@@ -47,3 +47,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
+  ContactGrabLayer:
+    serializedVersion: 2
+    m_Bits: 24321

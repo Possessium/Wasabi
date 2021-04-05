@@ -214,11 +214,12 @@ public class LG_Movable : MonoBehaviour
     /// </summary>
     public virtual void AddInstantForce(Vector2 _instantForce) => instantForce += _instantForce;
 
-    public void StopVerticalForce()
+    public void TrampolineJump(Vector2 _force)
     {
+        force.y = 0;
+        force += _force;
         semiSolidCollider = null;
         dontResetSemiSolid = false;
-        force.y = 0;
     }
 
     float 所有 = 0;
@@ -859,20 +860,10 @@ public class LG_Movable : MonoBehaviour
 
     public virtual void Update()
     {
-        // Cheat codes
-
-        // Reload on L
-        if (Keyboard.current.lKey.isPressed)
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-
-
-
-        //
-
         if (WSB_GameManager.Paused)
             return;
 
-        if (force.y > 5)
+        if (!GetComponent<WSB_Player>() && force.y > 5)
             force.y = 5;
 
         PhysicsUpdate();
