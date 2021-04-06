@@ -69,7 +69,7 @@ public class WSB_Lever : MonoBehaviour
         if(active && canPress)
         {
             animator.SetBool("Open", active);
-
+            transform.position = new Vector3(transform.position.x, transform.position.y, -2);
             WSB_Ban.I.AnimateLever((Vector2)transform.position + characterPosition);
             WSB_Lux.I.AnimateLever((Vector2)transform.position + characterPosition);
             onDeactivate?.Invoke();
@@ -81,6 +81,7 @@ public class WSB_Lever : MonoBehaviour
         {
             animator.SetBool("Open", active);
 
+            transform.position = new Vector3(transform.position.x, transform.position.y, 2);
             WSB_Ban.I.AnimateLever((Vector2)transform.position + characterPosition);
             WSB_Lux.I.AnimateLever((Vector2)transform.position + characterPosition);
             onActivate?.Invoke();

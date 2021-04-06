@@ -61,13 +61,26 @@ public class WSB_Player : LG_Movable
                     CanMove = false;
                 }
 
+                playerAnimator.SetFloat("Run", speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
+
                 playerAnimator.SetBool("Jump", isJumping);
 
                 playerAnimator.SetBool("Grounded", IsGrounded ? true : (IsOnMovingPlateform && !isJumping) ? true : false);
 
                 if (CanMove)
                 {
-                    if(xMovement < 0 /*&& rend.transform.rotation.y > 0*/ && IsRight)
+                    //if(xMovement != 0)
+                    //{
+                    //    IsRight = xMovement < 0 ? false : xMovement > 0 ? true : IsRight;
+
+                    //    if((IsRight && rend.transform.eulerAngles.y != 90) || (!IsRight && rend.transform.eulerAngles.y != -90))
+                    //    {
+                    //        playerAnimator.SetBool("Turning", true);
+                    //        playerAnimator.SetTrigger("Rotate");
+                    //    }
+                    //}
+
+                    if (xMovement < 0 && IsRight)
                     {
                         IsRight = false;
                         if (isGrounded)
@@ -79,7 +92,7 @@ public class WSB_Player : LG_Movable
                             rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, -90, rend.transform.eulerAngles.z);
                     }
 
-                    if (xMovement > 0 /*&& rend.transform.rotation.y < 0*/ && !IsRight)
+                    if (xMovement > 0 && !IsRight)
                     {
                         IsRight = true;
                         if (isGrounded)
@@ -90,8 +103,6 @@ public class WSB_Player : LG_Movable
                         else
                             rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, 90, rend.transform.eulerAngles.z);
                     }
-
-                    playerAnimator.SetFloat("Run", speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
                 }
             }
             if (isJumping)
@@ -179,7 +190,7 @@ public class WSB_Player : LG_Movable
         }
     }
 
-    public void AnimationFinished() => CanMove = true;
+    public void AnimationFinished(bool _s) => CanMove = _s;
 
     /*[SerializeField] */
     float xMovement = 0;
