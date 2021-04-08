@@ -29,7 +29,7 @@ public class WSB_Shrink : WSB_Power
     {
         base.Update();
 
-        if (!isActive)
+        if (!IsActive)
             return;
 
         Collider2D[] _hits = Physics2D.OverlapCircleAll((Vector2)transform.position + offset, range * (WSB_Lux.I.Shrinked ? 1 : .9f), layerShrink);

@@ -21,7 +21,7 @@ public class WSB_Carnivore : WSB_Power
         // Will loop until the object is disabled or destroyed
         while(true)
         {
-            while(!isActive || !isActive)
+            while(!IsActive || !IsActive)
             {
                 yield return new WaitForSeconds(.5f);
             }
