@@ -154,7 +154,7 @@ public class WSB_Player : LG_Movable
         base.Update();
     }
 
-    bool canAnimateLever = false;
+    [SerializeField] bool canAnimateLever = false;
     bool canAnimateButton = false;
     bool isLeverRight = false;
 

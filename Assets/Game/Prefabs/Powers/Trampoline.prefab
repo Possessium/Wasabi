@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5201212870536816819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.75, y: 7.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8722301976305177871}
@@ -124,11 +124,11 @@ MonoBehaviour:
   collider: {fileID: 5201212870536816821}
   rigidbody: {fileID: 7653885120521000254}
   isGrounded: 0
-  force: {x: 0, y: 0}
   movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}
   animator: {fileID: 0}
   range: 2
-  isActive: 1
+  IsActive: 1
+  owner: {fileID: 0}
   trampolineForce: 15
   bounceCollider: {fileID: 6942134283002665311}
   layerBounce:

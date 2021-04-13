@@ -166,7 +166,7 @@ MonoBehaviour:
   movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}
   animator: {fileID: 0}
   range: 5
-  isActive: 1
+  IsActive: 1
   owner: {fileID: 0}
   layerShrink:
     serializedVersion: 2
