@@ -24,7 +24,7 @@ public class TurnOnEnd : StateMachineBehaviour
         count--;
         if(stateInfo.normalizedTime * stateInfo.length >= stateInfo.length && count < 1)
         {
-            animator.transform.eulerAngles = new Vector3(animator.transform.eulerAngles.x, animator.GetComponentInParent<WSB_Lux>().IsRight ? 90 : -90,    animator.transform.eulerAngles.z);
+            animator.transform.eulerAngles = new Vector3(animator.transform.eulerAngles.x, animator.GetComponentInParent<WSB_Player>().IsRight ? 90 : -90,    animator.transform.eulerAngles.z);
             animator.SetBool("Turning", false);
         }
 

@@ -67,7 +67,7 @@ public class WSB_GameManager : MonoBehaviour
     {
         // Cheat codes
         // *   *   *   *   *   *   *
-        if (Keyboard.current.lKey.isPressed)
+        if (Keyboard.current.pKey.isPressed)
             ReloadScene();
         if(Paused)
         {

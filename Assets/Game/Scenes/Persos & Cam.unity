@@ -867,7 +867,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460986512884628068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 75.41, y: -4.5, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1433720641}
@@ -926,6 +926,7 @@ MonoBehaviour:
     maxNormalAngle: 0
   shrinkSpeed: 10
   render: {fileID: 1433720640}
+  deb: 0
   startSize: {x: 0, y: 0}
   startRenderSize: {x: 0, y: 0, z: 0}
 --- !u!61 &460986512884628066
@@ -1007,7 +1008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 63e435c4d9da78041a83a775ca2e52e5,
+  m_Actions: {fileID: -944628639613478452, guid: 7440a67a96aeb294597febd88acb4f41,
     type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
@@ -1024,7 +1025,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 460986512884628065}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -1035,12 +1036,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 638cbbd1-dec2-40c1-b1c2-0c7586d149b2
-    m_ActionName: Controls lux/Move[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+    m_ActionId: 6374adc6-ef50-495e-8ee0-71afcf4d61f3
+    m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/i,/Keyboard/k,/Keyboard/j,/Keyboard/l]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 460986512884628065}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -1051,12 +1052,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: cab4877c-edd6-46cf-b1f3-afe7be49fe4b
-    m_ActionName: Controls lux/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/upArrow]
+    m_ActionId: 77c2def3-7e84-4707-951a-a33ac9f70688
+    m_ActionName: Player/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 16af5895-420f-45ab-a52b-7bfa66ced45a
+    m_ActionName: Player/Interact[/XInputControllerWindows/buttonEast,/Keyboard/o]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 460986512884628065}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
         m_MethodName: GrabObject
         m_Mode: 0
         m_Arguments:
@@ -1067,79 +1072,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: e645cc83-78a7-4e3f-b115-4d197b7fdd53
-    m_ActionName: Controls lux/Interact[/XInputControllerWindows/buttonEast,/Keyboard/rightCtrl]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: UseSpell
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: bdd8a730-0154-4706-817c-d11732587269
-    m_ActionName: Controls lux/Use spell[/XInputControllerWindows/buttonWest,/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: RotateSpells
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 820cba7d-4b58-496e-9a77-1cca37a2a9d8
-    m_ActionName: Controls lux/Rotate spell[/XInputControllerWindows/leftShoulder,/XInputControllerWindows/rightShoulder,/Keyboard/pageUp,/Keyboard/pageDown,/XInputControllerWindows/leftTrigger,/XInputControllerWindows/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1025220014611113696}
-        m_TargetAssemblyTypeName: WSB_CheckpointManager, Assembly-CSharp
-        m_MethodName: RespawnLux
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 8006422a-1977-4e23-9ef6-3d6a8a7d02da
-    m_ActionName: Controls lux/Respawn[/XInputControllerWindows/buttonNorth,/Keyboard/delete]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1025220014611113700}
-        m_TargetAssemblyTypeName: WSB_GameManager, Assembly-CSharp
-        m_MethodName: Pause
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ae67757f-efdb-46cd-a81e-ecce8e6a19b4
-    m_ActionName: Controls lux/Pause[/XInputControllerWindows/start,/Keyboard/backspace]
+    m_ActionId: d1bf986b-4746-4140-b6d1-4b9505cfc28a
+    m_ActionName: Player/Pickup[/XInputControllerWindows/buttonWest,/Keyboard/u]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 4c9c8ef2-51c9-4cf2-81f2-438e94db04e3
-    m_ActionName: Controls lux/Switch[/XInputControllerWindows/select,/Keyboard/numpad0]
+    m_ActionId: 1be3063a-e038-4221-9105-1b185945174b
+    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: db95a42d-5473-4c63-b547-faf3b60bb6cb
+    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f9299248-8d70-4875-8aeb-eb724bcd0e54
+    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e6451a3b-f3f0-4b01-88f6-09723f408e32
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4f13d543-7c31-4e6f-8212-e1a105b356b3
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a9ed39c3-9097-4275-8f19-4b40c6632d01
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4fc8ae1c-9f2f-4a12-8f39-9f5f7b15f3f9
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 995ab571-6860-4824-9b01-e6260d202d53
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d6b5137b-f376-42f6-aa9c-ea25621d5816
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fc18376d-e49b-4d1e-9f0f-49fe3bd82692
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Controls lux
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!4 &626246957297411332
@@ -1312,14 +1289,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allScenesInOrder:
-  - Menus
-  - Interactables
-  - Plateformes
-  - PNJ
-  - "D\xE9cor"
-  - Lights
-  - FX
-  loadOnPlay: 0
+  - GP_Plateformes
+  - GP_Interactables
+  - "GP_D\xE9cor"
+  - GP_FX
+  - GP_Lights
+  loadOnPlay: 1
 --- !u!23 &1741114563396121927
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1954,7 +1929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 45e4c72b96983bf4c97bada9f2cf2b04,
+  m_Actions: {fileID: -944628639613478452, guid: cdc245917ee7bba47b12fc42f41a2b37,
     type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
@@ -1971,7 +1946,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6072583074185493623}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -1982,12 +1957,52 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 891fdd9c-ae73-4e94-aed2-79586b927fa7
-    m_ActionName: Controls1/Move[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+    m_ActionId: ecff11c4-11b2-42f4-a3e1-6a9bd2d9468a
+    m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9c5306e2-6ca1-4a1b-9ac4-44e84448976a
+    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48057166-d2df-4d85-828d-d32b6a4c282b
+    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 63900942-2d65-4678-8ea6-a2f203170907
+    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0f25950f-205c-419f-92d1-1ffe5e04f160
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3934b89f-d27d-49d2-a841-0e4d42b384e0
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f8919fb-4c6e-43cc-9864-2573380da9b2
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2e614d74-7199-4812-9cef-9e75aafca8a8
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9930f3e7-e209-43b5-83c5-7ffe2cf6c36b
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8c85f3bb-1e76-4dff-bd20-e7fd327b60cf
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44620809-06c7-4a57-b402-4dbf7d7a05ba
+    m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6072583074185493623}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -1998,12 +2013,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: e042ed82-959a-4f85-88ef-b0f9041405b6
-    m_ActionName: Controls1/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/space]
+    m_ActionId: a4ae1d1a-4a2a-4dcd-8664-c3df5b91ecbe
+    m_ActionName: Player/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b037f3d8-79b7-42e4-937e-1bd8cb025e16
+    m_ActionName: Player/Interact[/XInputControllerWindows/buttonEast,/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6072583074185493623}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
         m_MethodName: GrabObject
         m_Mode: 0
         m_Arguments:
@@ -2014,75 +2033,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 531a1dcb-7fcd-4b58-a2ea-42221c3999f2
-    m_ActionName: Controls1/Interact[/XInputControllerWindows/buttonEast,/Keyboard/f]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: UseSpell
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: de03b86b-1157-46eb-9dc3-5a6ee0943788
-    m_ActionName: Controls1/Use spell[/XInputControllerWindows/buttonWest,/Keyboard/shift]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: RotateSpells
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 156ca60c-658a-4ed6-97e0-ed323f58d826
-    m_ActionName: Controls1/Rotate spell[/XInputControllerWindows/leftShoulder,/XInputControllerWindows/rightShoulder,/Keyboard/q,/Keyboard/e,/XInputControllerWindows/leftTrigger,/XInputControllerWindows/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1025220014611113696}
-        m_TargetAssemblyTypeName: WSB_CheckpointManager, Assembly-CSharp
-        m_MethodName: RespawnBan
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 303cca4d-ce42-4b35-a828-67af0d34dce0
-    m_ActionName: Controls1/Respawn[/XInputControllerWindows/buttonNorth,/Keyboard/r]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1025220014611113700}
-        m_TargetAssemblyTypeName: WSB_GameManager, Assembly-CSharp
-        m_MethodName: Pause
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 587223d5-063b-4db8-9343-d21a63cb0766
-    m_ActionName: Controls1/Pause[/XInputControllerWindows/start,/Keyboard/escape]
+    m_ActionId: 46cd1975-9ee3-4f7f-accc-45d6128da143
+    m_ActionName: Player/Pickup[/XInputControllerWindows/buttonWest,/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Controls ban
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!61 &6072583074185493620
@@ -2140,7 +2095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6072583074185493578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.75, y: -1.75, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5562033670130245338}

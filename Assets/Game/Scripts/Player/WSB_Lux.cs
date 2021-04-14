@@ -11,6 +11,7 @@ public class WSB_Lux : WSB_Player
     [SerializeField] float shrinkSpeed = 10;
     [SerializeField] GameObject render = null;
     public bool Shrinked { get; private set; } = false;
+    [SerializeField] bool deb = false;
     Coroutine shrink = null;
     Coroutine unshrink = null;
 
@@ -46,6 +47,7 @@ public class WSB_Lux : WSB_Player
     void MyUpdate()
     {
         base.Update();
+        deb = Shrinked;
     }
 
     
@@ -101,11 +103,12 @@ public class WSB_Lux : WSB_Player
     IEnumerator UnshrinkCoroutine()
     {
         RaycastHit2D[] _hits = new RaycastHit2D[1];
+        BoxCollider2D _startCollider = collider;
         // Increase size back to the stocked start size
         while (collider.size != startSize || render.transform.localScale != startRenderSize)
         {
             // Checks above behind if there is a roof, loops until there isn't anymore
-            if(collider.Cast(Vector2.up, shrinkLayer, _hits, 1.5f, true) == 0)
+            if(_startCollider.Cast(Vector2.up, shrinkLayer, _hits, .5f, true) == 0)
                 collider.size = Vector2.MoveTowards(collider.size, startSize, Time.deltaTime * shrinkSpeed);
 
             render.transform.localScale = Vector3.MoveTowards(render.transform.localScale, startRenderSize, Time.deltaTime * shrinkSpeed);

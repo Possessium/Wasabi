@@ -151,6 +151,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkBusHierarchyFlags.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseSwitchGroupReference.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerMouseExit.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_Socle.cs" />
     <Compile Include="Assets\Game\Scripts\Blit_shader_scripts\Blit.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkSerializedCallbackHeader.cs" />
     <Compile Include="Assets\Game\Scripts\WSB_ContextualMenu.cs" />
@@ -319,7 +320,6 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkRoomParams.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerCollisionEnter.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkDiffractionPathInfoArray.cs" />
-    <Compile Include="Assets\Game\Scripts\WSB_Socle.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86_64\DSP\MSSpatial.dll" />

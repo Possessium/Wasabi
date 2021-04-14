@@ -33,10 +33,10 @@ public class WSB_Socle : MonoBehaviour
                 (collision.GetComponent<WSB_Carnivore>() && soclePower == Power.Dragon) ||
                 (collision.GetComponent<WSB_Trampoline>() && soclePower == Power.Trampoline))
             {
-                Debug.LogError("in");
                 onActivate?.Invoke();
                 collision.transform.position = new Vector3(transform.position.x + position.x, transform.position.y + position.y, collision.transform.position.z);
                 currentHeldPower = _buffer;
+                currentHeldPower.enabled = false;
             }
         }
     }
@@ -48,7 +48,7 @@ public class WSB_Socle : MonoBehaviour
 
         if (currentHeldPower == collision.GetComponent<WSB_Power>())
         {
-            Debug.LogError("out");
+            currentHeldPower.enabled = true;
             currentHeldPower = null;
             onDeactivate?.Invoke();
         }

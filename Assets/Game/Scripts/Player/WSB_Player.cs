@@ -196,6 +196,7 @@ public class WSB_Player : LG_Movable
     float xMovement = 0;
     /*[SerializeField] */float yMovement = 0;
     /*[SerializeField] */bool jumpInput = false;
+    bool down = false;
     [SerializeField] SO_ControllerValues controllerValues = null;
     [SerializeField] GameObject rend = null;
     [SerializeField] protected Animator playerAnimator = null;
@@ -207,6 +208,7 @@ public class WSB_Player : LG_Movable
         if (_context.valueType != typeof(Vector2) || !CanMove) return;
         xMovement = _context.ReadValue<Vector2>().x;
         yMovement = _context.ReadValue<Vector2>().y;
+        down = _context.ReadValue<Vector2>().y < 0;
     }
 
     // Reads jump input and sets it in jumpInput
@@ -297,7 +299,7 @@ public class WSB_Player : LG_Movable
     void Jump()
     {
         // Checks if input was in direction of the ground
-        if (yMovement < 0)
+        if (down)
         {
             // Cast below character to found if there is any SemiSolid plateform
             RaycastHit2D[] _hits = new RaycastHit2D[1];

@@ -30,7 +30,9 @@ public class WSB_Power : LG_Movable
         IsActive = true;
         owner = null;
 
-        if(animator)
+        collider.size = collider.size * 2;
+
+        if (animator)
             animator.SetTrigger("Grow");
     }
 
@@ -38,6 +40,8 @@ public class WSB_Power : LG_Movable
     {
         IsActive = false;
         owner = _p;
+
+        collider.size = collider.size / 2;
 
         if (animator)
             animator.SetTrigger("Shrink");

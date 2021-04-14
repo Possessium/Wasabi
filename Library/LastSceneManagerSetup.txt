@@ -3,23 +3,3 @@ sceneSetups:
   isLoaded: 1
   isActive: 1
   isSubScene: 0
-- path: Assets/Game/Scenes/Gameplay area/Plateformes.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
-- path: "Assets/Game/Scenes/Gameplay area/D\xE9cor.unity"
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Game/Scenes/Gameplay area/FX.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Game/Scenes/Gameplay area/Interactables.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Game/Scenes/Gameplay area/Lights.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
