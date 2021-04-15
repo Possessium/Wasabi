@@ -11,7 +11,6 @@ public class WSB_Lux : WSB_Player
     [SerializeField] float shrinkSpeed = 10;
     [SerializeField] GameObject render = null;
     public bool Shrinked { get; private set; } = false;
-    [SerializeField] bool deb = false;
     Coroutine shrink = null;
     Coroutine unshrink = null;
 
@@ -47,7 +46,6 @@ public class WSB_Lux : WSB_Player
     void MyUpdate()
     {
         base.Update();
-        deb = Shrinked;
     }
 
     

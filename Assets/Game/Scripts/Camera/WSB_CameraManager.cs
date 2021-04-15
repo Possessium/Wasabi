@@ -306,12 +306,12 @@ public class WSB_CameraManager : MonoBehaviour
         // Get the position of both cameras and offset them by the zoom troward each other
         Vector3 _luxOffset = new Vector3(
             lux.position.x - (_dir.normalized.x * MaxCamZoom),
-            lux.position.y - (_dir.normalized.y * MinCamZoom),
+            lux.position.y - (_dir.normalized.y * MaxCamZoom / 2),
             camLux.transform.position.z);
 
         Vector3 _banOffset = new Vector3(
             ban.position.x + (_dir.normalized.x * MaxCamZoom),
-            ban.position.y + (_dir.normalized.y * MinCamZoom),
+            ban.position.y + (_dir.normalized.y * MaxCamZoom / 2),
             camBan.transform.position.z);
 
         // Set the correct cameras position and zoom
@@ -328,12 +328,12 @@ public class WSB_CameraManager : MonoBehaviour
         // Get the position of both cameras and offset them by the zoom troward each other
         Vector3 _luxOffset = new Vector3(
             lux.position.x - (_dir.normalized.x * (MaxCamZoom)),
-            (lux.position.y) - (_dir.normalized.y * (MinCamZoom)),
+            (lux.position.y) - (_dir.normalized.y * (MaxCamZoom / 2)),
             camLux.transform.position.z);
 
         Vector3 _banOffset = new Vector3(
             ban.position.x + (_dir.normalized.x * (MaxCamZoom)),
-            (ban.position.y) + (_dir.normalized.y * (MinCamZoom)),
+            (ban.position.y) + (_dir.normalized.y * (MaxCamZoom / 2)),
             camBan.transform.position.z);
 
         if(leftMiddle.GetBool("Split") != _dist >= MaxCamZoom)
@@ -381,8 +381,8 @@ public class WSB_CameraManager : MonoBehaviour
         // If the distance is higher than the max zoom * 1.5
         else
         {
-            camBan.SetCam(new Vector3(_banOffset.x, _banOffset.y, Mathf.Clamp(_dist, minCamZoom, maxCamZoom * 1.5f)));
-            camLux.SetCam(new Vector3(_luxOffset.x, _luxOffset.y, Mathf.Clamp(_dist, minCamZoom, maxCamZoom * 1.5f)));
+            camBan.SetCam(new Vector3(_banOffset.x, _banOffset.y, Mathf.Clamp(_dist, MaxCamZoom / 2, maxCamZoom * 1.5f)));
+            camLux.SetCam(new Vector3(_luxOffset.x, _luxOffset.y, Mathf.Clamp(_dist, MaxCamZoom / 2, maxCamZoom * 1.5f)));
         }
 
         // Sets the correct angle of the split

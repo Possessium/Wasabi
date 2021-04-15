@@ -96,6 +96,9 @@ public class WSB_Shrink : WSB_Power
 
     private void OnDisable()
     {
+        if (!hasLux)
+            return;
+
         if (shrinkDelay != null)
             StopCoroutine(shrinkDelay);
         shrinkDelay = null;
@@ -103,6 +106,5 @@ public class WSB_Shrink : WSB_Power
         hasLux = false;
 
         WSB_Lux.I.Unshrink();
-        unshrinkDelay = StartCoroutine(UnshrinkDelay());
     }
 }
