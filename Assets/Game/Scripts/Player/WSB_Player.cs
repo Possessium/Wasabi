@@ -146,10 +146,10 @@ public class WSB_Player : LG_Movable
             if (xMovement != 0)
                 IsRight = xMovement > 0;
 
-            //if (grabbedObject)
-            //{
-            //    grabbedObject.transform.position = playerHands.transform.position + grabbedObject.transform.right;
-            //}
+            if (grabbedObject && !playerHands)
+            {
+                grabbedObject.transform.position = transform.position + Vector3.up * 1.5f + (IsRight ? Vector3.right : Vector3.left) * 1.5f;
+            }
         }
             
 
@@ -220,6 +220,8 @@ public class WSB_Player : LG_Movable
 
 
     /*[SerializeField] */LG_Movable grabbedObject = null;
+    public bool HeldObject { get { return grabbedObject; } }
+
     [SerializeField] Transform playerHands = null;
     [SerializeField] ContactFilter2D grabContactFilter = new ContactFilter2D();
     // Reads grab input and try to grab object
@@ -231,6 +233,14 @@ public class WSB_Player : LG_Movable
 
         if (playerAnimator)
             playerAnimator.SetTrigger("Pick");
+
+        if(GetComponent<WSB_Ban>())
+        {
+            if (grabbedObject)
+                DropGrabbedObject();
+            else
+                TryGrab();
+        }
     }
 
     void DropGrabbedObject()
@@ -275,8 +285,12 @@ public class WSB_Player : LG_Movable
 
             grabbedObject.enabled = false;
             grabbedObject.GetComponent<WSB_Power>().DeactivatePower(this);
-            grabbedObject.transform.parent = playerHands;
-            grabbedObject.transform.position = playerHands.transform.position + (IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right);
+
+            if(playerHands)
+            {
+                grabbedObject.transform.parent = playerHands;
+                grabbedObject.transform.position = playerHands.transform.position + (IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right);
+            }
 
             grabbedObject.MovableCollider.enabled = false;
 
