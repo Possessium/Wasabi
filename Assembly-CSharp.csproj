@@ -322,6 +322,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Wwise\Deployment\Components\AkRTPCTrack.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Wind.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkAuxSendArray.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkWwiseEditorSettings.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\WAAPI\AkWaapiClient_PINVOKE.cs" />
@@ -352,7 +353,6 @@
     <Compile Include="Assets\Wwise\Deployment\Components\AkGameObjListenerList.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkDeviceDescription.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseTypes\AkWwiseAcousticTexture.cs" />
-    <Compile Include="Assets\Game\Scripts\Player\WSB_Spells.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkSourceSettings.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkFloorPlane.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkAcousticSurfaceArray.cs" />
@@ -402,7 +402,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Mac\AkMacSettings.cs" />
     <Compile Include="Assets\Game\Scripts\Player\WSB_Ban.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMultiPositionType.cs" />
-    <Compile Include="Assets\Game\Scripts\Plants\WSB_Trampoline.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Trampoline.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMusicSyncCallbackInfo.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkGameObjPosOffsetData.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkSurfaceReflector.cs" />
@@ -437,8 +437,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Windows\AkWindowsBasePathGetter.cs" />
     <Compile Include="Assets\Game\Scripts\Controls\WSB_InputManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkReflectionPathInfoArray.cs" />
-    <Compile Include="Assets\Game\Scripts\Plants\WSB_Ladder.cs" />
-    <Compile Include="Assets\Game\Scripts\Plants\WSB_Pot.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Power.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\Ak3DSpatializationMode.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkRamp.cs" />
     <Compile Include="Assets\Game\Scripts\Player\SO_MovableValues.cs" />
@@ -525,7 +524,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\Ak3DPositionType.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Windows\AkSoundEngine.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Mac\AkThreadProperties_Mac.cs" />
-    <Compile Include="Assets\Game\Scripts\Plants\WSB_Carnivore.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Carnivore.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkPositioningInfo.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkAudioSettings.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTerminator.cs" />
@@ -548,7 +547,6 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseTriggerReference.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Windows\AkAudioAPI_Windows.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Timeline\AkTimelineRtpcTrack.cs" />
-    <Compile Include="Assets\Game\Scripts\Plants\WSB_Bridge.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkEventTrack.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkCallbackType.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkAudioFormat.cs" />
@@ -577,6 +575,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkDiffractionPathInfo.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkAmbient.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkEventCallbackInfo.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Shrink.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkAudioListener.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Windows\AkSoundEnginePINVOKE_Windows.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkPanningRule.cs" />
@@ -585,6 +584,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkRoomParams.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerCollisionEnter.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkDiffractionPathInfoArray.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_Socle.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86_64\DSP\MSSpatial.dll" />

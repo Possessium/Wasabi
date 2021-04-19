@@ -17,15 +17,31 @@ public class WSB_Player : LG_Movable
 
         if(CanMove)
         {
-            MoveHorizontally(xMovement);
+            bool _isBlocked = false;
 
-            if (grabbedObject)
+            if (grabbedObject && ((!IsRight && xMovement <= 0) || (IsRight && xMovement >= 0)) )
             {
-                if (!grabbedObject.IsGrounded || force.y < -2f || Vector2.Distance(grabbedObject.MovableCollider.ClosestPoint(transform.position), transform.position) > 1)
-                    DropGrabbedObject();
-                else
-                    grabbedObject.MoveHorizontally(xMovement);
+                Collider2D[] _hits = Physics2D.OverlapBoxAll((Vector2)grabbedObject.transform.position + grabbedObject.MovableCollider.offset, grabbedObject.MovableCollider.size * 1.1f, 0, controllerValues.ContactGrabLayer);
+
+                for (int i = 0; i < _hits.Length; i++)
+                {
+                    if (_hits[i].transform != this.transform && _hits[i].transform != grabbedObject.transform)
+                    {
+                        _isBlocked = true;
+                        break;
+                    }
+
+                }
+                _hits = Physics2D.OverlapBoxAll((Vector2)grabbedObject.transform.position + grabbedObject.MovableCollider.offset, grabbedObject.MovableCollider.size, 0, controllerValues.ContactGrabLayer);
+                for (int i = 0; i < _hits.Length; i++)
+                {
+                    if (_hits[i].transform != this.transform && _hits[i].transform != grabbedObject.transform)
+                        rigidbody.position += (IsRight ? Vector2.left : Vector2.right) * .1f;
+                }
             }
+
+            if(!_isBlocked)
+                MoveHorizontally(xMovement);
 
             if (IsGrounded)
             {
@@ -37,13 +53,36 @@ public class WSB_Player : LG_Movable
             }
             if (playerAnimator)
             {
+                if (Keyboard.current.yKey.isPressed)
+                {
+                    playerAnimator.SetTrigger("Key");
+                    IsRight = true;
+                    rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, 90, rend.transform.eulerAngles.z);
+                    CanMove = false;
+                }
+
+                playerAnimator.SetFloat("Run", speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
+
                 playerAnimator.SetBool("Jump", isJumping);
 
-                if(CanMove)
+                playerAnimator.SetBool("Grounded", IsGrounded ? true : (IsOnMovingPlateform && !isJumping) ? true : false);
+
+                if (CanMove)
                 {
-                    if(xMovement < 0 /*&& rend.transform.rotation.y > 0*/ && isRight)
+                    //if(xMovement != 0)
+                    //{
+                    //    IsRight = xMovement < 0 ? false : xMovement > 0 ? true : IsRight;
+
+                    //    if((IsRight && rend.transform.eulerAngles.y != 90) || (!IsRight && rend.transform.eulerAngles.y != -90))
+                    //    {
+                    //        playerAnimator.SetBool("Turning", true);
+                    //        playerAnimator.SetTrigger("Rotate");
+                    //    }
+                    //}
+
+                    if (xMovement < 0 && IsRight)
                     {
-                        isRight = false;
+                        IsRight = false;
                         if (isGrounded)
                         {
                             playerAnimator.SetBool("Turning", true);
@@ -53,9 +92,9 @@ public class WSB_Player : LG_Movable
                             rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, -90, rend.transform.eulerAngles.z);
                     }
 
-                    if (xMovement > 0 /*&& rend.transform.rotation.y < 0*/ && !isRight)
+                    if (xMovement > 0 && !IsRight)
                     {
-                        isRight = true;
+                        IsRight = true;
                         if (isGrounded)
                         {
                             playerAnimator.SetBool("Turning", true);
@@ -64,8 +103,6 @@ public class WSB_Player : LG_Movable
                         else
                             rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, 90, rend.transform.eulerAngles.z);
                     }
-
-                    playerAnimator.SetFloat("Run", speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (isRight ? 1 : -1));
                 }
             }
             if (isJumping)
@@ -107,7 +144,10 @@ public class WSB_Player : LG_Movable
             }
 
             if (xMovement != 0)
-                isRight = movement.x > 0;
+                IsRight = xMovement > 0;
+
+            if (grabbedObject)
+                grabbedObject.transform.position = transform.position + Vector3.up * 1.5f + (IsRight ? Vector3.right : Vector3.left) * 1.5f;
         }
             
 
@@ -133,7 +173,7 @@ public class WSB_Player : LG_Movable
         if (canAnimateLever && playerAnimator)
         {
             rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, isLeverRight ? 90 : -90, rend.transform.eulerAngles.z);
-            isRight = isLeverRight = !isLeverRight;
+            IsRight = isLeverRight = !isLeverRight;
             SetPosition(_pos);
             playerAnimator.SetTrigger("Lever");
             CanMove = false;
@@ -150,7 +190,7 @@ public class WSB_Player : LG_Movable
         }
     }
 
-    public void AnimationFinished() => CanMove = true;
+    public void AnimationFinished(bool _s) => CanMove = _s;
 
     /*[SerializeField] */
     float xMovement = 0;
@@ -159,7 +199,7 @@ public class WSB_Player : LG_Movable
     [SerializeField] SO_ControllerValues controllerValues = null;
     [SerializeField] GameObject rend = null;
     [SerializeField] protected Animator playerAnimator = null;
-    /*[SerializeField]*/ protected bool isRight = true;
+    /*[SerializeField]*/ public bool IsRight { get; protected set; } = true;
 
     // Reads x & y movement and sets it in xMovement & yMovement
     public void Move(InputAction.CallbackContext _context)
@@ -182,32 +222,40 @@ public class WSB_Player : LG_Movable
     // Reads grab input and try to grab object
     public void GrabObject(InputAction.CallbackContext _context)
     {
-        // Drop object if input canceled
-        if (_context.canceled)
-            DropGrabbedObject();
+        // Exit if not the beggining of the input
+        if (!_context.started || (GetComponent<WSB_Lux>() && GetComponent<WSB_Lux>().Shrinked))
+            return;
 
-        else if (_context.started && !grabbedObject)
+
+        // Drop object if already got one
+        if (grabbedObject)
         {
-            RaycastHit2D[] _hit = new RaycastHit2D[1];
+            DropGrabbedObject();
+            return;
+        }
 
-            // Cast on facing direction to check if there is an object
-            if (collider.Cast(isRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, .5f) > 0)
-            {
-                if (_hit[0].transform.GetComponent<WSB_Movable>() && !_hit[0].transform.GetComponent<WSB_Movable>().CanMove)
-                    return;
-                // Search for WSB_Pot component
-                if (_hit[0].transform.GetComponent<WSB_Pot>())
-                    // Breaks seed if pot found & not Carnivore or Trampoline seed
-                    if (_hit[0].transform.childCount > 0 && _hit[0].transform.GetChild(0).tag != "Carnivore" && _hit[0].transform.GetChild(0).tag != "Trampoline")
-                        _hit[0].transform.GetComponent<WSB_Pot>().BreakSeed();
+        RaycastHit2D[] _hit = new RaycastHit2D[1];
 
-                // Sets grabbedObject var
-                _hit[0].transform.TryGetComponent(out grabbedObject);
-                grabbedObject.transform.parent = transform;
+        // Cast on facing direction to check if there is an object
+        if (collider.Cast(IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, .5f) > 0)
+        {
+            if (_hit[0].transform.GetComponent<WSB_Movable>() && !_hit[0].transform.GetComponent<WSB_Movable>().CanMove)
+                return;
+            // Search for WSB_Pot component
+            if (_hit[0].transform.GetComponent<WSB_Power>())
 
-                if (playerAnimator)
-                    playerAnimator.SetBool("Grab", true);
-            }
+            // Sets grabbedObject var
+            _hit[0].transform.TryGetComponent(out grabbedObject);
+
+            grabbedObject.enabled = false;
+            grabbedObject.GetComponent<WSB_Power>().DeactivatePower(this);
+            grabbedObject.transform.parent = transform;
+            grabbedObject.transform.position = transform.position + Vector3.up * 1.5f + (IsRight ? Vector3.right : Vector3.left) * 1.5f;
+
+            grabbedObject.MovableCollider.enabled = false;
+
+            if (playerAnimator)
+                playerAnimator.SetBool("Grab", true);
         }
     }
 
@@ -218,27 +266,31 @@ public class WSB_Player : LG_Movable
 
         grabbedObject.transform.parent = transform.parent;
 
+        grabbedObject.MovableCollider.enabled = true;
+        grabbedObject.enabled = true;
+        grabbedObject.GetComponent<WSB_Power>().ActivatePower();
+        grabbedObject.transform.position = transform.position * 1.5f + (IsRight ? Vector3.right : Vector3.left) * 1.5f;
         grabbedObject.RefreshOnMovingPlateform();
         grabbedObject = null;
         if (playerAnimator)
             playerAnimator.SetBool("Grab", false);
     }
 
-    // Virtual method
-    public virtual void UseSpell(string _s)
-    {
-        // Stops if grabbedObject
-        if (grabbedObject)
-            return;
-    }
+    //// Virtual method
+    //public virtual void UseSpell(string _s)
+    //{
+    //    // Stops if grabbedObject
+    //    if (grabbedObject)
+    //        return;
+    //}
 
-    // Virtual method
-    public virtual void StopSpell()
-    {
-        // Stops if grabbedObject
-        if (grabbedObject)
-            return;
-    }
+    //// Virtual method
+    //public virtual void StopSpell()
+    //{
+    //    // Stops if grabbedObject
+    //    if (grabbedObject)
+    //        return;
+    //}
     float coyoteVar = -999;
 
     // Makes the character jump
@@ -273,18 +325,10 @@ public class WSB_Player : LG_Movable
     }
     protected void StopJump() => isJumping = false;
 
-    public void TrampolineJump(Vector2 _f)
-    {
-        force.y = 0;
-        AddForce(_f);
-    }
-
     protected override void OnSetGrounded()
     {
         base.OnSetGrounded();
         if(IsGrounded)
             isJumping = false;
-        if (playerAnimator)
-            playerAnimator.SetBool("Grounded", IsGrounded);
     }
 }

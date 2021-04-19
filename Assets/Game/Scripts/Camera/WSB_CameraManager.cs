@@ -190,6 +190,12 @@ public class WSB_CameraManager : MonoBehaviour
         
         currentCamType = _t;
 
+        leftMiddle.SetTrigger("Change");
+        rightMiddle.SetTrigger("Change");
+        leftMiddle.SetBool("Split", _dist >= MaxCamZoom);
+        rightMiddle.SetBool("Split", _dist >= MaxCamZoom);
+
+        camBan.SetInstantCam(new Vector3(camLux.transform.position.x, camLux.transform.position.y, camLux.Cam.orthographicSize));
 
         // Set the given position
         targetPositionCamBan = new Vector3(targetPositionCamBan.x, targetPositionCamBan.y, camBan.Cam.orthographicSize);

@@ -7,23 +7,7 @@ public class WSB_Lux : WSB_Player
 {
     public static WSB_Lux I { get; private set; }
 
-    [SerializeField] float range = 5;
-    [SerializeField] LayerMask potLayer = 0;
     [SerializeField] ContactFilter2D shrinkLayer;
-
-    [SerializeField] WSB_Spells spells = null;
-
-    #region Spell Charges
-    [SerializeField] int maxTrampolineCharges = 10;
-    [SerializeField] int maxCarnivoreCharges = 10;
-    [SerializeField] int maxBridgeCharges = 10;
-
-    int trampolineCharges = 10;
-    int carnivoreCharges = 10;
-    int bridgeCharges = 10;
-    #endregion
-
-
     [SerializeField] float shrinkSpeed = 10;
     [SerializeField] GameObject render = null;
     public bool Shrinked { get; private set; } = false;
@@ -48,14 +32,6 @@ public class WSB_Lux : WSB_Player
 
         startSize = collider.size;
         startRenderSize = render.transform.localScale;
-
-        bridgeCharges = maxBridgeCharges;
-        trampolineCharges = maxTrampolineCharges;
-        carnivoreCharges = maxCarnivoreCharges;
-
-        spells.UpdateChargesUI(bridgeCharges.ToString());
-        spells.UpdateChargesUI(trampolineCharges.ToString());
-        spells.UpdateChargesUI(carnivoreCharges.ToString());
     }
 
 
@@ -72,107 +48,39 @@ public class WSB_Lux : WSB_Player
         base.Update();
     }
 
-    public override void UseSpell(string _s)
+    
+    public void Shrink()
     {
-        base.UseSpell(_s);
-
-        // Exit if game paused
-        if (WSB_GameManager.Paused)
-            return;
-
-        // Search for pot in corresponding direction
-        RaycastHit2D _hit = Physics2D.BoxCast(transform.position, collider.size, 0, isRight ? Vector2.right : Vector2.left, range, potLayer);
-
-        if(_hit)
-        {
-            WSB_Pot _pot = _hit.transform.GetComponent<WSB_Pot>();
-
-            // Exist if WSB_Pot doesn't exist
-            if (!_pot)
-                return;
-
-            // Switch on the given string to find the corresponding seed to grow
-            if (_s == "Trampoline" && trampolineCharges > 0)
-            {
-                Trampoline(_pot);
-            }
-
-            else if (_s == "Bridge" && bridgeCharges > 0)
-            {
-                Bridge(_pot);
-            }
-
-            else if (_s == "Carnivore" && carnivoreCharges > 0)
-            {
-                Carnivore(_pot);
-            }
-
-            else
-            {
-                _pot.BreakSeed();
-                if (playerAnimator)
-                    playerAnimator.SetTrigger("Unspell");
-            }
-        }
-
-    }
-
-    public void RechargeSeed(string _s)
-    {
-        // Switch on given string to find the corresponding charges to increase if not already full and updates corresponding UI
-        if (_s == "Trampoline" && trampolineCharges < maxTrampolineCharges)
-        {
-            trampolineCharges++;
-            spells.UpdateChargesUI(trampolineCharges.ToString());
-            spells.UpdateEmptyCharges(1);
-        }
-        else if (_s == "Bridge" && bridgeCharges < maxBridgeCharges)
-        {
-            bridgeCharges++;
-            spells.UpdateChargesUI(bridgeCharges.ToString());
-            spells.UpdateEmptyCharges(1);
-        }
-        else if (_s == "Carnivore" && carnivoreCharges < maxCarnivoreCharges)
-        {
-            carnivoreCharges++;
-            spells.UpdateChargesUI(carnivoreCharges.ToString());
-            spells.UpdateEmptyCharges(1);
-        }
-    }
-
-    public bool Shrink(out bool _canShrink)
-    {
-        _canShrink = true;
         StopJump();
-        if (Shrinked)
-        {
-            RaycastHit2D[] _hits = new RaycastHit2D[1];
-            if (collider.Cast(Vector2.up, shrinkLayer, _hits, 1.5f, true) > 0)
-            {
-                _canShrink = false;
-                return false;
-            }
-            Shrinked = false;
-            AddSpeedCoef(2);
-            if(shrink != null)
-            {
-                StopCoroutine(shrink);
-                shrink = null;
-            }
-            unshrink = StartCoroutine(UnshrinkCoroutine());
-            return false;
-        }
-        else
+        if(shrink == null)
         {
             RemoveSpeedCoef(2);
-            Shrinked = true;
+
             if(unshrink != null)
             {
                 StopCoroutine(unshrink);
                 unshrink = null;
             }
             shrink = StartCoroutine(ShrinkCoroutine());
-            return true;
+        }
+    }
+
+    public void Unshrink()
+    {
+        if(unshrink == null)
+        {
+            RaycastHit2D[] _hits = new RaycastHit2D[1];
+            if (collider.Cast(Vector2.up, shrinkLayer, _hits, 1.5f, true) > 0)
+                return;
+
+            AddSpeedCoef(2);
+
+            if (shrink != null)
+            {
+                StopCoroutine(shrink);
+                shrink = null;
+            }
+            unshrink = StartCoroutine(UnshrinkCoroutine());
         }
     }
 
@@ -186,6 +94,7 @@ public class WSB_Lux : WSB_Player
             render.transform.localPosition = Vector3.MoveTowards(render.transform.localPosition, new Vector3(0, .6f, 0), Time.deltaTime * shrinkSpeed);
             yield return new WaitForEndOfFrame();
         }
+        Shrinked = true;
         shrink = null;
     }
 
@@ -203,70 +112,8 @@ public class WSB_Lux : WSB_Player
             render.transform.localPosition = Vector3.MoveTowards(render.transform.localPosition, Vector3.zero, Time.deltaTime * shrinkSpeed);
             yield return new WaitForEndOfFrame();
         }
+        Shrinked = false;
         unshrink = null;
-    }
-
-    void Trampoline(WSB_Pot _pot)
-    {
-        // Exit if growing a seed isn't possible
-        if (!_pot.GrowSeed("Trampoline"))
-        {
-            if (playerAnimator)
-                playerAnimator.SetTrigger("Unspell");
-            return;
-        }
-
-        if (playerAnimator)
-            playerAnimator.SetTrigger("Spell");
-
-        // Reduce trampoline charges and update corresponding UI
-        trampolineCharges--;
-        spells.UpdateChargesUI(trampolineCharges.ToString());
-        if(trampolineCharges == 0)
-            spells.UpdateEmptyCharges(0);
-    }
-
-    void Carnivore(WSB_Pot _pot)
-    {
-        // Exit if growing a seed isn't possible
-        if (!_pot.GrowSeed("Carnivore"))
-        {
-            if (playerAnimator)
-                playerAnimator.SetTrigger("Unspell");
-            return;
-        }
-
-        if (playerAnimator)
-            playerAnimator.SetTrigger("Spell");
-
-        // Reduce carnivore charges and update corresponding UI
-        carnivoreCharges--;
-        spells.UpdateChargesUI(carnivoreCharges.ToString());
-        if(carnivoreCharges == 0)
-            spells.UpdateEmptyCharges(0);
-    }
-
-    void Bridge(WSB_Pot _pot)
-    {
-        // Exit if growing a seed isn't possible
-        if (!_pot.GrowSeed("Bridge"))
-        {
-            if (playerAnimator)
-                playerAnimator.SetTrigger("Unspell");
-            return;
-        }
-
-        if (playerAnimator)
-            playerAnimator.SetTrigger("Spell");
-        
-        // Deploy bridge and gives it the direction it needs to grow
-        _pot.GrownSeed.GetComponent<WSB_Bridge>().StartCoroutine(_pot.GrownSeed.GetComponent<WSB_Bridge>().DeployBridge(transform.position.x < _pot.transform.position.x));
-
-        // Reduce bridge charges and update corresponding UI
-        bridgeCharges--;
-        spells.UpdateChargesUI(bridgeCharges.ToString());
-        if (bridgeCharges == 0)
-            spells.UpdateEmptyCharges(0);
     }
 
 }
