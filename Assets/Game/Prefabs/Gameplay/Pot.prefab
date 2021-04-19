@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2916364248773082266}
   - component: {fileID: 2916364248773082269}
   - component: {fileID: -8471440574619025135}
-  - component: {fileID: -2221237146618945966}
   m_Layer: 10
   m_Name: Pot
   m_TagString: Untagged
@@ -73,18 +72,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c2a23c0a15dc645a67baa2946af306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 2916364248773082266}
+  rigidbody: {fileID: -8471440574619025135}
+  movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}
   carnivorePrefab: {fileID: 2990940654364743354, guid: bd70f4cb75b029f48ae22217f63767f9,
     type: 3}
   bridgePrefab: {fileID: 5730708420388439123, guid: b052b9a3658ec4448bdeeb55c9c86cea,
     type: 3}
-  ladderPrefab: {fileID: 4091738836118152600, guid: c6ad540c4b3a49a44927a244689e5b16,
-    type: 3}
   trampolinePrefab: {fileID: 9019854362832223848, guid: bf443efd1570b234cb3d4d0f7ceca613,
     type: 3}
-  isCursed: 0
-  cursedMat: {fileID: 2100000, guid: dc163b09ca718ee47b54ca1b6312f146, type: 2}
-  uncursedMat: {fileID: 2100000, guid: e8cd38897b4dd294bbb8fb9f148a2eeb, type: 2}
   rend: {fileID: 4687410442404886256}
+  fx: {fileID: 0}
   spawnPos: {x: 0, y: 0.5}
 --- !u!50 &-8471440574619025135
 Rigidbody2D:
@@ -107,29 +105,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-2221237146618945966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2916364248773082268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd73235831b532b44a48e2e22cfc314a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canMove: 1
-  lockX: 0
-  ignoreGroundSnap: 0
-  controllerValues: {fileID: 11400000, guid: c75d547f7cba61d4e860f56cbc581edf, type: 2}
-  force: {x: 0, y: 0}
-  instantForce: {x: 0, y: 0}
-  movement: {x: 0, y: 0}
-  groundNormal: {x: 0, y: 0}
-  isGrounded: 0
-  IsOnMovingPlateform: 0
-  ignoredCollider: {fileID: 0}
 --- !u!1001 &3940566553605504365
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -68,7 +68,7 @@ public class WSB_Movable : MonoBehaviour
 
     #region Controller
 
-    [SerializeField] SO_ControllerValues controllerValues = null;
+    [SerializeField] SO_MovableValues controllerValues = null;
 
     [SerializeField] Vector2 force = Vector2.zero;
     [SerializeField] Vector2 instantForce = Vector2.zero;
@@ -142,7 +142,7 @@ public class WSB_Movable : MonoBehaviour
             if (force != Vector2.zero)
                 force -= castBuffer[i].normal * Vector2.Dot(force, castBuffer[i].normal);
 
-            if (!_isGrounded && (castBuffer[i].normal.y > controllerValues.GroundMin))
+            if (!_isGrounded && (castBuffer[i].normal.y > 0))
             {
                 _isGrounded = true;
                 groundNormal = castBuffer[i].normal;
@@ -151,7 +151,7 @@ public class WSB_Movable : MonoBehaviour
 
         if (!_isGrounded)
         {
-            _isGrounded = (CastCollider(Vector2.down * Physics2D.defaultContactOffset * 2, out RaycastHit2D _hit) && (_hit.normal.y > controllerValues.GroundMin) && _hit.collider != ignoredCollider) || IsOnMovingPlateform;
+            _isGrounded = (CastCollider(Vector2.down * Physics2D.defaultContactOffset * 2, out RaycastHit2D _hit) && (_hit.normal.y > 0) && _hit.collider != ignoredCollider) || IsOnMovingPlateform;
             groundNormal = _isGrounded ? _hit.normal : Vector2.up;
         }
 
@@ -287,7 +287,7 @@ public class WSB_Movable : MonoBehaviour
 
     void ClimbStep(ref Vector2 _velocity, RaycastHit2D _hit)
     {
-        if (_velocity.x == 0 || _hit.normal.y > controllerValues.GroundMin)
+        if (_velocity.x == 0 || _hit.normal.y > 0)
             return;
         Physic.position += new Vector2(0, controllerValues.MaxHeightClimb);
         _velocity.y -= controllerValues.MaxHeightClimb;

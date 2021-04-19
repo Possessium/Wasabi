@@ -13,6 +13,7 @@ public class WSB_GameManager : MonoBehaviour
     //[SerializeField] GameObject menu = null; 
     //[SerializeField] GameObject menuPause = null;
     [SerializeField] Animator elevatorAnimator = null;
+    [SerializeField] bool paused = true;
     public static bool Paused { get; private set; } = true;
     public static bool IsDialogue { get; private set; } = false;
 
@@ -33,14 +34,14 @@ public class WSB_GameManager : MonoBehaviour
         // Hide the mouse cursor
         //Cursor.visible = false;
 
-        // Get every Rigidbody in the scene and freeze them
-        Rigidbody2D[] _physics = FindObjectsOfType<Rigidbody2D>();
-        foreach (Rigidbody2D _r in _physics)
-        {
-            _r.isKinematic = true;
-            _r.velocity = Vector2.zero;
-            _r.angularVelocity = 0;
-        }
+        //// Get every Rigidbody in the scene and freeze them
+        //Rigidbody2D[] _physics = FindObjectsOfType<Rigidbody2D>();
+        //foreach (Rigidbody2D _r in _physics)
+        //{
+        //    _r.isKinematic = true;
+        //    _r.velocity = Vector2.zero;
+        //    _r.angularVelocity = 0;
+        //}
 
         InputSystem.onDeviceChange += DeviceChange;
 
@@ -77,6 +78,8 @@ public class WSB_GameManager : MonoBehaviour
             if (Keyboard.current.numpad3Key.isPressed)
                 StartGame("Both");
         }
+
+        Paused = paused;
         // *   *   *   *   *   *   *
 
 
@@ -91,47 +94,6 @@ public class WSB_GameManager : MonoBehaviour
             WSB_CheckpointManager.I.Respawn(collision.GetComponent<WSB_Player>());
     }
 
-    //// Menu Playtests
-    //int currentMenu = 1;
-    //[SerializeField] GameObject parent = null;
-    //[SerializeField] GameObject bNext = null;
-    //[SerializeField] GameObject bPrev = null;
-    //Coroutine animateUI = null;
-
-    //public void NextMenu()
-    //{
-    //    bPrev.SetActive(true);
-    //    currentMenu++;
-    //    if (currentMenu == 3)
-    //        bNext.SetActive(false);
-
-    //    if (animateUI != null)
-    //        StopCoroutine(animateUI);
-    //    animateUI = StartCoroutine(AnimateUI());
-    //}
-
-    //public void PreviousMenu()
-    //{
-    //    bNext.SetActive(true);
-    //    currentMenu--;
-    //    if (currentMenu == 1)
-    //        bPrev.SetActive(false);
-
-    //    if (animateUI != null)
-    //        StopCoroutine(animateUI);
-    //    animateUI = StartCoroutine(AnimateUI());
-    //}
-
-    //IEnumerator AnimateUI()
-    //{
-    //    while(parent.transform.position.x != (currentMenu == 1 ? 960 : currentMenu == 2 ? -960 : -2880))
-    //    {
-    //        parent.transform.position = Vector2.MoveTowards(parent.transform.position, new Vector2((currentMenu == 1 ? 960 : currentMenu == 2 ? -960 : -2880), parent.transform.position.y), Time.deltaTime * 2500);
-    //        yield return new WaitForEndOfFrame();
-    //    }
-    //    animateUI = null;
-    //}
-    ////
 
     public static void SetDialogue(bool _state) => IsDialogue = _state;
 
@@ -189,14 +151,14 @@ public class WSB_GameManager : MonoBehaviour
                 return;
         }
 
-        // Get all the rigidbody in the scene and unfreeze them
-        Rigidbody2D[] _physics = FindObjectsOfType<Rigidbody2D>();
-        foreach (Rigidbody2D _r in _physics)
-        {
-            if (_r.GetComponent<WSB_Player>() || _r.GetComponent<WSB_Movable>() || _r.GetComponent<WSB_MovingPlateform>() || _r.transform.tag == "Earth")
-                continue;
-            _r.isKinematic = false;
-        }
+        //// Get all the rigidbody in the scene and unfreeze them
+        //Rigidbody2D[] _physics = FindObjectsOfType<Rigidbody2D>();
+        //foreach (Rigidbody2D _r in _physics)
+        //{
+        //    if (_r.GetComponent<WSB_Player>() || _r.GetComponent<WSB_Movable>() || _r.GetComponent<WSB_MovingPlateform>() || _r.transform.tag == "Earth")
+        //        continue;
+        //    _r.isKinematic = false;
+        //}
 
         // Set Pause to false
         Paused = false;
