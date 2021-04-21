@@ -67,17 +67,17 @@ public class WSB_GameManager : MonoBehaviour
     {
         // Cheat codes
         // *   *   *   *   *   *   *
-        if (Keyboard.current.lKey.isPressed)
-            ReloadScene();
-        if(Paused)
-        {
-            if (Keyboard.current.numpad1Key.isPressed)
-                StartGame("Keyboard");
-            if (Keyboard.current.numpad2Key.isPressed)
-                StartGame("Controller");
-            if (Keyboard.current.numpad3Key.isPressed)
-                StartGame("Both");
-        }
+        //if (Keyboard.current.pKey.isPressed)
+        //    ReloadScene();
+        //if(Paused)
+        //{
+        //    if (Keyboard.current.numpad1Key.isPressed)
+        //        StartGame("Keyboard");
+        //    if (Keyboard.current.numpad2Key.isPressed)
+        //        StartGame("Controller");
+        //    if (Keyboard.current.numpad3Key.isPressed)
+        //        StartGame("Both");
+        //}
 
         Paused = paused;
         // *   *   *   *   *   *   *

@@ -18,7 +18,7 @@ public class WSB_Camera : MonoBehaviour
             Destroy(this);
         }
     }
-
+    [SerializeField] float coef = 2;
     public void SetCam(Vector3 _pos, bool _needCallBack = false)
     {
         // Call the callback if the position is already set to the given position
@@ -29,13 +29,18 @@ public class WSB_Camera : MonoBehaviour
             return;
         }
 
+        float _d = Vector2.Distance(_pos, transform.position);
+        float _coef = 1;
+        if (_d < 2)
+            _coef = coef;
+
         transform.position = new Vector3(
-               Mathf.Lerp(transform.position.x, _pos.x, Time.deltaTime * WSB_CameraManager.I.CamMoveSpeed),
-               Mathf.Lerp(transform.position.y, _pos.y, Time.deltaTime * WSB_CameraManager.I.CamMoveSpeed),
+               Mathf.Lerp(transform.position.x, _pos.x, Time.deltaTime * WSB_CameraManager.I.CamMoveSpeed * _coef),
+               Mathf.Lerp(transform.position.y, _pos.y, Time.deltaTime * WSB_CameraManager.I.CamMoveSpeed * _coef),
                transform.position.z);
         Cam.orthographicSize = Mathf.Lerp(Cam.orthographicSize, _pos.z, Time.deltaTime * (WSB_CameraManager.I.CamZoomSpeed));
 
-        if(_needCallBack && Vector2.Distance(transform.position, _pos) < .1f)
+        if(_needCallBack && _d < .01f)
             WSB_CameraManager.I.SwitchCamType(CamType.Dynamic, transform.position);
 
         return;

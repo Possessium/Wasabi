@@ -13,13 +13,18 @@ public class WSB_Trampoline : WSB_Power
     }
 
     [SerializeField] LayerMask layerBounce;
+    [SerializeField] ContactFilter2D bounceFilter;
     RaycastHit2D[] hits = new RaycastHit2D[2];
 
     public override void Update()
     {
         base.Update();
 
-        Physics2D.BoxCastNonAlloc((Vector2)transform.position + bounceCollider.offset, bounceCollider.size, 0, Vector2.zero, hits, 0, layerBounce);
+        System.Array.Clear(hits, 0, 2);
+
+        bounceCollider.Cast(Vector2.up, bounceFilter, hits, .5f);
+
+        //Physics2D.BoxCastNonAlloc((Vector2)transform.position + bounceCollider.offset, bounceCollider.size, 0, Vector2.zero, hits, 0, layerBounce);
         
         for (int i = 0; i < hits.Length; i++)
         {

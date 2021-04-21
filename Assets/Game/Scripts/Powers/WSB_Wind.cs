@@ -31,17 +31,17 @@ public class WSB_Wind : WSB_Power
             if (hit == WSB_Ban.I.MovableCollider || hit == WSB_Lux.I.MovableCollider || hit == collider)
                 continue;
 
-            // Check if Ban is on top of the moving object
-            checkPlayerOn = new RaycastHit2D[10];
-            WSB_Ban.I.MovableCollider.Cast(Vector2.down, checkPlayerOn, 1);
-            if (System.Array.Find(checkPlayerOn, r => r.collider == hit))
-                continue;
+            //// Check if Ban is on top of the moving object
+            //checkPlayerOn = new RaycastHit2D[10];
+            //WSB_Ban.I.MovableCollider.Cast(Vector2.down, checkPlayerOn, 1);
+            //if (System.Array.Find(checkPlayerOn, r => r.collider == hit))
+            //    continue;
 
-            // Check if Lux is on top of the moving object
-            checkPlayerOn = new RaycastHit2D[10];
-            WSB_Lux.I.MovableCollider.Cast(Vector2.down, checkPlayerOn, 1);
-            if (System.Array.Find(checkPlayerOn, r => r.collider == hit))
-                continue;
+            //// Check if Lux is on top of the moving object
+            //checkPlayerOn = new RaycastHit2D[10];
+            //WSB_Lux.I.MovableCollider.Cast(Vector2.down, checkPlayerOn, 1);
+            //if (System.Array.Find(checkPlayerOn, r => r.collider == hit))
+            //    continue;
 
             // Looks if there is a wall between the power and the object and stop if yes
             Vector2 _dir = hit.transform.position - transform.position;

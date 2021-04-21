@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class WSB_Power : LG_Movable
     [SerializeField] Animator animator = null;
     [SerializeField] protected float range = 2;
     public bool IsActive = true;
-    [SerializeField] WSB_Player owner = null;
+    public WSB_Player Owner { get; private set; } = null;
 
     public override void Start()
     {
@@ -28,18 +29,27 @@ public class WSB_Power : LG_Movable
     public void ActivatePower()
     {
         IsActive = true;
-        owner = null;
+        Owner = null;
 
-        if(animator)
+        collider.size = collider.size * 2;
+
+        if (animator)
             animator.SetTrigger("Grow");
     }
 
     public void DeactivatePower(WSB_Player _p)
     {
         IsActive = false;
-        owner = _p;
+        Owner = _p;
+
+        collider.size = collider.size / 2;
 
         if (animator)
             animator.SetTrigger("Shrink");
+    }
+
+    internal void Lock(bool v)
+    {
+        CanMove = v;
     }
 }
