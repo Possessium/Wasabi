@@ -119,10 +119,10 @@ public class WSB_CameraManager : MonoBehaviour
                 break;
             case CamType.SplitDynamic:
                 // Sets the correct angle of the split
-                _dir = ban.position - lux.position;
-                _angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
-                mask.transform.eulerAngles = new Vector3(0, 0, _angle - 90);
-                render.transform.localEulerAngles = new Vector3(0, 0, -_angle + 90);
+                //_dir = ban.position - lux.position;
+                //_angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
+                //mask.transform.eulerAngles = new Vector3(0, 0, _angle - 90);
+                //render.transform.localEulerAngles = new Vector3(0, 0, -_angle + 90);
                 SplitDynamic();
                 break;
         }
@@ -376,6 +376,10 @@ public class WSB_CameraManager : MonoBehaviour
             (ban.position.y) + (_dir.normalized.y * (MaxCamZoom / 2)),
             camBan.transform.position.z);
 
+        // Sets the correct angle of the split
+        float _angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
+        mask.transform.eulerAngles = new Vector3(0, 0, _angle - 90);
+        render.transform.localEulerAngles = new Vector3(0, 0, -_angle + 90);
 
         // Loop until the distance between lux & ban is lower than the max zoom * 1.5
         if (_dist <= MaxCamZoom * 1.5f)
@@ -416,10 +420,6 @@ public class WSB_CameraManager : MonoBehaviour
             camLux.SetCam(new Vector3(_luxOffset.x, _luxOffset.y, Mathf.Clamp(_dist, MaxCamZoom / 2, maxCamZoom * 1.5f)));
         }
 
-        //// Sets the correct angle of the split
-        //float _angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
-        //mask.transform.eulerAngles = new Vector3(0, 0, _angle - 90);
-        //render.transform.localEulerAngles = new Vector3(0, 0, -_angle + 90);
     }
 
     public void ToggleSplit(bool _status)

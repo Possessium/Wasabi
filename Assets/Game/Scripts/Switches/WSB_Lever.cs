@@ -15,6 +15,9 @@ public class WSB_Lever : MonoBehaviour
     [SerializeField] Vector2 characterPosition = Vector2.zero;
     [SerializeField] Animator animator = null;
 
+    bool hasLux  = false;
+    bool hasBan  = false;
+
     [SerializeField] float cooldown = .2f;
     bool canPress = true;
 
@@ -32,14 +35,14 @@ public class WSB_Lever : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // If ban enter this trigger, its Use action is bound to the Interact method
-        if (collision.GetComponent<WSB_Ban>())
+        if (hasBan = collision.GetComponent<WSB_Ban>())
         {
             inputBan.FindAction("Interact").performed += Interact;
             WSB_Ban.I.ToggleLever(true, active);
         }
 
         // If lux enter this trigger, its Use action is bound to the Interact method
-        if (collision.GetComponent<WSB_Lux>())
+        if (hasLux = collision.GetComponent<WSB_Lux>())
         {
             inputLux.FindAction("Interact").performed += Interact;
             WSB_Lux.I.ToggleLever(true, active);
@@ -51,6 +54,7 @@ public class WSB_Lever : MonoBehaviour
         // If ban exits this trigger, its Interact method is unbound from the Use action
         if (collision.GetComponent<WSB_Ban>())
         {
+            hasBan = false;
             inputBan.FindAction("Interact").performed -= Interact;
             WSB_Ban.I.ToggleLever(false);
         }
@@ -58,6 +62,7 @@ public class WSB_Lever : MonoBehaviour
         // If lux exits this trigger, its Interact method is unbound from the Use action
         if (collision.GetComponent<WSB_Lux>())
         {
+            hasLux = false;
             inputLux.FindAction("Interact").performed -= Interact;
             WSB_Lux.I.ToggleLever(false);
         }
@@ -72,8 +77,13 @@ public class WSB_Lever : MonoBehaviour
                 animator.SetBool("Open", active);
 
             transform.position = new Vector3(transform.position.x, transform.position.y, -2);
-            WSB_Ban.I.AnimateLever((Vector2)transform.position + characterPosition);
-            WSB_Lux.I.AnimateLever((Vector2)transform.position + characterPosition);
+
+            if(hasBan)
+                WSB_Ban.I.AnimateLever((Vector2)transform.position + characterPosition);
+
+            else if(hasLux)
+                WSB_Lux.I.AnimateLever((Vector2)transform.position + characterPosition);
+
             onDeactivate?.Invoke();
             active = canPress = false;
             StartCoroutine(Cooldown());
@@ -85,8 +95,13 @@ public class WSB_Lever : MonoBehaviour
                 animator.SetBool("Open", active);
 
             transform.position = new Vector3(transform.position.x, transform.position.y, 2);
-            WSB_Ban.I.AnimateLever((Vector2)transform.position + characterPosition);
-            WSB_Lux.I.AnimateLever((Vector2)transform.position + characterPosition);
+
+            if(hasBan)
+                WSB_Ban.I.AnimateLever((Vector2)transform.position + characterPosition);
+
+            else if (hasLux)
+                WSB_Lux.I.AnimateLever((Vector2)transform.position + characterPosition);
+
             onActivate?.Invoke();
             active = true;
             canPress = false;

@@ -69,17 +69,6 @@ public class WSB_Player : LG_Movable
 
                 if (CanMove)
                 {
-                    //if(xMovement != 0)
-                    //{
-                    //    IsRight = xMovement < 0 ? false : xMovement > 0 ? true : IsRight;
-
-                    //    if((IsRight && rend.transform.eulerAngles.y != 90) || (!IsRight && rend.transform.eulerAngles.y != -90))
-                    //    {
-                    //        playerAnimator.SetBool("Turning", true);
-                    //        playerAnimator.SetTrigger("Rotate");
-                    //    }
-                    //}
-
                     if (xMovement < 0 && IsRight)
                     {
                         IsRight = false;
@@ -102,6 +91,11 @@ public class WSB_Player : LG_Movable
                         }
                         else
                             rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, 90, rend.transform.eulerAngles.z);
+                    }
+
+                    if(playerAnimator.GetBool("Turning"))
+                    {
+                        rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, IsRight ? -90 : 90, rend.transform.eulerAngles.z);
                     }
                 }
             }
