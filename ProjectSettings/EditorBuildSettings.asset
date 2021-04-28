@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
     guid: a9561a7250176874d95b5a635d5c87f1
+  - enabled: 1
+    path: Assets/Game/Scenes/Empty Scene.unity
+    guid: ace1ebf595a71144aafadf2e8a4726b7
   m_configObjects: {}
