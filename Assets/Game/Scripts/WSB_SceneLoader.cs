@@ -8,24 +8,24 @@ using UnityEngine.SceneManagement;
 
 public class WSB_SceneLoader : MonoBehaviour
 {
-    const string MAINSCENENAME = "Persos & Cam";
-
-    //[SerializeField] List<string> allScenesInOrder = new List<string>();
-    [SerializeField] BoxCollider2D trigger = null;
-    [SerializeField] bool loadOnPlay = false;
-    [SerializeField] List<SceneAsset> allScenesInOrder = new List<SceneAsset>();
+    public Collider2D Trigger = null;
+    public bool LoadOnPlay = false;
+    public List<ScenePicker> AllScenesToLoadInOrder = new List<ScenePicker>();
+    public int LoadListSize = 0;
+    public List<ScenePicker> AllScenesToUnloadInOrder = new List<ScenePicker>();
+    public int UnloadListSize = 0;
 
     bool hasLux = false;
     bool hasBan = false;
 
     void Start()
     {
-        if (!loadOnPlay)
+        if (!LoadOnPlay)
             return;
 
-        for (int i = 0; i < allScenesInOrder.Count; i++)
+        for (int i = 0; i < AllScenesToLoadInOrder.Count; i++)
         {
-            SceneManager.LoadScene(allScenesInOrder[i].name, LoadSceneMode.Additive);
+            SceneManager.LoadScene(AllScenesToLoadInOrder[i].SceneName, LoadSceneMode.Additive);
         }
     }
 
@@ -36,7 +36,7 @@ public class WSB_SceneLoader : MonoBehaviour
         if (collision.GetComponent<WSB_Ban>())
             hasBan = true;
 
-        if (hasLux && hasBan && trigger.enabled)
+        if (hasLux && hasBan && Trigger.enabled)
             NextScene();
     }
 
@@ -52,11 +52,11 @@ public class WSB_SceneLoader : MonoBehaviour
 
     private void NextScene()
     {
-        if(trigger)
-            trigger.enabled = false;
-        for (int i = 0; i < allScenesInOrder.Count; i++)
+        if(Trigger)
+            Trigger.enabled = false;
+        for (int i = 0; i < AllScenesToLoadInOrder.Count; i++)
         {
-            loadingScenes.Add(SceneManager.LoadSceneAsync(allScenesInOrder[i].name, LoadSceneMode.Additive));
+            loadingScenes.Add(SceneManager.LoadSceneAsync(AllScenesToLoadInOrder[i].SceneName, LoadSceneMode.Additive));
         }
         StartCoroutine(Loading());
     }
@@ -66,27 +66,33 @@ public class WSB_SceneLoader : MonoBehaviour
         while(loadingScenes.Any(s => !s.isDone))
             yield return new WaitForEndOfFrame();
 
-        Loaded();
+        Unload();
     }
 
-    void Loaded()
+    void Unload()
     {
-        WSB_SceneLoader[] _loaders = FindObjectsOfType<WSB_SceneLoader>();
-        for (int i = 0; i < _loaders.Length; i++)
+        for (int i = 0; i < AllScenesToUnloadInOrder.Count; i++)
         {
-            if (_loaders[i] != this)
-                _loaders[i].Unload();
+            SceneManager.UnloadSceneAsync(AllScenesToUnloadInOrder[i].SceneName);
         }
     }
+}
 
-    public void Unload()
+[Serializable]
+public class ScenePicker
+{
+    public string ScenePath;
+    public string SceneName;
+
+    public ScenePicker(string _path, string _name)
     {
-        for (int i = allScenesInOrder.Count - 1; i >= 0; i--)
-        {
-            if (allScenesInOrder[i].name == MAINSCENENAME)
-                continue;
+        ScenePath = _path;
+        SceneName = _name;
+    }
 
-            SceneManager.UnloadSceneAsync(allScenesInOrder[i].name);
-        }
+    public ScenePicker()
+    {
+        ScenePath = string.Empty;
+        SceneName = string.Empty;
     }
 }

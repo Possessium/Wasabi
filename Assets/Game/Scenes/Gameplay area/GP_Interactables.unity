@@ -2151,6 +2151,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 781797160}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &814425731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 814425733}
+  - component: {fileID: 814425732}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &814425732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814425731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbad4d3ae692e84da3c564b6c6121fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: 4b9477f739063424283dc75f9ca5415d,
+    type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  diffractionFlags: 11
+  engineLogging: 0
+--- !u!4 &814425733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814425731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &869188161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4803,10 +4861,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093ec8c4f899be74cb665c1f371aebdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 1933981416}
-  loadOnPlay: 0
-  allScenesInOrder:
-  - {fileID: 102900000, guid: ace1ebf595a71144aafadf2e8a4726b7, type: 3}
+  Trigger: {fileID: 1933981416}
+  LoadOnPlay: 0
+  AllScenesToLoadInOrder:
+  - ScenePath: Assets/Game/Scenes/Empty Scene.unity
+    SceneName: Empty Scene
+  LoadListSize: 1
+  AllScenesToUnloadInOrder:
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Plateformes.unity
+    SceneName: GP_Plateformes
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
+    SceneName: GP_Interactables
+  - ScenePath: "Assets/Game/Scenes/Gameplay area/GP_D\xE9cor.unity"
+    SceneName: "GP_D\xE9cor"
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_FX.unity
+    SceneName: GP_FX
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
+    SceneName: GP_Lights
+  UnloadListSize: 5
 --- !u!4 &1933981418
 Transform:
   m_ObjectHideFlags: 0

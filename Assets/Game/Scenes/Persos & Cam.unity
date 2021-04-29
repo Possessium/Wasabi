@@ -6325,14 +6325,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093ec8c4f899be74cb665c1f371aebdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 0}
-  loadOnPlay: 1
-  allScenesInOrder:
-  - {fileID: 102900000, guid: 79a98fffeb3efba48a6915439ccd0c31, type: 3}
-  - {fileID: 102900000, guid: 5146905c5b51552499b44b4403430b07, type: 3}
-  - {fileID: 102900000, guid: dd2d21c2be15e7747a912cf0fedcd329, type: 3}
-  - {fileID: 102900000, guid: 9993888ef4b93ae48a5557aa5654d68d, type: 3}
-  - {fileID: 102900000, guid: a9561a7250176874d95b5a635d5c87f1, type: 3}
+  Trigger: {fileID: 0}
+  LoadOnPlay: 1
+  AllScenesInOrder:
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Plateformes.unity
+    SceneName: GP_Plateformes
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
+    SceneName: GP_Interactables
+  - ScenePath: "Assets/Game/Scenes/Gameplay area/GP_D\xE9cor.unity"
+    SceneName: "GP_D\xE9cor"
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_FX.unity
+    SceneName: GP_FX
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
+    SceneName: GP_Lights
+  ListSize: 5
+  IgnoredScene: Transitions
 --- !u!4 &1489719380
 Transform:
   m_ObjectHideFlags: 0

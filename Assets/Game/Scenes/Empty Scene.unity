@@ -179,14 +179,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093ec8c4f899be74cb665c1f371aebdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 531992559}
-  loadOnPlay: 0
-  allScenesInOrder:
-  - {fileID: 102900000, guid: 79a98fffeb3efba48a6915439ccd0c31, type: 3}
-  - {fileID: 102900000, guid: 5146905c5b51552499b44b4403430b07, type: 3}
-  - {fileID: 102900000, guid: dd2d21c2be15e7747a912cf0fedcd329, type: 3}
-  - {fileID: 102900000, guid: 9993888ef4b93ae48a5557aa5654d68d, type: 3}
-  - {fileID: 102900000, guid: a9561a7250176874d95b5a635d5c87f1, type: 3}
+  Trigger: {fileID: 531992559}
+  LoadOnPlay: 0
+  AllScenesToLoadInOrder:
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Plateformes.unity
+    SceneName: GP_Plateformes
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
+    SceneName: GP_Interactables
+  - ScenePath: "Assets/Game/Scenes/Gameplay area/GP_D\xE9cor.unity"
+    SceneName: "GP_D\xE9cor"
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_FX.unity
+    SceneName: GP_FX
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
+    SceneName: GP_Lights
+  LoadListSize: 5
+  AllScenesToUnloadInOrder:
+  - ScenePath: Assets/Game/Scenes/Empty Scene.unity
+    SceneName: Empty Scene
+  UnloadListSize: 1
 --- !u!4 &531992561
 Transform:
   m_ObjectHideFlags: 0
@@ -196,64 +206,6 @@ Transform:
   m_GameObject: {fileID: 531992558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.094581604, y: -6.4829865, z: 18.296555}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &933709850
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 933709852}
-  - component: {fileID: 933709851}
-  m_Layer: 0
-  m_Name: WwiseGlobal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &933709851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933709850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adbad4d3ae692e84da3c564b6c6121fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 11400000, guid: 4b9477f739063424283dc75f9ca5415d,
-    type: 2}
-  basePath: 
-  language: 
-  defaultPoolSize: 0
-  lowerPoolSize: 0
-  streamingPoolSize: 0
-  memoryCutoffThreshold: 0
-  monitorPoolSize: 0
-  monitorQueuePoolSize: 0
-  callbackManagerBufferSize: 0
-  spatialAudioPoolSize: 0
-  maxSoundPropagationDepth: 0
-  diffractionFlags: 11
-  engineLogging: 0
---- !u!4 &933709852
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933709850}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
