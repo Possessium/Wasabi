@@ -6305,7 +6305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1489719380}
-  - component: {fileID: 1489719379}
+  - component: {fileID: 1489719378}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -6313,7 +6313,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1489719379
+--- !u!114 &1489719378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6327,7 +6327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Trigger: {fileID: 0}
   LoadOnPlay: 1
-  AllScenesInOrder:
+  AllScenesToLoadInOrder:
   - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Plateformes.unity
     SceneName: GP_Plateformes
   - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
@@ -6338,8 +6338,9 @@ MonoBehaviour:
     SceneName: GP_FX
   - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
     SceneName: GP_Lights
-  ListSize: 5
-  IgnoredScene: Transitions
+  LoadListSize: 5
+  AllScenesToUnloadInOrder: []
+  UnloadListSize: 0
 --- !u!4 &1489719380
 Transform:
   m_ObjectHideFlags: 0

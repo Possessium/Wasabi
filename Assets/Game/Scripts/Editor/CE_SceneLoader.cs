@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 [CustomEditor(typeof(WSB_SceneLoader))]
 public class CE_SceneLoader : Editor
@@ -149,7 +150,10 @@ public class CE_SceneLoader : Editor
                 EditorGUILayout.EndHorizontal();
             }
         }
-        EditorGUI.EndChangeCheck();
+        if(EditorGUI.EndChangeCheck())
+        {
+            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+        }
         serializedObject.ApplyModifiedProperties();
     }
 }
