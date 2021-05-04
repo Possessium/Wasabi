@@ -25,7 +25,7 @@ public class CE_SceneLoader : Editor
         else
         {
             serializedObject.Update();
-            EditorGUI.BeginChangeCheck();
+            Undo.RecordObjects(serializedObject.targetObjects, "SceneLoader change");
             tLoader = (WSB_SceneLoader)target;
             CustomEditor();
         }
@@ -35,6 +35,7 @@ public class CE_SceneLoader : Editor
 
     void CustomEditor()
     {
+        EditorGUI.BeginChangeCheck();
         buffer = null;
         tLoader.LoadOnPlay = EditorGUILayout.Toggle("Are scenes loading on play : ", tLoader.LoadOnPlay);
 
@@ -46,6 +47,9 @@ public class CE_SceneLoader : Editor
             tLoader.Trigger = (Collider2D)EditorGUILayout.ObjectField(tLoader.Trigger, typeof(Collider2D), false);
             EditorGUILayout.Space();
         }
+
+        if (EditorGUI.EndChangeCheck())
+            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
 
         string[] _guids = AssetDatabase.FindAssets("t:scene");
 
@@ -61,6 +65,7 @@ public class CE_SceneLoader : Editor
         showLoad = EditorGUILayout.Foldout(showLoad, "Load scenes", true);
         if(showLoad)
         {
+            EditorGUI.BeginChangeCheck();
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("List of scenes to load :", EditorStyles.boldLabel);
             tLoader.LoadListSize = EditorGUILayout.IntField(tLoader.LoadListSize);
@@ -102,12 +107,15 @@ public class CE_SceneLoader : Editor
                 }
                 EditorGUILayout.EndHorizontal();
             }
+            if (EditorGUI.EndChangeCheck())
+                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
         }
 
 
         showUnload = EditorGUILayout.Foldout(showUnload, "Unload scenes", true);
         if (showUnload)
         {
+            EditorGUI.BeginChangeCheck();
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("List of scenes to unload :", EditorStyles.boldLabel);
             tLoader.UnloadListSize = EditorGUILayout.IntField(tLoader.UnloadListSize);
@@ -149,10 +157,8 @@ public class CE_SceneLoader : Editor
                 }
                 EditorGUILayout.EndHorizontal();
             }
-        }
-        if(EditorGUI.EndChangeCheck())
-        {
-            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+            if (EditorGUI.EndChangeCheck())
+                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
         }
         serializedObject.ApplyModifiedProperties();
     }
