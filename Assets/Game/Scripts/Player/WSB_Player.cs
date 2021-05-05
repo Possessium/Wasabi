@@ -212,8 +212,12 @@ public class WSB_Player : LG_Movable
             jumpInput = _context.ReadValue<float>() == 1;
     }
 
+    #region ANIMATION HASHES
+    private static readonly int pick_Hash = Animator.StringToHash("Pick"); //LA
+    #endregion
 
-    /*[SerializeField] */LG_Movable grabbedObject = null;
+    /*[SerializeField] */
+    LG_Movable grabbedObject = null;
     public bool HeldObject { get { return grabbedObject; } }
 
     [SerializeField] Transform playerHands = null;
@@ -226,7 +230,7 @@ public class WSB_Player : LG_Movable
             return;
 
         if (playerAnimator)
-            playerAnimator.SetTrigger("Pick");
+            playerAnimator.SetTrigger(pick_Hash);
 
         if(GetComponent<WSB_Ban>())
         {
