@@ -6780,7 +6780,7 @@ MonoBehaviour:
     m_ActionId: fc18376d-e49b-4d1e-9f0f-49fe3bd82692
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -7681,7 +7681,7 @@ MonoBehaviour:
     m_ActionId: 46cd1975-9ee3-4f7f-accc-45d6128da143
     m_ActionName: Player/Pickup[/XInputControllerWindows/buttonWest,/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultControlScheme: Gamepad 2
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

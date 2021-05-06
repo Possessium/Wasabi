@@ -20,8 +20,8 @@ public class WSB_InputManager : MonoBehaviour
     private void Start()
     {
         InputSystem.onDeviceChange += InputSystem_onDeviceChange;
-        inputBan.SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
-        inputLux.SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
+        inputBan.SwitchCurrentControlScheme("Gamepad 2", Gamepad.all[0].device);
+        inputLux.SwitchCurrentControlScheme("Gamepad", Gamepad.all[1].device);
     }
 
     private void InputSystem_onDeviceChange(InputDevice arg1, InputDeviceChange arg2)
