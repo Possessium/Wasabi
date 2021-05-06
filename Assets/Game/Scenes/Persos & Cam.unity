@@ -176,7 +176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &779654527
 Transform:
   m_ObjectHideFlags: 0
@@ -6392,6 +6392,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991252385}
   m_CullTransparentMesh: 1
+--- !u!1 &2025519322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+    type: 3}
+  m_PrefabInstance: {fileID: 2072432662}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2025519323 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+    type: 3}
+  m_PrefabInstance: {fileID: 2072432662}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2025519324
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025519322}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ac7c5be79b5ac7b489566c446c2b81a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &2072432662
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6072583074185493622}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+        type: 3}
+      propertyPath: m_Name
+      value: Ban_character_model
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425, type: 3}
 --- !u!4 &2102953472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8706078291433909051, guid: 58aea331293a00b448cf7025fc297a4e,
@@ -7645,6 +7745,7 @@ Transform:
   m_Children:
   - {fileID: 5562033670130245338}
   - {fileID: 779654527}
+  - {fileID: 2025519323}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7668,7 +7769,7 @@ MonoBehaviour:
   canAnimateLever: 0
   controllerValues: {fileID: 11400000, guid: c75d547f7cba61d4e860f56cbc581edf, type: 2}
   rend: {fileID: 779654526}
-  playerAnimator: {fileID: 779654528}
+  playerAnimator: {fileID: 2025519324}
   playerHands: {fileID: 0}
   grabContactFilter:
     useTriggers: 0
