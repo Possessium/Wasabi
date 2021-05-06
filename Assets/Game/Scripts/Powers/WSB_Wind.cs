@@ -49,9 +49,7 @@ public class WSB_Wind : WSB_Power
                 continue;
 
             // Gets physic of hit object
-            hit.gameObject.TryGetComponent(out physics);
-
-            if (physics)
+            if (hit.gameObject.TryGetComponent(out physics))
             {
                 // Add vertical force on the physic of the object
                 physics.AddForce(Vector2.up * windPower);
