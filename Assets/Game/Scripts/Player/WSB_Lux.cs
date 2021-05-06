@@ -67,7 +67,7 @@ public class WSB_Lux : WSB_Player
 
     public void Unshrink()
     {
-        if(unshrink == null)
+        if (unshrink == null)
         {
             RaycastHit2D[] _hits = new RaycastHit2D[1];
             if (collider.Cast(Vector2.up, shrinkLayer, _hits, 1.5f, true) > 0)

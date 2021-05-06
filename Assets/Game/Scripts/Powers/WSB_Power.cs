@@ -37,7 +37,7 @@ public class WSB_Power : LG_Movable
             animator.SetTrigger("Grow");
     }
 
-    public void DeactivatePower(WSB_Player _p)
+    public virtual void DeactivatePower(WSB_Player _p)
     {
         IsActive = false;
         Owner = _p;

@@ -38,30 +38,20 @@ public class WSB_Shrink : WSB_Power
 
     void Shrink()
     {
-        // Changer par la distance plutôt que le cast du fiak
-        Collider2D[] _hits = Physics2D.OverlapCircleAll(new Vector2(transform.position.x + offset.x, transform.position.y + offset.y), range * (WSB_Lux.I.Shrinked ? 1 : .9f), layerShrink);
-
-        if (!WSB_Lux.I.Shrinked && !WSB_Lux.I.HeldObject)
+        if (!WSB_Lux.I.Shrinked && !WSB_Lux.I.HeldObject && Vector2.Distance(transform.position, WSB_Lux.I.transform.position) < range)
         {
-            for (int i = 0; i < _hits.Length; i++)
-            {
-                if (_hits[i].transform != WSB_Lux.I.transform)
-                    continue;
-
-                hasLux = true;
-
-                if (unshrinkDelay != null)
-                    StopCoroutine(unshrinkDelay);
-                unshrinkDelay = null;
-
-                WSB_Lux.I.Shrink();
-                shrinkDelay = StartCoroutine(ShrinkDelay());
-                break;
-            }
+            hasLux = true;
+            
+            if (unshrinkDelay != null)
+                StopCoroutine(unshrinkDelay);
+            unshrinkDelay = null;
+            
+            WSB_Lux.I.Shrink();
+            shrinkDelay = StartCoroutine(ShrinkDelay());
             return;
         }
 
-        else if (!System.Array.Find(_hits, h => h.transform == WSB_Lux.I.transform) && hasLux)
+        else if (hasLux && Vector2.Distance(transform.position, WSB_Lux.I.transform.position) > range)
         {
             if (shrinkDelay != null)
                 StopCoroutine(shrinkDelay);
@@ -94,6 +84,23 @@ public class WSB_Shrink : WSB_Power
         }
         unshrinkDelay = null;
     }
+    public override void DeactivatePower(WSB_Player _p)
+    {
+        base.DeactivatePower(_p);
+
+        if (!hasLux)
+            return;
+
+        if (shrinkDelay != null)
+            StopCoroutine(shrinkDelay);
+        shrinkDelay = null;
+
+        hasLux = false;
+
+        //Debug.LogError("in");
+        WSB_Lux.I.Unshrink();
+        //Debug.LogError("inner");
+    }
 
     private void OnDisable()
     {
@@ -106,6 +113,8 @@ public class WSB_Shrink : WSB_Power
 
         hasLux = false;
 
+        Debug.LogError("in");
         WSB_Lux.I.Unshrink();
+        Debug.LogError("inner");
     }
 }

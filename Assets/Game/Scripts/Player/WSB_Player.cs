@@ -269,7 +269,6 @@ public class WSB_Player : LG_Movable
     public void TryGrab()
     {
         RaycastHit2D[] _hit = new RaycastHit2D[1];
-
         // Cast on facing direction to check if there is an object
         if (collider.Cast(IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, .5f) > 0)
         {
@@ -277,23 +276,25 @@ public class WSB_Player : LG_Movable
                 return;
             // Search for WSB_Pot component
             if (_hit[0].transform.GetComponent<WSB_Power>())
-
+            {
                 // Sets grabbedObject var
                 _hit[0].transform.TryGetComponent(out grabbedObject);
 
-            grabbedObject.enabled = false;
-            grabbedObject.GetComponent<WSB_Power>().DeactivatePower(this);
+                grabbedObject.enabled = false;
+                grabbedObject.GetComponent<WSB_Power>().DeactivatePower(this);
 
-            if(playerHands)
-            {
-                grabbedObject.transform.parent = playerHands;
-                grabbedObject.transform.position = playerHands.transform.position + (IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right);
+
+                if (playerHands)
+                {
+                    grabbedObject.transform.parent = playerHands;
+                    grabbedObject.transform.position = playerHands.transform.position + (IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right);
+                }
+
+                grabbedObject.MovableCollider.enabled = false;
+
+                if (playerAnimator)
+                    playerAnimator.SetBool("Grab", true);
             }
-
-            grabbedObject.MovableCollider.enabled = false;
-
-            if (playerAnimator)
-                playerAnimator.SetBool("Grab", true);
         }
     }
 
