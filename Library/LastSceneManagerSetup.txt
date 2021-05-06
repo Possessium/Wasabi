@@ -3,23 +3,3 @@ sceneSetups:
   isLoaded: 1
   isActive: 1
   isSubScene: 0
-- path: Assets/Game/Scenes/Gameplay area/GP_Plateformes.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
-- path: "Assets/Game/Scenes/Gameplay area/GP_D\xE9cor.unity"
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Game/Scenes/Gameplay area/GP_FX.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
