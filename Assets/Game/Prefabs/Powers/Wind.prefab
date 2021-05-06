@@ -150,11 +150,11 @@ MonoBehaviour:
   animator: {fileID: 0}
   range: 5
   IsActive: 1
-  owner: {fileID: 0}
   windPower: 2
   windLayer:
     serializedVersion: 2
-    m_Bits: 65536
+    m_Bits: 1280
+  size: {x: 2, y: 10}
   stopWindSight:
     serializedVersion: 2
-    m_Bits: 6144
+    m_Bits: 20481
