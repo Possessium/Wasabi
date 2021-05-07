@@ -20,7 +20,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: b23ffeab850aed45b3ad330afb56e9f1
     GuidInternal: 
-    m_lastTime: -8585850280424088368
+    m_lastTime: -8585812163099868028
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -30,8 +30,182 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 1d3b50ca337ea84c8bf735deb15d19c1
     GuidInternal: 
-    m_lastTime: -8585850280424886235
+    m_lastTime: -8585812149463412715
     List:
+    - name: BAN
+      guid: 35fd9eec09eb8a40b5623e4f98df734e
+      id: 513390140
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: BAN
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\BAN
+    - name: Ban_Foley
+      guid: b741aaa8123f0142bab3df8d23523704
+      id: 487774080
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: BAN
+        ObjectType: 2
+      - ElementName: Ban_Foley
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\BAN\Ban_Foley
+    - name: Ban_FT
+      guid: cbcbf66957473f43b17c32a9ead8cd6f
+      id: 44542721
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: BAN
+        ObjectType: 2
+      - ElementName: Ban_FT
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\BAN\Ban_FT
+    - name: ENV
+      guid: 46da28c931ff36499b6ed10d0ae2b27e
+      id: 529726550
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: ENV
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\ENV
+    - name: FDB
+      guid: 0a5782dcc87a0f47940596b14b1142aa
+      id: 1267691439
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: INTERRACTION
+        ObjectType: 2
+      - ElementName: FDB
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\INTERRACTION\FDB
+    - name: GH1
+      guid: eacb0559f183c840afe6f496ad9f5781
+      id: 428663473
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: ENV
+        ObjectType: 2
+      - ElementName: GH1
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\ENV\GH1
+    - name: GH2
+      guid: d935abf4fdc933478a748ad617e64649
+      id: 428663474
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: ENV
+        ObjectType: 2
+      - ElementName: GH2
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\ENV\GH2
+    - name: GH3
+      guid: e9b8489254e0244b80f6523bc12639ce
+      id: 428663475
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: ENV
+        ObjectType: 2
+      - ElementName: GH3
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\ENV\GH3
+    - name: HUB
+      guid: 81fa7befd8891e469094eeb86eb34298
+      id: 646625282
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: ENV
+        ObjectType: 2
+      - ElementName: HUB
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\ENV\HUB
+    - name: InCommon
+      guid: 474760fad9656a4eb03400214dfb8259
+      id: 3070449207
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: ENV
+        ObjectType: 2
+      - ElementName: InCommon
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\ENV\InCommon
+    - name: INTERRACTION
+      guid: 96a3c8f31425484388a66f46a1c69fa9
+      id: 3217650583
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: INTERRACTION
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\INTERRACTION
+    - name: LUX
+      guid: d99b4ce7eeec9148bec40cd0e4d86d9c
+      id: 914478924
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: LUX
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\LUX
+    - name: Lux_Foley
+      guid: e277edda6f026c4985f52a47ddbe4470
+      id: 4096139792
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: LUX
+        ObjectType: 2
+      - ElementName: Lux_Foley
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\LUX\Lux_Foley
+    - name: Lux_FT
+      guid: fdd026ca85f9d34aba0877cf69894907
+      id: 2830372017
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: LUX
+        ObjectType: 2
+      - ElementName: Lux_FT
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\LUX\Lux_FT
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -41,6 +215,115 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
+    - name: NPC
+      guid: 31819a32129b944e904463ba2f5dcd14
+      id: 662417162
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: NPC
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\NPC
+    - name: OTHER
+      guid: e2ab840f5db29047893ee979711dbce1
+      id: 2376466361
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: OTHER
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\OTHER
+    - name: Runes
+      guid: adcb5ee953263e48b9270c0dacf19348
+      id: 500672212
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: INTERRACTION
+        ObjectType: 2
+      - ElementName: Runes
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\INTERRACTION\Runes
+    - name: Seeds
+      guid: fb4a9f134d883f4eb37f4d8817d2d0d6
+      id: 3750040961
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: INTERRACTION
+        ObjectType: 2
+      - ElementName: Seeds
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\INTERRACTION\Seeds
+    - name: UI
+      guid: f00a1e9bb7a3dc4d9e20e56bfda68511
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: UI
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\UI
+    - name: VOC
+      guid: d3c3b71f55e82149a58aa096cab3486d
+      id: 543694031
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: VOC
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\VOC
+    - name: VOC_Ban
+      guid: 15f363e2e1d2d24780bc031bec10a6d3
+      id: 3806204025
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: VOC
+        ObjectType: 2
+      - ElementName: VOC_Ban
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\VOC\VOC_Ban
+    - name: VOC_Lux
+      guid: c568cdb14b8f324eb1f2eb52c8fd8699
+      id: 4075528361
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: VOC
+        ObjectType: 2
+      - ElementName: VOC_Lux
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\VOC\VOC_Lux
+    - name: VOC_Other
+      guid: c0e2571852992b4181b6329bea10e98e
+      id: 2759895900
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: VOC
+        ObjectType: 2
+      - ElementName: VOC_Other
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\VOC\VOC_Other
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -49,8 +332,30 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: b9fae272c2867e4eb9d90338b3cf36b8
     GuidInternal: 
-    m_lastTime: -8585850280424447394
+    m_lastTime: -8585812131748621671
     List: []
+  - PhysicalPath: SoundBanks\Mus.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    - ElementName: Mus
+      ObjectType: 12
+    ParentPath: Default Work Unit\Mus
+    guid: 388acbcf6744624798beafe0bebbc3c5
+    GuidInternal: 
+    m_lastTime: -8585812129184752737
+    List:
+    - name: Mus_SB
+      guid: 2110968fa0d3d04c9ac319360dd66d7f
+      id: 1329476194
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Mus
+        ObjectType: 12
+      - ElementName: Mus_SB
+        ObjectType: 7
+      Path: Default Work Unit\Mus\Mus_SB
   - PhysicalPath: SoundBanks\Nico_WU.wwu
     PathAndIcons:
     - ElementName: Nico_WU
@@ -58,7 +363,7 @@ MonoBehaviour:
     ParentPath: Nico_WU
     guid: cfac2003e4adb145938d70abee3112ba
     GuidInternal: 
-    m_lastTime: -8585850280424397536
+    m_lastTime: -8585812163101324128
     List:
     - name: WASABI_WU_NS
       guid: 7e41d4b5d17237408a3881e48241e8ae
@@ -77,8 +382,49 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 37e1c75bfae2b24cba2ed5983942a8c3
     GuidInternal: 
-    m_lastTime: -8585850280425155271
+    m_lastTime: -8585812129184653347
     List: []
+  - PhysicalPath: Events\Music (=.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    - ElementName: Music (=
+      ObjectType: 12
+    ParentPath: Default Work Unit\Music (=
+    guid: 7e7947662e74f44e936f6dc8b069c4c5
+    GuidInternal: 
+    m_lastTime: -8585812116849130202
+    List:
+    - name: Mus_Niveau
+      guid: 4a910e1cc0986545b1ecfb766672477b
+      id: 478983795
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music (=
+        ObjectType: 12
+      - ElementName: Mus_Niveau
+        ObjectType: 4
+      Path: Default Work Unit\Music (=\Mus_Niveau
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Mus_Niveau
+      guid: 12bcecbaf684cc4b8311262125121378
+      id: 3151363576
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music (=
+        ObjectType: 12
+      - ElementName: Mus_Niveau
+        ObjectType: 4
+      - ElementName: Play_Mus_Niveau
+        ObjectType: 3
+      Path: Default Work Unit\Music (=\Mus_Niveau\Play_Mus_Niveau
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -87,7 +433,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f150671b5878647adc8ae70a9d71a9f
     GuidInternal: 
-    m_lastTime: -8585850280425095672
+    m_lastTime: -8585812163099618597
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -97,7 +443,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 34bf6bde99138f46a6efebe95f6aed6f
     GuidInternal: 
-    m_lastTime: -8585850280424277854
+    m_lastTime: -8585812163097464241
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -107,7 +453,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 26ac6d27ac5c2246ac285a6eb4315754
     GuidInternal: 
-    m_lastTime: -8585850280424217937
+    m_lastTime: -8585812163098541473
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -117,11 +463,19 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 29063cfd332e8c48bb990c8cf9fa97f2
     GuidInternal: 
-    m_lastTime: -8585850280424148208
+    m_lastTime: -8585812163098322053
     List: []
   ExpandedItems:
   - /Wasabi_WwiseProject
+  - /Wasabi_WwiseProject/Auxiliary Busses
+  - /Wasabi_WwiseProject/Auxiliary Busses/Default Work Unit
+  - /Wasabi_WwiseProject/Events
+  - /Wasabi_WwiseProject/Events/Default Work Unit
+  - /Wasabi_WwiseProject/Events/Default Work Unit/Music (=
+  - /Wasabi_WwiseProject/Events/Default Work Unit/Music (=/Mus_Niveau
   - /Wasabi_WwiseProject/SoundBanks
+  - /Wasabi_WwiseProject/SoundBanks/Default Work Unit
+  - /Wasabi_WwiseProject/SoundBanks/Default Work Unit/Mus
   - /Wasabi_WwiseProject/SoundBanks/Nico_WU
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
