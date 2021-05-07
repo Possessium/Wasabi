@@ -15,7 +15,7 @@ public class WSB_Player : LG_Movable
         if (WSB_GameManager.Paused)
             return;
 
-        if(CanMove)
+        if (CanMove)
         {
             bool _isBlocked = false;
 
@@ -69,17 +69,6 @@ public class WSB_Player : LG_Movable
 
                 if (CanMove)
                 {
-                    //if(xMovement != 0)
-                    //{
-                    //    IsRight = xMovement < 0 ? false : xMovement > 0 ? true : IsRight;
-
-                    //    if((IsRight && rend.transform.eulerAngles.y != 90) || (!IsRight && rend.transform.eulerAngles.y != -90))
-                    //    {
-                    //        playerAnimator.SetBool("Turning", true);
-                    //        playerAnimator.SetTrigger("Rotate");
-                    //    }
-                    //}
-
                     if (xMovement < 0 && IsRight)
                     {
                         IsRight = false;
@@ -102,6 +91,11 @@ public class WSB_Player : LG_Movable
                         }
                         else
                             rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, 90, rend.transform.eulerAngles.z);
+                    }
+
+                    if(playerAnimator.GetBool("Turning"))
+                    {
+                        rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, IsRight ? -90 : 90, rend.transform.eulerAngles.z);
                     }
                 }
             }
@@ -146,15 +140,16 @@ public class WSB_Player : LG_Movable
             if (xMovement != 0)
                 IsRight = xMovement > 0;
 
-            if (grabbedObject)
+            if (grabbedObject && !playerHands)
+            {
                 grabbedObject.transform.position = transform.position + Vector3.up * 1.5f + (IsRight ? Vector3.right : Vector3.left) * 1.5f;
+            }
         }
             
 
         base.Update();
     }
-
-    bool canAnimateLever = false;
+    [SerializeField] bool canAnimateLever = false;
     bool canAnimateButton = false;
     bool isLeverRight = false;
 
@@ -196,17 +191,18 @@ public class WSB_Player : LG_Movable
     float xMovement = 0;
     /*[SerializeField] */float yMovement = 0;
     /*[SerializeField] */bool jumpInput = false;
+    bool down = false;
     [SerializeField] SO_ControllerValues controllerValues = null;
     [SerializeField] GameObject rend = null;
     [SerializeField] protected Animator playerAnimator = null;
     /*[SerializeField]*/ public bool IsRight { get; protected set; } = true;
-
     // Reads x & y movement and sets it in xMovement & yMovement
     public void Move(InputAction.CallbackContext _context)
     {
         if (_context.valueType != typeof(Vector2) || !CanMove) return;
         xMovement = _context.ReadValue<Vector2>().x;
         yMovement = _context.ReadValue<Vector2>().y;
+        down = _context.ReadValue<Vector2>().y < 0;
     }
 
     // Reads jump input and sets it in jumpInput
@@ -218,6 +214,9 @@ public class WSB_Player : LG_Movable
 
 
     /*[SerializeField] */LG_Movable grabbedObject = null;
+    public bool HeldObject { get { return grabbedObject; } }
+
+    [SerializeField] Transform playerHands = null;
     [SerializeField] ContactFilter2D grabContactFilter = new ContactFilter2D();
     // Reads grab input and try to grab object
     public void GrabObject(InputAction.CallbackContext _context)
@@ -226,36 +225,15 @@ public class WSB_Player : LG_Movable
         if (!_context.started || (GetComponent<WSB_Lux>() && GetComponent<WSB_Lux>().Shrinked))
             return;
 
+        if (playerAnimator)
+            playerAnimator.SetTrigger("Pick");
 
-        // Drop object if already got one
-        if (grabbedObject)
+        if(GetComponent<WSB_Ban>())
         {
-            DropGrabbedObject();
-            return;
-        }
-
-        RaycastHit2D[] _hit = new RaycastHit2D[1];
-
-        // Cast on facing direction to check if there is an object
-        if (collider.Cast(IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, .5f) > 0)
-        {
-            if (_hit[0].transform.GetComponent<WSB_Movable>() && !_hit[0].transform.GetComponent<WSB_Movable>().CanMove)
-                return;
-            // Search for WSB_Pot component
-            if (_hit[0].transform.GetComponent<WSB_Power>())
-
-            // Sets grabbedObject var
-            _hit[0].transform.TryGetComponent(out grabbedObject);
-
-            grabbedObject.enabled = false;
-            grabbedObject.GetComponent<WSB_Power>().DeactivatePower(this);
-            grabbedObject.transform.parent = transform;
-            grabbedObject.transform.position = transform.position + Vector3.up * 1.5f + (IsRight ? Vector3.right : Vector3.left) * 1.5f;
-
-            grabbedObject.MovableCollider.enabled = false;
-
-            if (playerAnimator)
-                playerAnimator.SetBool("Grab", true);
+            if (grabbedObject)
+                DropGrabbedObject();
+            else
+                TryGrab();
         }
     }
 
@@ -269,35 +247,59 @@ public class WSB_Player : LG_Movable
         grabbedObject.MovableCollider.enabled = true;
         grabbedObject.enabled = true;
         grabbedObject.GetComponent<WSB_Power>().ActivatePower();
-        grabbedObject.transform.position = transform.position * 1.5f + (IsRight ? Vector3.right : Vector3.left) * 1.5f;
+        //grabbedObject.transform.position = transform.position * 1.5f + (IsRight ? Vector3.right : Vector3.left) * 1.5f;
+        grabbedObject.transform.parent = null;
+        grabbedObject.transform.eulerAngles = Vector3.zero;
         grabbedObject.RefreshOnMovingPlateform();
         grabbedObject = null;
-        if (playerAnimator)
-            playerAnimator.SetBool("Grab", false);
     }
 
-    //// Virtual method
-    //public virtual void UseSpell(string _s)
-    //{
-    //    // Stops if grabbedObject
-    //    if (grabbedObject)
-    //        return;
-    //}
+    public void DropObject()
+    {
+        if (playerAnimator)
+            playerAnimator.SetBool("Grab", false);
 
-    //// Virtual method
-    //public virtual void StopSpell()
-    //{
-    //    // Stops if grabbedObject
-    //    if (grabbedObject)
-    //        return;
-    //}
+        DropGrabbedObject();
+    }
+
+    public void TryGrab()
+    {
+        RaycastHit2D[] _hit = new RaycastHit2D[1];
+
+        // Cast on facing direction to check if there is an object
+        if (collider.Cast(IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, .5f) > 0)
+        {
+            if (_hit[0].transform.GetComponent<WSB_Movable>() && !_hit[0].transform.GetComponent<WSB_Movable>().CanMove)
+                return;
+            // Search for WSB_Pot component
+            if (_hit[0].transform.GetComponent<WSB_Power>())
+
+                // Sets grabbedObject var
+                _hit[0].transform.TryGetComponent(out grabbedObject);
+
+            grabbedObject.enabled = false;
+            grabbedObject.GetComponent<WSB_Power>().DeactivatePower(this);
+
+            if(playerHands)
+            {
+                grabbedObject.transform.parent = playerHands;
+                grabbedObject.transform.position = playerHands.transform.position + (IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right);
+            }
+
+            grabbedObject.MovableCollider.enabled = false;
+
+            if (playerAnimator)
+                playerAnimator.SetBool("Grab", true);
+        }
+    }
+
     float coyoteVar = -999;
 
     // Makes the character jump
     void Jump()
     {
         // Checks if input was in direction of the ground
-        if (yMovement < 0)
+        if (down)
         {
             // Cast below character to found if there is any SemiSolid plateform
             RaycastHit2D[] _hits = new RaycastHit2D[1];

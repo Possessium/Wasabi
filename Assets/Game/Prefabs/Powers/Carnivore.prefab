@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3319797153310874226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.75, y: 7.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2249535984299435982}
@@ -210,7 +210,8 @@ MonoBehaviour:
   movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}
   animator: {fileID: 0}
   range: 7.5
-  isActive: 1
+  IsActive: 1
+  owner: {fileID: 0}
   eatDelay: 3
   eatLayer:
     serializedVersion: 2
