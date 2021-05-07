@@ -232,13 +232,13 @@ public class WSB_Player : LG_Movable
         if (playerAnimator)
             playerAnimator.SetTrigger(pick_Hash);
 
-        if(GetComponent<WSB_Ban>())
-        {
-            if (grabbedObject)
-                DropGrabbedObject();
-            else
-                TryGrab();
-        }
+        //if(GetComponent<WSB_Ban>())
+        //{
+        //    if (grabbedObject)
+        //        DropGrabbedObject();
+        //    else
+        //        TryGrab();
+        //}
     }
 
     void DropGrabbedObject()
@@ -287,7 +287,7 @@ public class WSB_Player : LG_Movable
             if(playerHands)
             {
                 grabbedObject.transform.parent = playerHands;
-                grabbedObject.transform.position = playerHands.transform.position + (IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right);
+                grabbedObject.transform.position = playerHands.transform.position + ((IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right) * 1.5f);
             }
 
             grabbedObject.MovableCollider.enabled = false;
