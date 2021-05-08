@@ -6,17 +6,13 @@ using UnityEngine.InputSystem;
 
 public class WSB_Lever : MonoBehaviour
 {
-    [SerializeField] InputActionAsset inputBan = null;
-    [SerializeField] InputActionAsset inputLux = null;
-
     [SerializeField] bool active = false;
     [SerializeField] UnityEvent onActivate = null;
     [SerializeField] UnityEvent onDeactivate = null;
     [SerializeField] Vector2 characterPosition = Vector2.zero;
+    public Vector2 Position { get { return (Vector2)transform.position + characterPosition; } }
     [SerializeField] Animator animator = null;
 
-    bool hasLux  = false;
-    bool hasBan  = false;
 
     [SerializeField] float cooldown = .2f;
     bool canPress = true;
@@ -32,43 +28,7 @@ public class WSB_Lever : MonoBehaviour
         Gizmos.DrawSphere((Vector2)transform.position + characterPosition, .2f);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // If ban enter this trigger, its Use action is bound to the Interact method
-        if (hasBan = collision.GetComponent<WSB_Ban>())
-        {
-            inputBan.FindAction("Interact").performed += Interact;
-            WSB_Ban.I.ToggleLever(true, active);
-        }
-
-        // If lux enter this trigger, its Use action is bound to the Interact method
-        if (hasLux = collision.GetComponent<WSB_Lux>())
-        {
-            inputLux.FindAction("Interact").performed += Interact;
-            WSB_Lux.I.ToggleLever(true, active);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        // If ban exits this trigger, its Interact method is unbound from the Use action
-        if (collision.GetComponent<WSB_Ban>())
-        {
-            hasBan = false;
-            inputBan.FindAction("Interact").performed -= Interact;
-            WSB_Ban.I.ToggleLever(false);
-        }
-
-        // If lux exits this trigger, its Interact method is unbound from the Use action
-        if (collision.GetComponent<WSB_Lux>())
-        {
-            hasLux = false;
-            inputLux.FindAction("Interact").performed -= Interact;
-            WSB_Lux.I.ToggleLever(false);
-        }
-    }
-
-    public void Interact(InputAction.CallbackContext _ctx)
+    public void Interact()
     {
         // Call activate event and inverse active bool
         if(active && canPress)
@@ -77,12 +37,6 @@ public class WSB_Lever : MonoBehaviour
                 animator.SetBool("Open", active);
 
             transform.position = new Vector3(transform.position.x, transform.position.y, -2);
-
-            if(hasBan)
-                WSB_Ban.I.AnimateLever((Vector2)transform.position + characterPosition);
-
-            else if(hasLux)
-                WSB_Lux.I.AnimateLever((Vector2)transform.position + characterPosition);
 
             onDeactivate?.Invoke();
             active = canPress = false;
@@ -96,11 +50,6 @@ public class WSB_Lever : MonoBehaviour
 
             transform.position = new Vector3(transform.position.x, transform.position.y, 2);
 
-            if(hasBan)
-                WSB_Ban.I.AnimateLever((Vector2)transform.position + characterPosition);
-
-            else if (hasLux)
-                WSB_Lux.I.AnimateLever((Vector2)transform.position + characterPosition);
 
             onActivate?.Invoke();
             active = true;

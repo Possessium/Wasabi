@@ -16,5 +16,8 @@ public class SO_ControllerValues : ScriptableObject
 
     [Tooltip("Layer of the object that repulse player when an object is currently grabbed")]
     public LayerMask ContactGrabLayer = 0;
+
+    [Tooltip("Layer of the levers the the players can interact with")]
+    public LayerMask LeverLayer = 0;
     
 }

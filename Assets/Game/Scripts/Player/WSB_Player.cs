@@ -158,6 +158,21 @@ public class WSB_Player : LG_Movable
         canAnimateLever = _s;
         isLeverRight = _r;
     }
+
+    public void Lever(InputAction.CallbackContext _ctx)
+    {
+        if (!_ctx.started)
+            return;
+
+        Collider2D _hit = Physics2D.OverlapBox(rigidbody.position + Vector2.up, Vector2.one, 0, controllerValues.LeverLayer);
+        if(_hit)
+        {
+            WSB_Lever _lever = _hit.GetComponent<WSB_Lever>();
+            _lever.Interact();
+            AnimateLever(_lever.Position);
+        }
+    }
+
     public void ToggleButton(bool _s)
     {
         canAnimateButton = _s;
@@ -165,7 +180,7 @@ public class WSB_Player : LG_Movable
 
     public void AnimateLever(Vector2 _pos)
     {
-        if (canAnimateLever && playerAnimator)
+        if (/*canAnimateLever &&*/ playerAnimator)
         {
             rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, isLeverRight ? 90 : -90, rend.transform.eulerAngles.z);
             IsRight = isLeverRight = !isLeverRight;
