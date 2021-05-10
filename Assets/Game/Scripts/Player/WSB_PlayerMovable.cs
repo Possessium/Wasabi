@@ -6,8 +6,32 @@ using UnityEngine.InputSystem;
 
 public class WSB_PlayerMovable : LG_Movable
 {
-    float jumpOriginHeight = 0;
+    public float XMovement = 0;
+    public float YMovement = 0;
+
+    public SO_ControllerValues ControllerValues = null;
+    public GameObject Rend = null;
+
     public bool Turning = false;
+    public bool IsRight = true;
+
+    [SerializeField] private Animator PlayerAnimator = null;
+
+    private bool jumpInput = false;
+    private bool pressDown = false;
+
+    private float coyoteVar = -999;
+    private float jumpOriginHeight = 0;
+
+
+    #region ANIMATION HASHES
+    private static readonly int run_Hash = Animator.StringToHash("Run");
+    private static readonly int jump_Hash = Animator.StringToHash("Jump");
+    private static readonly int grounded_Hash = Animator.StringToHash("Grounded");
+    private static readonly int turning_Hash = Animator.StringToHash("Turning");
+    private static readonly int rotate_Hash = Animator.StringToHash("Rotate");
+    #endregion
+
     public override void Update()
     {
         if (WSB_GameManager.Paused)
@@ -21,54 +45,47 @@ public class WSB_PlayerMovable : LG_Movable
                 jumpVar = force.y = 0;
                 jumpOriginHeight = transform.position.y;
                 if (jumpInput && CanMove)
-                    if (IsGrounded || (Time.time - coyoteVar < controllerValues.JumpDelay))
+                    if (IsGrounded || (Time.time - coyoteVar < ControllerValues.JumpDelay))
                         Jump();
             }
-            if (playerAnimator)
+            if (PlayerAnimator)
             {
-                if (Keyboard.current.yKey.isPressed)
-                {
-                    playerAnimator.SetTrigger("Key");
-                    IsRight = true;
-                    rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, 90, rend.transform.eulerAngles.z);
-                    CanMove = false;
-                }
 
-                playerAnimator.SetFloat("Run", speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
+                PlayerAnimator.SetFloat(run_Hash, speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
 
-                playerAnimator.SetBool("Jump", isJumping);
+                PlayerAnimator.SetBool(jump_Hash, isJumping);
 
-                playerAnimator.SetBool("Grounded",IsGrounded ? true : (IsOnMovingPlateform && !isJumping) ? true : false);
+                PlayerAnimator.SetBool(grounded_Hash,IsGrounded ? true : (IsOnMovingPlateform && !isJumping) ? true : false);
 
                 if (CanMove)
                 {
-                    if (xMovement < 0 && IsRight)
+                    if (XMovement < 0 && IsRight)
                     {
                         IsRight = false;
                         if (IsGrounded)
                         {
-                            playerAnimator.SetBool("Turning", true);
-                            playerAnimator.SetTrigger("Rotate");
+                            PlayerAnimator.SetBool(turning_Hash, true);
+                            PlayerAnimator.SetTrigger(rotate_Hash);
                         }
                         else
-                            rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, -90, rend.transform.eulerAngles.z);
+                            Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, -90, Rend.transform.eulerAngles.z);
                     }
 
-                    if (xMovement > 0 && !IsRight)
+                    if (XMovement > 0 && !IsRight)
                     {
                         IsRight = true;
                         if (IsGrounded)
                         {
-                            playerAnimator.SetBool("Turning", true);
-                            playerAnimator.SetTrigger("Rotate");
+                            PlayerAnimator.SetBool(turning_Hash, true);
+                            PlayerAnimator.SetTrigger(rotate_Hash);
                         }
                         else
-                            rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, 90, rend.transform.eulerAngles.z);
+                            Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, 90, Rend.transform.eulerAngles.z);
                     }
 
-                    if(playerAnimator.GetBool("Turning"))
+                    if(PlayerAnimator.GetBool(turning_Hash))
                     {
-                        rend.transform.eulerAngles = new Vector3(rend.transform.eulerAngles.x, IsRight ? -90 : 90, rend.transform.eulerAngles.z);
+                        Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, IsRight ? -90 : 90, Rend.transform.eulerAngles.z);
                     }
                 }
             }
@@ -90,7 +107,7 @@ public class WSB_PlayerMovable : LG_Movable
                     // Stop the jump if input is released & peak of jump icn't reached yet
                     if (!jumpInput && jumpVar < .3f)
                     {
-                        jumpOriginHeight -= (controllerValues.JumpCurve.Evaluate(.3f) - controllerValues.JumpCurve.Evaluate(jumpVar));
+                        jumpOriginHeight -= (ControllerValues.JumpCurve.Evaluate(.3f) - ControllerValues.JumpCurve.Evaluate(jumpVar));
                         jumpVar = .3f;
                     }
                     // Get the value corresponding to the curve set
@@ -99,42 +116,33 @@ public class WSB_PlayerMovable : LG_Movable
                         jumpVar += Time.deltaTime;
 
                         // Stop jump if peak reached
-                        if (jumpVar > controllerValues.JumpCurve[controllerValues.JumpCurve.length - 1].time)
+                        if (jumpVar > ControllerValues.JumpCurve[ControllerValues.JumpCurve.length - 1].time)
                         {
-                            jumpVar = controllerValues.JumpCurve[controllerValues.JumpCurve.length - 1].time;
+                            jumpVar = ControllerValues.JumpCurve[ControllerValues.JumpCurve.length - 1].time;
                             isJumping = false;
                         }
 
-                        MoveVertically((jumpOriginHeight + (controllerValues.JumpCurve.Evaluate(jumpVar)) - MovableRigidbody.position.y) / Time.deltaTime);
+                        MoveVertically((jumpOriginHeight + (ControllerValues.JumpCurve.Evaluate(jumpVar)) - MovableRigidbody.position.y) / Time.deltaTime);
                     }
                 }
             }
 
-            if (xMovement != 0)
-                IsRight = xMovement > 0;
+            if (XMovement != 0)
+                IsRight = XMovement > 0;
 
         }
 
         base.Update();
     }
 
-    
-    /*[SerializeField] */
-    public float xMovement = 0;
-    /*[SerializeField] */public float yMovement = 0;
-    /*[SerializeField] */bool jumpInput = false;
-    bool down = false;
-    public SO_ControllerValues controllerValues = null;
-    public GameObject rend = null;
-    [SerializeField] protected Animator playerAnimator = null;
-    /*[SerializeField]*/ public bool IsRight = true;
+    #region Input reading
     // Reads x & y movement and sets it in xMovement & yMovement
     public void Move(InputAction.CallbackContext _context)
     {
         if (_context.valueType != typeof(Vector2) || !CanMove) return;
-        xMovement = _context.ReadValue<Vector2>().x;
-        yMovement = _context.ReadValue<Vector2>().y;
-        down = _context.ReadValue<Vector2>().y < 0;
+        XMovement = _context.ReadValue<Vector2>().x;
+        YMovement = _context.ReadValue<Vector2>().y;
+        pressDown = _context.ReadValue<Vector2>().y < 0;
     }
 
     // Reads jump input and sets it in jumpInput
@@ -143,15 +151,14 @@ public class WSB_PlayerMovable : LG_Movable
         if (_context.valueType == typeof(float))
             jumpInput = _context.ReadValue<float>() == 1;
     }
+    #endregion
 
-    
-    float coyoteVar = -999;
-
+    #region Jump
     // Makes the character jump
     void Jump()
     {
         // Checks if input was in direction of the ground
-        if (down)
+        if (pressDown)
         {
             // Cast below character to found if there is any SemiSolid plateform
             RaycastHit2D[] _hits = new RaycastHit2D[1];
@@ -177,13 +184,15 @@ public class WSB_PlayerMovable : LG_Movable
         // Reset coyoteVar to unobtainable number
         coyoteVar = -999;
     }
+
     public void StopJump() => isJumping = false;
 
     protected override void OnSetGrounded()
     {
         base.OnSetGrounded();
 
-        if(IsGrounded)
+        if (IsGrounded)
             isJumping = false;
     }
+    #endregion
 }

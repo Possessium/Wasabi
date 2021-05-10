@@ -6,8 +6,6 @@ public class WSB_Camera : MonoBehaviour
     [SerializeField] Camera cam = null;
     public Camera Cam { get { return cam; } }
 
-    Coroutine moveCam = null;
-
     private void Awake()
     {
         // Check if all the needed components are here, throw error and destroy itself if not

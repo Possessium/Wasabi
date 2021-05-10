@@ -99,8 +99,6 @@
     <Compile Include="Assets\Wwise\Deployment\Components\AkEmitterObstructionOcclusion.cs" />
     <Compile Include="Assets\Game\Scripts\Controls\Controls Lux.cs" />
     <Compile Include="Assets\Game\Scripts\WSB_Elevator.cs" />
-    <Compile Include="Assets\Game\Scripts\Player\WSB_MovingPlateform2.cs" />
-    <Compile Include="Assets\Game\Scripts\Switches\WSB_PressurePlate.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Mac\AkPlatformInitSettings_Mac.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkSpatialAudioDebugDraw.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerEnter.cs" />
@@ -200,7 +198,6 @@
     <Compile Include="Assets\Wwise\Deployment\Components\AkGameObjPositionData.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkTaskContext.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerMouseUp.cs" />
-    <Compile Include="Assets\Game\Scripts\WSB_Movable.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\WAAPI\AkWaapiClient.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMusicSettings.cs" />
     <Compile Include="Assets\Game\Scripts\Player\WSB_MovingPlateform.cs" />
@@ -321,7 +318,6 @@
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerCollisionEnter.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkDiffractionPathInfoArray.cs" />
     <Compile Include="Assets\Game\Scripts\Player\WSB_PlayerInteraction.cs" />
-    <Compile Include="Assets\Game\Scripts\Player\WSB_Player.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86_64\DSP\MSSpatial.dll" />

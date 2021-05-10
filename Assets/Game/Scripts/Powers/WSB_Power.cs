@@ -9,8 +9,10 @@ public abstract class WSB_Power : MonoBehaviour
     [SerializeField] protected float range = 2;
     public bool IsActive = true;
     public WSB_PlayerMovable Owner { get; private set; } = null;
-    [SerializeField] protected LG_Movable movable = null; 
+    [SerializeField] protected LG_Movable movable = null;
 
+    private static readonly int grow_Hash = Animator.StringToHash("Grow");
+    private static readonly int shrink_Hash = Animator.StringToHash("Shrink");
     private void Start()
     {
         if (!animator)
@@ -32,7 +34,7 @@ public abstract class WSB_Power : MonoBehaviour
         movable.MovableCollider.size *= 2;
 
         if (animator)
-            animator.SetTrigger("Grow");
+            animator.SetTrigger(grow_Hash);
     }
 
     public void DeactivatePower(WSB_PlayerMovable _p)
@@ -43,7 +45,7 @@ public abstract class WSB_Power : MonoBehaviour
         movable.MovableCollider.size /= 2;
 
         if (animator)
-            animator.SetTrigger("Shrink");
+            animator.SetTrigger(shrink_Hash);
     }
 
     internal void Lock(bool v)

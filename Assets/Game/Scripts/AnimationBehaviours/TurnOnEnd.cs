@@ -6,6 +6,8 @@ public class TurnOnEnd : StateMachineBehaviour
 {
     int count = 0;
 
+    private static readonly int turning_Hash = Animator.StringToHash("Turning");
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -25,7 +27,7 @@ public class TurnOnEnd : StateMachineBehaviour
         if(stateInfo.normalizedTime * stateInfo.length >= stateInfo.length && count < 1)
         {
             animator.transform.eulerAngles = new Vector3(animator.transform.eulerAngles.x, animator.GetComponentInParent<WSB_PlayerMovable>().IsRight ? 90 : -90,    animator.transform.eulerAngles.z);
-            animator.SetBool("Turning", false);
+            animator.SetBool(turning_Hash, false);
         }
 
     }

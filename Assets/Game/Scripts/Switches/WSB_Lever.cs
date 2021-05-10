@@ -12,6 +12,8 @@ public class WSB_Lever : MonoBehaviour
     [SerializeField] Vector2 characterPosition = Vector2.zero;
     public Vector2 Position { get { return (Vector2)transform.position + characterPosition; } }
     [SerializeField] Animator animator = null;
+    private static readonly int open_Hash = Animator.StringToHash("Open");
+    private static readonly int activate_Hash = Animator.StringToHash("Activate");
 
 
     [SerializeField] float cooldown = .2f;
@@ -34,7 +36,7 @@ public class WSB_Lever : MonoBehaviour
         if(active && canPress)
         {
             if(animator)
-                animator.SetBool("Open", active);
+                animator.SetBool(open_Hash, active);
 
             transform.position = new Vector3(transform.position.x, transform.position.y, -2);
 
@@ -46,7 +48,7 @@ public class WSB_Lever : MonoBehaviour
         else if (canPress)
         {
             if (animator)
-                animator.SetBool("Open", active);
+                animator.SetBool(open_Hash, active);
 
             transform.position = new Vector3(transform.position.x, transform.position.y, 2);
 
@@ -61,7 +63,7 @@ public class WSB_Lever : MonoBehaviour
     IEnumerator Cooldown()
     {
         if (animator)
-            animator.SetTrigger("Activate");
+            animator.SetTrigger(activate_Hash);
 
         yield return new WaitForSeconds(cooldown);
         canPress = true;

@@ -157,7 +157,7 @@ public class LG_Movable : MonoBehaviour
         {
             for (int i = 0; i < _hits.Length; i++)
             {
-                if(_hits[i] && _hits[i].transform.GetComponent<WSB_MovingPlateform2>() && _hits[i].collider.bounds.max.y < collider.bounds.min.y)
+                if(_hits[i] && _hits[i].transform.GetComponent<WSB_MovingPlateform>() && _hits[i].collider.bounds.max.y < collider.bounds.min.y)
                 {
                     SetOnMovingPlateform(true, _hits[i].collider);
                     return;

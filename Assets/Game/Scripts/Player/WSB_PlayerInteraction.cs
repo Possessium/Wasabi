@@ -5,12 +5,25 @@ using UnityEngine.InputSystem;
 
 public class WSB_PlayerInteraction : MonoBehaviour
 {
-    [SerializeField] WSB_PlayerMovable movable = null;
-    [SerializeField] Animator playerAnimator = null;
+    [SerializeField] private WSB_PlayerMovable movable = null;
 
-    [SerializeField] bool canAnimateLever = false;
-    bool canAnimateButton = false;
-    bool isLeverRight = false;
+    [SerializeField] private ContactFilter2D grabContactFilter = new ContactFilter2D();
+
+    [SerializeField] private Animator playerAnimator = null;
+    [SerializeField] private Transform playerHands = null;
+
+    private bool isLeverRight = false;
+
+    private LG_Movable grabbedObject = null;
+        public bool HeldObject { get { return grabbedObject; } }
+
+    #region ANIMATION HASHES
+    private static readonly int pick_Hash = Animator.StringToHash("Pick");
+    private static readonly int key_Hash = Animator.StringToHash("Key");
+    private static readonly int lever_Hash = Animator.StringToHash("Lever");
+    private static readonly int grab_Hash = Animator.StringToHash("Grab");
+    #endregion
+
 
     private void Start()
     {
@@ -23,9 +36,9 @@ public class WSB_PlayerInteraction : MonoBehaviour
         bool _isBlocked = false;
 
 
-        if (grabbedObject && ((!movable.IsRight && movable.xMovement <= 0) || (movable.IsRight && movable.xMovement >= 0)))
+        if (grabbedObject && ((!movable.IsRight && movable.XMovement <= 0) || (movable.IsRight && movable.XMovement >= 0)))
         {
-            Collider2D[] _hits = Physics2D.OverlapBoxAll((Vector2)grabbedObject.transform.position + grabbedObject.MovableCollider.offset, grabbedObject.MovableCollider.size * 1.1f, 0, movable.controllerValues.ContactGrabLayer);
+            Collider2D[] _hits = Physics2D.OverlapBoxAll((Vector2)grabbedObject.transform.position + grabbedObject.MovableCollider.offset, grabbedObject.MovableCollider.size * 1.1f, 0, movable.ControllerValues.ContactGrabLayer);
 
             for (int i = 0; i < _hits.Length; i++)
             {
@@ -36,7 +49,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
                 }
 
             }
-            _hits = Physics2D.OverlapBoxAll((Vector2)grabbedObject.transform.position + grabbedObject.MovableCollider.offset, grabbedObject.MovableCollider.size, 0, movable.controllerValues.ContactGrabLayer);
+            _hits = Physics2D.OverlapBoxAll((Vector2)grabbedObject.transform.position + grabbedObject.MovableCollider.offset, grabbedObject.MovableCollider.size, 0, movable.ControllerValues.ContactGrabLayer);
             for (int i = 0; i < _hits.Length; i++)
             {
                 if (_hits[i].transform != this.transform && _hits[i].transform != grabbedObject.transform)
@@ -45,7 +58,15 @@ public class WSB_PlayerInteraction : MonoBehaviour
         }
 
         if (!_isBlocked)
-            movable.MoveHorizontally(movable.xMovement);
+            movable.MoveHorizontally(movable.XMovement);
+
+        if (Keyboard.current.yKey.isPressed)
+        {
+            playerAnimator.SetTrigger(key_Hash);
+            movable.IsRight = true;
+            movable.Rend.transform.eulerAngles = new Vector3(movable.Rend.transform.eulerAngles.x, 90, movable.Rend.transform.eulerAngles.z);
+            movable.CanMove = false;
+        }
 
         if (grabbedObject && !playerHands)
         {
@@ -53,18 +74,16 @@ public class WSB_PlayerInteraction : MonoBehaviour
         }
     }
 
-    public void ToggleLever(bool _s, bool _r = false)
-    {
-        canAnimateLever = _s;
-        isLeverRight = _r;
-    }
 
+    public void AnimationFinished(bool _s) => movable.CanMove = _s;
+
+    #region Lever
     public void Lever(InputAction.CallbackContext _ctx)
     {
         if (!_ctx.started)
             return;
 
-        Collider2D _hit = Physics2D.OverlapBox(movable.MovableRigidbody.position + Vector2.up, Vector2.one, 0, movable.controllerValues.LeverLayer);
+        Collider2D _hit = Physics2D.OverlapBox(movable.MovableRigidbody.position + Vector2.up, Vector2.one, 0, movable.ControllerValues.LeverLayer);
         if (_hit)
         {
             WSB_Lever _lever = _hit.GetComponent<WSB_Lever>();
@@ -77,27 +96,16 @@ public class WSB_PlayerInteraction : MonoBehaviour
     {
         if (playerAnimator)
         {
-            movable.rend.transform.eulerAngles = new Vector3(movable.rend.transform.eulerAngles.x, isLeverRight ? 90 : -90, movable.rend.transform.eulerAngles.z);
+            movable.Rend.transform.eulerAngles = new Vector3(movable.Rend.transform.eulerAngles.x, isLeverRight ? 90 : -90, movable.Rend.transform.eulerAngles.z);
             movable.IsRight = isLeverRight = !isLeverRight;
             movable.SetPosition(_pos);
-            playerAnimator.SetTrigger("Lever");
+            playerAnimator.SetTrigger(lever_Hash);
             movable.CanMove = false;
         }
     }
-
-    public void AnimationFinished(bool _s) => movable.CanMove = _s;
-
-    #region ANIMATION HASHES
-    private static readonly int pick_Hash = Animator.StringToHash("Pick"); //LA
     #endregion
 
-    /*[SerializeField] */
-    LG_Movable grabbedObject = null;
-    public bool HeldObject { get { return grabbedObject; } }
-
-    [SerializeField] Transform playerHands = null;
-    [SerializeField] ContactFilter2D grabContactFilter = new ContactFilter2D();
-    // Reads grab input and try to grab object
+    #region Power
     public void GrabObject(InputAction.CallbackContext _context)
     {
         // Exit if not the beggining of the input
@@ -136,11 +144,11 @@ public class WSB_PlayerInteraction : MonoBehaviour
     public void DropObject()
     {
         if (playerAnimator)
-            playerAnimator.SetBool("Grab", false);
+            playerAnimator.SetBool(grab_Hash, false);
 
         DropGrabbedObject();
     }
-
+     
     public void TryGrab()
     {
         RaycastHit2D[] _hit = new RaycastHit2D[1];
@@ -148,7 +156,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
         // Cast on facing direction to check if there is an object
         if (movable.MovableCollider.Cast(movable.IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, .5f) > 0)
         {
-            if (_hit[0].transform.GetComponent<WSB_Movable>() && !_hit[0].transform.GetComponent<WSB_Movable>().CanMove)
+            if (_hit[0].transform.GetComponent<LG_Movable>() && !_hit[0].transform.GetComponent<LG_Movable>().CanMove)
                 return;
             // Search for WSB_Pot component
             if (_hit[0].transform.GetComponent<WSB_Power>())
@@ -168,17 +176,8 @@ public class WSB_PlayerInteraction : MonoBehaviour
             grabbedObject.MovableCollider.enabled = false;
 
             if (playerAnimator)
-                playerAnimator.SetBool("Grab", true);
+                playerAnimator.SetBool(grab_Hash, true);
         }
     }
-
-
-
-
-
-
-
-
-
-
+    #endregion
 }
