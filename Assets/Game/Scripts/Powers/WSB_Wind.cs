@@ -13,6 +13,16 @@ public class WSB_Wind : WSB_Power
     LG_Movable physics;
     [SerializeField] LayerMask stopWindSight = 0;
 
+    WSB_Ban ban = null;
+    WSB_Lux lux = null;
+
+
+    private void Start()
+    {
+        ban = FindObjectOfType<WSB_Ban>();
+        lux = FindObjectOfType<WSB_Lux>();
+    }
+
     protected override void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, 2, .3f, .6f);
@@ -20,12 +30,10 @@ public class WSB_Wind : WSB_Power
 
     }
 
-    public override void Update()
+    private void Update()
     {
-        base.Update();
-
         // Hold if game is in pause
-        if (WSB_GameManager.Paused)
+        if (WSB_GameManager.Paused || !ban || !lux)
             return;
 
         // Find all corresponding objects in range
@@ -36,7 +44,7 @@ public class WSB_Wind : WSB_Power
         {
             hit = _hits[i];
             // Check if hit is Ban or Lux
-            if (hit == WSB_Ban.I.MovableCollider || hit == WSB_Lux.I.MovableCollider || hit == collider)
+            if (hit == ban.Player.MovableCollider || hit == lux.PlayerMovable.MovableCollider || hit == movable.MovableCollider)
                 continue;
 
             // Looks if there is a wall between the power and the object and stop if yes

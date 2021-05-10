@@ -3,20 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WSB_Power : LG_Movable
+public abstract class WSB_Power : MonoBehaviour
 {
     [SerializeField] Animator animator = null;
     [SerializeField] protected float range = 2;
     public bool IsActive = true;
-    public WSB_Player Owner { get; private set; } = null;
+    public WSB_PlayerMovable Owner { get; private set; } = null;
+    [SerializeField] protected LG_Movable movable = null; 
 
-    public override void Start()
+    private void Start()
     {
-        base.Start();
-
         if (!animator)
             TryGetComponent(out animator);
-
     }
 
     protected virtual void OnDrawGizmos()
@@ -31,18 +29,18 @@ public class WSB_Power : LG_Movable
         IsActive = true;
         Owner = null;
 
-        collider.size = collider.size * 2;
+        movable.MovableCollider.size *= 2;
 
         if (animator)
             animator.SetTrigger("Grow");
     }
 
-    public void DeactivatePower(WSB_Player _p)
+    public void DeactivatePower(WSB_PlayerMovable _p)
     {
         IsActive = false;
         Owner = _p;
 
-        collider.size = collider.size / 2;
+        movable.MovableCollider.size /= 2;
 
         if (animator)
             animator.SetTrigger("Shrink");
@@ -50,6 +48,6 @@ public class WSB_Power : LG_Movable
 
     internal void Lock(bool v)
     {
-        CanMove = v;
+        movable.CanMove = v;
     }
 }

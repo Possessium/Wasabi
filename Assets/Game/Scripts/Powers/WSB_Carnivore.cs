@@ -8,10 +8,8 @@ public class WSB_Carnivore : WSB_Power
     [SerializeField] LayerMask eatLayer = 0;
     bool isEating = false;
 
-    public override void Update()
+    private void Update()
     {
-        base.Update();
-
         if (!IsActive || isEating)
             return;
 

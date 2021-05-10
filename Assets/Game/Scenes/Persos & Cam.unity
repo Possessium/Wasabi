@@ -160,6 +160,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &619692565 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5029541864169448554, guid: 2d2e1c9332952ac4a9f1cdb0f14e2425,
+    type: 3}
+  m_PrefabInstance: {fileID: 2072432662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &779654526
 GameObject:
   m_ObjectHideFlags: 0
@@ -6552,30 +6558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69a53196015d3647936abf24f267e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 460986512884628066}
-  rigidbody: {fileID: 460986512884628067}
-  isGrounded: 0
-  movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}
-  Turning: 0
-  canAnimateLever: 0
-  controllerValues: {fileID: 11400000, guid: c75d547f7cba61d4e860f56cbc581edf, type: 2}
-  rend: {fileID: 1433720640}
-  playerAnimator: {fileID: 1433720642}
-  playerHands: {fileID: 2102953472}
-  grabContactFilter:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 1024
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
   shrinkLayer:
     useTriggers: 0
     useLayerMask: 1
@@ -6594,6 +6576,8 @@ MonoBehaviour:
   render: {fileID: 1433720640}
   startSize: {x: 0, y: 0}
   startRenderSize: {x: 0, y: 0, z: 0}
+  playerMovable: {fileID: 460986512884628070}
+  playerInteraction: {fileID: 460986512884628071}
 --- !u!61 &460986512884628066
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6654,6 +6638,8 @@ GameObject:
   - component: {fileID: 460986512884628066}
   - component: {fileID: 460986512884628069}
   - component: {fileID: 460986512884628065}
+  - component: {fileID: 460986512884628070}
+  - component: {fileID: 460986512884628071}
   m_Layer: 7
   m_Name: Lux
   m_TagString: Untagged
@@ -6689,7 +6675,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 460986512884628065}
+      - m_Target: {fileID: 460986512884628070}
         m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
@@ -6705,7 +6691,7 @@ MonoBehaviour:
     m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/i,/Keyboard/k,/Keyboard/j,/Keyboard/l]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 460986512884628065}
+      - m_Target: {fileID: 460986512884628070}
         m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
@@ -6721,8 +6707,8 @@ MonoBehaviour:
     m_ActionName: Player/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/i]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 460986512884628065}
-        m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
+      - m_Target: {fileID: 460986512884628071}
+        m_TargetAssemblyTypeName: WSB_PlayerInteraction, Assembly-CSharp
         m_MethodName: Lever
         m_Mode: 0
         m_Arguments:
@@ -6737,8 +6723,8 @@ MonoBehaviour:
     m_ActionName: Player/Interact[/XInputControllerWindows/buttonEast,/Keyboard/o]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 460986512884628065}
-        m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
+      - m_Target: {fileID: 460986512884628071}
+        m_TargetAssemblyTypeName: WSB_PlayerInteraction, Assembly-CSharp
         m_MethodName: GrabObject
         m_Mode: 0
         m_Arguments:
@@ -6796,6 +6782,68 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &460986512884628070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460986512884628068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99c8df9801a58f4ab040e46c523c548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanMove: 1
+  collider: {fileID: 460986512884628066}
+  MovableRigidbody: {fileID: 460986512884628067}
+  isGrounded: 0
+  speed: 1
+  force: {x: 0, y: 0}
+  instantForce: {x: 0, y: 0}
+  movement: {x: 0, y: 0}
+  dontResetSemiSolid: 0
+  semiSolidCollider: {fileID: 0}
+  jumpVar: 0
+  isJumping: 0
+  movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}
+  Turning: 0
+  xMovement: 0
+  yMovement: 0
+  controllerValues: {fileID: 11400000, guid: c75d547f7cba61d4e860f56cbc581edf, type: 2}
+  rend: {fileID: 1433720640}
+  playerAnimator: {fileID: 1433720642}
+  IsRight: 1
+--- !u!114 &460986512884628071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460986512884628068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a142c49ac857b514ea152ff180436792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movable: {fileID: 460986512884628070}
+  playerAnimator: {fileID: 1433720642}
+  canAnimateLever: 0
+  playerHands: {fileID: 2102953472}
+  grabContactFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 1024
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!4 &626246957297411332
 Transform:
   m_ObjectHideFlags: 0
@@ -7567,6 +7615,8 @@ GameObject:
   - component: {fileID: 6072583074185493620}
   - component: {fileID: 6072583074185493579}
   - component: {fileID: 6072583074185493623}
+  - component: {fileID: 6072583074185493580}
+  - component: {fileID: 6072583074185493581}
   m_Layer: 7
   m_Name: Ban
   m_TagString: Untagged
@@ -7602,7 +7652,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6072583074185493623}
+      - m_Target: {fileID: 6072583074185493580}
         m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
@@ -7658,7 +7708,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6072583074185493623}
+      - m_Target: {fileID: 6072583074185493580}
         m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
@@ -7673,13 +7723,25 @@ MonoBehaviour:
     m_ActionId: a4ae1d1a-4a2a-4dcd-8664-c3df5b91ecbe
     m_ActionName: Player/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/w]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6072583074185493581}
+        m_TargetAssemblyTypeName: WSB_PlayerInteraction, Assembly-CSharp
+        m_MethodName: Lever
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b037f3d8-79b7-42e4-937e-1bd8cb025e16
     m_ActionName: Player/Interact[/XInputControllerWindows/buttonEast,/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6072583074185493623}
-        m_TargetAssemblyTypeName: WSB_Player, Assembly-CSharp
+      - m_Target: {fileID: 6072583074185493581}
+        m_TargetAssemblyTypeName: WSB_PlayerInteraction, Assembly-CSharp
         m_MethodName: GrabObject
         m_Mode: 0
         m_Arguments:
@@ -7697,6 +7759,68 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6072583074185493580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6072583074185493578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99c8df9801a58f4ab040e46c523c548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanMove: 1
+  collider: {fileID: 6072583074185493620}
+  MovableRigidbody: {fileID: 6072583074185493621}
+  isGrounded: 0
+  speed: 1
+  force: {x: 0, y: 0}
+  instantForce: {x: 0, y: 0}
+  movement: {x: 0, y: 0}
+  dontResetSemiSolid: 0
+  semiSolidCollider: {fileID: 0}
+  jumpVar: 0
+  isJumping: 0
+  movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}
+  Turning: 0
+  xMovement: 0
+  yMovement: 0
+  controllerValues: {fileID: 11400000, guid: c75d547f7cba61d4e860f56cbc581edf, type: 2}
+  rend: {fileID: 2025519322}
+  playerAnimator: {fileID: 2025519324}
+  IsRight: 1
+--- !u!114 &6072583074185493581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6072583074185493578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a142c49ac857b514ea152ff180436792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movable: {fileID: 6072583074185493580}
+  playerAnimator: {fileID: 2025519324}
+  canAnimateLever: 0
+  playerHands: {fileID: 619692565}
+  grabContactFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 2048
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!61 &6072583074185493620
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7773,30 +7897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa93e43e4e1e094b8d95631fcff2656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 6072583074185493620}
-  rigidbody: {fileID: 6072583074185493621}
-  isGrounded: 0
-  movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}
-  Turning: 0
-  canAnimateLever: 0
-  controllerValues: {fileID: 11400000, guid: c75d547f7cba61d4e860f56cbc581edf, type: 2}
-  rend: {fileID: 779654526}
-  playerAnimator: {fileID: 2025519324}
-  playerHands: {fileID: 0}
-  grabContactFilter:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 2048
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
+  player: {fileID: 6072583074185493580}
 --- !u!1 &9155746076508717519
 GameObject:
   m_ObjectHideFlags: 0

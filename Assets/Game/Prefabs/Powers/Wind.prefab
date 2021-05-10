@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6734575209522334010}
   - component: {fileID: 6734575209522334007}
   - component: {fileID: 3868218173550294174}
+  - component: {fileID: 7395138133827779389}
   m_Layer: 11
   m_Name: Wind
   m_TagString: Untagged
@@ -143,13 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf79eb7b7466cb418c81be1519e3cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 6734575209522334010}
-  rigidbody: {fileID: 6734575209522334007}
-  isGrounded: 0
-  movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}
   animator: {fileID: 0}
   range: 5
   IsActive: 1
+  movable: {fileID: 7395138133827779389}
   windPower: 2
   windLayer:
     serializedVersion: 2
@@ -158,3 +156,28 @@ MonoBehaviour:
   stopWindSight:
     serializedVersion: 2
     m_Bits: 20481
+--- !u!114 &7395138133827779389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6734575209522334005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89f32785dc40b440baec35b6b3b0aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanMove: 1
+  collider: {fileID: 6734575209522334010}
+  MovableRigidbody: {fileID: 6734575209522334007}
+  isGrounded: 0
+  speed: 1
+  force: {x: 0, y: 0}
+  instantForce: {x: 0, y: 0}
+  movement: {x: 0, y: 0}
+  dontResetSemiSolid: 0
+  semiSolidCollider: {fileID: 0}
+  jumpVar: 0
+  isJumping: 0
+  movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}

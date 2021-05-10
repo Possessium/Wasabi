@@ -2168,10 +2168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736b63a56048580479f3aa239efbfdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputBan: {fileID: -944628639613478452, guid: 45e4c72b96983bf4c97bada9f2cf2b04,
-    type: 3}
-  inputLux: {fileID: -944628639613478452, guid: 63e435c4d9da78041a83a775ca2e52e5,
-    type: 3}
   active: 0
   onActivate:
     m_PersistentCalls:

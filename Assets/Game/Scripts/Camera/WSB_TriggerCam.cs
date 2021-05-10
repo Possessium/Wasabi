@@ -82,7 +82,7 @@ public class WSB_TriggerCam : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         // If any player enters this trigger, send the trigger information to the camera manager
-        if (col.GetComponent<WSB_Player>())
+        if (col.GetComponent<WSB_PlayerMovable>())
         {
             PlayersIn++;
             WSB_CameraManager.I.TriggerEntered(this);
@@ -91,7 +91,7 @@ public class WSB_TriggerCam : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.GetComponent<WSB_Player>())
+        if(collision.GetComponent<WSB_PlayerMovable>())
         {
             PlayersIn--;
             if(PlayersIn == 0)

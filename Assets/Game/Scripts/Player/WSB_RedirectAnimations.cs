@@ -6,13 +6,13 @@ public class WSB_RedirectAnimations : MonoBehaviour
 {
     public void TryGrab()
     {
-        if(GetComponentInParent<WSB_Player>())
-            GetComponentInParent<WSB_Player>().TryGrab();
+        if(GetComponentInParent<WSB_PlayerInteraction>())
+            GetComponentInParent<WSB_PlayerInteraction>().TryGrab();
     }
 
     public void DropObject()
     {
-        if (GetComponentInParent<WSB_Player>())
-            GetComponentInParent<WSB_Player>().DropObject();
+        if (GetComponentInParent<WSB_PlayerInteraction>())
+            GetComponentInParent<WSB_PlayerInteraction>().DropObject();
     }
 }

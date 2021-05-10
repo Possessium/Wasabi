@@ -6,6 +6,15 @@ public class WSB_MovingPlateform2 : MonoBehaviour
 {
     [SerializeField] Collider2D col = null;
 
+    WSB_Ban ban = null;
+    WSB_Lux lux = null;
+
+    private void Start()
+    {
+        ban = FindObjectOfType<WSB_Ban>();
+        lux = FindObjectOfType<WSB_Lux>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.GetComponent<LG_Movable>() && collision.bounds.center.y - .25f > col.bounds.max.y)
@@ -18,7 +27,7 @@ public class WSB_MovingPlateform2 : MonoBehaviour
     {
         if (collision.transform.GetComponent<LG_Movable>())
         {
-            if(collision.transform.GetComponent<LG_Movable>().IsOnMovingPlateform && collision.transform.parent != WSB_Ban.I.transform && collision.transform.parent != WSB_Lux.I.transform)
+            if(collision.transform.GetComponent<LG_Movable>().IsOnMovingPlateform && collision.transform.parent != ban.transform && collision.transform.parent != lux.transform)
                 collision.transform.GetComponent<LG_Movable>().SetOnMovingPlateform(false, col);
         }
     }

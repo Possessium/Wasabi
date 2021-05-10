@@ -29,14 +29,15 @@ public class LG_Movable : MonoBehaviour
     #region Fields / Properties
     protected const float castMaxDistanceDetection = .001f;
     protected const int collisionSystemRecursionCeil = 3;
-    public bool CanMove { get; protected set; } = true;
+    public bool CanMove = true;
 
     // -----------------------
     
 
     [SerializeField] protected new BoxCollider2D collider = null;
     public BoxCollider2D MovableCollider { get { return collider; } }
-    [SerializeField] protected new Rigidbody2D rigidbody = null;
+    public Rigidbody2D MovableRigidbody = null;
+    
 
     /*[SerializeField] */protected bool isAwake = true;
     /*[SerializeField] */protected bool useGravity = true;
@@ -81,7 +82,7 @@ public class LG_Movable : MonoBehaviour
     public int FacingSide { get { return facingSide; } }
     public bool IsGrounded { get { return isGrounded; } }
 
-    /*[SerializeField, Min(0)] */protected float speed = 1;
+    /*[SerializeField, Min(0)] */public float speed = 1;
     /*[SerializeField, Min(0)] */protected float speedCoef = 1;
 
     // --------------------------------------------------
@@ -94,9 +95,9 @@ public class LG_Movable : MonoBehaviour
     //  • Movement, the velocity applied by the object itself (like walking)
     //
 
-    /*[SerializeField] */protected Vector2 force = Vector2.zero;
-    /*[SerializeField] */protected Vector2 instantForce = Vector2.zero;
-    /*[SerializeField] */protected Vector2 movement = Vector2.zero;
+    /*[SerializeField] */public Vector2 force = Vector2.zero;
+    /*[SerializeField] */public Vector2 instantForce = Vector2.zero;
+    /*[SerializeField] */public Vector2 movement = Vector2.zero;
 
     // -----------------------
 
@@ -129,7 +130,7 @@ public class LG_Movable : MonoBehaviour
             isJumping = false;
             AddIgnoredCollider(_plateformCollider);
 
-            Vector2 _p = new Vector2(rigidbody.position.x, _plateformCollider.bounds.max.y);
+            Vector2 _p = new Vector2(MovableRigidbody.position.x, _plateformCollider.bounds.max.y);
             _p.y += Vector2.Distance(_p, transform.position);
 
             SetPosition(_p);
@@ -240,7 +241,7 @@ public class LG_Movable : MonoBehaviour
         movement.x += (_movement * speed);
     }
 
-    protected virtual void MoveVertically(float _movement) => movement.y += _movement;
+    public void MoveVertically(float _movement) => movement.y += _movement;
 
     // -----------------------
 
@@ -344,19 +345,19 @@ public class LG_Movable : MonoBehaviour
     {
 #if UNITY_EDITOR
         // Refresh position if object moved in editor
-        if (previousPosition != rigidbody.position) RefreshPosition();
+        if (previousPosition != MovableRigidbody.position) RefreshPosition();
 #endif
 
         if (!((force + instantForce + movement) == null))
         {
-            Vector2 _lastPosition = rigidbody.position;
+            Vector2 _lastPosition = MovableRigidbody.position;
 
             ComputeVelocityBeforeMovement();
             ComplexCollisionsSystem();
             //CollisionSystemDelegate();
             RefreshPosition();
 
-            Vector2 _finalMovement = rigidbody.position - _lastPosition;
+            Vector2 _finalMovement = MovableRigidbody.position - _lastPosition;
 
             if (useGravity)
                 RefreshGroundState(_finalMovement);
@@ -367,7 +368,7 @@ public class LG_Movable : MonoBehaviour
             OnAppliedVelocity(Vector2.zero);
 
 #if UNITY_EDITOR
-        previousPosition = rigidbody.position;
+        previousPosition = MovableRigidbody.position;
 #endif
     }
 
@@ -377,9 +378,9 @@ public class LG_Movable : MonoBehaviour
     /// </summary>
     public void SetPosition(Vector2 _position)
     {
-        if (rigidbody.position != _position)
+        if (MovableRigidbody.position != _position)
         {
-            rigidbody.position = _position;
+            MovableRigidbody.position = _position;
             RefreshPosition();
         }
     }
@@ -437,8 +438,8 @@ public class LG_Movable : MonoBehaviour
     {
         ExtractFromCollisions();
 
-        if ((Vector2)transform.position != rigidbody.position)
-            transform.position = rigidbody.position;
+        if ((Vector2)transform.position != MovableRigidbody.position)
+            transform.position = MovableRigidbody.position;
     }
 
     // -----------------------
@@ -448,7 +449,7 @@ public class LG_Movable : MonoBehaviour
     /// </summary>
     protected virtual void OnAppliedVelocity(Vector2 _movement) { }
 
-    protected bool dontResetSemiSolid = false;
+    public bool dontResetSemiSolid = false;
 
     /// <summary>
     /// Called when grounded value has been set.
@@ -545,7 +546,7 @@ public class LG_Movable : MonoBehaviour
 
         if (_amount == 0)
         {
-            rigidbody.position += _velocity;
+            MovableRigidbody.position += _velocity;
             GroundSnap(_velocity, _normal);
             //semiSolidCollider = null;
             return;
@@ -557,7 +558,7 @@ public class LG_Movable : MonoBehaviour
         {
             Vector2 _normalizedVelocity = _velocity.normalized;
 
-            rigidbody.position += _normalizedVelocity * _distance;
+            MovableRigidbody.position += _normalizedVelocity * _distance;
             _velocity = _normalizedVelocity * (_velocity.magnitude - _distance);
         }
 
@@ -672,14 +673,14 @@ public class LG_Movable : MonoBehaviour
 
         // Heighten the rigidbody position and add opposite velocity,
         // then cast collider and get hit informations.
-        rigidbody.position += new Vector2(0, movableValues.MaxHeightClimb);
+        MovableRigidbody.position += new Vector2(0, movableValues.MaxHeightClimb);
         _velocity.y -= movableValues.MaxHeightClimb;
 
         int _amount = CastCollider(_velocity, extraCastBuffer, out float _climbDistance);
 
         if (_amount == 0)
         {
-            rigidbody.position += _velocity;
+            MovableRigidbody.position += _velocity;
             _velocity.Set(0, 0);
         }
         // If hit something, check if it's a different surface than the one trying to climb
@@ -687,7 +688,7 @@ public class LG_Movable : MonoBehaviour
         else if ((_climbDistance != 0) && ((_stepHit.collider != extraCastBuffer[0].collider) || (_stepHit.normal != extraCastBuffer[0].normal)))
         {
             Vector2 _normalized = _velocity.normalized;
-            rigidbody.position += _normalized * _climbDistance;
+            MovableRigidbody.position += _normalized * _climbDistance;
             _velocity = _normalized * (_velocity.magnitude - _climbDistance);
 
             InsertCastInfos(extraCastBuffer, _amount);
@@ -695,7 +696,7 @@ public class LG_Movable : MonoBehaviour
         // If not, climb is failed so just reset position and velocity.
         else
         {
-            rigidbody.position -= new Vector2(0, movableValues.MaxHeightClimb);
+            MovableRigidbody.position -= new Vector2(0, movableValues.MaxHeightClimb);
             _velocity.y += movableValues.MaxHeightClimb;
             _velocity.x = 0;
         }
@@ -734,7 +735,7 @@ public class LG_Movable : MonoBehaviour
     {
         if (CastCollider(_normal * -movableValues.GroundSnapHeight, out RaycastHit2D _snapHit))
         {
-            rigidbody.position += _normal * -_snapHit.distance;
+            MovableRigidbody.position += _normal * -_snapHit.distance;
             InsertCastInfo(_snapHit);
             return true;
         }
@@ -745,7 +746,7 @@ public class LG_Movable : MonoBehaviour
 
     #region Collider Operations
 
-    protected Collider2D semiSolidCollider = null;
+    public Collider2D semiSolidCollider = null;
 
     private static RaycastHit2D[] singleCastBuffer = new RaycastHit2D[1];
 
@@ -832,16 +833,17 @@ public class LG_Movable : MonoBehaviour
                 && !transform.parent
                ))
             {
-                rigidbody.position += _distance.normal * _distance.distance * 2;
+                MovableRigidbody.position += _distance.normal * _distance.distance * 2;
             }
                
         }
     }
     #endregion
      
-    protected float jumpVar = 0;
-    /*[SerializeField]*/ protected bool isJumping = false;
-    [SerializeField] protected SO_MovableValues movableValues;
+    public float jumpVar = 0;
+    /*[SerializeField]*/
+    public bool isJumping = false;
+    public SO_MovableValues movableValues;
 
     #region Monobehaviour
     public virtual void Start()
@@ -863,7 +865,7 @@ public class LG_Movable : MonoBehaviour
         if (WSB_GameManager.Paused)
             return;
 
-        if (!GetComponent<WSB_Player>() && force.y > 5)
+        if (!GetComponent<WSB_PlayerMovable>() && force.y > 5)
             force.y = 5;
 
         PhysicsUpdate();

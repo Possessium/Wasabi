@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class WSB_Lux : WSB_Player
+public class WSB_Lux : MonoBehaviour
 {
-    public static WSB_Lux I { get; private set; }
-
     [SerializeField] ContactFilter2D shrinkLayer;
     [SerializeField] float shrinkSpeed = 10;
     [SerializeField] GameObject render = null;
@@ -17,44 +15,26 @@ public class WSB_Lux : WSB_Player
     [SerializeField] Vector2 startSize = Vector2.zero;
     [SerializeField] Vector3 startRenderSize = Vector3.zero;
 
-    // Populate the Instance of this script
-    private void Awake()
-    {
-        I = this;
-    }
+    [SerializeField] WSB_PlayerMovable playerMovable = null;
+    public WSB_PlayerMovable PlayerMovable { get { return playerMovable; } }
+    [SerializeField] WSB_PlayerInteraction playerInteraction = null;
+    public WSB_PlayerInteraction PlayerInteraction { get { return playerInteraction; } }
 
     // Set default calues to charges and adds custom update in game global update
-    public override void Start()
+    private void Start()
     {
-        base.Start();
 
-        WSB_GameManager.OnUpdate += MyUpdate;
-
-        startSize = collider.size;
+        startSize = playerMovable.MovableCollider.size;
         startRenderSize = render.transform.localScale;
-    }
-
-
-    public override void Update()
-    {
-        // Has to be here and empty to override Unity update and use MyUpdate below
-    }
-    //  |
-    //  |
-    //  V
-    // Update called on bound event
-    void MyUpdate()
-    {
-        base.Update();
     }
 
     
     public void Shrink()
     {
-        StopJump();
+        playerMovable.StopJump();
         if(shrink == null)
         {
-            RemoveSpeedCoef(2);
+            playerMovable.RemoveSpeedCoef(2);
 
             if(unshrink != null)
             {
@@ -70,10 +50,10 @@ public class WSB_Lux : WSB_Player
         if(unshrink == null)
         {
             RaycastHit2D[] _hits = new RaycastHit2D[1];
-            if (collider.Cast(Vector2.up, shrinkLayer, _hits, 1.5f, true) > 0)
+            if (playerMovable.MovableCollider.Cast(Vector2.up, shrinkLayer, _hits, 1.5f, true) > 0)
                 return;
 
-            AddSpeedCoef(2);
+            playerMovable.AddSpeedCoef(2);
 
             if (shrink != null)
             {
@@ -87,9 +67,9 @@ public class WSB_Lux : WSB_Player
     IEnumerator ShrinkCoroutine()
     {
         // Reduce size to half of the start's
-        while (collider.size != startSize / 2)
+        while (playerMovable.MovableCollider.size != startSize / 2)
         {
-            collider.size = Vector2.MoveTowards(collider.size, startSize / 2, Time.deltaTime * shrinkSpeed);
+            playerMovable.MovableCollider.size = Vector2.MoveTowards(playerMovable.MovableCollider.size, startSize / 2, Time.deltaTime * shrinkSpeed);
             render.transform.localScale = Vector3.MoveTowards(render.transform.localScale, startRenderSize / 2, Time.deltaTime * shrinkSpeed);
             render.transform.localPosition = Vector3.MoveTowards(render.transform.localPosition, new Vector3(0, .6f, 0), Time.deltaTime * shrinkSpeed);
             yield return new WaitForEndOfFrame();
@@ -101,13 +81,13 @@ public class WSB_Lux : WSB_Player
     IEnumerator UnshrinkCoroutine()
     {
         RaycastHit2D[] _hits = new RaycastHit2D[1];
-        BoxCollider2D _startCollider = collider;
+        BoxCollider2D _startCollider = playerMovable.MovableCollider;
         // Increase size back to the stocked start size
-        while (collider.size != startSize || render.transform.localScale != startRenderSize)
+        while (playerMovable.MovableCollider.size != startSize || render.transform.localScale != startRenderSize)
         {
             // Checks above behind if there is a roof, loops until there isn't anymore
             if(_startCollider.Cast(Vector2.up, shrinkLayer, _hits, .5f, true) == 0)
-                collider.size = Vector2.MoveTowards(collider.size, startSize, Time.deltaTime * shrinkSpeed);
+                playerMovable.MovableCollider.size = Vector2.MoveTowards(playerMovable.MovableCollider.size, startSize, Time.deltaTime * shrinkSpeed);
 
             render.transform.localScale = Vector3.MoveTowards(render.transform.localScale, startRenderSize, Time.deltaTime * shrinkSpeed);
             render.transform.localPosition = Vector3.MoveTowards(render.transform.localPosition, Vector3.zero, Time.deltaTime * shrinkSpeed);

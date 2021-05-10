@@ -93,7 +93,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkAcousticSurfaceArray.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkVector.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AKRESULT.cs" />
-    <Compile Include="Assets\Game\Scripts\Player\WSB_Player.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\WSB_PlayerMovable.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Timeline\AkTimelineRtpcPlayable.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkObstructionOcclusionValues.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkEmitterObstructionOcclusion.cs" />
@@ -179,7 +179,6 @@
     <Compile Include="Assets\Game\Scripts\Player\SO_MovableValues.cs" />
     <Compile Include="Assets\Game\Scripts\WSB_GameManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkEarlyReflections.cs" />
-    <Compile Include="Assets\Game\Scripts\Switches\WSB_Button.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkBaseArray.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkCallbackSerializer.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMIDICcTypes.cs" />
@@ -321,6 +320,8 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkRoomParams.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerCollisionEnter.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkDiffractionPathInfoArray.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\WSB_PlayerInteraction.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\WSB_Player.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86_64\DSP\MSSpatial.dll" />

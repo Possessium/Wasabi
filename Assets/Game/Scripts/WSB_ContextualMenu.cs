@@ -11,7 +11,7 @@ public class WSB_ContextualMenu : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<WSB_Player>())
+        if (collision.GetComponent<WSB_PlayerMovable>())
         {
             // Increase the stocked number of players in the trigger
             playersIn++;
@@ -23,7 +23,7 @@ public class WSB_ContextualMenu : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<WSB_Player>())
+        if (collision.GetComponent<WSB_PlayerMovable>())
         {
             // Decrease the stocked number of players in the trigger
             playersIn--;
