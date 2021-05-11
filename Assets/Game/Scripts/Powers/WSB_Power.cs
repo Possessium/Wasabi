@@ -13,10 +13,17 @@ public abstract class WSB_Power : MonoBehaviour
 
     private static readonly int grow_Hash = Animator.StringToHash("Grow");
     private static readonly int shrink_Hash = Animator.StringToHash("Shrink");
+
     private void Start()
     {
         if (!animator)
             TryGetComponent(out animator);
+    }
+
+    private void Update()
+    {
+        if (IsActive)
+            PlayPower();
     }
 
     protected virtual void OnDrawGizmos()
@@ -48,6 +55,7 @@ public abstract class WSB_Power : MonoBehaviour
             animator.SetTrigger(shrink_Hash);
     }
 
+    abstract protected void PlayPower();
     internal void Lock(bool v)
     {
         movable.CanMove = v;

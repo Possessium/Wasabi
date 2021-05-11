@@ -2,13 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WSB_Carnivore : WSB_Power
+public class WSB_Carnivore : WSB_Plant
 {
     [SerializeField] float eatDelay = 3;
     [SerializeField] LayerMask eatLayer = 0;
     bool isEating = false;
 
-    private void Update()
+    IEnumerator Eat()
+    {
+        isEating = true;
+
+        // Wait for given delay
+        yield return new WaitForSeconds(eatDelay);
+
+        isEating = false;
+    }
+
+    protected override void PlayPower()
     {
         if (!IsActive || isEating)
             return;
@@ -20,15 +30,5 @@ public class WSB_Carnivore : WSB_Power
             Destroy(_hits[0]);
             StartCoroutine(Eat());
         }
-    }
-
-    IEnumerator Eat()
-    {
-        isEating = true;
-
-        // Wait for given delay
-        yield return new WaitForSeconds(eatDelay);
-
-        isEating = false;
     }
 }
