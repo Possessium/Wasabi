@@ -6155,7 +6155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Trigger: {fileID: 0}
-  LoadOnPlay: 0
+  LoadOnPlay: 1
   AllScenesToLoadInOrder:
   - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Plateformes.unity
     SceneName: GP_Plateformes
@@ -6167,7 +6167,9 @@ MonoBehaviour:
     SceneName: GP_FX
   - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
     SceneName: GP_Lights
-  LoadListSize: 5
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_elevator.unity
+    SceneName: GP_elevator
+  LoadListSize: 6
   AllScenesToUnloadInOrder: []
   UnloadListSize: 0
 --- !u!4 &1489719380
@@ -7373,7 +7375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6072583074185493578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.72, y: -0.79, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1590498219}
