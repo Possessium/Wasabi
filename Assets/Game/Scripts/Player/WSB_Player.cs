@@ -212,8 +212,12 @@ public class WSB_Player : LG_Movable
             jumpInput = _context.ReadValue<float>() == 1;
     }
 
+    #region ANIMATION HASHES
+    private static readonly int pick_Hash = Animator.StringToHash("Pick"); //LA
+    #endregion
 
-    /*[SerializeField] */LG_Movable grabbedObject = null;
+    /*[SerializeField] */
+    LG_Movable grabbedObject = null;
     public bool HeldObject { get { return grabbedObject; } }
 
     [SerializeField] Transform playerHands = null;
@@ -226,15 +230,15 @@ public class WSB_Player : LG_Movable
             return;
 
         if (playerAnimator)
-            playerAnimator.SetTrigger("Pick");
+            playerAnimator.SetTrigger(pick_Hash);
 
-        if(GetComponent<WSB_Ban>())
-        {
-            if (grabbedObject)
-                DropGrabbedObject();
-            else
-                TryGrab();
-        }
+        //if(GetComponent<WSB_Ban>())
+        //{
+        //    if (grabbedObject)
+        //        DropGrabbedObject();
+        //    else
+        //        TryGrab();
+        //}
     }
 
     void DropGrabbedObject()
@@ -283,7 +287,7 @@ public class WSB_Player : LG_Movable
             if(playerHands)
             {
                 grabbedObject.transform.parent = playerHands;
-                grabbedObject.transform.position = playerHands.transform.position + (IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right);
+                grabbedObject.transform.position = playerHands.transform.position + ((IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right) * 1.5f);
             }
 
             grabbedObject.MovableCollider.enabled = false;
