@@ -76,3 +76,7 @@ Library/
 
 Library/SceneVisibilityState.asset
 *.log
+obj/Debug
+Library/SceneVisibilityState.asset
+Library/ShaderCache
+Library/ShaderCache.db

@@ -14,6 +14,8 @@ public class WSB_Button : MonoBehaviour
     [SerializeField, Min(.01f)] float duration = 1;
     [SerializeField] UnityEvent onActivate = null;
     [SerializeField] UnityEvent onDeactivate = null;
+    [SerializeField] Vector2 characterPosition = Vector2.zero;
+
 
     private void Start()
     {
@@ -23,7 +25,7 @@ public class WSB_Button : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = active ? Color.green : Color.red;
-        Gizmos.DrawSphere(transform.position, .2f);
+        Gizmos.DrawSphere((Vector2)transform.position + characterPosition, .2f);
     }
 
 
@@ -31,22 +33,34 @@ public class WSB_Button : MonoBehaviour
     {
         // If ban enter this trigger, its Use action is bound to the Interact method
         if (collision.GetComponent<WSB_Ban>())
+        {
             inputBan.FindAction("Interact").performed += Interact;
+            WSB_Ban.I.ToggleButton(true);
+        }
 
         // If lux enter this trigger, its Use action is bound to the Interact method
         if (collision.GetComponent<WSB_Lux>())
+        {
             inputLux.FindAction("Interact").performed += Interact;
+            WSB_Lux.I.ToggleButton(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         // If ban exits this trigger, its Interact method is unbound from the Use action
         if (collision.GetComponent<WSB_Ban>())
+        {
             inputBan.FindAction("Interact").performed -= Interact;
+            WSB_Ban.I.ToggleButton(false);
+        }
 
         // If lux exits this trigger, its Interact method is unbound from the Use action
         if (collision.GetComponent<WSB_Lux>())
+        {
             inputLux.FindAction("Interact").performed -= Interact;
+            WSB_Lux.I.ToggleButton(false);
+        }
     }
 
     void Interact(InputAction.CallbackContext obj)
@@ -54,6 +68,8 @@ public class WSB_Button : MonoBehaviour
         // Check if the button isn't already active
         if (!active)
         {
+            WSB_Ban.I.AnimateButton((Vector2)transform.position + characterPosition);
+            WSB_Lux.I.AnimateButton((Vector2)transform.position + characterPosition);
             // Activates the button, invoke the event and start the delay for the deactivation
             active = true;
             onActivate?.Invoke();

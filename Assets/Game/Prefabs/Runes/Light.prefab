@@ -104,8 +104,7 @@ GameObject:
   - component: {fileID: 108613375397056620}
   - component: {fileID: 6311642416808518294}
   - component: {fileID: 7267713820901921137}
-  - component: {fileID: 4350393555023284908}
-  - component: {fileID: 2187858143579663201}
+  - component: {fileID: 4120344467134050101}
   m_Layer: 17
   m_Name: Light
   m_TagString: Untagged
@@ -177,20 +176,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4350393555023284908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5346021174561631932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6e788344080fa0439e24c950ae44352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 5
---- !u!58 &2187858143579663201
+--- !u!58 &4120344467134050101
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,4 +191,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 4

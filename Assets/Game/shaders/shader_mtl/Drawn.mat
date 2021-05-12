@@ -114,12 +114,12 @@ Material:
     - _SrcBlend: 1
     - _StartLimite: 0.01
     - _Surface: 0
-    - _Thickness: 8
+    - _Thickness: 5
     - _ThicknessPWR: 5
     - _Thickness_pwr: 1.5
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _on_off: 1
+    - _on_off: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

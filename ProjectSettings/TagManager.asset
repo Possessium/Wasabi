@@ -24,14 +24,14 @@ TagManager:
   - Player
   - Movable
   - Destroyable
-  - Pot
-  - Wall
+  - Plant
+  - Rune
   - Ground
   - SemiSolid
-  - Bloom
-  - GroundNoDirt
-  - WindMovable
-  - LightObject
+  - Wall
+  - Grille
+  - Socle
+  - 
   - 
   - 
   - 

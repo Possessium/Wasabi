@@ -1,22 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="135">
 	<RootPaths>
-		<ProjectRoot>/Users/Sancho/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/Audio Workshop/JEUX VIDEO/WASABI_PROJECT/Wasabi/Wasabi_WwiseProject/</ProjectRoot>
-		<SourceFilesRoot>/Users/Sancho/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/Audio Workshop/JEUX VIDEO/WASABI_PROJECT/Wasabi/Wasabi_WwiseProject/.cache/Mac/</SourceFilesRoot>
-		<SoundBanksRoot>/Users/Sancho/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/Audio Workshop/JEUX VIDEO/WASABI_PROJECT/Wasabi/Wasabi_WwiseProject/GeneratedSoundBanks/Mac/</SoundBanksRoot>
+		<ProjectRoot>D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>/Users/Sancho/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/Audio Workshop/JEUX VIDEO/WASABI_PROJECT/Wasabi/Wasabi_WwiseProject/GeneratedSoundBanks/Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
-	<StreamedFiles/>
+	<StreamedFiles>
+		<File Id="613892428" Language="SFX">
+			<ShortName>Mus_Wasabi_Niveau_V2.wav</ShortName>
+			<Path>SFX\Mus_Wasabi_Niveau_V2_D79FB2B7.wem</Path>
+		</File>
+	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
+		<SoundBank Id="1329476194" Language="SFX" Hash="1662410534">
+			<ObjectPath>\SoundBanks\Default Work Unit\Mus\Mus_SB</ObjectPath>
+			<ShortName>Mus_SB</ShortName>
+			<Path>Mus_SB.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3151363576" Name="Play_Mus_Niveau" ObjectPath="\Events\Default Work Unit\Music (=\Mus_Niveau\Play_Mus_Niveau" DurationType="Infinite">
+					<ReferencedStreamedFiles>
+						<File Id="613892428" Language="SFX">
+							<ShortName>Mus_Wasabi_Niveau_V2.wav</ShortName>
+							<Path>SFX\Mus_Wasabi_Niveau_V2_D79FB2B7.wem</Path>
+						</File>
+					</ReferencedStreamedFiles>
+					<IncludedMemoryFiles>
+						<File Id="613892428" Language="SFX">
+							<ShortName>Mus_Wasabi_Niveau_V2.wav</ShortName>
+							<Path>SFX\Mus_Wasabi_Niveau_V2_D79FB2B7.wem</Path>
+							<PrefetchSize>157944</PrefetchSize>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX" Hash="1031502636">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3291955309" Language="SFX" Hash="3073254991">
+		<SoundBank Id="3291955309" Language="SFX">
 			<ObjectPath>\SoundBanks\Nico_WU\WASABI_WU_NS</ObjectPath>
 			<ShortName>WASABI_WU_NS</ShortName>
 			<Path>WASABI_WU_NS.bnk</Path>

@@ -45,9 +45,9 @@ public class WSB_CheckpointManager : MonoBehaviour
     public void Respawn(WSB_Player _p)
     {
         if (_p.GetComponent<WSB_Ban>() && checkPointBan)
-            _p.transform.position = checkPointBan.transform.position;
+            _p.transform.position = checkPointBan.Position;
 
         else if (_p.GetComponent<WSB_Lux>() && checkpointLux)
-            _p.transform.position = checkpointLux.transform.position;
+            _p.transform.position = checkpointLux.Position;
     }
 }

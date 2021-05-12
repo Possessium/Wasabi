@@ -31,6 +31,9 @@ public class SO_ControllerValues : ScriptableObject
 
     [Tooltip("Curve of the jump of the object")]
     public AnimationCurve JumpCurve = new AnimationCurve();
+
+    [Tooltip("Layer of the object that repulse player when an object is currently grabbed")]
+    public LayerMask ContactGrabLayer = 0;
     
     [Tooltip("Curve of the acceleration of the object")]
     public AnimationCurve SpeedCurve = new AnimationCurve();
