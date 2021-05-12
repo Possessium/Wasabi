@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Gameplay area/GP_elevator.unity
     guid: e40a21716e9c95d42862c147b7895928
+  - enabled: 1
+    path: Assets/Game/Scenes/Sound_Design.unity
+    guid: f5f82b50d878942009b778bb7e3392dc
   m_configObjects: {}
