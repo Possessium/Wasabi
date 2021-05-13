@@ -1041,7 +1041,7 @@ GameObject:
   - component: {fileID: 447571218}
   - component: {fileID: 447571217}
   - component: {fileID: 447571222}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Socle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2918,7 +2918,7 @@ GameObject:
   - component: {fileID: 1297852327}
   - component: {fileID: 1297852326}
   - component: {fileID: 1297852331}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Socle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4118,16 +4118,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754262397}
     m_Modifications:
-    - target: {fileID: 3868218173550294174, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
-        type: 3}
-      propertyPath: windLayer.m_Bits
-      value: 1280
-      objectReference: {fileID: 0}
-    - target: {fileID: 3868218173550294174, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
-        type: 3}
-      propertyPath: stopWindSight.m_Bits
-      value: 20481
-      objectReference: {fileID: 0}
     - target: {fileID: 6734575209522334005, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
         type: 3}
       propertyPath: m_Name
