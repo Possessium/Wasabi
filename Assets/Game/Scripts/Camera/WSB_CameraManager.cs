@@ -425,6 +425,8 @@ public class WSB_CameraManager : MonoBehaviour
     public void ToggleSplit(bool _status)
     {
         bigSplit.SetActive(_status);
+
+        camBan.transform.gameObject.SetActive(_status);
     }
 }
 

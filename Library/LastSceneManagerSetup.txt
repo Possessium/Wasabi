@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Game/Scenes/Temp/Temp_Kmie.unity
+- path: Assets/Game/Scenes/Persos & Cam.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

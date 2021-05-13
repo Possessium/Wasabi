@@ -17,7 +17,7 @@ public class WSB_Lever : MonoBehaviour
 
 
     [SerializeField] float cooldown = .2f;
-    bool canPress = true;
+    public bool CanPress = true;
 
     private void Start()
     {
@@ -33,7 +33,7 @@ public class WSB_Lever : MonoBehaviour
     public void Interact()
     {
         // Call activate event and inverse active bool
-        if(active && canPress)
+        if(active && CanPress)
         {
             if(animator)
                 animator.SetBool(open_Hash, active);
@@ -41,11 +41,10 @@ public class WSB_Lever : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, -2);
 
             onDeactivate?.Invoke();
-            active = canPress = false;
-            StartCoroutine(Cooldown());
+            active = CanPress = false;
         }
         // Call deactivate event and inverse active bool
-        else if (canPress)
+        else if (CanPress)
         {
             if (animator)
                 animator.SetBool(open_Hash, active);
@@ -55,17 +54,7 @@ public class WSB_Lever : MonoBehaviour
 
             onActivate?.Invoke();
             active = true;
-            canPress = false;
-            StartCoroutine(Cooldown());
+            CanPress = false;
         }
-    }
-
-    IEnumerator Cooldown()
-    {
-        if (animator)
-            animator.SetTrigger(activate_Hash);
-
-        yield return new WaitForSeconds(cooldown);
-        canPress = true;
     }
 }
