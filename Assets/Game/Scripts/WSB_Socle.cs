@@ -28,17 +28,34 @@ public class WSB_Socle : MonoBehaviour
 
         if(collision.TryGetComponent(out _buffer))
         {
-            if ((collision.GetComponent<WSB_Shrink>() && soclePower == Power.Shrink) ||
-                (collision.GetComponent<WSB_Wind>() && soclePower == Power.Wind) ||
-                (collision.GetComponent<WSB_Carnivore>() && soclePower == Power.Dragon) ||
-                (collision.GetComponent<WSB_Trampoline>() && soclePower == Power.Trampoline))
+            switch (soclePower)
             {
-                onActivate?.Invoke();
-                collision.transform.position = new Vector3(transform.position.x + position.x, transform.position.y + position.y, collision.transform.position.z);
-                currentHeldPower = _buffer;
-                currentHeldPower.Lock(true);
+                case Power.Shrink:
+                    if (_buffer is WSB_Shrink)
+                        ActivateSocle(_buffer);
+                    break;
+                case Power.Wind:
+                    if (_buffer is WSB_Wind)
+                        ActivateSocle(_buffer);
+                    break;
+                case Power.Dragon:
+                    if (_buffer is WSB_Carnivore)
+                        ActivateSocle(_buffer);
+                    break;
+                case Power.Trampoline:
+                    if (_buffer is WSB_Trampoline)
+                        ActivateSocle(_buffer);
+                    break;
             }
         }
+    }
+
+    void ActivateSocle(WSB_Power _power)
+    {
+        onActivate?.Invoke();
+        _power.transform.position = new Vector3(transform.position.x + position.x, transform.position.y + position.y, _power.transform.position.z);
+        currentHeldPower = _power;
+        currentHeldPower.Lock(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
