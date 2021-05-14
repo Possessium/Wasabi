@@ -70,7 +70,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
 
         if (grabbedObject && !playerHands)
         {
-            grabbedObject.transform.position = transform.position + Vector3.up * 1.5f + (movable.IsRight ? Vector3.right : Vector3.left) * 1.5f;
+            grabbedObject.transform.position = transform.position + Vector3.up * (GetComponent<WSB_Ban>() ? 2 : 1) + (movable.IsRight ? Vector3.right : Vector3.left) * 1.5f;
         }
     }
 
@@ -114,14 +114,6 @@ public class WSB_PlayerInteraction : MonoBehaviour
 
         if (playerAnimator)
             playerAnimator.SetTrigger(pick_Hash);
-
-        if (GetComponent<WSB_Ban>())
-        {
-            if (grabbedObject)
-                DropGrabbedObject();
-            else
-                TryGrab();
-        }
     }
 
     void DropGrabbedObject()
@@ -170,7 +162,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
             if (playerHands)
             {
                 grabbedObject.transform.parent = playerHands;
-                grabbedObject.transform.position = playerHands.transform.position + (movable.IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right);
+                grabbedObject.transform.position = playerHands.transform.position + ((movable.IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right) * (GetComponent<WSB_Ban>() ? 1.2f : .7f));
             }
 
             grabbedObject.MovableCollider.enabled = false;
