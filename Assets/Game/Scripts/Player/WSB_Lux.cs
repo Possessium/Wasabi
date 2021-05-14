@@ -5,15 +5,10 @@ using UnityEngine;
 
 public class WSB_Lux : MonoBehaviour
 {
-    [SerializeField] ContactFilter2D shrinkLayer;
-    [SerializeField] float shrinkSpeed = 10;
-    [SerializeField] GameObject render = null;
-    public bool Shrinked { get; private set; } = false;
-    //Coroutine shrink = null;
-    //Coroutine unshrink = null;
+    public static WSB_Lux I { get; private set; }
 
-    [SerializeField] Vector2 startSize = Vector2.zero;
-    [SerializeField] Vector3 startRenderSize = Vector3.zero;
+    [SerializeField] ContactFilter2D shrinkLayer;
+    public bool Shrinked { get; private set; } = false;
 
     [SerializeField] WSB_PlayerMovable playerMovable = null;
     public WSB_PlayerMovable PlayerMovable { get { return playerMovable; } }
@@ -25,15 +20,12 @@ public class WSB_Lux : MonoBehaviour
     private static readonly int unshrink_Hash = Animator.StringToHash("Unshrink");
 
 
-    // Set default calues to charges and adds custom update in game global update
-    private void Start()
+    private void Awake()
     {
-
-        startSize = playerMovable.MovableCollider.size;
-        startRenderSize = render.transform.localScale;
+        I = this;
     }
 
-    
+
     public void Shrink()
     {
         playerMovable.StopJump();

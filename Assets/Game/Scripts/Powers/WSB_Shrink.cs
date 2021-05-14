@@ -10,7 +10,7 @@ public class WSB_Shrink : WSB_Rune
 
     private void Start()
     {
-        lux = FindObjectOfType<WSB_Lux>();
+        lux = WSB_Lux.I;
     }
 
 

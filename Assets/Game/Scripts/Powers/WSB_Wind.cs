@@ -16,8 +16,8 @@ public class WSB_Wind : WSB_Rune
 
     private void Start()
     {
-        ban = FindObjectOfType<WSB_Ban>();
-        lux = FindObjectOfType<WSB_Lux>();
+        ban = WSB_Ban.I;
+        lux = WSB_Lux.I;
     }
 
     protected override void OnDrawGizmos()

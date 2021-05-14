@@ -20,8 +20,8 @@ public class WSB_CheckpointManager : MonoBehaviour
 
     private void Start()
     {
-        ban = FindObjectOfType<WSB_Ban>();
-        lux = FindObjectOfType<WSB_Lux>();
+        ban = WSB_Ban.I;
+        lux = WSB_Lux.I;
     }
 
     public void SetNewCheckpoint(WSB_Checkpoint _cp, bool _ban)

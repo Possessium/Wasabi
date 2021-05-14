@@ -11,8 +11,8 @@ public class WSB_MovingPlateform : MonoBehaviour
 
     private void Start()
     {
-        ban = FindObjectOfType<WSB_Ban>();
-        lux = FindObjectOfType<WSB_Lux>();
+        ban = WSB_Ban.I;
+        lux = WSB_Lux.I;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
