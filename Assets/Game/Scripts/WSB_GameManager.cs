@@ -57,8 +57,8 @@ public class WSB_GameManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<WSB_Player>())
-            WSB_CheckpointManager.I.Respawn(collision.GetComponent<WSB_Player>());
+        if (collision.GetComponent<WSB_PlayerMovable>())
+            WSB_CheckpointManager.I.Respawn(collision.GetComponent<WSB_PlayerMovable>());
     }
 
 

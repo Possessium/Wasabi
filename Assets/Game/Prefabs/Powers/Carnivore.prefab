@@ -94,8 +94,8 @@ GameObject:
   - component: {fileID: 3319797153310874231}
   - component: {fileID: 3319797153310874228}
   - component: {fileID: 865867157017634815}
-  - component: {fileID: 462542796882226078}
   - component: {fileID: 8906412799403487368}
+  - component: {fileID: 4136980650250086288}
   m_Layer: 10
   m_Name: Carnivore
   m_TagString: Untagged
@@ -166,32 +166,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &462542796882226078
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3319797153310874226}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &8906412799403487368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,18 +178,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21897badc74451d40ab458ecec40fb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 3319797153310874228}
-  rigidbody: {fileID: 865867157017634815}
-  isGrounded: 0
-  movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}
   animator: {fileID: 0}
   range: 7.5
   IsActive: 1
-  owner: {fileID: 0}
+  movable: {fileID: 4136980650250086288}
   eatDelay: 3
   eatLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &4136980650250086288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3319797153310874226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89f32785dc40b440baec35b6b3b0aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanMove: 1
+  collider: {fileID: 3319797153310874228}
+  MovableRigidbody: {fileID: 865867157017634815}
+  isGrounded: 0
+  speed: 1
+  force: {x: 0, y: 0}
+  instantForce: {x: 0, y: 0}
+  movement: {x: 0, y: 0}
+  dontResetSemiSolid: 0
+  semiSolidCollider: {fileID: 0}
+  jumpVar: 0
+  isJumping: 0
+  movableValues: {fileID: 11400000, guid: a50a579a44b5d9841b84265f4897779e, type: 2}
 --- !u!1001 &3514211090513189763
 PrefabInstance:
   m_ObjectHideFlags: 0

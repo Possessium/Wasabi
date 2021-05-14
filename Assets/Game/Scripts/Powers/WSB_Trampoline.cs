@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WSB_Trampoline : WSB_Power
+public class WSB_Trampoline : WSB_Plant
 {
     [SerializeField] float trampolineForce = 10;
     [SerializeField] BoxCollider2D bounceCollider = null;
@@ -12,20 +12,15 @@ public class WSB_Trampoline : WSB_Power
         // don't show range on that plant
     }
 
-    [SerializeField] LayerMask layerBounce;
     [SerializeField] ContactFilter2D bounceFilter;
     RaycastHit2D[] hits = new RaycastHit2D[2];
 
-    public override void Update()
+    protected override void PlayPower()
     {
-        base.Update();
-
         System.Array.Clear(hits, 0, 2);
 
         bounceCollider.Cast(Vector2.up, bounceFilter, hits, .5f);
 
-        //Physics2D.BoxCastNonAlloc((Vector2)transform.position + bounceCollider.offset, bounceCollider.size, 0, Vector2.zero, hits, 0, layerBounce);
-        
         for (int i = 0; i < hits.Length; i++)
         {
             LG_Movable _movable;
@@ -35,6 +30,5 @@ public class WSB_Trampoline : WSB_Power
                 _movable.TrampolineJump(Vector2.up * trampolineForce);
             }
         }
-
     }
 }

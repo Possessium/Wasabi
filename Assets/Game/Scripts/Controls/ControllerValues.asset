@@ -50,3 +50,6 @@ MonoBehaviour:
   ContactGrabLayer:
     serializedVersion: 2
     m_Bits: 57089
+  LeverLayer:
+    serializedVersion: 2
+    m_Bits: 131072
