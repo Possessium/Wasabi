@@ -8,7 +8,7 @@ public class WSB_Elevator : MonoBehaviour
     [SerializeField] GameObject pivotRight = null;
     [SerializeField] LineRenderer line = null;
     [SerializeField] Animator animator = null;
-    [SerializeField] WSB_EventOnDestroy destroyEvent = null;
+    [SerializeField] WSB_BreakableObject destroyEvent = null;
 
     private void Start()
     {

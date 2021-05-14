@@ -6,6 +6,7 @@ public class WSB_Trampoline : WSB_Plant
 {
     [SerializeField] float trampolineForce = 10;
     [SerializeField] BoxCollider2D bounceCollider = null;
+    [SerializeField] ParticleSystem trampolineBounceFX = null;
 
     protected override void OnDrawGizmos()
     {
@@ -24,8 +25,11 @@ public class WSB_Trampoline : WSB_Plant
         for (int i = 0; i < hits.Length; i++)
         {
             LG_Movable _movable;
-            if (hits[i] && hits[i].transform != this.transform && hits[i].transform.TryGetComponent(out _movable))
+            if (hits[i] && hits[i].transform != this.transform && hits[i].transform.position.y > transform.position.y + .5f && hits[i].transform.TryGetComponent(out _movable))
             {
+                if(trampolineBounceFX)
+                    trampolineBounceFX.Play();
+
                 _movable.SetPosition(_movable.transform.position + Vector3.up * .5f);
                 _movable.TrampolineJump(Vector2.up * trampolineForce);
             }

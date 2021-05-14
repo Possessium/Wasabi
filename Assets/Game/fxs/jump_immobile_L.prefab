@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2563315505554339888}
   - component: {fileID: 2563315505554339887}
   m_Layer: 0
-  m_Name: jump_immobile_L_test
+  m_Name: jump_immobile_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2563315505554339886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.98, y: -0.36, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 2563315506397988842}
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ ParticleSystem:
   serializedVersion: 7
   lengthInSec: 0.65
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}

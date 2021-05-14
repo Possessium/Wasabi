@@ -48,6 +48,13 @@ public class WSB_Shrink : WSB_Rune
         }
     }
 
+    public override void DeactivatePower(WSB_PlayerMovable _p)
+    {
+        base.DeactivatePower(_p);
+
+        enabled = false;
+    }
+
     private void OnDisable()
     {
         if (!hasLux || !lux)

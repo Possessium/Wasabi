@@ -7,6 +7,10 @@ public abstract class WSB_Power : MonoBehaviour
 {
     [SerializeField] Animator animator = null;
     [SerializeField] protected float range = 2;
+
+    [SerializeField] ParticleSystem insectFX = null;
+    [SerializeField] ParticleSystem dropFX = null;
+
     public bool IsActive = true;
     public WSB_PlayerMovable Owner { get; private set; } = null;
     [SerializeField] protected LG_Movable movable = null;
@@ -23,7 +27,11 @@ public abstract class WSB_Power : MonoBehaviour
     private void Update()
     {
         if (IsActive)
+        {
             PlayPower();
+            transform.position = new Vector3(transform.position.x, transform.position.y, 2);
+        }
+
     }
 
     protected virtual void OnDrawGizmos()
@@ -40,11 +48,14 @@ public abstract class WSB_Power : MonoBehaviour
 
         movable.MovableCollider.size *= 2;
 
+        if (dropFX)
+            dropFX.Play();
+
         if (animator)
             animator.SetTrigger(grow_Hash);
     }
 
-    public void DeactivatePower(WSB_PlayerMovable _p)
+    public virtual void DeactivatePower(WSB_PlayerMovable _p)
     {
         IsActive = false;
         Owner = _p;
@@ -53,6 +64,9 @@ public abstract class WSB_Power : MonoBehaviour
 
         if (animator)
             animator.SetTrigger(shrink_Hash);
+
+        if (insectFX)
+            insectFX.Play();
     }
 
     abstract protected void PlayPower();

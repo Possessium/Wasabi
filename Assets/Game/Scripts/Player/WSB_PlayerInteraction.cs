@@ -17,6 +17,13 @@ public class WSB_PlayerInteraction : MonoBehaviour
     private LG_Movable grabbedObject = null;
         public bool HeldObject { get { return grabbedObject; } }
 
+    #region FX
+    [SerializeField] ParticleSystem sweat = null;
+
+
+    #endregion
+
+
     #region ANIMATION HASHES
     private static readonly int pick_Hash = Animator.StringToHash("Pick");
     private static readonly int key_Hash = Animator.StringToHash("Key");
@@ -87,6 +94,10 @@ public class WSB_PlayerInteraction : MonoBehaviour
         if (_hit)
         {
             WSB_Lever _lever = _hit.GetComponent<WSB_Lever>();
+            
+            if (!_lever.CanPress)
+                return;
+
             _lever.Interact();
             AnimateLever(_lever.Position);
         }
@@ -125,12 +136,16 @@ public class WSB_PlayerInteraction : MonoBehaviour
 
         grabbedObject.MovableCollider.enabled = true;
         grabbedObject.enabled = true;
+        grabbedObject.GetComponent<WSB_Power>().enabled = true;
         grabbedObject.GetComponent<WSB_Power>().ActivatePower();
-        //grabbedObject.transform.position = transform.position * 1.5f + (IsRight ? Vector3.right : Vector3.left) * 1.5f;
         grabbedObject.transform.parent = null;
         grabbedObject.transform.eulerAngles = Vector3.zero;
+        grabbedObject.SetPosition(new Vector3(grabbedObject.MovableRigidbody.position.x, grabbedObject.MovableRigidbody.position.y, 2));
         grabbedObject.RefreshOnMovingPlateform();
         grabbedObject = null;
+        
+        if (sweat)
+            sweat.Stop();
     }
 
     public void DropObject()
@@ -162,13 +177,16 @@ public class WSB_PlayerInteraction : MonoBehaviour
             if (playerHands)
             {
                 grabbedObject.transform.parent = playerHands;
-                grabbedObject.transform.position = playerHands.transform.position + ((movable.IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right) * (GetComponent<WSB_Ban>() ? 1.2f : .7f));
+                grabbedObject.transform.position = playerHands.transform.position + ((movable.IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right) * (GetComponent<WSB_Ban>() ? 1.2f : .85f));
             }
 
             grabbedObject.MovableCollider.enabled = false;
 
             if (playerAnimator)
                 playerAnimator.SetBool(grab_Hash, true);
+
+            if (sweat)
+                sweat.Play();
         }
     }
     #endregion
