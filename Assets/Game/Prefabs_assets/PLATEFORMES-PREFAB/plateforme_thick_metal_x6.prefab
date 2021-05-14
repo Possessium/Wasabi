@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3251739773568064967}
   - component: {fileID: 1913849028870115938}
   - component: {fileID: 4425821020218681000}
+  - component: {fileID: 2993277699758814508}
   m_Layer: 0
   m_Name: plateforme_thick_metal_x6
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2768395133785786237}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -39,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2768395133785786237}
-  m_Mesh: {fileID: 5693014495616131845, guid: f4525feccd3fa84469ac27be3d29cdcc, type: 3}
+  m_Mesh: {fileID: 5693014495616131845, guid: 4381218c71bb18e438166c71099fdf0a, type: 3}
 --- !u!23 &4425821020218681000
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81,3 +82,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!61 &2993277699758814508
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2768395133785786237}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000011920929, y: 1.5019037}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.000001, y: 3.0038822}
+  m_EdgeRadius: 0
