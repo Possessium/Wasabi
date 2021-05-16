@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WSB_Socle : MonoBehaviour
 {
+    [SerializeField] private bool isEndSocle = false;
+
     [SerializeField] Power soclePower = Power.Shrink;
     WSB_Power currentHeldPower = null;
 
@@ -17,6 +19,14 @@ public class WSB_Socle : MonoBehaviour
     {
         Gizmos.color = new Color(255, 120, 0, 1);
         Gizmos.DrawSphere(new Vector3(transform.position.x + position.x, transform.position.y + position.y, -5), .1f);
+    }
+
+    private void Start()
+    {
+        if(isEndSocle)
+        {
+            onActivate.AddListener(WSB_Elevator.I.ActivateTrigger);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
