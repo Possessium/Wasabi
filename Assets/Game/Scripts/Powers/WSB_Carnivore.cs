@@ -27,7 +27,7 @@ public class WSB_Carnivore : WSB_Plant
         // If found any, eat them
         if (_hits.Length > 0)
         {
-            Destroy(_hits[0]);
+            Destroy(_hits[0].gameObject);
             StartCoroutine(Eat());
         }
     }

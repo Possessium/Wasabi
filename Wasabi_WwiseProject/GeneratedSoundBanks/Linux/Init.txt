@@ -1,5 +1,28 @@
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	44542721	Ban_FT			\Default Work Unit\Master Audio Bus\BAN\Ban_FT	
+	428663473	GH1			\Default Work Unit\Master Audio Bus\ENV\GH1	
+	428663474	GH2			\Default Work Unit\Master Audio Bus\ENV\GH2	
+	428663475	GH3			\Default Work Unit\Master Audio Bus\ENV\GH3	
+	487774080	Ban_Foley			\Default Work Unit\Master Audio Bus\BAN\Ban_Foley	
+	500672212	Runes			\Default Work Unit\Master Audio Bus\INTERRACTION\Runes	
+	513390140	BAN			\Default Work Unit\Master Audio Bus\BAN	
+	529726550	ENV			\Default Work Unit\Master Audio Bus\ENV	
+	543694031	VOC			\Default Work Unit\Master Audio Bus\VOC	
+	646625282	HUB			\Default Work Unit\Master Audio Bus\ENV\HUB	
+	662417162	NPC			\Default Work Unit\Master Audio Bus\NPC	
+	914478924	LUX			\Default Work Unit\Master Audio Bus\LUX	
+	1267691439	FDB			\Default Work Unit\Master Audio Bus\INTERRACTION\FDB	
+	1551306167	UI			\Default Work Unit\Master Audio Bus\UI	
+	2376466361	OTHER			\Default Work Unit\Master Audio Bus\OTHER	
+	2759895900	VOC_Other			\Default Work Unit\Master Audio Bus\VOC\VOC_Other	
+	2830372017	Lux_FT			\Default Work Unit\Master Audio Bus\LUX\Lux_FT	
+	3070449207	InCommon			\Default Work Unit\Master Audio Bus\ENV\InCommon	
+	3217650583	INTERRACTION			\Default Work Unit\Master Audio Bus\INTERRACTION	
+	3750040961	Seeds			\Default Work Unit\Master Audio Bus\INTERRACTION\Seeds	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3806204025	VOC_Ban			\Default Work Unit\Master Audio Bus\VOC\VOC_Ban	
+	4075528361	VOC_Lux			\Default Work Unit\Master Audio Bus\VOC\VOC_Lux	
+	4096139792	Lux_Foley			\Default Work Unit\Master Audio Bus\LUX\Lux_Foley	
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

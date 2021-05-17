@@ -59,6 +59,7 @@
     <Compile Include="Assets\Wwise\Deployment\Components\AkRTPCTrack.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkAuxSendArray.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkWwiseEditorSettings.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Wind.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\WAAPI\AkWaapiClient_PINVOKE.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkSpeakerPanningType.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkCommonPlatformSettings.cs" />
@@ -67,16 +68,21 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkRoomAwareManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkEventCallbackData.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkLogger.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\WSB_PlayerInteraction.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseRtpcReference.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Windows\AkWindowsSettings.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkObjectInfoArray.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMonitorErrorLevel.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Windows\AkPlatformInitSettings_Windows.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkSoundEngine.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\WSB_Lux.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\LG_Movable.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkQueryRTPCValue.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkRoom.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseTypes\AkWwiseEvent.cs" />
+    <Compile Include="Assets\Game\Scripts\AnimationBehaviours\TurnOnEnd.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkEvent.cs" />
+    <Compile Include="Assets\Game\Scripts\Checkpoints\WSB_CheckpointManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkVertex.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseTypes\AkWwiseTypeMigration.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkGameObjPositionOffsetData.cs" />
@@ -88,9 +94,12 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkAcousticSurfaceArray.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkVector.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AKRESULT.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\WSB_PlayerMovable.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Timeline\AkTimelineRtpcPlayable.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkObstructionOcclusionValues.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkEmitterObstructionOcclusion.cs" />
+    <Compile Include="Assets\Game\Scripts\Controls\Controls Lux.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_Elevator.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Mac\AkPlatformInitSettings_Mac.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkSpatialAudioDebugDraw.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerEnter.cs" />
@@ -102,6 +111,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Mac\AkSoundEngine.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkShowOnlyAttribute.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkInitializationSettings.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_MenuManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Linux\AkSoundEngine_Linux.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkCallbackManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkActionOnEventType.cs" />
@@ -109,6 +119,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkObstructionOcclusionValuesArray.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseObjectReference.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkTriangle.cs" />
+    <Compile Include="Assets\Game\Scripts\Blit_shader_scripts\BlitPass.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseStateReference.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkRTPCPlayable.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Linux\AkSoundEngine.cs" />
@@ -122,8 +133,11 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseSwitchReference.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkReflectionPathInfo.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Mac\AkSoundEngine_Mac.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Plant.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Mac\AkMacSettings.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\WSB_Ban.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMultiPositionType.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Trampoline.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMusicSyncCallbackInfo.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkGameObjPosOffsetData.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkSurfaceReflector.cs" />
@@ -135,33 +149,49 @@
     <Compile Include="Assets\Wwise\Deployment\Components\AkSpatialAudioEmitter.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerDisable.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkBusHierarchyFlags.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Rune.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseSwitchGroupReference.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerMouseExit.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_Socle.cs" />
+    <Compile Include="Assets\Game\Scripts\Blit_shader_scripts\Blit.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkSerializedCallbackHeader.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_ContextualMenu.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Timeline\AkTimelineEventTrack.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkInitializer.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkGlobalCallbackLocation.cs" />
+    <Compile Include="Assets\Game\Scripts\Camera\WSB_Camera.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkIterator.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Linux\AkLinuxSettings.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Mac\AkSoundEnginePINVOKE_Mac.cs" />
+    <Compile Include="Assets\Game\Scripts\AnimationBehaviours\UnluckOnEnd.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_PNJ.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkPlaylistItem.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\SO_ControllerValues.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkDeviceSettings.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkObjectInfo.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkWwiseXMLWatcher.cs" />
+    <Compile Include="Assets\Game\Scripts\Checkpoints\WSB_Checkpoint.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Windows\AkWindowsBasePathGetter.cs" />
+    <Compile Include="Assets\Game\Scripts\Controls\WSB_InputManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkReflectionPathInfoArray.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Power.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\Ak3DSpatializationMode.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkRamp.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\SO_MovableValues.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_GameManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkEarlyReflections.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkBaseArray.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkCallbackSerializer.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMIDICcTypes.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseTypes\AkWwiseBaseType.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkChannelEmitterArray.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\WSB_RedirectAnimations.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseTypes\AkWwiseSwitch.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerEnable.cs" />
+    <Compile Include="Assets\Game\Scripts\Switches\WSB_Lever.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkRoomAwareObject.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseAuxBusReference.cs" />
+    <Compile Include="Assets\Game\Scripts\Dialogues\WSB_Dialogue.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkPositionArray.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Linux\AkSoundEnginePINVOKE_Linux.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkSoundEngineController.cs" />
@@ -173,6 +203,8 @@
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerMouseUp.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\WAAPI\AkWaapiClient.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMusicSettings.cs" />
+    <Compile Include="Assets\Game\Scripts\Player\WSB_MovingPlateform.cs" />
+    <Compile Include="Assets\Game\Scripts\Camera\WSB_TriggerCam.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerMouseDown.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Linux\AkUnityPlatformSpecificSettings_Linux.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkAudioSourceChangeCallbackInfo.cs" />
@@ -194,8 +226,10 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkConnectionType.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkInitSettings.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkSourceSettingsArray.cs" />
+    <Compile Include="Assets\Game\Scripts\Controls\Controls Ban.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkSpatialAudioListener.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkRoomPortalObstruction.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_OutOfBounds.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Timeline\AkTimelineEventPlayable.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkWwiseInitializationSettings.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseTypes\AkWwiseState.cs" />
@@ -207,6 +241,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkChannelOrdering.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerCollisionExit.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerMouseEnter.cs" />
+    <Compile Include="Assets\Game\Scripts\Menus\WSB_MainMenu.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Linux\AkThreadProperties_Linux.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkChannelConfigType.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Mac\AkCommunicationSettings_Mac.cs" />
@@ -225,6 +260,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\Ak3DPositionType.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Windows\AkSoundEngine.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Mac\AkThreadProperties_Mac.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Carnivore.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkPositioningInfo.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkAudioSettings.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTerminator.cs" />
@@ -235,7 +271,9 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMIDIEventCallbackInfo.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkDeviceDescriptionArray.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMIDIPost.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_SceneLoader.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Linux\AkPlatformInitSettings_Linux.cs" />
+    <Compile Include="Assets\Game\Scripts\Dialogues\SO_Dialogue.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseStateGroupReference.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkSegmentInfo.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkAudioInputManager.cs" />
@@ -249,6 +287,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkCallbackType.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkAudioFormat.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkSourceChannelOrdering.cs" />
+    <Compile Include="Assets\Game\Scripts\Camera\WSB_CameraManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkBankCallbackInfo.cs" />
     <Compile Include="Assets\Tools\SceneLoader\Scripts\SceneLoaderProfile.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkCurveInterpolation.cs" />
@@ -262,6 +301,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseEventReference.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkEnvironmentPortal.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Windows\AkSoundEngine_Windows.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_InteractiveElement.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Mac\AkMacBasePathGetter.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkGameObjEnvironmentData.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkBank.cs" />
@@ -271,9 +311,11 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkDiffractionPathInfo.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkAmbient.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkEventCallbackInfo.cs" />
+    <Compile Include="Assets\Game\Scripts\Powers\WSB_Shrink.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkAudioListener.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Windows\AkSoundEnginePINVOKE_Windows.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkPanningRule.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_BreakableObject.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkAcousticSurface.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkRoomParams.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerCollisionEnter.cs" />
@@ -343,6 +385,7 @@
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86_64\Debug\AkSoundEngine.dll" />
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86_64\Release\AkWaapiClient.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\Game\Scripts\Blit_shader_scripts\Sobel.hlsl" />
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86\DSP\AkPitchShifter.dll" />
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86_64\DSP\AkTremolo.dll" />
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86\DSP\AkGuitarDistortion.dll" />
@@ -1008,10 +1051,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="WasabiAssembly.csproj">
-      <Project>{4B186C9B-C4FE-5DBE-9244-08F7D2BDB25F}</Project>
-      <Name>WasabiAssembly</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

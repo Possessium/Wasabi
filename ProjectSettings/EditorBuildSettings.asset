@@ -15,21 +15,18 @@ EditorBuildSettings:
     path: "Assets/Game/Scenes/Gameplay area/GP_D\xE9cor.unity"
     guid: 9993888ef4b93ae48a5557aa5654d68d
   - enabled: 1
-    path: Assets/Game/Scenes/Gameplay area/GP_FX.unity
-    guid: dd2d21c2be15e7747a912cf0fedcd329
-  - enabled: 1
     path: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
     guid: 5146905c5b51552499b44b4403430b07
   - enabled: 1
     path: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
     guid: a9561a7250176874d95b5a635d5c87f1
   - enabled: 1
-    path: Assets/Game/Scenes/Empty Scene.unity
-    guid: ace1ebf595a71144aafadf2e8a4726b7
-  - enabled: 1
-    path: Assets/Game/Scenes/Menus.unity
-    guid: 4b08ef9661f8ce54aa39f9220a74198c
-  - enabled: 1
     path: Assets/Game/Scenes/Gameplay area/GP_elevator.unity
     guid: e40a21716e9c95d42862c147b7895928
+  - enabled: 1
+    path: Assets/Game/Scenes/Sound_Design.unity
+    guid: f5f82b50d878942009b778bb7e3392dc
+  - enabled: 1
+    path: Assets/Game/Scenes/Music.unity
+    guid: 00a9edcc9395fba4ea82034c53676d64
   m_configObjects: {}

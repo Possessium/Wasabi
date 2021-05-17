@@ -22,6 +22,8 @@ public class WSB_Lever : MonoBehaviour
     private void Start()
     {
         TryGetComponent(out animator);
+        animator.SetBool(open_Hash, !active);
+        animator.SetTrigger(activate_Hash);
     }
 
     private void OnDrawGizmos()
@@ -36,7 +38,10 @@ public class WSB_Lever : MonoBehaviour
         if(active && CanPress)
         {
             if(animator)
+            {
                 animator.SetBool(open_Hash, active);
+                animator.SetTrigger(activate_Hash);
+            }
 
             transform.position = new Vector3(transform.position.x, transform.position.y, -2);
 
@@ -47,7 +52,10 @@ public class WSB_Lever : MonoBehaviour
         else if (CanPress)
         {
             if (animator)
+            {
                 animator.SetBool(open_Hash, active);
+                animator.SetTrigger(activate_Hash);
+            }
 
             transform.position = new Vector3(transform.position.x, transform.position.y, 2);
 

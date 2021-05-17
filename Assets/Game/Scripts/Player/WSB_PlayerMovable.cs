@@ -23,6 +23,14 @@ public class WSB_PlayerMovable : LG_Movable
     private float coyoteVar = -999;
     private float jumpOriginHeight = 0;
 
+    #region Animations
+    [SerializeField] Transform jumpPosition = null;
+
+    [SerializeField] GameObject jumpFX = null;
+    [SerializeField] GameObject jumpInplaceFX = null;
+    #endregion
+
+
 
     #region ANIMATION HASHES
     private static readonly int run_Hash = Animator.StringToHash("Run");
@@ -175,6 +183,38 @@ public class WSB_PlayerMovable : LG_Movable
         dontResetSemiSolid = false;
 
         isJumping = true;
+
+        if (XMovement != 0)
+        {
+            if (jumpFX && jumpPosition)
+            {
+                ParticleSystemRenderer _fx = Instantiate(jumpFX, jumpPosition.position, Quaternion.identity).GetComponent<ParticleSystemRenderer>();
+                if(_fx)
+                {
+                    _fx.transform.localScale = Vector3.one * (GetComponent<WSB_Ban>() ? 2 : 1);
+                    _fx.flip = new Vector3(IsRight ? 0 : 1, 0, 0);
+                    _fx.transform.eulerAngles = new Vector3(0, IsRight ? 0 : 180, 0);
+                }
+            }
+        }
+        else
+        {
+            if (jumpInplaceFX && jumpPosition)
+            {
+                ParticleSystemRenderer _fx = Instantiate(jumpInplaceFX, jumpPosition.position, Quaternion.identity).GetComponent<ParticleSystemRenderer>();
+                if (_fx)
+                {
+                    _fx.transform.localScale = Vector3.one * (GetComponent<WSB_Ban>() ? 2 : 1);
+                    _fx.flip = new Vector3(IsRight ? 0 : 1, 0, 0);
+                    _fx.transform.eulerAngles = new Vector3(0, IsRight ? 0 : 180, 0);
+
+                    ParticleSystemRenderer _fxChild = _fx.transform.GetChild(0).GetComponent<ParticleSystemRenderer>();
+                    if (_fxChild)
+                        _fxChild.flip = new Vector3(IsRight ? 1 : 0, 0, 0);
+                }
+            }
+        }
+        
 
         jumpVar = force.y = 0;
 
