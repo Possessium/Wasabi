@@ -67,14 +67,6 @@ public class WSB_PlayerInteraction : MonoBehaviour
         if (!_isBlocked)
             movable.MoveHorizontally(movable.XMovement);
 
-        if (Keyboard.current.yKey.isPressed)
-        {
-            playerAnimator.SetTrigger(key_Hash);
-            movable.IsRight = true;
-            movable.Rend.transform.eulerAngles = new Vector3(movable.Rend.transform.eulerAngles.x, 90, movable.Rend.transform.eulerAngles.z);
-            movable.CanMove = false;
-        }
-
         if (grabbedObject && !playerHands)
         {
             grabbedObject.transform.position = transform.position + Vector3.up * (GetComponent<WSB_Ban>() ? 2 : 1) + (movable.IsRight ? Vector3.right : Vector3.left) * 1.5f;
@@ -101,6 +93,15 @@ public class WSB_PlayerInteraction : MonoBehaviour
             _lever.Interact();
             AnimateLever(_lever.Position);
         }
+    }
+
+    public void AnimateKey()
+    {
+        playerAnimator.SetTrigger(key_Hash);
+        movable.IsRight = true;
+        movable.Rend.transform.eulerAngles = new Vector3(movable.Rend.transform.eulerAngles.x, 90, movable.Rend.transform.eulerAngles.z);
+        movable.CanMove = false;
+        movable.StopMoving();
     }
 
     public void AnimateLever(Vector2 _pos)

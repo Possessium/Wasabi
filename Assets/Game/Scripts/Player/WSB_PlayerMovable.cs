@@ -227,6 +227,8 @@ public class WSB_PlayerMovable : LG_Movable
 
     public void StopJump() => isJumping = false;
 
+    public void StopMoving() => XMovement = YMovement = 0;
+
     protected override void OnSetGrounded()
     {
         base.OnSetGrounded();
