@@ -111,6 +111,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Mac\AkSoundEngine.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkShowOnlyAttribute.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkInitializationSettings.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_KeyObject.cs" />
     <Compile Include="Assets\Game\Scripts\WSB_MenuManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Linux\AkSoundEngine_Linux.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkCallbackManager.cs" />
@@ -163,7 +164,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkIterator.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Linux\AkLinuxSettings.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Mac\AkSoundEnginePINVOKE_Mac.cs" />
-    <Compile Include="Assets\Game\Scripts\AnimationBehaviours\UnluckOnEnd.cs" />
+    <Compile Include="Assets\Game\Scripts\AnimationBehaviours\UnlockOnEnd.cs" />
     <Compile Include="Assets\Game\Scripts\WSB_PNJ.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkPlaylistItem.cs" />
     <Compile Include="Assets\Game\Scripts\Player\SO_ControllerValues.cs" />
@@ -320,7 +321,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkRoomParams.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerCollisionEnter.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkDiffractionPathInfoArray.cs" />
-    <Compile Include="Assets\Game\Scripts\WSB_KeyObject.cs" />
+    <Compile Include="Assets\Game\Scripts\AnimationBehaviours\ActivateLever.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86_64\DSP\MSSpatial.dll" />

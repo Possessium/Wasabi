@@ -12,13 +12,12 @@ public class WSB_PlayerInteraction : MonoBehaviour
     [SerializeField] private Animator playerAnimator = null;
     [SerializeField] private Transform playerHands = null;
 
-    private bool isLeverRight = false;
-
     private LG_Movable grabbedObject = null;
         public bool HeldObject { get { return grabbedObject; } }
 
     #region FX
-    [SerializeField] ParticleSystem sweat = null;
+    [SerializeField] ParticleSystem sweatBack = null;
+    [SerializeField] ParticleSystem sweatFront = null;
 
 
     #endregion
@@ -74,9 +73,19 @@ public class WSB_PlayerInteraction : MonoBehaviour
     }
 
 
-    public void AnimationFinished(bool _s) => movable.CanMove = _s;
+    public void AnimationFinished(bool _s)
+    {
+        if (!_s)
+            movable.StopMoving();
+        
+        else
+            movable.CanMove = true;
+    }
+
 
     #region Lever
+    private WSB_Lever leverToTrigger = null;
+
     public void Lever(InputAction.CallbackContext _ctx)
     {
         if (!_ctx.started)
@@ -90,8 +99,11 @@ public class WSB_PlayerInteraction : MonoBehaviour
             if (!_lever.CanPress)
                 return;
 
-            _lever.Interact();
-            AnimateLever(_lever.Position);
+            movable.IsRight = _lever.Active;
+            movable.Rend.transform.eulerAngles = new Vector3(movable.Rend.transform.eulerAngles.x, _lever.Active ? 90 : -90, movable.Rend.transform.eulerAngles.z);
+
+            leverToTrigger = _lever;
+            AnimateLever();
         }
     }
 
@@ -104,16 +116,22 @@ public class WSB_PlayerInteraction : MonoBehaviour
         movable.StopMoving();
     }
 
-    public void AnimateLever(Vector2 _pos)
+    public void AnimateLever()
     {
         if (playerAnimator)
         {
-            movable.Rend.transform.eulerAngles = new Vector3(movable.Rend.transform.eulerAngles.x, isLeverRight ? 90 : -90, movable.Rend.transform.eulerAngles.z);
-            movable.IsRight = isLeverRight = !isLeverRight;
-            movable.SetPosition(_pos);
+            movable.SetPosition(leverToTrigger.Position);
             playerAnimator.SetTrigger(lever_Hash);
             movable.CanMove = false;
         }
+    }
+
+    public void ToggleLever()
+    {
+        if (leverToTrigger)
+            leverToTrigger.Interact();
+
+        leverToTrigger = null;
     }
     #endregion
 
@@ -124,8 +142,14 @@ public class WSB_PlayerInteraction : MonoBehaviour
         if (!_context.started || (GetComponent<WSB_Lux>() && GetComponent<WSB_Lux>().Shrinked))
             return;
 
-        if (playerAnimator)
-            playerAnimator.SetTrigger(pick_Hash);
+        RaycastHit2D[] _hit = new RaycastHit2D[1];
+        if(!grabbedObject && movable.MovableCollider.Cast(movable.IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, .5f) > 0 || grabbedObject)
+        {
+            if (playerAnimator)
+                playerAnimator.SetTrigger(pick_Hash);
+
+            movable.StopMoving();
+        }
     }
 
     void DropGrabbedObject()
@@ -144,9 +168,12 @@ public class WSB_PlayerInteraction : MonoBehaviour
         grabbedObject.SetPosition(new Vector3(grabbedObject.MovableRigidbody.position.x, grabbedObject.MovableRigidbody.position.y, 2));
         grabbedObject.RefreshOnMovingPlateform();
         grabbedObject = null;
+        movable.AddSpeedCoef(1.5f);
         
-        if (sweat)
-            sweat.Stop();
+        if (sweatBack)
+            sweatBack.Stop();
+        if (sweatFront)
+            sweatFront.Stop();
     }
 
     public void DropObject()
@@ -182,12 +209,15 @@ public class WSB_PlayerInteraction : MonoBehaviour
             }
 
             grabbedObject.MovableCollider.enabled = false;
+            movable.RemoveSpeedCoef(1.5f);
 
             if (playerAnimator)
                 playerAnimator.SetBool(grab_Hash, true);
 
-            if (sweat)
-                sweat.Play();
+            if (sweatBack)
+                sweatBack.Play();
+            if (sweatFront)
+                sweatFront.Play();
         }
     }
     #endregion

@@ -90,11 +90,6 @@ public class WSB_PlayerMovable : LG_Movable
                         else
                             Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, 90, Rend.transform.eulerAngles.z);
                     }
-
-                    if(PlayerAnimator.GetBool(turning_Hash))
-                    {
-                        Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, IsRight ? -90 : 90, Rend.transform.eulerAngles.z);
-                    }
                 }
             }
             if (isJumping)
@@ -147,7 +142,7 @@ public class WSB_PlayerMovable : LG_Movable
     // Reads x & y movement and sets it in xMovement & yMovement
     public void Move(InputAction.CallbackContext _context)
     {
-        if (_context.valueType != typeof(Vector2) || !CanMove) return;
+        if (_context.valueType != typeof(Vector2) /*|| !CanMove*/) return;
         XMovement = _context.ReadValue<Vector2>().x;
         YMovement = _context.ReadValue<Vector2>().y;
         pressDown = _context.ReadValue<Vector2>().y < 0;
@@ -160,6 +155,11 @@ public class WSB_PlayerMovable : LG_Movable
             jumpInput = _context.ReadValue<float>() == 1;
     }
     #endregion
+
+    public void Turn()
+    {
+        Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, IsRight ? 90 : -90, Rend.transform.eulerAngles.z);
+    }
 
     #region Jump
     // Makes the character jump
@@ -227,7 +227,6 @@ public class WSB_PlayerMovable : LG_Movable
 
     public void StopJump() => isJumping = false;
 
-    public void StopMoving() => XMovement = YMovement = 0;
 
     protected override void OnSetGrounded()
     {

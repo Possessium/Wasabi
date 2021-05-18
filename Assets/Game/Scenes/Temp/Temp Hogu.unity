@@ -826,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 5201212870536816819, guid: 25f4ba55638ead643aa8fdabc11e8abf,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5201212870536816822, guid: 25f4ba55638ead643aa8fdabc11e8abf,
         type: 3}
@@ -1605,7 +1605,7 @@ PrefabInstance:
     - target: {fileID: 5116671383415194171, guid: d1acb031ec524e6468031743dc15f3d6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5337615686082469020, guid: d1acb031ec524e6468031743dc15f3d6,
         type: 3}
@@ -1645,7 +1645,7 @@ PrefabInstance:
     - target: {fileID: 6440556262999617767, guid: d1acb031ec524e6468031743dc15f3d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6440556262999617767, guid: d1acb031ec524e6468031743dc15f3d6,
         type: 3}
@@ -2159,7 +2159,7 @@ PrefabInstance:
     - target: {fileID: 1365447000156757516, guid: 0ff904526b783674181160111a21d11f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ff904526b783674181160111a21d11f, type: 3}
@@ -2259,7 +2259,7 @@ PrefabInstance:
     - target: {fileID: 3319797153310874226, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3319797153310874231, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616,
         type: 3}
@@ -2333,7 +2333,7 @@ PrefabInstance:
     - target: {fileID: 6734575209522334005, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6734575209522334011, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
         type: 3}
@@ -2546,7 +2546,6 @@ MonoBehaviour:
       m_Calls: []
   characterPosition: {x: 0, y: 0}
   animator: {fileID: 0}
-  cooldown: 0.2
   CanPress: 1
 --- !u!1 &1975294426
 GameObject:

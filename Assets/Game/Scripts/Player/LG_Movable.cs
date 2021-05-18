@@ -227,6 +227,9 @@ public class LG_Movable : MonoBehaviour
 
     public virtual void MoveHorizontally(float _movement)
     {
+        if (!CanMove)
+            return;
+
         if (_movement == 0)
         {
             if(speed != 0)
@@ -239,6 +242,12 @@ public class LG_Movable : MonoBehaviour
         speed = movableValues.SpeedCurve.Evaluate(所有);
 
         movement.x += (_movement * speed);
+    }
+
+    public void StopMoving()
+    {
+        movement = Vector2.zero;
+        CanMove = false;
     }
 
     public void MoveVertically(float _movement) => movement.y += _movement;
@@ -786,6 +795,8 @@ public class LG_Movable : MonoBehaviour
             {
                 semiSolidCollider = null;
             }
+            if (_hitBuffer[i].normal.y == -1 && force.y > 0)
+                force.y = 0;
         }
 
         if (_hitAmount > 0)

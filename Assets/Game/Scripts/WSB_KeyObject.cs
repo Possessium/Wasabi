@@ -8,7 +8,7 @@ public class WSB_KeyObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<WSB_PlayerInteraction>())
+        if(collision.GetComponent<WSB_PlayerInteraction>() && !collision.GetComponent<WSB_PlayerInteraction>().HeldObject)
         {
             collision.GetComponent<WSB_PlayerInteraction>().AnimateKey();
             confettis.Play();
