@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 3ab1c314b36413a4482d0b841b9d87d9
+guid: 82fd4f800983eef4eb0eb64ea12377df
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: levier
+    second: leviernew
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: levier
+      name: leviernew
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 42
+      firstFrame: 120
+      lastFrame: 154
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -59,7 +59,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.24791086
+      - time: 0.25626758
         functionName: AnimateLever
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 1a280892c1a6c8540bd87f790a4599d7,
@@ -70,7 +70,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 120
     isReadable: 0
   meshes:
     lODScreenPercentages: []

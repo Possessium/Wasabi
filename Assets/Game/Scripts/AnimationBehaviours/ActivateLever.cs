@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnOnEnd : StateMachineBehaviour
+public class ActivateLever : StateMachineBehaviour
 {
-    private WSB_PlayerMovable playerMovable = null;
+    private WSB_Lever lever = null;
     private bool populated = false;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
-    //
+    //    
     //}
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -23,12 +23,12 @@ public class TurnOnEnd : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (!populated)
-            populated = playerMovable = animator.GetComponentInParent<WSB_PlayerMovable>();
+            populated = lever = animator.GetComponent<WSB_Lever>();
 
         if (!populated)
             return;
 
-        playerMovable.Turn();
+        lever.CanPress = true;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

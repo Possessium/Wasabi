@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnluckOnEnd : StateMachineBehaviour
+public class UnlockOnEnd : StateMachineBehaviour
 {
     WSB_PlayerInteraction playerInteraction = null;
     bool isFound = false;
