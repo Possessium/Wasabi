@@ -99,6 +99,8 @@ public class WSB_PlayerInteraction : MonoBehaviour
             if (!_lever.CanPress)
                 return;
 
+            _lever.DisablePress();
+
             movable.IsRight = _lever.Active;
             movable.Rend.transform.eulerAngles = new Vector3(movable.Rend.transform.eulerAngles.x, _lever.Active ? 90 : -90, movable.Rend.transform.eulerAngles.z);
 
@@ -122,7 +124,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
         {
             movable.SetPosition(leverToTrigger.Position);
             playerAnimator.SetTrigger(lever_Hash);
-            movable.CanMove = false;
+            movable.StopMoving();
         }
     }
 

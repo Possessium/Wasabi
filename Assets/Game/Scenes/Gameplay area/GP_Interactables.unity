@@ -170,6 +170,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.86602545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -120
+      objectReference: {fileID: 0}
     - target: {fileID: 3070379544864620075, guid: d1acb031ec524e6468031743dc15f3d6,
         type: 3}
       propertyPath: m_Layer
@@ -305,6 +325,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8660254
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7320424831987449656, guid: d1acb031ec524e6468031743dc15f3d6,
         type: 3}
       propertyPath: m_Layer
@@ -387,7 +427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736b63a56048580479f3aa239efbfdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   onActivate:
     m_PersistentCalls:
       m_Calls:
@@ -420,7 +459,6 @@ MonoBehaviour:
       m_Calls: []
   characterPosition: {x: 0, y: 0}
   animator: {fileID: 0}
-  cooldown: 0.2
   CanPress: 1
 --- !u!120 &64198766
 LineRenderer:
@@ -536,7 +574,7 @@ Animator:
   m_GameObject: {fileID: 64198763}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3c94177676d196e44b33a61be5b1e23d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3dd25155139af66409345d13edeb25f3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1613,6 +1651,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.86602545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -120
+      objectReference: {fileID: 0}
     - target: {fileID: 3070379544864620075, guid: d1acb031ec524e6468031743dc15f3d6,
         type: 3}
       propertyPath: m_Layer
@@ -1748,6 +1806,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8660254
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7320424831987449656, guid: d1acb031ec524e6468031743dc15f3d6,
         type: 3}
       propertyPath: m_Layer
@@ -1830,7 +1908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736b63a56048580479f3aa239efbfdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   onActivate:
     m_PersistentCalls:
       m_Calls:
@@ -1863,7 +1940,6 @@ MonoBehaviour:
         m_CallState: 2
   characterPosition: {x: 0, y: 0}
   animator: {fileID: 0}
-  cooldown: 0.2
   CanPress: 1
 --- !u!120 &890525329
 LineRenderer:
@@ -1982,7 +2058,7 @@ Animator:
   m_GameObject: {fileID: 890525326}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3c94177676d196e44b33a61be5b1e23d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3dd25155139af66409345d13edeb25f3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4467,6 +4543,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.86602545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -120
+      objectReference: {fileID: 0}
     - target: {fileID: 3070379544864620075, guid: d1acb031ec524e6468031743dc15f3d6,
         type: 3}
       propertyPath: m_Layer
@@ -4602,6 +4698,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8660254
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248978226904868787, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7320424831987449656, guid: d1acb031ec524e6468031743dc15f3d6,
         type: 3}
       propertyPath: m_Layer
@@ -4684,7 +4800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736b63a56048580479f3aa239efbfdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   onActivate:
     m_PersistentCalls:
       m_Calls:
@@ -4741,7 +4856,6 @@ MonoBehaviour:
         m_CallState: 2
   characterPosition: {x: 0, y: 0}
   animator: {fileID: 0}
-  cooldown: 0.2
   CanPress: 1
 --- !u!120 &1973754837
 LineRenderer:
@@ -4853,7 +4967,7 @@ Animator:
   m_GameObject: {fileID: 1973754834}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3c94177676d196e44b33a61be5b1e23d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3dd25155139af66409345d13edeb25f3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

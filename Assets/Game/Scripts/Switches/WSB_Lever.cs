@@ -30,10 +30,13 @@ public class WSB_Lever : MonoBehaviour
         Gizmos.DrawSphere((Vector2)transform.position + characterPosition, .2f);
     }
 
+    public void EnablePress() => CanPress = true;
+    public void DisablePress() => CanPress = false;
+
     public void Interact()
     {
         // Call activate event and inverse active bool
-        if(Active && CanPress)
+        if(Active)
         {
             if(animator)
             {
@@ -47,7 +50,7 @@ public class WSB_Lever : MonoBehaviour
             Active = CanPress = false;
         }
         // Call deactivate event and inverse active bool
-        else if (CanPress)
+        else
         {
             if (animator)
             {

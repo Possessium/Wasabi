@@ -22,6 +22,7 @@ public class ActivateLever : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.LogError("in");
         if (!populated)
             populated = lever = animator.GetComponent<WSB_Lever>();
 

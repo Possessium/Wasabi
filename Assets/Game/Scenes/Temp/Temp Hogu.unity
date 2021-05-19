@@ -655,7 +655,6 @@ GameObject:
   - component: {fileID: 528478489}
   - component: {fileID: 528478488}
   - component: {fileID: 528478487}
-  - component: {fileID: 528478486}
   - component: {fileID: 528478485}
   - component: {fileID: 528478484}
   m_Layer: 0
@@ -710,18 +709,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.1}
   m_EdgeRadius: 0
---- !u!114 &528478486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528478483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f71f82b31df929d4fb902eab0dbcf014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &528478487
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1536,6 +1523,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.86602545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645524811321905637, guid: d1acb031ec524e6468031743dc15f3d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 3070379544864620075, guid: d1acb031ec524e6468031743dc15f3d6,
         type: 3}
@@ -2537,7 +2549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736b63a56048580479f3aa239efbfdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   onActivate:
     m_PersistentCalls:
       m_Calls: []

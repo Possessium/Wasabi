@@ -59,7 +59,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.25626758
+      - time: 0.18830642
         functionName: AnimateLever
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 1a280892c1a6c8540bd87f790a4599d7,

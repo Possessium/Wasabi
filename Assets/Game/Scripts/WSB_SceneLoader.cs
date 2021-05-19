@@ -14,6 +14,7 @@ public class WSB_SceneLoader : MonoBehaviour
     public int LoadListSize = 0;
     public List<ScenePicker> AllScenesToUnloadInOrder = new List<ScenePicker>();
     public int UnloadListSize = 0;
+    public BoxCollider2D BlockingCollider = null;
 
     bool hasLux = false;
     bool hasBan = false;
@@ -71,6 +72,9 @@ public class WSB_SceneLoader : MonoBehaviour
 
     void Unload()
     {
+        if (BlockingCollider)
+            BlockingCollider.gameObject.SetActive(false);
+
         for (int i = 0; i < AllScenesToUnloadInOrder.Count; i++)
         {
             SceneManager.UnloadSceneAsync(AllScenesToUnloadInOrder[i].SceneName);
