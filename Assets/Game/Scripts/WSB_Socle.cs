@@ -26,6 +26,7 @@ public class WSB_Socle : MonoBehaviour
         if(isEndSocle)
         {
             onActivate.AddListener(WSB_Elevator.I.ActivateTrigger);
+            onDeactivate.AddListener(WSB_Elevator.I.DisableTrigger);
         }
     }
 

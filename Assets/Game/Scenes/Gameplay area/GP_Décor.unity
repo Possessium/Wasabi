@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 28504321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nature/Props exte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 219794829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Machinerie
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 299687214}
   - component: {fileID: 299687213}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 319083111}
   - component: {fileID: 319083112}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 365446182}
   - component: {fileID: 365446181}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Salle vide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450448935}
   - component: {fileID: 450448936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 473162610}
   - component: {fileID: 473162611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nuage 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 743546328}
   - component: {fileID: 743546329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,7 +696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 911657925}
   - component: {fileID: 911657926}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 940797046}
   - component: {fileID: 940797047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 947518933}
   - component: {fileID: 947518934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1051051553}
   - component: {fileID: 1051051552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ciel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1024,7 +1024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1136664231}
   - component: {fileID: 1136664232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1401632277}
   - component: {fileID: 1401632276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pailette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1188,7 +1188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1465401272}
   - component: {fileID: 1465401273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nuage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1270,7 +1270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561377015}
   - component: {fileID: 1561377016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1352,7 +1352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1626443122}
   - component: {fileID: 1626443123}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1434,7 +1434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1786025459}
   - component: {fileID: 1786025460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1515,7 +1515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1807435561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cabane
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1548,7 +1548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1870448892}
   - component: {fileID: 1870448893}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -88,7 +88,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
 
     public void Lever(InputAction.CallbackContext _ctx)
     {
-        if (!_ctx.started)
+        if (!_ctx.started || HeldObject)
             return;
 
         Collider2D _hit = Physics2D.OverlapBox(movable.MovableRigidbody.position + Vector2.up, Vector2.one, 0, movable.ControllerValues.LeverLayer);

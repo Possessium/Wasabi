@@ -52,5 +52,10 @@ public class WSB_Elevator : MonoBehaviour
         elevatorFX.Stop();
         trigger.enabled = true;
     }
+    public void DisableTrigger()
+    {
+        elevatorFX.Play();
+        trigger.enabled = false;
+    }
 
 }
