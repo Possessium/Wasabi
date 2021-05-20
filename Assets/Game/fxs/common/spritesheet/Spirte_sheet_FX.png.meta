@@ -26,6 +26,12 @@ TextureImporter:
   - first:
       213: -6000332733890134250
     second: Leaf_trampo
+  - first:
+      213: -4075001847565529470
+    second: pissenlit
+  - first:
+      213: 5599080825631443811
+    second: aigrettes
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,9 +62,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: 2
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 0
@@ -1637,6 +1643,48 @@ TextureImporter:
       bones: []
       spriteID: 61f745e6b298abca0800000000000000
       internalID: -6000332733890134250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pissenlit
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 353
+        width: 52
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ecbc0f86fa277c0800000000000000
+      internalID: -4075001847565529470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aigrettes
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 350
+        width: 48
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b8670885ee3bd40800000000000000
+      internalID: 5599080825631443811
       vertices: []
       indices: 
       edges: []
