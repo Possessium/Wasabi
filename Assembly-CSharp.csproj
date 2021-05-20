@@ -50,6 +50,7 @@
      <Compile Include="Assets\Wwise\Deployment\Components\AkRTPCTrack.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkAuxSendArray.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkWwiseEditorSettings.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
      <Compile Include="Assets\Game\Scripts\Powers\WSB_Wind.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Handwritten\WAAPI\AkWaapiClient_PINVOKE.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkSpeakerPanningType.cs" />
@@ -186,6 +187,7 @@
      <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseAuxBusReference.cs" />
      <Compile Include="Assets\Game\Scripts\Dialogues\WSB_Dialogue.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkPositionArray.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Linux\AkSoundEnginePINVOKE_Linux.cs" />
      <Compile Include="Assets\Wwise\Deployment\Components\AkSoundEngineController.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkCallbackInfo.cs" />
@@ -215,6 +217,7 @@
      <Compile Include="Assets\Wwise\Deployment\Components\AkMemBankLoader.cs" />
      <Compile Include="Assets\Wwise\Deployment\Components\AkObstructionOcclusion.cs" />
      <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerHandler.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
      <Compile Include="Assets\Unity\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Game\Scripts\AnimationBehaviours\ActivateLever.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkConnectionType.cs" />
@@ -258,6 +261,7 @@
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkPositioningInfo.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkAudioSettings.cs" />
      <Compile Include="Assets\Wwise\Deployment\Components\AkTerminator.cs" />
+     <Compile Include="Assets\Game\fxs\scripts\WSB_WindParticle.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMonitoringCallbackInfo.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkExternalSourceInfo.cs" />
      <Compile Include="Assets\Wwise\Deployment\Components\AkRoomPortal.cs" />
@@ -273,12 +277,14 @@
      <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkAudioInputManager.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkChannelConfig.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseTypes\AkWwiseBank.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseTypes\AkWwiseBaseGroupType.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseTriggerReference.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Windows\AkAudioAPI_Windows.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Timeline\AkTimelineRtpcTrack.cs" />
      <Compile Include="Assets\Wwise\Deployment\Components\AkEventTrack.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkCallbackType.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkAudioFormat.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkSourceChannelOrdering.cs" />
      <Compile Include="Assets\Game\Scripts\Camera\WSB_CameraManager.cs" />
@@ -308,6 +314,7 @@
      <Compile Include="Assets\Game\Scripts\Powers\WSB_Shrink.cs" />
      <Compile Include="Assets\Wwise\Deployment\Components\AkAudioListener.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Windows\AkSoundEnginePINVOKE_Windows.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkPanningRule.cs" />
      <Compile Include="Assets\Game\Scripts\WSB_BreakableObject.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkAcousticSurface.cs" />
@@ -909,88 +916,98 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualEffectGraph.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Universal.Shaders">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Universal.Runtime">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualEffectGraph.Runtime">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Searcher.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Core.Runtime">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.InputSystem">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ShaderGraph.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Universal.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Formats.Alembic.Runtime">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.Formats.Alembic.Runtime.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.Formats.Alembic.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Formats.Alembic.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.Formats.Alembic.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.Formats.Alembic.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Core.Editor">
- <HintPath>C:/Users/3D3_Alienware_01/Documents/GITHUB_KRAKEN/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+ <HintPath>C:/Users/3D3Alien_03/Documents/Hugo Guerquin/Wasabi/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="PathCreator.csproj">
+      <Project>{2CF02C31-A485-448C-073B-81E6D43F12B8}</Project>
+      <Name>PathCreator</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="PathCreatorEditor.csproj">
+      <Project>{00D6883D-1213-0B37-C3EF-2474FDCCAF50}</Project>
+      <Name>PathCreatorEditor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

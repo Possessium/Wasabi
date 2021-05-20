@@ -8,6 +8,9 @@ public class WSB_Trampoline : WSB_Plant
     [SerializeField] BoxCollider2D bounceCollider = null;
     [SerializeField] ParticleSystem trampolineBounceFX = null;
 
+
+    private static readonly int bounce_Hash = Animator.StringToHash("Bounce");
+
     protected override void OnDrawGizmos()
     {
         // don't show range on that plant
@@ -31,6 +34,10 @@ public class WSB_Trampoline : WSB_Plant
                     trampolineBounceFX.Play();
 
                 _movable.SetPosition(_movable.transform.position + Vector3.up * .5f);
+
+                if (animator)
+                    animator.SetTrigger(bounce_Hash);
+
                 _movable.TrampolineJump(Vector2.up * trampolineForce);
             }
         }

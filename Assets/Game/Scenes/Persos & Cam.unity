@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.17807674, g: 0.21671712, b: 0.26913905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6754,7 +6754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Trigger: {fileID: 0}
-  LoadOnPlay: 1
+  LoadOnPlay: 0
   AllScenesToLoadInOrder:
   - ScenePath: Assets/Game/Scenes/Gameplay area/GP_elevator.unity
     SceneName: GP_elevator

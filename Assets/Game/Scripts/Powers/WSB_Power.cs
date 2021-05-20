@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class WSB_Power : MonoBehaviour
 {
-    [SerializeField] Animator animator = null;
+    [SerializeField] protected Animator animator = null;
     [SerializeField] protected float range = 2;
 
     [SerializeField] ParticleSystem insectFX = null;
@@ -41,7 +41,7 @@ public abstract class WSB_Power : MonoBehaviour
     }
 
 
-    public void ActivatePower()
+    public virtual void ActivatePower()
     {
         IsActive = true;
         Owner = null;
