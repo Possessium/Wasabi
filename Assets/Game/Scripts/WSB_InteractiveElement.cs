@@ -30,5 +30,4 @@ public class WSB_InteractiveElement : MonoBehaviour
         if (isOneTimeUse)
             Destroy(this);
     }
-
 }
