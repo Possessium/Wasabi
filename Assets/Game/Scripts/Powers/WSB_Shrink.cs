@@ -5,7 +5,7 @@ using UnityEngine;
 public class WSB_Shrink : WSB_Rune
 {
     [SerializeField] Vector2 offset = Vector2.zero;
-    bool hasLux = false;
+    [SerializeField] bool hasLux = false;
     WSB_Lux lux = null;
 
     private void Start()
@@ -18,7 +18,7 @@ public class WSB_Shrink : WSB_Rune
     {
         Gizmos.color = new Color(0, 2, .3f, .6f);
         if(lux)
-            Gizmos.DrawWireSphere((Vector2)transform.position + offset, range * (lux.Shrinked ? 1 : .9f));
+            Gizmos.DrawWireSphere((Vector2)transform.position + offset, range);
         
         else
             Gizmos.DrawWireSphere((Vector2)transform.position + offset, range);
@@ -29,7 +29,7 @@ public class WSB_Shrink : WSB_Rune
         if (!lux)
             return;
 
-        if (!hasLux && !lux.Shrinked && !lux.PlayerInteraction.HeldObject && Vector2.Distance(transform.position, lux.transform.position) < range)
+        if (!hasLux && !lux.PlayerInteraction.HeldObject && Vector2.Distance(transform.position, lux.transform.position) < range)
         {
             hasLux = true;
 
@@ -38,7 +38,7 @@ public class WSB_Shrink : WSB_Rune
             return;
         }
 
-        else if (hasLux && Vector2.Distance(transform.position, lux.transform.position) > range)
+        else if (hasLux && !lux.PlayerInteraction.HeldObject && Vector2.Distance(transform.position, lux.transform.position) > range)
         {
             hasLux = false;
 

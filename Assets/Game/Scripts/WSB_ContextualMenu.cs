@@ -50,4 +50,9 @@ public class WSB_ContextualMenu : MonoBehaviour
             toShow.SetActive(false);
     }
 
+    public void Disable()
+    {
+        toShow.SetActive(false);
+    }
+
 }
