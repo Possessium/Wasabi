@@ -13,6 +13,14 @@ public class WSB_SwitchStairs : MonoBehaviour
 
     bool left = false;
 
+    private void Start()
+    {
+        if (leftStair)
+            leftStairMat = leftStair.GetComponentInChildren<MeshRenderer>().material;
+        if (rightStair)
+            rightStairMat = rightStair.GetComponentInChildren<MeshRenderer>().material;
+    }
+
     private void Update()
     {
         if(left)

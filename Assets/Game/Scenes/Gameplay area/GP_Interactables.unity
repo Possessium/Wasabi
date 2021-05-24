@@ -1280,6 +1280,7 @@ GameObject:
   - component: {fileID: 502840231}
   - component: {fileID: 502840232}
   - component: {fileID: 502840233}
+  - component: {fileID: 502840234}
   m_Layer: 0
   m_Name: Poudlard stairs
   m_TagString: Untagged
@@ -1340,6 +1341,24 @@ MonoBehaviour:
   - {fileID: 502840232}
   isOneTimeUse: 0
   isAnimationPlayOnTrigger: 0
+--- !u!114 &502840234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502840230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b77b22622cba5964a9dd96a87d81d8e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftStair: {fileID: 919132147882066672}
+  leftStairMat: {fileID: 0}
+  rightStair: {fileID: 919132148869235031}
+  rightStairMat: {fileID: 0}
+  enabledColor: {r: 1, g: 1, b: 1, a: 1}
+  disabledColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1001 &590646877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2650,6 +2669,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 502840234}
+        m_TargetAssemblyTypeName: WSB_SwitchStairs, Assembly-CSharp
+        m_MethodName: SwitchMaterial
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onDeactivate:
     m_PersistentCalls:
       m_Calls:
@@ -2657,6 +2688,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: WSB_InteractiveElement, Assembly-CSharp
         m_MethodName: ActivateAnimators
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 502840234}
+        m_TargetAssemblyTypeName: WSB_SwitchStairs, Assembly-CSharp
+        m_MethodName: SwitchMaterial
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
