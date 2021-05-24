@@ -116,6 +116,7 @@
     <Compile Include="Assets\Game\Scripts\WSB_KeyObject.cs" />
     <Compile Include="Assets\Game\Scripts\WSB_MenuManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Linux\AkSoundEngine_Linux.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_SwitchStairs.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkCallbackManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkActionOnEventType.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkDynamicSequenceItemCallbackInfo.cs" />
@@ -330,7 +331,6 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkRoomParams.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerCollisionEnter.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkDiffractionPathInfoArray.cs" />
-    <Compile Include="Assets\Game\Scripts\WSB_SwitchStairs.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86_64\DSP\MSSpatial.dll" />

@@ -8,7 +8,14 @@ public class WSB_BreakableObject : MonoBehaviour
     public UnityEvent CallBack = null;
 
     [SerializeField] GameObject destroyFX = null;
+    [SerializeField] private Vector2 position = Vector2.zero;
     private bool isQuitting = false;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawSphere((Vector2)transform.position + position, .2f);
+    }
 
     private void OnDestroy()
     {
@@ -16,15 +23,15 @@ public class WSB_BreakableObject : MonoBehaviour
             return;
 
         if (destroyFX)
-            Instantiate(destroyFX, transform.position, Quaternion.identity);
+            Instantiate(destroyFX, (Vector2)transform.position + position, Quaternion.identity);
 
         CallBack?.Invoke();
     }
 
-    private void OnDisable()
-    {
-        isQuitting = true;
-    }
+    //private void OnDisable()
+    //{
+    //    isQuitting = true;
+    //}
 
     private void OnApplicationQuit()
     {
