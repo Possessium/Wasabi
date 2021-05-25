@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2545029128938760273}
   - component: {fileID: 2545029128938760272}
   m_Layer: 0
-  m_Name: 'Pissenlit '
+  m_Name: Pissenlit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

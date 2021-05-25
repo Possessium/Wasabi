@@ -207,7 +207,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
             if (playerHands)
             {
                 grabbedObject.transform.parent = playerHands;
-                grabbedObject.transform.position = playerHands.transform.position + ((movable.IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right) * (GetComponent<WSB_Ban>() ? 1.2f : .85f));
+                grabbedObject.transform.position = playerHands.transform.position + ((movable.IsRight ? Vector3.right : Vector3.left) * (GetComponent<WSB_Ban>() ? 1.2f : .85f));
             }
 
             grabbedObject.MovableCollider.enabled = false;
