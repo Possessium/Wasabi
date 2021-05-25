@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7408784975291110270}
-  m_Mesh: {fileID: -2661208095611027421, guid: c3e613071c312634ca6cc968f70bf9fb, type: 3}
+  m_Mesh: {fileID: -2661208095611027421, guid: 8bd5ec1425137fe4fa3aba9d23d12f0e, type: 3}
 --- !u!23 &9066228590744826539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.49743375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}

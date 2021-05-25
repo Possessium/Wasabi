@@ -4,23 +4,53 @@ using UnityEngine;
 
 public class WSB_Elevator : MonoBehaviour
 {
-    [SerializeField] GameObject pivotLeft = null;
-    [SerializeField] GameObject pivotRight = null;
-    [SerializeField] LineRenderer line = null;
-    [SerializeField] Animator animator = null;
-    [SerializeField] WSB_EventOnDestroy destroyEvent = null;
+    public static WSB_Elevator I { get; private set; }
 
-    private void Start()
+    [SerializeField] private Animator animator = null;
+    [SerializeField] private BoxCollider2D block = null;
+    [SerializeField] private BoxCollider2D trigger = null;
+    [SerializeField] private ParticleSystem elevatorFX = null;
+
+    private static readonly int startElevator_Hash = Animator.StringToHash("Start");
+
+    private int playersIn = 0;
+
+    private void Awake()
     {
-        WSB_GameManager.I.RegisterElevator(animator);
-        destroyEvent.CallBack.AddListener(WSB_GameManager.I.ElevatorRepaired);
+        I = this;
     }
 
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        line.SetPosition(1, new Vector3(pivotLeft.transform.position.x, pivotLeft.transform.position.y, -5));
-        line.SetPosition(2, new Vector3(pivotRight.transform.position.x, pivotRight.transform.position.y, -5));
+        if (!collision.GetComponent<WSB_PlayerInteraction>())
+            return;
+
+        playersIn++;
+        if (playersIn == 2)
+            ActivateElevator();
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!collision.GetComponent<WSB_PlayerInteraction>())
+            return;
+
+        playersIn--;
+    }
+
+
+
+
+    private void ActivateElevator()
+    {
+        animator.SetTrigger(startElevator_Hash);
+        block.enabled = true;
+    }
+
+    public void ActivateTrigger()
+    {
+        elevatorFX.Stop();
+        trigger.enabled = true;
+    }
 
 }

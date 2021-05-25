@@ -31,23 +31,8 @@ public class WSB_GameManager : MonoBehaviour
     private void Start()
     {
         currentLevel = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        // Hide the mouse cursor
-        //Cursor.visible = false;
-
-        //// Get every Rigidbody in the scene and freeze them
-        //Rigidbody2D[] _physics = FindObjectsOfType<Rigidbody2D>();
-        //foreach (Rigidbody2D _r in _physics)
-        //{
-        //    _r.isKinematic = true;
-        //    _r.velocity = Vector2.zero;
-        //    _r.angularVelocity = 0;
-        //}
 
         InputSystem.onDeviceChange += DeviceChange;
-
-
-        // Debug to start game
-        //Resume();
     }
 
     private void DeviceChange(InputDevice arg1, InputDeviceChange arg2)
@@ -57,31 +42,13 @@ public class WSB_GameManager : MonoBehaviour
             Paused = true;
 
             OnPause?.Invoke();
-            //menuPause.SetActive(true);
-            //EventSystem.current.SetSelectedGameObject(menuPause.GetComponentInChildren<UnityEngine.UI.Button>().gameObject);
         }
     }
 
 
     private void Update()
     {
-        // Cheat codes
-        // *   *   *   *   *   *   *
-        //if (Keyboard.current.pKey.isPressed)
-        //    ReloadScene();
-        //if(Paused)
-        //{
-        //    if (Keyboard.current.numpad1Key.isPressed)
-        //        StartGame("Keyboard");
-        //    if (Keyboard.current.numpad2Key.isPressed)
-        //        StartGame("Controller");
-        //    if (Keyboard.current.numpad3Key.isPressed)
-        //        StartGame("Both");
-        //}
-
         Paused = paused;
-        // *   *   *   *   *   *   *
-
 
         // Invoke the main Update of the game if it is not paused
         if (!Paused)
@@ -90,8 +57,8 @@ public class WSB_GameManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<WSB_Player>())
-            WSB_CheckpointManager.I.Respawn(collision.GetComponent<WSB_Player>());
+        if (collision.GetComponent<WSB_PlayerMovable>())
+            WSB_CheckpointManager.I.Respawn(collision.GetComponent<WSB_PlayerMovable>());
     }
 
 
@@ -122,53 +89,16 @@ public class WSB_GameManager : MonoBehaviour
         OnResume?.Invoke();
     }
 
-    public void SetBanController(bool _isBan)
-    {
-        isBanController = _isBan;
-    }
-
-    bool isBanController = false;
-
     public void RegisterElevator(Animator _a)
     {
         elevatorAnimator = _a;
     }
     public void StartGame(string _m)
     {
-
-        switch (_m)
-        {
-            case "Controller":
-                if (!WSB_InputManager.I.ChangeControllers(ControlsMode.Controller, isBanController)) return;
-                break;
-            case "Keyboard":
-                if (!WSB_InputManager.I.ChangeControllers(ControlsMode.Keyboard, isBanController)) return;
-                break;
-            case "Both":
-                if (!WSB_InputManager.I.ChangeControllers(ControlsMode.ControllerKeyboard, isBanController)) return;
-                break;
-            default:
-                return;
-        }
-
-        //// Get all the rigidbody in the scene and unfreeze them
-        //Rigidbody2D[] _physics = FindObjectsOfType<Rigidbody2D>();
-        //foreach (Rigidbody2D _r in _physics)
-        //{
-        //    if (_r.GetComponent<WSB_Player>() || _r.GetComponent<WSB_Movable>() || _r.GetComponent<WSB_MovingPlateform>() || _r.transform.tag == "Earth")
-        //        continue;
-        //    _r.isKinematic = false;
-        //}
-
         // Set Pause to false
         Paused = false;
 
-
-
         OnResume?.Invoke();
-
-        //// Hide menu
-        //menu.SetActive(false);
     }
 
     public void ReloadScene()

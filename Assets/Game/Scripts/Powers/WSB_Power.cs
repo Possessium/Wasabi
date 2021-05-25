@@ -3,19 +3,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WSB_Power : LG_Movable
+public abstract class WSB_Power : MonoBehaviour
 {
     [SerializeField] Animator animator = null;
     [SerializeField] protected float range = 2;
+
+    [SerializeField] ParticleSystem insectFX = null;
+    [SerializeField] ParticleSystem dropFX = null;
+
     public bool IsActive = true;
-    public WSB_Player Owner { get; private set; } = null;
+    public WSB_PlayerMovable Owner { get; private set; } = null;
+    [SerializeField] protected LG_Movable movable = null;
 
-    public override void Start()
+    private static readonly int grow_Hash = Animator.StringToHash("Grow");
+    private static readonly int shrink_Hash = Animator.StringToHash("Shrink");
+
+    private void Start()
     {
-        base.Start();
-
         if (!animator)
             TryGetComponent(out animator);
+    }
+
+    private void Update()
+    {
+        if (IsActive)
+        {
+            PlayPower();
+            transform.position = new Vector3(transform.position.x, transform.position.y, 2);
+        }
 
     }
 
@@ -31,25 +46,32 @@ public class WSB_Power : LG_Movable
         IsActive = true;
         Owner = null;
 
-        collider.size = collider.size * 2;
+        movable.MovableCollider.size *= 2;
+
+        if (dropFX)
+            dropFX.Play();
 
         if (animator)
-            animator.SetTrigger("Grow");
+            animator.SetTrigger(grow_Hash);
     }
 
-    public void DeactivatePower(WSB_Player _p)
+    public virtual void DeactivatePower(WSB_PlayerMovable _p)
     {
         IsActive = false;
         Owner = _p;
 
-        collider.size = collider.size / 2;
+        movable.MovableCollider.size /= 2;
 
         if (animator)
-            animator.SetTrigger("Shrink");
+            animator.SetTrigger(shrink_Hash);
+
+        if (insectFX)
+            insectFX.Play();
     }
 
+    abstract protected void PlayPower();
     internal void Lock(bool v)
     {
-        CanMove = v;
+        movable.CanMove = v;
     }
 }

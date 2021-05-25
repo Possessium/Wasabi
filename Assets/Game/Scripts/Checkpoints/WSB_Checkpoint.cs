@@ -17,7 +17,7 @@ public class WSB_Checkpoint : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // If a player enter the trigger, tells the manager this is the new checkpoint
-        if(collision.GetComponent<WSB_Player>())
+        if(collision.GetComponent<WSB_PlayerMovable>())
         {
             WSB_CheckpointManager.I.SetNewCheckpoint(this, collision.GetComponent<WSB_Ban>());
         }
