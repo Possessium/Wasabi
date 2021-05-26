@@ -18,7 +18,6 @@ public class WSB_PlayerMovable : LG_Movable
     [SerializeField] private Animator PlayerAnimator = null;
 
     private bool jumpInput = false;
-    private bool pressDown = false;
 
     private float coyoteVar = -999;
     private float jumpOriginHeight = 0;
@@ -62,7 +61,18 @@ public class WSB_PlayerMovable : LG_Movable
 
                 PlayerAnimator.SetBool(jump_Hash, isJumping);
 
-                PlayerAnimator.SetBool(grounded_Hash,IsGrounded ? true : (IsOnMovingPlateform && !isJumping) ? true : false);
+                if (IsGrounded)
+                    PlayerAnimator.SetBool(grounded_Hash, true);
+                else
+                {
+                    if (IsOnMovingPlateform && !isJumping)
+                        PlayerAnimator.SetBool(grounded_Hash, true);
+                    else if (semiSolidCollider && !isJumping)
+                        PlayerAnimator.SetBool(grounded_Hash, true);
+                    else PlayerAnimator.SetBool(grounded_Hash, false);
+                }
+
+                //PlayerAnimator.SetBool(grounded_Hash,IsGrounded ? true : (IsOnMovingPlateform && !isJumping) ? true : false);
 
                 if (CanMove)
                 {
@@ -142,7 +152,7 @@ public class WSB_PlayerMovable : LG_Movable
         if (_context.valueType != typeof(Vector2) /*|| !CanMove*/) return;
         XMovement = _context.ReadValue<Vector2>().x;
         YMovement = _context.ReadValue<Vector2>().y;
-        pressDown = _context.ReadValue<Vector2>().y < -.8f;
+        PressDown = _context.ReadValue<Vector2>().y < -.8f;
     }
 
     // Reads jump input and sets it in jumpInput
@@ -163,7 +173,7 @@ public class WSB_PlayerMovable : LG_Movable
     void Jump()
     {
         // Checks if input was in direction of the ground
-        if (pressDown)
+        if (PressDown)
         {
             // Cast below character to found if there is any SemiSolid plateform
             RaycastHit2D[] _hits = new RaycastHit2D[1];
@@ -172,12 +182,11 @@ public class WSB_PlayerMovable : LG_Movable
 
                 // If found set collider in ignoredCollider and don't do the jump
                 semiSolidCollider = _hits[0].collider;
-                dontResetSemiSolid = true;
                 return;
             }
         }
 
-        dontResetSemiSolid = false;
+        PressDown = false;
 
         isJumping = true;
 

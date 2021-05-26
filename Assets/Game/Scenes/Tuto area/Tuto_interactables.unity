@@ -644,7 +644,7 @@ MonoBehaviour:
   force: {x: 0, y: 0}
   instantForce: {x: 0, y: 0}
   movement: {x: 0, y: 0}
-  dontResetSemiSolid: 0
+  PressDown: 0
   semiSolidCollider: {fileID: 0}
   jumpVar: 0
   isJumping: 0
@@ -1614,12 +1614,12 @@ PrefabInstance:
     - target: {fileID: 3319797153310874231, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.5
+      value: -5.46
       objectReference: {fileID: 0}
     - target: {fileID: 3319797153310874231, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.5
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 3319797153310874231, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616,
         type: 3}
@@ -2052,12 +2052,12 @@ PrefabInstance:
     - target: {fileID: 1365447000156757506, guid: 0ff904526b783674181160111a21d11f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -18.72
       objectReference: {fileID: 0}
     - target: {fileID: 1365447000156757506, guid: 0ff904526b783674181160111a21d11f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.22
       objectReference: {fileID: 0}
     - target: {fileID: 1365447000156757506, guid: 0ff904526b783674181160111a21d11f,
         type: 3}
@@ -2440,7 +2440,7 @@ MonoBehaviour:
   force: {x: 0, y: 0}
   instantForce: {x: 0, y: 0}
   movement: {x: 0, y: 0}
-  dontResetSemiSolid: 0
+  PressDown: 0
   semiSolidCollider: {fileID: 0}
   jumpVar: 0
   isJumping: 0
