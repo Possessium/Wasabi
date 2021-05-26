@@ -81,3 +81,4 @@ Library/SceneVisibilityState.asset
 Library/ShaderCache
 Library/ShaderCache.db
 *.validationcache
+*.prof
