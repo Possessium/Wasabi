@@ -1,7 +1,7 @@
 sceneSetups:
 - path: Assets/Game/Scenes/Persos & Cam.unity
   isLoaded: 1
-  isActive: 1
+  isActive: 0
   isSubScene: 0
 - path: Assets/Game/Scenes/Gameplay area/GP_Plateformes.unity
   isLoaded: 1
@@ -24,6 +24,26 @@ sceneSetups:
   isActive: 0
   isSubScene: 0
 - path: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_plateformes.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_plateformes.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_plateformes.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
+- path: Assets/Game/Scenes/Tuto area/Tuto_plateformes.unity
   isLoaded: 1
   isActive: 0
   isSubScene: 0
