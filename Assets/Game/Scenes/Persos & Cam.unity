@@ -6785,23 +6785,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Trigger: {fileID: 0}
-  LoadOnPlay: 0
+  LoadOnPlay: 1
   AllScenesToLoadInOrder:
-  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_elevator.unity
-    SceneName: GP_elevator
-  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Plateformes.unity
-    SceneName: GP_Plateformes
-  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
-    SceneName: GP_Interactables
-  - ScenePath: "Assets/Game/Scenes/Gameplay area/GP_D\xE9cor.unity"
-    SceneName: "GP_D\xE9cor"
-  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
-    SceneName: GP_Lights
-  - ScenePath: Assets/Game/Scenes/Sound_Design.unity
-    SceneName: Sound_Design
+  - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_plateformes.unity
+    SceneName: Tuto_plateformes
+  - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_interactables.unity
+    SceneName: Tuto_interactables
+  - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_lights.unity
+    SceneName: Tuto_lights
+  - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
+    SceneName: T1_plateformes
   - ScenePath: Assets/Game/Scenes/Music.unity
     SceneName: Music
-  LoadListSize: 7
+  - ScenePath: Assets/Game/Scenes/Sound_Design.unity
+    SceneName: Sound_Design
+  LoadListSize: 6
   AllScenesToUnloadInOrder: []
   UnloadListSize: 0
   BlockingCollider: {fileID: 0}
@@ -7202,7 +7200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460986512884628068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 112.29, y: -62.75, z: 0}
+  m_LocalPosition: {x: 127, y: -58.25, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1433720641}
@@ -8339,7 +8337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6072583074185493578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 134.7, y: -88.5, z: 0}
+  m_LocalPosition: {x: 140, y: -56, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1600151151}

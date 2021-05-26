@@ -448,7 +448,7 @@ public class LG_Movable : MonoBehaviour
         ExtractFromCollisions();
 
         if ((Vector2)transform.position != MovableRigidbody.position)
-            transform.position = MovableRigidbody.position;
+            transform.position = new Vector3(MovableRigidbody.position.x, MovableRigidbody.position.y, transform.position.z);
     }
 
     // -----------------------

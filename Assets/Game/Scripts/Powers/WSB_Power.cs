@@ -30,7 +30,6 @@ public abstract class WSB_Power : MonoBehaviour
         if (IsActive)
         {
             PlayPower();
-            transform.position = new Vector3(transform.position.x, transform.position.y, 2);
         }
 
     }

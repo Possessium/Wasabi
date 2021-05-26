@@ -9,7 +9,13 @@ public class WSB_Elevator : MonoBehaviour
     [SerializeField] private Animator animator = null;
     [SerializeField] private BoxCollider2D block = null;
     [SerializeField] private BoxCollider2D trigger = null;
-    [SerializeField] private ParticleSystem elevatorFX = null;
+
+    [SerializeField] private ParticleSystem elevatorStuckFX = null;
+
+    [SerializeField] private WSB_SceneLoader bottomSceneLoader = null;
+    [SerializeField] private WSB_SceneLoader stuckSceneLoader = null;
+
+    private ElevatorState elevatorState = ElevatorState.Bottom;
 
     private static readonly int startElevator_Hash = Animator.StringToHash("Start");
 
@@ -36,6 +42,9 @@ public class WSB_Elevator : MonoBehaviour
             return;
 
         playersIn--;
+
+        if (playersIn < 0)
+            playersIn = 0;
     }
 
 
@@ -43,19 +52,82 @@ public class WSB_Elevator : MonoBehaviour
 
     private void ActivateElevator()
     {
-        animator.SetTrigger(startElevator_Hash);
+        playersIn = 0;
+        switch (elevatorState)
+        {
+            case ElevatorState.Bottom:
+                bottomSceneLoader.OnScenesReady += StartElevator;
+                bottomSceneLoader.NextScene();
+
+                elevatorState = ElevatorState.Stuck;
+
+                bottomSceneLoader.enabled = false;
+                stuckSceneLoader.enabled = true;
+                break;
+            case ElevatorState.Stuck:
+                stuckSceneLoader.OnScenesReady += StartElevator;
+                stuckSceneLoader.NextScene();
+
+                elevatorState = ElevatorState.Top;
+
+                stuckSceneLoader.enabled = false;
+                break;
+        }
         block.enabled = true;
+        trigger.enabled = false;
+    }
+
+    void StartElevator()
+    {
+        animator.SetTrigger(startElevator_Hash);
+        switch (elevatorState)
+        {
+            case ElevatorState.Stuck:
+                bottomSceneLoader.OnScenesReady -= StartElevator;
+                break;
+            case ElevatorState.Top:
+                stuckSceneLoader.OnScenesReady -= StartElevator;
+                break;
+        }
     }
 
     public void ActivateTrigger()
     {
-        elevatorFX.Stop();
-        trigger.enabled = true;
-    }
-    public void DisableTrigger()
-    {
-        elevatorFX.Play();
-        trigger.enabled = false;
+        switch (elevatorState)
+        {
+            case ElevatorState.Bottom:
+                break;
+            case ElevatorState.Stuck:
+                elevatorStuckFX.Stop();
+                trigger.enabled = true;
+                break;
+            case ElevatorState.Top:
+                break;
+        }
     }
 
+    public void DisableTrigger()
+    {
+        switch (elevatorState)
+        {
+            case ElevatorState.Bottom:
+                break;
+            case ElevatorState.Stuck:
+                elevatorStuckFX.Play();
+                trigger.enabled = false;
+                break;
+            case ElevatorState.Top:
+                break;
+            default:
+                break;
+        }
+    }
+
+}
+
+public enum ElevatorState
+{
+    Bottom,
+    Stuck,
+    Top
 }

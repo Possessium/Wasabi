@@ -494,6 +494,8 @@ GameObject:
   - component: {fileID: 517820873}
   - component: {fileID: 517820875}
   - component: {fileID: 517820874}
+  - component: {fileID: 517820877}
+  - component: {fileID: 517820876}
   m_Layer: 0
   m_Name: Elevator
   m_TagString: Untagged
@@ -509,7 +511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517820870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.55789, y: -24.911648, z: 14.11729}
+  m_LocalPosition: {x: 2.55789, y: -36.911648, z: 14.11729}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2030809026}
@@ -545,7 +547,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517820870}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -579,7 +581,9 @@ MonoBehaviour:
   animator: {fileID: 517820872}
   block: {fileID: 517820873}
   trigger: {fileID: 517820875}
-  elevatorFX: {fileID: 153709271}
+  elevatorStuckFX: {fileID: 153709271}
+  bottomSceneLoader: {fileID: 517820877}
+  stuckSceneLoader: {fileID: 517820876}
 --- !u!61 &517820875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -587,7 +591,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517820870}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -606,6 +610,70 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.449479, y: 4.3744907}
   m_EdgeRadius: 0
+--- !u!114 &517820876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517820870}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093ec8c4f899be74cb665c1f371aebdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trigger: {fileID: 0}
+  LoadOnPlay: 0
+  AllScenesToLoadInOrder:
+  - ScenePath: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_plateformes.unity
+    SceneName: T2_plateformes
+  LoadListSize: 1
+  AllScenesToUnloadInOrder:
+  - ScenePath: Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_plateformes.unity
+    SceneName: T_serre_bas_plateformes
+  UnloadListSize: 1
+  BlockingCollider: {fileID: 0}
+--- !u!114 &517820877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517820870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093ec8c4f899be74cb665c1f371aebdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trigger: {fileID: 0}
+  LoadOnPlay: 0
+  AllScenesToLoadInOrder:
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Plateformes.unity
+    SceneName: GP_Plateformes
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
+    SceneName: GP_Interactables
+  - ScenePath: "Assets/Game/Scenes/Gameplay area/GP_D\xE9cor.unity"
+    SceneName: "GP_D\xE9cor"
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
+    SceneName: GP_Lights
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_FX.unity
+    SceneName: GP_FX
+  - ScenePath: Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_plateformes.unity
+    SceneName: T_serre_haut_plateformes
+  - ScenePath: "Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_D\xE9cor.unity"
+    SceneName: "T_serre_haut_D\xE9cor"
+  LoadListSize: 7
+  AllScenesToUnloadInOrder:
+  - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_interactables.unity
+    SceneName: Tuto_interactables
+  - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_plateformes.unity
+    SceneName: Tuto_plateformes
+  - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_lights.unity
+    SceneName: Tuto_lights
+  - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
+    SceneName: T1_plateformes
+  UnloadListSize: 4
+  BlockingCollider: {fileID: 0}
 --- !u!1001 &535091295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -617,6 +685,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: broken_thick_smoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 352528409745181481, guid: 2720abf23b02cdc46a440706f4bbfa2b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2097622393242098048, guid: 2720abf23b02cdc46a440706f4bbfa2b,
         type: 3}
@@ -710,7 +783,7 @@ PrefabInstance:
     - target: {fileID: 583348426443034168, guid: c4ae23de0d17fbf46803a35116dcff73,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.117293
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 583348426443034168, guid: c4ae23de0d17fbf46803a35116dcff73,
         type: 3}
@@ -1338,7 +1411,7 @@ PrefabInstance:
     - target: {fileID: 6895461323742639177, guid: f377346f5bda7324786f0ac2376e20fc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.117293
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 6895461323742639177, guid: f377346f5bda7324786f0ac2376e20fc,
         type: 3}

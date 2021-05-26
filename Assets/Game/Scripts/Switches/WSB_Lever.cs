@@ -44,7 +44,7 @@ public class WSB_Lever : MonoBehaviour
                 animator.SetTrigger(activate_Hash);
             }
 
-            transform.position = new Vector3(transform.position.x, transform.position.y, -2);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -7);
 
             onDeactivate?.Invoke();
             Active = CanPress = false;

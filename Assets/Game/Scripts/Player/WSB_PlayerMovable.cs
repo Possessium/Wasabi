@@ -36,7 +36,6 @@ public class WSB_PlayerMovable : LG_Movable
     private static readonly int run_Hash = Animator.StringToHash("Run");
     private static readonly int jump_Hash = Animator.StringToHash("Jump");
     private static readonly int grounded_Hash = Animator.StringToHash("Grounded");
-    private static readonly int turning_Hash = Animator.StringToHash("Turning");
     private static readonly int rotate_Hash = Animator.StringToHash("Rotate");
     #endregion
 
@@ -72,7 +71,6 @@ public class WSB_PlayerMovable : LG_Movable
                         IsRight = false;
                         if (IsGrounded)
                         {
-                            PlayerAnimator.SetBool(turning_Hash, true);
                             PlayerAnimator.SetTrigger(rotate_Hash);
                         }
                         else
@@ -84,7 +82,6 @@ public class WSB_PlayerMovable : LG_Movable
                         IsRight = true;
                         if (IsGrounded)
                         {
-                            PlayerAnimator.SetBool(turning_Hash, true);
                             PlayerAnimator.SetTrigger(rotate_Hash);
                         }
                         else
@@ -145,7 +142,7 @@ public class WSB_PlayerMovable : LG_Movable
         if (_context.valueType != typeof(Vector2) /*|| !CanMove*/) return;
         XMovement = _context.ReadValue<Vector2>().x;
         YMovement = _context.ReadValue<Vector2>().y;
-        pressDown = _context.ReadValue<Vector2>().y < 0;
+        pressDown = _context.ReadValue<Vector2>().y < -.8f;
     }
 
     // Reads jump input and sets it in jumpInput
