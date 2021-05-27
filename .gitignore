@@ -83,3 +83,5 @@ Library/ShaderCache.db
 Assembly-CSharp.csproj
 Library/ScriptAssemblies
 Library/SceneVisibilityState.asset
+.vs/Wasabi/v16/.suo
+Library/InspectorExpandedItems.asset
