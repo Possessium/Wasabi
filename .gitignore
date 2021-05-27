@@ -85,3 +85,6 @@ Library/ScriptAssemblies
 Library/SceneVisibilityState.asset
 .vs/Wasabi/v16/.suo
 Library/InspectorExpandedItems.asset
+Library/ShaderCache/EditorEncounteredVariants
+Assembly-CSharp.csproj
+Wasabi.sln
