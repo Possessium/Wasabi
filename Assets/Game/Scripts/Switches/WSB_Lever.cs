@@ -30,7 +30,14 @@ public class WSB_Lever : MonoBehaviour
         Gizmos.DrawSphere((Vector2)transform.position + characterPosition, .2f);
     }
 
-    public void EnablePress() => CanPress = true;
+    public void EnablePress() => StartCoroutine(Cooldown());
+
+    IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(1.5f);
+        CanPress = true;
+    }
+
     public void DisablePress() => CanPress = false;
 
     public void Interact()
