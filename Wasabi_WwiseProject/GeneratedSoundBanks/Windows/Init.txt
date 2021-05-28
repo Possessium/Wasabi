@@ -3,6 +3,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	428663473	GH1			\Default Work Unit\Master Audio Bus\ENV\GH1	
 	428663474	GH2			\Default Work Unit\Master Audio Bus\ENV\GH2	
 	428663475	GH3			\Default Work Unit\Master Audio Bus\ENV\GH3	
+	428993202	Ban_Runes			\Default Work Unit\Master Audio Bus\BAN\Ban_Runes	
 	487774080	Ban_Foley			\Default Work Unit\Master Audio Bus\BAN\Ban_Foley	
 	500672212	Runes			\Default Work Unit\Master Audio Bus\INTERRACTION\Runes	
 	513390140	BAN			\Default Work Unit\Master Audio Bus\BAN	
