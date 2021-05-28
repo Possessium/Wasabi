@@ -176,7 +176,6 @@
     <Compile Include="Assets/Game/Scripts/Powers/WSB_Power.cs" />
     <Compile Include="Assets/Wwise/Deployment/API/Generated/Common/Ak3DSpatializationMode.cs" />
     <Compile Include="Assets/Wwise/Deployment/API/Generated/Common/AkRamp.cs" />
-    <Compile Include="Assets/Game/Scripts/Player/SO_MovableValues.cs" />
     <Compile Include="Assets/Game/Scripts/WSB_GameManager.cs" />
     <Compile Include="Assets/Wwise/Deployment/Components/AkEarlyReflections.cs" />
     <Compile Include="Assets/Game/Scripts/Switches/WSB_Button.cs" />
@@ -216,6 +215,7 @@
     <Compile Include="Assets/Wwise/Deployment/API/Generated/Common/AkImageSourceSettings.cs" />
     <Compile Include="Assets/Wwise/Deployment/API/Handwritten/Common/AkUtilities.cs" />
     <Compile Include="Assets/Wwise/Deployment/API/Generated/Common/AkMeteringFlags.cs" />
+    <Compile Include="Assets/Game/Scripts/Plants/WSB_Trampoline.cs" />
     <Compile Include="Assets/Wwise/Extensions/AkSoundEngine.extensions.cs" />
     <Compile Include="Assets/Wwise/Deployment/API/Generated/Common/AkResourceMonitorDataSummary.cs" />
     <Compile Include="Assets/Wwise/Deployment/API/Generated/Common/AkAuxSendValue.cs" />
@@ -321,6 +321,11 @@
     <Compile Include="Assets/Wwise/Deployment/API/Generated/Common/AkRoomParams.cs" />
     <Compile Include="Assets/Wwise/Deployment/Components/AkTriggerCollisionEnter.cs" />
     <Compile Include="Assets/Wwise/Deployment/API/Handwritten/Common/Arrays/AkDiffractionPathInfoArray.cs" />
+    <Compile Include="Assets/Game/Scripts/Player/WSB_RedirectAnimations 2.cs" />
+    <Compile Include="Assets/Game/Scripts/Player/LG_Movable 2.cs" />
+    <Compile Include="Assets/Game/Scripts/WSB_Socle 2.cs" />
+    <Compile Include="Assets/Game/Scripts/Player/WSB_MovingPlateform2 2.cs" />
+    <Compile Include="Assets/Game/Scripts/Player/SO_MovableValues 2.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/Wwise/Deployment/Plugins/Windows/x86_64/DSP/MSSpatial.dll" />
