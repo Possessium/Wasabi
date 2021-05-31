@@ -23,9 +23,10 @@ public class WSB_Socle : MonoBehaviour
 
     private void Start()
     {
-        if(isEndSocle)
+        if(isEndSocle && WSB_Elevator.I)
         {
             onActivate.AddListener(WSB_Elevator.I.ActivateTrigger);
+            onDeactivate.AddListener(WSB_Elevator.I.DisableTrigger);
         }
     }
 

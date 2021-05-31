@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Linq;
 
@@ -48,6 +49,15 @@ public class WSB_GameManager : MonoBehaviour
 
     private void Update()
     {
+        // * * * * * *
+        // Cheat codes
+
+        if (Keyboard.current.numpad8Key.isPressed)
+            SceneManager.LoadScene("Persos & Cam");
+
+        //
+        //
+
         Paused = paused;
 
         // Invoke the main Update of the game if it is not paused

@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class TurnOnEnd : StateMachineBehaviour
 {
-    int count = 0;
-
-    private static readonly int turning_Hash = Animator.StringToHash("Turning");
+    private WSB_PlayerMovable playerMovable = null;
+    private bool populated = false;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        count++;
-    }
+    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //
+    //}
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -23,13 +22,13 @@ public class TurnOnEnd : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        count--;
-        if(stateInfo.normalizedTime * stateInfo.length >= stateInfo.length && count < 1)
-        {
-            animator.transform.eulerAngles = new Vector3(animator.transform.eulerAngles.x, animator.GetComponentInParent<WSB_PlayerMovable>().IsRight ? 90 : -90,    animator.transform.eulerAngles.z);
-            animator.SetBool(turning_Hash, false);
-        }
+        if (!populated)
+            populated = playerMovable = animator.GetComponentInParent<WSB_PlayerMovable>();
 
+        if (!populated)
+            return;
+
+        playerMovable.Turn();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

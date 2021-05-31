@@ -220,13 +220,16 @@ public class LG_Movable : MonoBehaviour
         force.y = 0;
         force += _force;
         semiSolidCollider = null;
-        dontResetSemiSolid = false;
+        PressDown = false;
     }
 
     float 所有 = 0;
 
     public virtual void MoveHorizontally(float _movement)
     {
+        if (!CanMove)
+            return;
+
         if (_movement == 0)
         {
             if(speed != 0)
@@ -239,6 +242,12 @@ public class LG_Movable : MonoBehaviour
         speed = movableValues.SpeedCurve.Evaluate(所有);
 
         movement.x += (_movement * speed);
+    }
+
+    public void StopMoving()
+    {
+        movement = Vector2.zero;
+        CanMove = false;
     }
 
     public void MoveVertically(float _movement) => movement.y += _movement;
@@ -413,7 +422,7 @@ public class LG_Movable : MonoBehaviour
         if (!_isGrounded)
         {
             _isGrounded = CastCollider(groundNormal * Physics2D.defaultContactOffset * -2, out RaycastHit2D _groundHit) &&
-                            (_groundHit.normal.y >= movableValues.GroundClimbHeight) &&
+                            (_groundHit.normal.y >= movableValues.GroundClimbHeight) && !ignoredColliders.Contains(_groundHit.collider) && 
                             _groundHit.collider != semiSolidCollider
                             || IsOnMovingPlateform;
 
@@ -439,7 +448,7 @@ public class LG_Movable : MonoBehaviour
         ExtractFromCollisions();
 
         if ((Vector2)transform.position != MovableRigidbody.position)
-            transform.position = MovableRigidbody.position;
+            transform.position = new Vector3(MovableRigidbody.position.x, MovableRigidbody.position.y, transform.position.z);
     }
 
     // -----------------------
@@ -449,7 +458,7 @@ public class LG_Movable : MonoBehaviour
     /// </summary>
     protected virtual void OnAppliedVelocity(Vector2 _movement) { }
 
-    public bool dontResetSemiSolid = false;
+    public bool PressDown = false;
 
     /// <summary>
     /// Called when grounded value has been set.
@@ -457,7 +466,7 @@ public class LG_Movable : MonoBehaviour
     protected virtual void OnSetGrounded()
     {
         // Reduce horizontal force if not null when get grounded.
-        if (isGrounded && !dontResetSemiSolid)
+        if (isGrounded && !PressDown)
         {
             if (semiSolidCollider)
                 semiSolidCollider = null;
@@ -685,7 +694,7 @@ public class LG_Movable : MonoBehaviour
         }
         // If hit something, check if it's a different surface than the one trying to climb
         // and that the rigidbody is not stuck in ; when so, distance is equal to zero.
-        else if ((_climbDistance != 0) && ((_stepHit.collider != extraCastBuffer[0].collider) || (_stepHit.normal != extraCastBuffer[0].normal)))
+        else if ((_climbDistance != 0) && ((_stepHit.collider != extraCastBuffer[0].collider) || (_stepHit.normal != extraCastBuffer[0].normal)) && _stepHit.collider != semiSolidCollider && !ignoredColliders.Contains(_stepHit.collider))
         {
             Vector2 _normalized = _velocity.normalized;
             MovableRigidbody.position += _normalized * _climbDistance;
@@ -735,6 +744,8 @@ public class LG_Movable : MonoBehaviour
     {
         if (CastCollider(_normal * -movableValues.GroundSnapHeight, out RaycastHit2D _snapHit))
         {
+            if (_snapHit.collider == semiSolidCollider || ignoredColliders.Contains(_snapHit.collider))
+                return false;
             MovableRigidbody.position += _normal * -_snapHit.distance;
             InsertCastInfo(_snapHit);
             return true;
@@ -767,7 +778,7 @@ public class LG_Movable : MonoBehaviour
 
         int _hitAmount = collider.Cast(_movement, movableValues.Contact, _hitBuffer, _distance);
 
-        if (_hitAmount == 0 && !dontResetSemiSolid)
+        if (_hitAmount == 0 && !PressDown)
         {
             semiSolidCollider = null;
         }
@@ -786,6 +797,8 @@ public class LG_Movable : MonoBehaviour
             {
                 semiSolidCollider = null;
             }
+            if (_hitBuffer[i].normal.y == -1 && force.y > 0)
+                force.y = 0;
         }
 
         if (_hitAmount > 0)
@@ -813,7 +826,7 @@ public class LG_Movable : MonoBehaviour
 
         for (int _i = 0; _i < _count; _i++)
         {
-            if (ignoredColliders.Contains(overlapBuffer[_i]))
+            if (ignoredColliders.Contains(overlapBuffer[_i]) || overlapBuffer[_i] == semiSolidCollider)
                 continue;
 
             // If overlap, extract from collision.
@@ -829,7 +842,7 @@ public class LG_Movable : MonoBehaviour
                (
                    _distance.normal.y == -1
                 && _distance.pointB.y < transform.position.y + .01f
-                && !dontResetSemiSolid
+                && !PressDown
                 && !transform.parent
                ))
             {

@@ -7,7 +7,7 @@ public class WSB_Wind : WSB_Rune
     [SerializeField] float windPower = 2;
     [SerializeField] LayerMask windLayer = 0;
     [SerializeField] Vector2 size = Vector2.one;
-
+    [SerializeField] private GameObject poufAigretteFX = null;
     [SerializeField] LayerMask stopWindSight = 0;
 
     WSB_Ban ban = null;
@@ -62,5 +62,13 @@ public class WSB_Wind : WSB_Rune
                 _physics.AddForce(Vector2.up * windPower);
             }
         }
+    }
+
+    public override void DeactivatePower(WSB_PlayerMovable _p)
+    {
+        base.DeactivatePower(_p);
+
+        if (poufAigretteFX)
+            Instantiate(poufAigretteFX, transform.position, Quaternion.identity);
     }
 }

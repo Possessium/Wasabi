@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class WSB_Power : MonoBehaviour
 {
-    [SerializeField] Animator animator = null;
+    [SerializeField] protected Animator animator = null;
     [SerializeField] protected float range = 2;
 
     [SerializeField] ParticleSystem insectFX = null;
@@ -14,6 +14,7 @@ public abstract class WSB_Power : MonoBehaviour
     public bool IsActive = true;
     public WSB_PlayerMovable Owner { get; private set; } = null;
     [SerializeField] protected LG_Movable movable = null;
+    [SerializeField] private WSB_ContextualMenu contextualMenu = null;
 
     private static readonly int grow_Hash = Animator.StringToHash("Grow");
     private static readonly int shrink_Hash = Animator.StringToHash("Shrink");
@@ -29,7 +30,6 @@ public abstract class WSB_Power : MonoBehaviour
         if (IsActive)
         {
             PlayPower();
-            transform.position = new Vector3(transform.position.x, transform.position.y, 2);
         }
 
     }
@@ -41,7 +41,7 @@ public abstract class WSB_Power : MonoBehaviour
     }
 
 
-    public void ActivatePower()
+    public virtual void ActivatePower()
     {
         IsActive = true;
         Owner = null;
@@ -61,6 +61,9 @@ public abstract class WSB_Power : MonoBehaviour
         Owner = _p;
 
         movable.MovableCollider.size /= 2;
+
+        if (contextualMenu)
+            contextualMenu.Disable();
 
         if (animator)
             animator.SetTrigger(shrink_Hash);

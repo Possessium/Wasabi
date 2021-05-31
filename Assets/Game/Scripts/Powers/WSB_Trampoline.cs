@@ -8,6 +8,9 @@ public class WSB_Trampoline : WSB_Plant
     [SerializeField] BoxCollider2D bounceCollider = null;
     [SerializeField] ParticleSystem trampolineBounceFX = null;
 
+
+    private static readonly int bounce_Hash = Animator.StringToHash("Bounce");
+
     protected override void OnDrawGizmos()
     {
         // don't show range on that plant
@@ -15,6 +18,7 @@ public class WSB_Trampoline : WSB_Plant
 
     [SerializeField] ContactFilter2D bounceFilter;
     RaycastHit2D[] hits = new RaycastHit2D[2];
+    bool canFX = true;
 
     protected override void PlayPower()
     {
@@ -27,12 +31,26 @@ public class WSB_Trampoline : WSB_Plant
             LG_Movable _movable;
             if (hits[i] && hits[i].transform != this.transform && hits[i].transform.position.y > transform.position.y + .5f && hits[i].transform.TryGetComponent(out _movable))
             {
-                if(trampolineBounceFX)
+                if(trampolineBounceFX && canFX)
+                {
                     trampolineBounceFX.Play();
+                    StartCoroutine(DelayFX());
+                }
 
                 _movable.SetPosition(_movable.transform.position + Vector3.up * .5f);
+
+                if (animator)
+                    animator.SetTrigger(bounce_Hash);
+
                 _movable.TrampolineJump(Vector2.up * trampolineForce);
             }
         }
+    }
+
+    IEnumerator DelayFX()
+    {
+        canFX = false;
+        yield return new WaitForSeconds(.5f);
+        canFX = true;
     }
 }

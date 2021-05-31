@@ -18,7 +18,6 @@ public class WSB_PlayerMovable : LG_Movable
     [SerializeField] private Animator PlayerAnimator = null;
 
     private bool jumpInput = false;
-    private bool pressDown = false;
 
     private float coyoteVar = -999;
     private float jumpOriginHeight = 0;
@@ -36,7 +35,6 @@ public class WSB_PlayerMovable : LG_Movable
     private static readonly int run_Hash = Animator.StringToHash("Run");
     private static readonly int jump_Hash = Animator.StringToHash("Jump");
     private static readonly int grounded_Hash = Animator.StringToHash("Grounded");
-    private static readonly int turning_Hash = Animator.StringToHash("Turning");
     private static readonly int rotate_Hash = Animator.StringToHash("Rotate");
     #endregion
 
@@ -63,7 +61,18 @@ public class WSB_PlayerMovable : LG_Movable
 
                 PlayerAnimator.SetBool(jump_Hash, isJumping);
 
-                PlayerAnimator.SetBool(grounded_Hash,IsGrounded ? true : (IsOnMovingPlateform && !isJumping) ? true : false);
+                if (IsGrounded)
+                    PlayerAnimator.SetBool(grounded_Hash, true);
+                else
+                {
+                    if (IsOnMovingPlateform && !isJumping)
+                        PlayerAnimator.SetBool(grounded_Hash, true);
+                    else if (semiSolidCollider && !isJumping)
+                        PlayerAnimator.SetBool(grounded_Hash, true);
+                    else PlayerAnimator.SetBool(grounded_Hash, false);
+                }
+
+                //PlayerAnimator.SetBool(grounded_Hash,IsGrounded ? true : (IsOnMovingPlateform && !isJumping) ? true : false);
 
                 if (CanMove)
                 {
@@ -72,7 +81,6 @@ public class WSB_PlayerMovable : LG_Movable
                         IsRight = false;
                         if (IsGrounded)
                         {
-                            PlayerAnimator.SetBool(turning_Hash, true);
                             PlayerAnimator.SetTrigger(rotate_Hash);
                         }
                         else
@@ -84,16 +92,10 @@ public class WSB_PlayerMovable : LG_Movable
                         IsRight = true;
                         if (IsGrounded)
                         {
-                            PlayerAnimator.SetBool(turning_Hash, true);
                             PlayerAnimator.SetTrigger(rotate_Hash);
                         }
                         else
                             Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, 90, Rend.transform.eulerAngles.z);
-                    }
-
-                    if(PlayerAnimator.GetBool(turning_Hash))
-                    {
-                        Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, IsRight ? -90 : 90, Rend.transform.eulerAngles.z);
                     }
                 }
             }
@@ -147,10 +149,10 @@ public class WSB_PlayerMovable : LG_Movable
     // Reads x & y movement and sets it in xMovement & yMovement
     public void Move(InputAction.CallbackContext _context)
     {
-        if (_context.valueType != typeof(Vector2) || !CanMove) return;
+        if (_context.valueType != typeof(Vector2) /*|| !CanMove*/) return;
         XMovement = _context.ReadValue<Vector2>().x;
         YMovement = _context.ReadValue<Vector2>().y;
-        pressDown = _context.ReadValue<Vector2>().y < 0;
+        PressDown = _context.ReadValue<Vector2>().y < -.8f;
     }
 
     // Reads jump input and sets it in jumpInput
@@ -161,12 +163,17 @@ public class WSB_PlayerMovable : LG_Movable
     }
     #endregion
 
+    public void Turn()
+    {
+        Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, IsRight ? 90 : -90, Rend.transform.eulerAngles.z);
+    }
+
     #region Jump
     // Makes the character jump
     void Jump()
     {
         // Checks if input was in direction of the ground
-        if (pressDown)
+        if (PressDown)
         {
             // Cast below character to found if there is any SemiSolid plateform
             RaycastHit2D[] _hits = new RaycastHit2D[1];
@@ -175,12 +182,11 @@ public class WSB_PlayerMovable : LG_Movable
 
                 // If found set collider in ignoredCollider and don't do the jump
                 semiSolidCollider = _hits[0].collider;
-                dontResetSemiSolid = true;
                 return;
             }
         }
 
-        dontResetSemiSolid = false;
+        PressDown = false;
 
         isJumping = true;
 
@@ -226,6 +232,7 @@ public class WSB_PlayerMovable : LG_Movable
     }
 
     public void StopJump() => isJumping = false;
+
 
     protected override void OnSetGrounded()
     {
