@@ -6785,12 +6785,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Trigger: {fileID: 0}
-  LoadOnPlay: 0
+  LoadOnPlay: 1
   AllScenesToLoadInOrder:
   - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_plateformes.unity
     SceneName: Tuto_plateformes
   - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_interactables.unity
     SceneName: Tuto_interactables
+  - ScenePath: Assets/Game/Scenes/All walls.unity
+    SceneName: All walls
   - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_lights.unity
     SceneName: Tuto_lights
   - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
@@ -6799,7 +6801,7 @@ MonoBehaviour:
     SceneName: Music
   - ScenePath: Assets/Game/Scenes/Sound_Design.unity
     SceneName: Sound_Design
-  LoadListSize: 6
+  LoadListSize: 7
   AllScenesToUnloadInOrder: []
   UnloadListSize: 0
   BlockingCollider: {fileID: 0}
