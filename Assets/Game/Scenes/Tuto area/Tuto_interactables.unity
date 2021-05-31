@@ -562,7 +562,7 @@ PrefabInstance:
     - target: {fileID: 3175025076563262152, guid: b2c1ead1faaa42e4ebea142a8c7bc453,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 152.75
+      value: 151.75
       objectReference: {fileID: 0}
     - target: {fileID: 3175025076563262152, guid: b2c1ead1faaa42e4ebea142a8c7bc453,
         type: 3}
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 617765109}
   - component: {fileID: 617765108}
   - component: {fileID: 617765107}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Socle dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1542,7 +1542,7 @@ PrefabInstance:
     - target: {fileID: 3868218173550294174, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
         type: 3}
       propertyPath: size.y
-      value: 3.8
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4884805826092129660, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
         type: 3}
@@ -1612,7 +1612,7 @@ PrefabInstance:
     - target: {fileID: 6734575209522334011, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.25
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 6734575209522334011, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
         type: 3}
@@ -2211,7 +2211,7 @@ GameObject:
   - component: {fileID: 1693528042}
   - component: {fileID: 1693528041}
   - component: {fileID: 1693528040}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Socle shrink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2427,7 +2427,7 @@ PrefabInstance:
     - target: {fileID: 1049804911432639112, guid: 441b9ed8639ccd44dbebde789151d9a8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 152.74
+      value: 151.74
       objectReference: {fileID: 0}
     - target: {fileID: 1049804911432639112, guid: 441b9ed8639ccd44dbebde789151d9a8,
         type: 3}

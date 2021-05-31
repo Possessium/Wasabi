@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_plateformes.unity
     guid: 05eb91179b2c2fe4ca4627847dd0d881
+  - enabled: 1
+    path: Assets/Game/Scenes/All walls.unity
+    guid: 4abe293ec4919514788d9c9ede22a78c
   m_configObjects: {}

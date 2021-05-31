@@ -91,7 +91,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
         if (!_ctx.started || HeldObject)
             return;
 
-        Collider2D _hit = Physics2D.OverlapBox(movable.MovableRigidbody.position + Vector2.up, Vector2.one, 0, movable.ControllerValues.LeverLayer);
+        Collider2D _hit = Physics2D.OverlapBox(movable.MovableRigidbody.position + Vector2.up, Vector2.one * 2f, 0, movable.ControllerValues.LeverLayer);
         if (_hit)
         {
             WSB_Lever _lever = _hit.GetComponent<WSB_Lever>();
@@ -145,7 +145,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
             return;
 
         RaycastHit2D[] _hit = new RaycastHit2D[1];
-        if(!grabbedObject && movable.MovableCollider.Cast(movable.IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, .5f) > 0 || grabbedObject)
+        if(!grabbedObject && movable.MovableCollider.Cast(movable.IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, 1) > 0 || grabbedObject)
         {
             if (playerAnimator)
                 playerAnimator.SetTrigger(pick_Hash);
@@ -191,7 +191,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
         RaycastHit2D[] _hit = new RaycastHit2D[1];
 
         // Cast on facing direction to check if there is an object
-        if (movable.MovableCollider.Cast(movable.IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, .5f) > 0)
+        if (movable.MovableCollider.Cast(movable.IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, 1) > 0)
         {
             if (_hit[0].transform.GetComponent<LG_Movable>() && !_hit[0].transform.GetComponent<LG_Movable>().CanMove)
                 return;

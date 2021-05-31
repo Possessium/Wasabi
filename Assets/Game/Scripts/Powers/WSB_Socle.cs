@@ -61,10 +61,13 @@ public class WSB_Socle : MonoBehaviour
         }
     }
 
+    float zPowerPosition = 0;
+
     void ActivateSocle(WSB_Power _power)
     {
         onActivate?.Invoke();
-        _power.transform.position = new Vector3(transform.position.x + position.x, transform.position.y + position.y, _power.transform.position.z);
+        zPowerPosition = _power.transform.position.z;
+        _power.transform.position = new Vector3(transform.position.x + position.x, transform.position.y + position.y, transform.position.z);
         currentHeldPower = _power;
         currentHeldPower.Lock(true);
     }
@@ -76,6 +79,7 @@ public class WSB_Socle : MonoBehaviour
 
         if (currentHeldPower == collision.GetComponent<WSB_Power>())
         {
+            currentHeldPower.transform.position = new Vector3(currentHeldPower.transform.position.x, currentHeldPower.transform.position.y, zPowerPosition);
             if(!currentHeldPower.Owner)
                 currentHeldPower.Lock(false);
             currentHeldPower = null;
