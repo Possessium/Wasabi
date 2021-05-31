@@ -87,6 +87,5 @@ Library/SceneVisibilityState.asset
 Library/InspectorExpandedItems.asset
 Library/ShaderCache/EditorEncounteredVariants
 Assembly-CSharp.csproj
-Wasabi.sln
 *.validationcache
 *.prof
