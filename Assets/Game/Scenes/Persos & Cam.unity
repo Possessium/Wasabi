@@ -6785,7 +6785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Trigger: {fileID: 0}
-  LoadOnPlay: 1
+  LoadOnPlay: 0
   AllScenesToLoadInOrder:
   - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_plateformes.unity
     SceneName: Tuto_plateformes

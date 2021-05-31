@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PathCreation;
+using PathCreation.Examples;
 
 public class WSB_Elevator : MonoBehaviour
 {
@@ -15,6 +17,10 @@ public class WSB_Elevator : MonoBehaviour
     [SerializeField] private WSB_SceneLoader bottomSceneLoader = null;
     [SerializeField] private WSB_SceneLoader stuckSceneLoader = null;
 
+    [SerializeField] private PathCreator pathCreator = null;
+
+    [SerializeField] private Transform[] linePoints = new Transform[4];
+    List<Vector2> linePosition = new List<Vector2>();
     private ElevatorState elevatorState = ElevatorState.Bottom;
 
     private static readonly int startElevator_Hash = Animator.StringToHash("Start");
@@ -24,6 +30,21 @@ public class WSB_Elevator : MonoBehaviour
     private void Awake()
     {
         I = this;
+    }
+
+    private void Update()
+    {
+        linePosition.Clear();
+
+        for (int i = 0; i < linePoints.Length; i++)
+        {
+            linePosition.Add(linePoints[i].localPosition);
+        }
+
+        BezierPath _path = new BezierPath(linePosition, true, PathSpace.xy);
+        pathCreator.bezierPath = _path;
+
+        //lineRenderer.SetPositions(pathCreator.path.localPoints);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,10 +69,9 @@ public class WSB_Elevator : MonoBehaviour
     }
 
 
-
-
     private void ActivateElevator()
     {
+
         playersIn = 0;
         switch (elevatorState)
         {
