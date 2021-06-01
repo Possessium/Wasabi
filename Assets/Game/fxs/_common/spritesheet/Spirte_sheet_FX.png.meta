@@ -32,6 +32,12 @@ TextureImporter:
   - first:
       213: 5599080825631443811
     second: aigrettes
+  - first:
+      213: 4600893536393101460
+    second: jump_static_L_06
+  - first:
+      213: -2814845724076200807
+    second: jump_static_R_06
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -538,10 +544,10 @@ TextureImporter:
       name: jump_static_L_02
       rect:
         serializedVersion: 2
-        x: 232
-        y: 718
-        width: 74
-        height: 55
+        x: 212
+        y: 713
+        width: 71
+        height: 65
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,10 +565,10 @@ TextureImporter:
       name: jump_static_L_03
       rect:
         serializedVersion: 2
-        x: 439
+        x: 395
         y: 714
-        width: 61
-        height: 57
+        width: 71
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,10 +586,10 @@ TextureImporter:
       name: jump_static_L_04
       rect:
         serializedVersion: 2
-        x: 610
+        x: 564
         y: 713
-        width: 61
-        height: 60
+        width: 59
+        height: 67
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -601,10 +607,10 @@ TextureImporter:
       name: jump_static_L_01
       rect:
         serializedVersion: 2
-        x: 19
-        y: 715
-        width: 86
-        height: 53
+        x: 8
+        y: 712
+        width: 83
+        height: 65
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -622,10 +628,10 @@ TextureImporter:
       name: jump_static_L_05
       rect:
         serializedVersion: 2
-        x: 792
+        x: 725
         y: 715
-        width: 40
-        height: 54
+        width: 57
+        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1483,10 +1489,10 @@ TextureImporter:
       name: jump_static_R_01
       rect:
         serializedVersion: 2
-        x: 115
-        y: 716
-        width: 89
-        height: 53
+        x: 102
+        y: 713
+        width: 102
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1504,10 +1510,10 @@ TextureImporter:
       name: jump_static_R_02
       rect:
         serializedVersion: 2
-        x: 329
-        y: 715
-        width: 84
-        height: 63
+        x: 297
+        y: 713
+        width: 72
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1525,10 +1531,10 @@ TextureImporter:
       name: jump_static_R_03
       rect:
         serializedVersion: 2
-        x: 512
-        y: 713
-        width: 65
-        height: 62
+        x: 475
+        y: 715
+        width: 71
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1546,10 +1552,10 @@ TextureImporter:
       name: jump_static_R_04
       rect:
         serializedVersion: 2
-        x: 696
-        y: 713
-        width: 65
-        height: 63
+        x: 639
+        y: 714
+        width: 58
+        height: 68
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1567,10 +1573,10 @@ TextureImporter:
       name: jump_static_R_05
       rect:
         serializedVersion: 2
-        x: 855
-        y: 713
-        width: 42
-        height: 57
+        x: 794
+        y: 716
+        width: 57
+        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1685,6 +1691,48 @@ TextureImporter:
       bones: []
       spriteID: 36b8670885ee3bd40800000000000000
       internalID: 5599080825631443811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_static_L_06
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 714
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4900a167b48a9df30800000000000000
+      internalID: 4600893536393101460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_static_R_06
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 715
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c29e64ab8afe8d0800000000000000
+      internalID: -2814845724076200807
       vertices: []
       indices: 
       edges: []
