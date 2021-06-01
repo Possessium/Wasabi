@@ -89,3 +89,4 @@ Library/ShaderCache/EditorEncounteredVariants
 Assembly-CSharp.csproj
 *.validationcache
 *.prof
+*.meta
