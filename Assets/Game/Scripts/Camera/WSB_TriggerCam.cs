@@ -2,100 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 
 public class WSB_TriggerCam : MonoBehaviour
 {
-    [SerializeField] BoxCollider2D trigger = null;
-        public BoxCollider2D Trigger { get { return trigger; } }
+    [SerializeField] private Vector2 targetPosition = Vector2.zero;
 
-    #region Trigger values
-    [SerializeField, Min(.1f)] Vector2 triggerSize = Vector2.one;
+    private bool moveToDestination = false;
 
-    [Header("Camera mode"), SerializeField] CamType changeTypeTo = CamType.None;
-        public CamType Type { get { return changeTypeTo; } }
-    [Header("Camera position"), SerializeField] Vector3 changePositionTo = Vector3.zero;
-        public Vector3 Position { get { return changePositionTo; } }
-    [Header("Split angle for SplitFixe"), SerializeField] float changeAngleTo = 0;
-        public float Angle { get { return changeAngleTo; } }
-    [Header("Camera Zoom"), SerializeField] float changeZoomTo = 0;
-        public float Zoom { get { return changeZoomTo; } }
-    //[Header("Camera FOV PERSPECTIVE ONLY"), SerializeField] float changeFOVTo = 0;
-    //    public float FOV { get { return changeFOVTo; } }
-    #endregion
-
-    public int PlayersIn { get; private set; } = 0;
+    [SerializeField] private PlayableDirector playableDirector = null;
+    [SerializeField] private bool stopPlayers = false;
 
     private void OnDrawGizmos()
     {
-        // For easy use
-        // Color selected based on trigger type
-        // Draw the trigger in that color
-        // Draw a line to the position the camera will go
-        switch (Type)
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawSphere((Vector2)transform.position + targetPosition, .25f);
+    }
+
+    private void Update()
+    {
+        if(moveToDestination)
         {
-            case CamType.Fixe:
-                Gizmos.color = new Color(1, 0, 0, .4f);
-                break;
-            case CamType.Dynamic:
-                Gizmos.color = new Color(0, 1, 0, .4f);
-                break;
-            case CamType.SplitFixe:
-                Gizmos.color = new Color(1, 1, 0, .4f);
-                break;
-            case CamType.SplitDynamic:
-                Gizmos.color = new Color(0, 1, 1, .4f);
-                break;
-            case CamType.None:
-                Gizmos.color = new Color(.01f, .01f, .01f, .4f);
-                break;
-        }
-        Gizmos.DrawCube(transform.position, new Vector3(triggerSize.x, triggerSize.y, 1));
-        if(Type == CamType.Fixe)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawSphere(Position, .25f);
-            Gizmos.DrawLine(Position, transform.position);
+            WSB_CameraManager.I.CamLux.SetCam((Vector2)transform.position + targetPosition, TriggerCinemachine);
         }
     }
 
-    private void Awake()
+    void TriggerCinemachine()
     {
-        // Gets needed components if not set.
-        // Throw errors if not found them destroy itself
-        if (!trigger) trigger = GetComponent<BoxCollider2D>();
-        if(!trigger)
-        {
-            Debug.LogError($"BoxCollider introuvable sur {transform.name}");
-            Destroy(this);
-        }
+        playableDirector.Play();
+        playableDirector.stopped += PlayableDirector_stopped;
     }
 
-    private void Start()
+    private void PlayableDirector_stopped(PlayableDirector obj)
     {
-        // Setup trigger
-        trigger.isTrigger = true;
-        trigger.size = triggerSize;
-        //if (WSB_CameraManager.I.IsOrtho)
-            changePositionTo = new Vector3(changePositionTo.x, changePositionTo.y, changeZoomTo);
+        WSB_CameraManager.I.IsActive = true;
+        if (stopPlayers)
+        {
+            WSB_Lux.I.PlayerMovable.CanMove = true;
+            WSB_Ban.I.Player.CanMove = true;
+        }
+        Destroy(this);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         // If any player enters this trigger, send the trigger information to the camera manager
-        if (col.GetComponent<WSB_PlayerMovable>())
+        if (!moveToDestination && col.GetComponent<WSB_PlayerMovable>())
         {
-            PlayersIn++;
-            WSB_CameraManager.I.TriggerEntered(this);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.GetComponent<WSB_PlayerMovable>())
-        {
-            PlayersIn--;
-            if(PlayersIn == 0)
-                WSB_CameraManager.I.TriggerExit(this);
+            if(stopPlayers)
+            {
+                WSB_Lux.I.PlayerMovable.StopMoving();
+                WSB_Ban.I.Player.StopMoving();
+            }
+            WSB_CameraManager.I.IsActive = false;
+            moveToDestination = true;
         }
     }
 }

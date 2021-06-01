@@ -6765,6 +6765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1489719380}
   - component: {fileID: 1489719378}
+  - component: {fileID: 1489719379}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -6802,6 +6803,27 @@ MonoBehaviour:
   - ScenePath: Assets/Game/Scenes/Sound_Design.unity
     SceneName: Sound_Design
   LoadListSize: 7
+  AllScenesToUnloadInOrder: []
+  UnloadListSize: 0
+  BlockingCollider: {fileID: 0}
+--- !u!114 &1489719379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489719377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093ec8c4f899be74cb665c1f371aebdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trigger: {fileID: 0}
+  LoadOnPlay: 1
+  AllScenesToLoadInOrder:
+  - ScenePath: Assets/Game/Scenes/Temp/Temp Hogu.unity
+    SceneName: Temp Hogu
+  LoadListSize: 1
   AllScenesToUnloadInOrder: []
   UnloadListSize: 0
   BlockingCollider: {fileID: 0}
@@ -7202,7 +7224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460986512884628068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -38.75, y: -18.5, z: -5}
+  m_LocalPosition: {x: 12.3, y: -14.9, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1433720641}
@@ -7619,7 +7641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a428568111efa49822558b10820d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCamType: 1
   lux: {fileID: 460986512884628064}
   ban: {fileID: 6072583074185493622}
   camLux: {fileID: 2381727434349249466}
@@ -7635,7 +7656,6 @@ MonoBehaviour:
   leftMiddle: {fileID: 1238294353}
   rightMiddle: {fileID: 1991252387}
   splitMiddleParent: {fileID: 23355676}
-  lastTriggered: []
   targetPositionCamBan: {x: 0, y: 0, z: 0}
   targetPositionCamLux: {x: 0, y: 0, z: 0}
 --- !u!1 &2381727434349249441
@@ -7652,6 +7672,7 @@ GameObject:
   - component: {fileID: 2381727434349249466}
   - component: {fileID: 2381727434349249443}
   - component: {fileID: 2381727434349249442}
+  - component: {fileID: 2381727434349249446}
   m_Layer: 0
   m_Name: Cam Lux
   m_TagString: MainCamera
@@ -7702,8 +7723,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2381727434349249441}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -31.026178, y: -9.28653, z: -36.658295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7741,6 +7762,40 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &2381727434349249446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2381727434349249441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!20 &2381727434349249447
 Camera:
   m_ObjectHideFlags: 0
@@ -7768,7 +7823,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
