@@ -7224,7 +7224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460986512884628068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.3, y: -14.9, z: -5}
+  m_LocalPosition: {x: 3.8000002, y: -14.9, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1433720641}
@@ -7658,6 +7658,7 @@ MonoBehaviour:
   splitMiddleParent: {fileID: 23355676}
   targetPositionCamBan: {x: 0, y: 0, z: 0}
   targetPositionCamLux: {x: 0, y: 0, z: 0}
+  IsActive: 1
 --- !u!1 &2381727434349249441
 GameObject:
   m_ObjectHideFlags: 0
@@ -7724,7 +7725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2381727434349249441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.026178, y: -9.28653, z: -36.658295}
+  m_LocalPosition: {x: -22.950005, y: -9.109996, z: -200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

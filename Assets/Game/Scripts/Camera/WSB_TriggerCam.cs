@@ -16,14 +16,14 @@ public class WSB_TriggerCam : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawSphere((Vector2)transform.position + targetPosition, .25f);
+        Gizmos.DrawSphere(new Vector3(transform.position.x + targetPosition.x, transform.position.y + targetPosition.y, transform.position.z), .25f);
     }
 
     private void Update()
     {
         if(moveToDestination)
         {
-            WSB_CameraManager.I.CamLux.SetCam((Vector2)transform.position + targetPosition, TriggerCinemachine);
+            WSB_CameraManager.I.CamLux.SetCam(new Vector3(transform.position.x + targetPosition.x, transform.position.y + targetPosition.y, transform.position.z), TriggerCinemachine);
         }
     }
 
