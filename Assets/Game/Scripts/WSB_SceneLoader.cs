@@ -14,6 +14,9 @@ public class WSB_SceneLoader : MonoBehaviour
     public int LoadListSize = 0;
     public List<ScenePicker> AllScenesToUnloadInOrder = new List<ScenePicker>();
     public int UnloadListSize = 0;
+    public BoxCollider2D BlockingCollider = null;
+
+    public event Action OnScenesReady = null;
 
     bool hasLux = false;
     bool hasBan = false;
@@ -31,17 +34,31 @@ public class WSB_SceneLoader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!Trigger)
+            return;
+
         if (collision.GetComponent<WSB_Lux>())
             hasLux = true;
         if (collision.GetComponent<WSB_Ban>())
             hasBan = true;
 
-        if (hasLux && hasBan && Trigger.enabled)
-            NextScene();
+        if (hasLux && hasBan)
+        {
+            if(Trigger)
+            {
+                if (Trigger.enabled)
+                    NextScene();
+            }
+            else
+                NextScene();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (!Trigger)
+            return;
+
         if (collision.GetComponent<WSB_Lux>())
             hasLux = false;
         if (collision.GetComponent<WSB_Ban>())
@@ -50,7 +67,7 @@ public class WSB_SceneLoader : MonoBehaviour
 
     List<AsyncOperation> loadingScenes = new List<AsyncOperation>();
 
-    private void NextScene()
+    public void NextScene()
     {
         if(Trigger)
             Trigger.enabled = false;
@@ -71,10 +88,15 @@ public class WSB_SceneLoader : MonoBehaviour
 
     void Unload()
     {
+        if (BlockingCollider)
+            BlockingCollider.gameObject.SetActive(false);
+
         for (int i = 0; i < AllScenesToUnloadInOrder.Count; i++)
         {
             SceneManager.UnloadSceneAsync(AllScenesToUnloadInOrder[i].SceneName);
         }
+
+        OnScenesReady?.Invoke();
     }
 }
 

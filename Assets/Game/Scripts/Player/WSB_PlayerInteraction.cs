@@ -12,13 +12,12 @@ public class WSB_PlayerInteraction : MonoBehaviour
     [SerializeField] private Animator playerAnimator = null;
     [SerializeField] private Transform playerHands = null;
 
-    private bool isLeverRight = false;
-
     private LG_Movable grabbedObject = null;
         public bool HeldObject { get { return grabbedObject; } }
 
     #region FX
-    [SerializeField] ParticleSystem sweat = null;
+    [SerializeField] ParticleSystem sweatBack = null;
+    [SerializeField] ParticleSystem sweatFront = null;
 
 
     #endregion
@@ -67,14 +66,6 @@ public class WSB_PlayerInteraction : MonoBehaviour
         if (!_isBlocked)
             movable.MoveHorizontally(movable.XMovement);
 
-        if (Keyboard.current.yKey.isPressed)
-        {
-            playerAnimator.SetTrigger(key_Hash);
-            movable.IsRight = true;
-            movable.Rend.transform.eulerAngles = new Vector3(movable.Rend.transform.eulerAngles.x, 90, movable.Rend.transform.eulerAngles.z);
-            movable.CanMove = false;
-        }
-
         if (grabbedObject && !playerHands)
         {
             grabbedObject.transform.position = transform.position + Vector3.up * (GetComponent<WSB_Ban>() ? 2 : 1) + (movable.IsRight ? Vector3.right : Vector3.left) * 1.5f;
@@ -82,15 +73,25 @@ public class WSB_PlayerInteraction : MonoBehaviour
     }
 
 
-    public void AnimationFinished(bool _s) => movable.CanMove = _s;
+    public void AnimationFinished(bool _s)
+    {
+        if (!_s)
+            movable.StopMoving();
+        
+        else
+            movable.CanMove = true;
+    }
+
 
     #region Lever
+    private WSB_Lever leverToTrigger = null;
+
     public void Lever(InputAction.CallbackContext _ctx)
     {
-        if (!_ctx.started)
+        if (!_ctx.started || HeldObject)
             return;
 
-        Collider2D _hit = Physics2D.OverlapBox(movable.MovableRigidbody.position + Vector2.up, Vector2.one, 0, movable.ControllerValues.LeverLayer);
+        Collider2D _hit = Physics2D.OverlapBox(movable.MovableRigidbody.position + Vector2.up, Vector2.one * 2f, 0, movable.ControllerValues.LeverLayer);
         if (_hit)
         {
             WSB_Lever _lever = _hit.GetComponent<WSB_Lever>();
@@ -98,21 +99,41 @@ public class WSB_PlayerInteraction : MonoBehaviour
             if (!_lever.CanPress)
                 return;
 
-            _lever.Interact();
-            AnimateLever(_lever.Position);
+            _lever.DisablePress();
+
+            movable.IsRight = _lever.Active;
+            movable.Rend.transform.eulerAngles = new Vector3(movable.Rend.transform.eulerAngles.x, _lever.Active ? 90 : -90, movable.Rend.transform.eulerAngles.z);
+
+            leverToTrigger = _lever;
+            AnimateLever();
         }
     }
 
-    public void AnimateLever(Vector2 _pos)
+    public void AnimateKey()
+    {
+        playerAnimator.SetTrigger(key_Hash);
+        movable.IsRight = true;
+        movable.Rend.transform.eulerAngles = new Vector3(movable.Rend.transform.eulerAngles.x, 90, movable.Rend.transform.eulerAngles.z);
+        movable.CanMove = false;
+        movable.StopMoving();
+    }
+
+    public void AnimateLever()
     {
         if (playerAnimator)
         {
-            movable.Rend.transform.eulerAngles = new Vector3(movable.Rend.transform.eulerAngles.x, isLeverRight ? 90 : -90, movable.Rend.transform.eulerAngles.z);
-            movable.IsRight = isLeverRight = !isLeverRight;
-            movable.SetPosition(_pos);
+            movable.SetPosition(leverToTrigger.Position);
             playerAnimator.SetTrigger(lever_Hash);
-            movable.CanMove = false;
+            movable.StopMoving();
         }
+    }
+
+    public void ToggleLever()
+    {
+        if (leverToTrigger)
+            leverToTrigger.Interact();
+
+        leverToTrigger = null;
     }
     #endregion
 
@@ -123,8 +144,14 @@ public class WSB_PlayerInteraction : MonoBehaviour
         if (!_context.started || (GetComponent<WSB_Lux>() && GetComponent<WSB_Lux>().Shrinked))
             return;
 
-        if (playerAnimator)
-            playerAnimator.SetTrigger(pick_Hash);
+        RaycastHit2D[] _hit = new RaycastHit2D[1];
+        if(!grabbedObject && movable.MovableCollider.Cast(movable.IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, 1) > 0 || grabbedObject)
+        {
+            if (playerAnimator)
+                playerAnimator.SetTrigger(pick_Hash);
+
+            movable.StopMoving();
+        }
     }
 
     void DropGrabbedObject()
@@ -143,9 +170,12 @@ public class WSB_PlayerInteraction : MonoBehaviour
         grabbedObject.SetPosition(new Vector3(grabbedObject.MovableRigidbody.position.x, grabbedObject.MovableRigidbody.position.y, 2));
         grabbedObject.RefreshOnMovingPlateform();
         grabbedObject = null;
+        movable.AddSpeedCoef(1.5f);
         
-        if (sweat)
-            sweat.Stop();
+        if (sweatBack)
+            sweatBack.Stop();
+        if (sweatFront)
+            sweatFront.Stop();
     }
 
     public void DropObject()
@@ -161,7 +191,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
         RaycastHit2D[] _hit = new RaycastHit2D[1];
 
         // Cast on facing direction to check if there is an object
-        if (movable.MovableCollider.Cast(movable.IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, .5f) > 0)
+        if (movable.MovableCollider.Cast(movable.IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, 1) > 0)
         {
             if (_hit[0].transform.GetComponent<LG_Movable>() && !_hit[0].transform.GetComponent<LG_Movable>().CanMove)
                 return;
@@ -177,16 +207,19 @@ public class WSB_PlayerInteraction : MonoBehaviour
             if (playerHands)
             {
                 grabbedObject.transform.parent = playerHands;
-                grabbedObject.transform.position = playerHands.transform.position + ((movable.IsRight ? grabbedObject.transform.right : -grabbedObject.transform.right) * (GetComponent<WSB_Ban>() ? 1.2f : .85f));
+                grabbedObject.transform.position = playerHands.transform.position + ((movable.IsRight ? Vector3.right : Vector3.left) * (GetComponent<WSB_Ban>() ? 1.2f : .85f));
             }
 
             grabbedObject.MovableCollider.enabled = false;
+            movable.RemoveSpeedCoef(1.5f);
 
             if (playerAnimator)
                 playerAnimator.SetBool(grab_Hash, true);
 
-            if (sweat)
-                sweat.Play();
+            if (sweatBack)
+                sweatBack.Play();
+            if (sweatFront)
+                sweatFront.Play();
         }
     }
     #endregion

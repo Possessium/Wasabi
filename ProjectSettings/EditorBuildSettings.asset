@@ -24,9 +24,42 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/Gameplay area/GP_elevator.unity
     guid: e40a21716e9c95d42862c147b7895928
   - enabled: 1
+    path: Assets/Game/Scenes/Gameplay area/GP_FX.unity
+    guid: dd2d21c2be15e7747a912cf0fedcd329
+  - enabled: 1
     path: Assets/Game/Scenes/Sound_Design.unity
     guid: f5f82b50d878942009b778bb7e3392dc
   - enabled: 1
     path: Assets/Game/Scenes/Music.unity
     guid: 00a9edcc9395fba4ea82034c53676d64
+  - enabled: 1
+    path: "Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_D\xE9cor.unity"
+    guid: 862191a9264d2ff4e85c3b0f9ac8509d
+  - enabled: 1
+    path: Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_plateformes.unity
+    guid: 027c06c6deaeb43459b58a596993222c
+  - enabled: 1
+    path: Assets/Game/Scenes/Tuto area/Tuto_interactables.unity
+    guid: 2d2b3f67c66605842a6614aea258243b
+  - enabled: 1
+    path: Assets/Game/Scenes/Tuto area/Tuto_lights.unity
+    guid: 83c5d0010389c6d4eba339b676367514
+  - enabled: 1
+    path: Assets/Game/Scenes/Tuto area/Tuto_plateformes.unity
+    guid: b7afae277d9e0794c88fcbbe390cf2fd
+  - enabled: 1
+    path: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
+    guid: 8d44e6a5dff93374eb1896e9a0ea89ad
+  - enabled: 1
+    path: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_plateformes.unity
+    guid: fbab61ec814f1be4aaa1571f9583be53
+  - enabled: 1
+    path: "Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_D\xE9cor.unity"
+    guid: 89ae1a8d8c1ddf945b2c8d7ada5086ab
+  - enabled: 1
+    path: Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_plateformes.unity
+    guid: 05eb91179b2c2fe4ca4627847dd0d881
+  - enabled: 1
+    path: Assets/Game/Scenes/All walls.unity
+    guid: 4abe293ec4919514788d9c9ede22a78c
   m_configObjects: {}
