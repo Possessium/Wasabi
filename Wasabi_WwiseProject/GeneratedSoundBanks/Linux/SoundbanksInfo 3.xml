@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Linux" BasePlatform="Linux" SchemaVersion="12" SoundbankVersion="135">
+	<RootPaths>
+		<ProjectRoot>/Users/Sancho/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/Audio Workshop/JEUX VIDEO/WASABI_PROJECT/Wasabi/Wasabi_WwiseProject/</ProjectRoot>
+		<SourceFilesRoot>/Users/Sancho/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/Audio Workshop/JEUX VIDEO/WASABI_PROJECT/Wasabi/Wasabi_WwiseProject/.cache/Linux/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/Sancho/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/Audio Workshop/JEUX VIDEO/WASABI_PROJECT/Wasabi/Wasabi_WwiseProject/GeneratedSoundBanks/Linux/</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>/Users/Sancho/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Desktop/Audio Workshop/JEUX VIDEO/WASABI_PROJECT/Wasabi/Wasabi_WwiseProject/GeneratedSoundBanks/Linux</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="2334219478">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3291955309" Language="SFX" Hash="3073254991">
+			<ObjectPath>\SoundBanks\Nico_WU\WASABI_WU_NS</ObjectPath>
+			<ShortName>WASABI_WU_NS</ShortName>
+			<Path>WASABI_WU_NS.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
