@@ -24,6 +24,9 @@ public class WSB_CameraManager : MonoBehaviour
     public float MinCamZoom { get { return minCamZoom; } }
     [SerializeField] float maxCamZoom = 10;
     public float MaxCamZoom { get { return maxCamZoom; } }
+
+    [SerializeField] private Vector3 offset = Vector3.zero;
+    [SerializeField] private Vector3 calculatedOffset = Vector3.zero;
     #endregion
 
     #region Split
@@ -101,6 +104,8 @@ public class WSB_CameraManager : MonoBehaviour
         Vector3 _dir = Vector3.zero;
         float _angle = 0;
 
+        CalculateOffset();
+
         // Switch on the type to behave properly
         if (!IsSplit)
         {
@@ -138,6 +143,21 @@ public class WSB_CameraManager : MonoBehaviour
 
     }
 
+    private void CalculateOffset()
+    {
+        Vector3 _dir = ban.position - lux.position;
+        float _angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
+        _angle = Mathf.Abs(_angle);
+
+        if (_angle > 90)
+            _angle -= (_angle - 90) * 2;
+
+        float _normalizedAngle = _angle / 90;
+
+        _normalizedAngle -= (_normalizedAngle * 2 - 1);
+
+        calculatedOffset = offset * _normalizedAngle;
+    }
 
     public void SetResolution()
     {
@@ -218,8 +238,8 @@ public class WSB_CameraManager : MonoBehaviour
         _camPos = GetDynamicMiddlePosition();
 
         // Set the camera position to between lux & ban and with the appropriate zoom
-        camLux.SetCam(_camPos);
-        camBan.SetCam(_camPos);
+        camLux.SetCam(_camPos + calculatedOffset);
+        camBan.SetCam(_camPos + calculatedOffset);
     }
 
 
@@ -270,8 +290,8 @@ public class WSB_CameraManager : MonoBehaviour
             // Tells the cameras to merge towards each other if the distance is lower than the max zoom
             if (_dist < MaxCamZoom)
             {
-                camBan.SetCam(GetDynamicMiddlePosition(), SwitchCamType);
-                camLux.SetCam(GetDynamicMiddlePosition());
+                camBan.SetCam(GetDynamicMiddlePosition() + calculatedOffset, SwitchCamType);
+                camLux.SetCam(GetDynamicMiddlePosition() + calculatedOffset);
                 return;
             }
 
@@ -285,7 +305,7 @@ public class WSB_CameraManager : MonoBehaviour
                 _dist);
 
 
-            camBan.SetCam(targetPositionCamBan/*, targetPositionCamBan.z*/);
+            camBan.SetCam(targetPositionCamBan + calculatedOffset/*, targetPositionCamBan.z*/);
 
             // Calcul and set ban's cam position and zoom
             targetPositionCamLux = new Vector3(
@@ -293,14 +313,14 @@ public class WSB_CameraManager : MonoBehaviour
                 _banOffset.y + (_dirOffset.y * (_dist /(maxCamZoom * 1.1f))),
                 _dist);
 
-            camLux.SetCam(targetPositionCamLux/*, targetPositionCamLux.z*/);
+            camLux.SetCam(targetPositionCamLux + calculatedOffset/*, targetPositionCamLux.z*/);
         }
 
         // If the distance is higher than the max zoom * 1.5
         else
         {
-            camBan.SetCam(new Vector3(_banOffset.x, _banOffset.y, Mathf.Clamp(_dist, MaxCamZoom / 2, maxCamZoom * 1.1f)));
-            camLux.SetCam(new Vector3(_luxOffset.x, _luxOffset.y, Mathf.Clamp(_dist, MaxCamZoom / 2, maxCamZoom * 1.1f)));
+            camBan.SetCam(new Vector3(_banOffset.x, _banOffset.y, Mathf.Clamp(_dist, MaxCamZoom / 2, maxCamZoom * 1.1f)) + calculatedOffset);
+            camLux.SetCam(new Vector3(_luxOffset.x, _luxOffset.y, Mathf.Clamp(_dist, MaxCamZoom / 2, maxCamZoom * 1.1f)) + calculatedOffset);
         }
 
     }
@@ -312,5 +332,11 @@ public class WSB_CameraManager : MonoBehaviour
         bigSplit.SetActive(_status);
 
         camBan.transform.gameObject.SetActive(_status);
+    }
+
+    public void ChangeZoom(float _z)
+    {
+        minCamZoom = _z;
+        maxCamZoom = _z;
     }
 }

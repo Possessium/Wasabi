@@ -1090,7 +1090,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230258497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalPosition: {x: 154.5, y: -67.75, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6765,7 +6765,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1489719380}
   - component: {fileID: 1489719378}
-  - component: {fileID: 1489719379}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -6786,7 +6785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Trigger: {fileID: 0}
-  LoadOnPlay: 0
+  LoadOnPlay: 1
   AllScenesToLoadInOrder:
   - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_plateformes.unity
     SceneName: Tuto_plateformes
@@ -6803,27 +6802,6 @@ MonoBehaviour:
   - ScenePath: Assets/Game/Scenes/Sound_Design.unity
     SceneName: Sound_Design
   LoadListSize: 7
-  AllScenesToUnloadInOrder: []
-  UnloadListSize: 0
-  BlockingCollider: {fileID: 0}
---- !u!114 &1489719379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489719377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 093ec8c4f899be74cb665c1f371aebdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Trigger: {fileID: 0}
-  LoadOnPlay: 1
-  AllScenesToLoadInOrder:
-  - ScenePath: Assets/Game/Scenes/Temp/Temp Hogu.unity
-    SceneName: Temp Hogu
-  LoadListSize: 1
   AllScenesToUnloadInOrder: []
   UnloadListSize: 0
   BlockingCollider: {fileID: 0}
@@ -7190,32 +7168,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1433720639}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &2116998977
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025220014611113701}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 50, y: -13}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 150, y: 5}
-  m_EdgeRadius: 0
 --- !u!4 &460986512884628064
 Transform:
   m_ObjectHideFlags: 0
@@ -7224,7 +7176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460986512884628068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8000002, y: -14.9, z: -5}
+  m_LocalPosition: {x: 129.1118, y: -83.65, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1433720641}
@@ -7607,7 +7559,6 @@ GameObject:
   - component: {fileID: 1025220014611113700}
   - component: {fileID: 1025220014611113697}
   - component: {fileID: 1025220014611113696}
-  - component: {fileID: 2116998977}
   m_Layer: 0
   m_Name: LOGIC
   m_TagString: Untagged
@@ -7646,9 +7597,10 @@ MonoBehaviour:
   camLux: {fileID: 2381727434349249466}
   camBan: {fileID: 1230258498}
   camMoveSpeed: 4
-  camZoomSpeed: 10
+  camZoomSpeed: 2.5
   minCamZoom: 12
   maxCamZoom: 12
+  offset: {x: 0, y: 6, z: 0}
   cam2RenderTexture: {fileID: 8400000, guid: e8dd7a3e2dacd23478b14eb9349d4c4a, type: 2}
   render: {fileID: 4007628560158463970}
   mask: {fileID: 4007628561300473982}
@@ -7725,7 +7677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2381727434349249441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.950005, y: -9.109996, z: -200}
+  m_LocalPosition: {x: 133.5293, y: -41, z: -200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7824,7 +7776,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 19
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8395,7 +8347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6072583074185493578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: -16.5, z: -5}
+  m_LocalPosition: {x: 137.9467, y: -83.65, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1600151151}
