@@ -14,6 +14,7 @@ public class WSB_CameraManager : MonoBehaviour
     [SerializeField] WSB_Camera camLux = null;
     public WSB_Camera CamLux { get { return camLux; } }
     [SerializeField] WSB_Camera camBan = null;
+    public WSB_Camera CamBan { get { return camBan; } }
 
     [SerializeField] float camMoveSpeed = 20;
     public float CamMoveSpeed { get { return camMoveSpeed; } }
@@ -145,6 +146,12 @@ public class WSB_CameraManager : MonoBehaviour
 
     private void CalculateOffset()
     {
+        if(!IsSplit)
+        {
+            calculatedOffset = offset;
+            return;
+        }
+
         Vector3 _dir = ban.position - lux.position;
         float _angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
         _angle = Mathf.Abs(_angle);
@@ -238,12 +245,12 @@ public class WSB_CameraManager : MonoBehaviour
         _camPos = GetDynamicMiddlePosition();
 
         // Set the camera position to between lux & ban and with the appropriate zoom
-        camLux.SetCam(_camPos + calculatedOffset);
-        camBan.SetCam(_camPos + calculatedOffset);
+        camLux.SetCam(_camPos);
+        camBan.SetCam(_camPos);
     }
 
 
-    Vector3 GetDynamicMiddlePosition()
+    public Vector3 GetDynamicMiddlePosition()
     {
         // Get required variables for further calculs
         Vector3 _dir = ban.position - lux.position;
@@ -258,7 +265,7 @@ public class WSB_CameraManager : MonoBehaviour
         else
             _zoom = _dist;
 
-        return new Vector3(lux.position.x + _dir.x / 2, lux.position.y + _dir.y / 2, _zoom);
+        return new Vector3(lux.position.x + _dir.x / 2, lux.position.y + _dir.y / 2, _zoom) + calculatedOffset;
     }
 
     void SplitDynamic()
@@ -290,8 +297,8 @@ public class WSB_CameraManager : MonoBehaviour
             // Tells the cameras to merge towards each other if the distance is lower than the max zoom
             if (_dist < MaxCamZoom)
             {
-                camBan.SetCam(GetDynamicMiddlePosition() + calculatedOffset, SwitchCamType);
-                camLux.SetCam(GetDynamicMiddlePosition() + calculatedOffset);
+                camBan.SetCam(GetDynamicMiddlePosition(), SwitchCamType);
+                camLux.SetCam(GetDynamicMiddlePosition());
                 return;
             }
 

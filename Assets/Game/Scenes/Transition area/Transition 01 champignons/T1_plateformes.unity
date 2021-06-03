@@ -354,12 +354,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0}
+  MoveToDestination: 0
   animator: {fileID: 0}
   stopPlayers: 0
   nextZoom: 19
   changeZoom: 1
   changePos: 0
   playOnStart: 0
+  isElevatorBottom: 0
 --- !u!4 &1923448153
 Transform:
   m_ObjectHideFlags: 0

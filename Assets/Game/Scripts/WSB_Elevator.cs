@@ -22,6 +22,8 @@ public class WSB_Elevator : MonoBehaviour
     [SerializeField] private Transform anchorLeft = null;
     [SerializeField] private Transform anchorRight = null;
 
+    [SerializeField] private WSB_TriggerCam triggerCamToStuck = null;
+
     private ElevatorState elevatorState = ElevatorState.Bottom;
 
     private static readonly int startElevator_Hash = Animator.StringToHash("Start");
@@ -68,7 +70,8 @@ public class WSB_Elevator : MonoBehaviour
         switch (elevatorState)
         {
             case ElevatorState.Bottom:
-                bottomSceneLoader.OnScenesReady += StartElevator;
+                bottomSceneLoader.OnScenesReady += TriggerCinemachine;
+                triggerCamToStuck.MoveToDestination = true;
                 bottomSceneLoader.NextScene();
 
                 elevatorState = ElevatorState.Stuck;
@@ -89,7 +92,9 @@ public class WSB_Elevator : MonoBehaviour
         trigger.enabled = false;
     }
 
-    void StartElevator()
+    void TriggerCinemachine() => triggerCamToStuck.TriggerCinemachine();
+
+    public void StartElevator()
     {
         animator.SetTrigger(startElevator_Hash);
         switch (elevatorState)

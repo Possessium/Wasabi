@@ -20,7 +20,7 @@ public class WSB_Camera : MonoBehaviour
     public void SetCam(Vector3 _pos, System.Action _callBack = null)
     {
         // Call the callback if the position is already set to the given position
-        if (transform.position == _pos)
+        if (transform.position == _pos && Cam.orthographicSize == _pos.z)
         {
             if (_callBack != null)
                 _callBack.Invoke();
@@ -36,9 +36,9 @@ public class WSB_Camera : MonoBehaviour
                Mathf.Lerp(transform.position.x, _pos.x, Time.deltaTime * WSB_CameraManager.I.CamMoveSpeed * _coef),
                Mathf.Lerp(transform.position.y, _pos.y, Time.deltaTime * WSB_CameraManager.I.CamMoveSpeed * _coef),
                transform.position.z);
-        Cam.orthographicSize = Mathf.Lerp(Cam.orthographicSize, _pos.z, Time.deltaTime * (WSB_CameraManager.I.CamZoomSpeed));
+        Cam.orthographicSize = Mathf.MoveTowards(Cam.orthographicSize, _pos.z, Time.deltaTime * (WSB_CameraManager.I.CamZoomSpeed));
 
-        if(_callBack != null && _d < .01f)
+        if(_callBack != null && _d < .01f && Mathf.Abs(Cam.orthographicSize - _pos.z) < .01f)
         {
             _callBack.Invoke();
         }

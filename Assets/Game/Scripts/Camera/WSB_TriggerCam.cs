@@ -8,7 +8,7 @@ public class WSB_TriggerCam : MonoBehaviour
 {
     [SerializeField] private Vector2 targetPosition = Vector2.zero;
 
-    private bool moveToDestination = false;
+    public bool MoveToDestination = false;
 
     [SerializeField] private Animator animator = null;
     [SerializeField] private bool stopPlayers = false;
@@ -17,6 +17,7 @@ public class WSB_TriggerCam : MonoBehaviour
     [SerializeField] private bool changeZoom = false;
     [SerializeField] private bool changePos = false;
     [SerializeField] private bool playOnStart = false;
+    [SerializeField] private bool isElevatorBottom = false;
 
     private void Start()
     {
@@ -32,18 +33,18 @@ public class WSB_TriggerCam : MonoBehaviour
 
     private void Update()
     {
-        if(moveToDestination)
+        if(MoveToDestination)
         {
             WSB_CameraManager.I.CamLux.SetCam(new Vector3(
-                changePos ? transform.position.x + targetPosition.x : WSB_CameraManager.I.CamLux.transform.position.x,
-                changePos ? transform.position.y + targetPosition.y : WSB_CameraManager.I.CamLux.transform.position.y,
+                changePos ? transform.position.x + targetPosition.x : WSB_CameraManager.I.GetDynamicMiddlePosition().x,
+                changePos ? transform.position.y + targetPosition.y : WSB_CameraManager.I.GetDynamicMiddlePosition().y,
                 changeZoom ? nextZoom : WSB_CameraManager.I.CamLux.Cam.orthographicSize),
                 TriggerCinemachine);
         }
 
         /* Cheat codes */
 
-        if (Keyboard.current.numpad9Key.isPressed)
+        if (Keyboard.current.numpad9Key.isPressed && (MoveToDestination || (animator && animator.enabled)))
         {
             if (animator)
                 animator.enabled = false;
@@ -80,6 +81,9 @@ public class WSB_TriggerCam : MonoBehaviour
         if (changeZoom)
             WSB_CameraManager.I.ChangeZoom(nextZoom);
 
+        if (isElevatorBottom)
+            WSB_Elevator.I.StartElevator();
+
         if (stopPlayers)
         {
             WSB_Lux.I.PlayerMovable.CanMove = true;
@@ -91,13 +95,17 @@ public class WSB_TriggerCam : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         // If any player enters this trigger, send the trigger information to the camera manager
-        if (!moveToDestination && col.GetComponent<WSB_PlayerMovable>())
+        if (!MoveToDestination && col.GetComponent<WSB_PlayerMovable>())
         {
             if (stopPlayers)
                 StopPlayers();
 
+            if (changeZoom)
+                WSB_CameraManager.I.ChangeZoom(nextZoom);
+
+            WSB_CameraManager.I.ToggleSplit(false);
             WSB_CameraManager.I.IsActive = false;
-            moveToDestination = true;
+            MoveToDestination = true;
         }
     }
 }

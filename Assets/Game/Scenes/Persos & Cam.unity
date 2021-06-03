@@ -7597,10 +7597,11 @@ MonoBehaviour:
   camLux: {fileID: 2381727434349249466}
   camBan: {fileID: 1230258498}
   camMoveSpeed: 4
-  camZoomSpeed: 2.5
+  camZoomSpeed: 5
   minCamZoom: 12
   maxCamZoom: 12
   offset: {x: 0, y: 6, z: 0}
+  calculatedOffset: {x: 0, y: 0, z: 0}
   cam2RenderTexture: {fileID: 8400000, guid: e8dd7a3e2dacd23478b14eb9349d4c4a, type: 2}
   render: {fileID: 4007628560158463970}
   mask: {fileID: 4007628561300473982}
@@ -7677,7 +7678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2381727434349249441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 133.5293, y: -41, z: -200}
+  m_LocalPosition: {x: 0, y: -31.7, z: -200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
