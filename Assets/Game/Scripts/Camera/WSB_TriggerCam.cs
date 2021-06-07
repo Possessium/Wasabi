@@ -93,10 +93,13 @@ public class WSB_TriggerCam : MonoBehaviour
 
             if (changeZoom)
                 WSB_CameraManager.I.ChangeZoom(nextZoom);
-
-            WSB_CameraManager.I.ToggleSplit(false);
-            WSB_CameraManager.I.IsActive = false;
-            MoveToDestination = true;
+            
+            if(changePos)
+            {
+                WSB_CameraManager.I.ToggleSplit(false);
+                WSB_CameraManager.I.IsActive = false;
+                MoveToDestination = true;
+            }
         }
     }
 }
