@@ -1702,12 +1702,12 @@ PrefabInstance:
     - target: {fileID: 3319797153310874231, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2900085
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 3319797153310874231, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7299995
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 3319797153310874231, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616,
         type: 3}
@@ -2463,6 +2463,7 @@ MonoBehaviour:
   changePos: 0
   playOnStart: 1
   isElevatorBottom: 0
+  isElevatorMid: 0
 --- !u!114 &1792303647
 MonoBehaviour:
   m_ObjectHideFlags: 0

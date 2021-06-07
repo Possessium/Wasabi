@@ -17,7 +17,7 @@ public class WSB_TriggerCam : MonoBehaviour
     [SerializeField] private bool changeZoom = false;
     [SerializeField] private bool changePos = false;
     [SerializeField] private bool playOnStart = false;
-    [SerializeField] private bool isElevatorBottom = false;
+    [SerializeField] private bool isElevator = false;
 
     private void Start()
     {
@@ -41,22 +41,13 @@ public class WSB_TriggerCam : MonoBehaviour
                 changeZoom ? nextZoom : WSB_CameraManager.I.CamLux.Cam.orthographicSize),
                 TriggerCinemachine);
         }
-
-        /* Cheat codes */
-
-        if (Keyboard.current.numpad9Key.isPressed && (MoveToDestination || (animator && animator.enabled)))
-        {
-            if (animator)
-                animator.enabled = false;
-            AnimationEnded();
-            Camera.main.GetComponent<Cinemachine.CinemachineBrain>().enabled = false;
-            WSB_CameraManager.I.ChangeZoom(12);
-        }
-
     }
 
     public void TriggerCinemachine()
     {
+        WSB_CameraManager.I.ToggleSplit(false);
+        WSB_CameraManager.I.IsActive = false;
+
         if (stopPlayers)
             StopPlayers();
 
@@ -79,10 +70,10 @@ public class WSB_TriggerCam : MonoBehaviour
     {
         WSB_CameraManager.I.IsActive = true;
         if (changeZoom)
+        {
             WSB_CameraManager.I.ChangeZoom(nextZoom);
-
-        if (isElevatorBottom)
-            WSB_Elevator.I.StartElevator();
+            nextZoom = 19;
+        }
 
         if (stopPlayers)
         {
@@ -95,7 +86,7 @@ public class WSB_TriggerCam : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         // If any player enters this trigger, send the trigger information to the camera manager
-        if (!MoveToDestination && col.GetComponent<WSB_PlayerMovable>())
+        if (!MoveToDestination && col.GetComponent<WSB_PlayerMovable>() && !isElevator)
         {
             if (stopPlayers)
                 StopPlayers();
