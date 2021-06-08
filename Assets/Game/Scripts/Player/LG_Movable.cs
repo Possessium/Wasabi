@@ -244,7 +244,7 @@ public class LG_Movable : MonoBehaviour
         movement.x += (_movement * speed);
     }
 
-    public void StopMoving()
+    public virtual void StopMoving()
     {
         movement = Vector2.zero;
         CanMove = false;

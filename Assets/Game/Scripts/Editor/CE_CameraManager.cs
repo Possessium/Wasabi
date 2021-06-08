@@ -7,7 +7,7 @@ using UnityEditor;
 public class CE_CameraManager : Editor
 {
 
-    bool ceActive = true;
+    bool ceActive = false;
 
     //SerializedProperty isOrtho;
     SerializedProperty camMoveSpeed;
