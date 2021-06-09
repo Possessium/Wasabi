@@ -3,3 +3,27 @@ sceneSetups:
   isLoaded: 1
   isActive: 1
   isSubScene: 0
+- path: Assets/Game/Scenes/All walls.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Gameplay area/GP_Plateformes.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Tuto area/Tuto_interactables.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Tuto area/Tuto_plateformes.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Gameplay area/GP_elevator.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0

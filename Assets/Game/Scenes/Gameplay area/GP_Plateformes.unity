@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129320046}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 49.584366, y: 20.262836, z: 0.00008046627}
+  m_LocalPosition: {x: 49.584366, y: 20.442837, z: 0.00008046627}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 1448482598}
@@ -585,7 +585,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8dd74ac153886f647a62f70d0e34f26e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 60.22
+      value: 60.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dd74ac153886f647a62f70d0e34f26e,
         type: 3}
@@ -890,6 +890,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!1 &588065831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 588065832}
+  - component: {fileID: 588065833}
+  m_Layer: 15
+  m_Name: Grille Elevator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &588065832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588065831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.201, y: 7.292, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1352435853}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &588065833
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588065831}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 7}
+  m_EdgeRadius: 0
 --- !u!1 &600330325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +1096,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 552d5e624a8f9564c8a3cf3a9264418d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.43
+      value: 10.610001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 552d5e624a8f9564c8a3cf3a9264418d,
         type: 3}
@@ -1107,7 +1164,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 625360906}
-  - component: {fileID: 625360905}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -1115,33 +1171,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &625360905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625360904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adbad4d3ae692e84da3c564b6c6121fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 11400000, guid: 4b9477f739063424283dc75f9ca5415d,
-    type: 2}
-  basePath: 
-  language: 
-  defaultPoolSize: 0
-  lowerPoolSize: 0
-  streamingPoolSize: 0
-  memoryCutoffThreshold: 0
-  monitorPoolSize: 0
-  monitorQueuePoolSize: 0
-  callbackManagerBufferSize: 0
-  spatialAudioPoolSize: 0
-  maxSoundPropagationDepth: 0
-  diffractionFlags: 11
-  engineLogging: 0
 --- !u!4 &625360906
 Transform:
   m_ObjectHideFlags: 0
@@ -2269,6 +2298,7 @@ Transform:
   - {fileID: 1998549427}
   - {fileID: 134155954}
   - {fileID: 1935893339}
+  - {fileID: 588065832}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3166,7 +3196,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: de94b5c98a46ac04cb8a9a341d0daca4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.75
+      value: -7.5699997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de94b5c98a46ac04cb8a9a341d0daca4,
         type: 3}
