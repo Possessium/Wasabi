@@ -3476,7 +3476,7 @@ MonoBehaviour:
   - position: {x: 0, y: 38.85, z: -100}
     tangent: {x: 0, y: 0, z: 0}
     roll: 0
-  - position: {x: -5.8824806, y: 36.218697, z: -100}
+  - position: {x: -5.8824806, y: 32, z: -100}
     tangent: {x: -4.0196095, y: -1.8, z: 0}
     roll: 0
   - position: {x: 50, y: 56, z: -100}
