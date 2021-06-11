@@ -10014,6 +10014,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: triple_ascenseurs_news
       objectReference: {fileID: 0}
+    - target: {fileID: 2119714978395404679, guid: fee2eb5a534eb9f4a8648155d8a7df9d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4bd89b5db2b67bb4ea37468fc0d37967, type: 2}
+    - target: {fileID: 6721283990780622218, guid: fee2eb5a534eb9f4a8648155d8a7df9d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4bd89b5db2b67bb4ea37468fc0d37967, type: 2}
+    - target: {fileID: 8173682893009284076, guid: fee2eb5a534eb9f4a8648155d8a7df9d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4bd89b5db2b67bb4ea37468fc0d37967, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fee2eb5a534eb9f4a8648155d8a7df9d, type: 3}
 --- !u!1 &1976397200 stripped
