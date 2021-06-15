@@ -8,6 +8,10 @@ public class WSB_InteractiveElement : MonoBehaviour
     [SerializeField] bool isOneTimeUse = false;
     [SerializeField] bool isAnimationPlayOnTrigger = false;
 
+    private static readonly int on_Hash = Animator.StringToHash("On");
+    private static readonly int activate_Hash = Animator.StringToHash("Activate");
+
+    bool on = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,12 +21,13 @@ public class WSB_InteractiveElement : MonoBehaviour
 
     public void ActivateAnimators()
     {
+        on = !on;
         for (int i = 0; i < animators.Count; i++)
         {
-            animators[i].SetTrigger("Activate");
+            animators[i].SetBool(on_Hash, on);
+            animators[i].SetTrigger(activate_Hash);
         }
         if (isOneTimeUse)
             Destroy(this);
     }
-
 }

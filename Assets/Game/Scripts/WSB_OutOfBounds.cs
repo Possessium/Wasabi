@@ -17,8 +17,8 @@ public class WSB_OutOfBounds : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Respawn any player that would've got out of bounds
-        if(collision.GetComponent<WSB_Player>())
-            WSB_CheckpointManager.I.Respawn(collision.GetComponent<WSB_Player>());
+        if(collision.GetComponent<WSB_PlayerMovable>())
+            WSB_CheckpointManager.I.Respawn(collision.GetComponent<WSB_PlayerMovable>());
 
         // Destroy any object that would fall out of bounds to avoid lag
         else

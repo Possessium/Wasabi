@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Linq;
 
@@ -13,6 +14,7 @@ public class WSB_GameManager : MonoBehaviour
     //[SerializeField] GameObject menu = null; 
     //[SerializeField] GameObject menuPause = null;
     [SerializeField] Animator elevatorAnimator = null;
+    [SerializeField] bool paused = true;
     public static bool Paused { get; private set; } = true;
     public static bool IsDialogue { get; private set; } = false;
 
@@ -30,23 +32,8 @@ public class WSB_GameManager : MonoBehaviour
     private void Start()
     {
         currentLevel = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        // Hide the mouse cursor
-        //Cursor.visible = false;
-
-        // Get every Rigidbody in the scene and freeze them
-        Rigidbody2D[] _physics = FindObjectsOfType<Rigidbody2D>();
-        foreach (Rigidbody2D _r in _physics)
-        {
-            _r.isKinematic = true;
-            _r.velocity = Vector2.zero;
-            _r.angularVelocity = 0;
-        }
 
         InputSystem.onDeviceChange += DeviceChange;
-
-
-        // Debug to start game
-        //Resume();
     }
 
     private void DeviceChange(InputDevice arg1, InputDeviceChange arg2)
@@ -56,29 +43,22 @@ public class WSB_GameManager : MonoBehaviour
             Paused = true;
 
             OnPause?.Invoke();
-            //menuPause.SetActive(true);
-            //EventSystem.current.SetSelectedGameObject(menuPause.GetComponentInChildren<UnityEngine.UI.Button>().gameObject);
         }
     }
 
 
     private void Update()
     {
+        // * * * * * *
         // Cheat codes
-        // *   *   *   *   *   *   *
-        if (Keyboard.current.lKey.isPressed)
-            ReloadScene();
-        if(Paused)
-        {
-            if (Keyboard.current.numpad1Key.isPressed)
-                StartGame("Keyboard");
-            if (Keyboard.current.numpad2Key.isPressed)
-                StartGame("Controller");
-            if (Keyboard.current.numpad3Key.isPressed)
-                StartGame("Both");
-        }
-        // *   *   *   *   *   *   *
 
+        if (Keyboard.current.numpad8Key.isPressed)
+            SceneManager.LoadScene("Persos & Cam");
+
+        //
+        //
+
+        Paused = paused;
 
         // Invoke the main Update of the game if it is not paused
         if (!Paused)
@@ -87,51 +67,10 @@ public class WSB_GameManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<WSB_Player>())
-            WSB_CheckpointManager.I.Respawn(collision.GetComponent<WSB_Player>());
+        if (collision.GetComponent<WSB_PlayerMovable>())
+            WSB_CheckpointManager.I.Respawn(collision.GetComponent<WSB_PlayerMovable>());
     }
 
-    //// Menu Playtests
-    //int currentMenu = 1;
-    //[SerializeField] GameObject parent = null;
-    //[SerializeField] GameObject bNext = null;
-    //[SerializeField] GameObject bPrev = null;
-    //Coroutine animateUI = null;
-
-    //public void NextMenu()
-    //{
-    //    bPrev.SetActive(true);
-    //    currentMenu++;
-    //    if (currentMenu == 3)
-    //        bNext.SetActive(false);
-
-    //    if (animateUI != null)
-    //        StopCoroutine(animateUI);
-    //    animateUI = StartCoroutine(AnimateUI());
-    //}
-
-    //public void PreviousMenu()
-    //{
-    //    bNext.SetActive(true);
-    //    currentMenu--;
-    //    if (currentMenu == 1)
-    //        bPrev.SetActive(false);
-
-    //    if (animateUI != null)
-    //        StopCoroutine(animateUI);
-    //    animateUI = StartCoroutine(AnimateUI());
-    //}
-
-    //IEnumerator AnimateUI()
-    //{
-    //    while(parent.transform.position.x != (currentMenu == 1 ? 960 : currentMenu == 2 ? -960 : -2880))
-    //    {
-    //        parent.transform.position = Vector2.MoveTowards(parent.transform.position, new Vector2((currentMenu == 1 ? 960 : currentMenu == 2 ? -960 : -2880), parent.transform.position.y), Time.deltaTime * 2500);
-    //        yield return new WaitForEndOfFrame();
-    //    }
-    //    animateUI = null;
-    //}
-    ////
 
     public static void SetDialogue(bool _state) => IsDialogue = _state;
 
@@ -160,53 +99,16 @@ public class WSB_GameManager : MonoBehaviour
         OnResume?.Invoke();
     }
 
-    public void SetBanController(bool _isBan)
-    {
-        isBanController = _isBan;
-    }
-
-    bool isBanController = false;
-
     public void RegisterElevator(Animator _a)
     {
         elevatorAnimator = _a;
     }
     public void StartGame(string _m)
     {
-
-        switch (_m)
-        {
-            case "Controller":
-                if (!WSB_InputManager.I.ChangeControllers(ControlsMode.Controller, isBanController)) return;
-                break;
-            case "Keyboard":
-                if (!WSB_InputManager.I.ChangeControllers(ControlsMode.Keyboard, isBanController)) return;
-                break;
-            case "Both":
-                if (!WSB_InputManager.I.ChangeControllers(ControlsMode.ControllerKeyboard, isBanController)) return;
-                break;
-            default:
-                return;
-        }
-
-        // Get all the rigidbody in the scene and unfreeze them
-        Rigidbody2D[] _physics = FindObjectsOfType<Rigidbody2D>();
-        foreach (Rigidbody2D _r in _physics)
-        {
-            if (_r.GetComponent<WSB_Player>() || _r.GetComponent<WSB_Movable>() || _r.GetComponent<WSB_MovingPlateform>() || _r.transform.tag == "Earth")
-                continue;
-            _r.isKinematic = false;
-        }
-
         // Set Pause to false
         Paused = false;
 
-
-
         OnResume?.Invoke();
-
-        //// Hide menu
-        //menu.SetActive(false);
     }
 
     public void ReloadScene()
