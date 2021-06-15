@@ -131,7 +131,7 @@ public class LG_Movable : MonoBehaviour
             AddIgnoredCollider(_plateformCollider);
 
             Vector2 _p = new Vector2(MovableRigidbody.position.x, _plateformCollider.bounds.max.y);
-            _p.y += Vector2.Distance(_p, transform.position);
+            //_p.y += Vector2.Distance(_p, transform.position);
 
             SetPosition(_p);
             if(!transform.parent)

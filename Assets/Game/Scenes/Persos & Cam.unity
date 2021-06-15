@@ -7396,6 +7396,7 @@ MonoBehaviour:
   jumpFX: {fileID: 6201043444680019866, guid: 29674f040469b61499ef4f9aa43f9c7d, type: 3}
   jumpInplaceFX: {fileID: 2563315505554339886, guid: ebeaa289d6a80d04e9b11cf79455322d,
     type: 3}
+  spawnPosition: {x: 129.1118, y: -83.65, z: -5}
 --- !u!114 &460986512884628071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8204,6 +8205,7 @@ MonoBehaviour:
   jumpFX: {fileID: 6201043444680019866, guid: 29674f040469b61499ef4f9aa43f9c7d, type: 3}
   jumpInplaceFX: {fileID: 2563315505554339886, guid: ebeaa289d6a80d04e9b11cf79455322d,
     type: 3}
+  spawnPosition: {x: 137.9467, y: -83.65, z: -5}
 --- !u!114 &6072583074185493581
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -69,17 +69,18 @@ public class WSB_TriggerCam : MonoBehaviour
     public void AnimationEnded()
     {
         WSB_CameraManager.I.IsActive = true;
-        if (changeZoom)
-        {
-            WSB_CameraManager.I.ChangeZoom(nextZoom);
-            nextZoom = 19;
-        }
 
         if (stopPlayers)
         {
             WSB_Lux.I.PlayerMovable.CanMove = true;
             WSB_Ban.I.Player.CanMove = true;
         }
+
+        if(isElevator)
+        {
+            FindObjectOfType<WSB_ElevatorCam>()?.Activate(true);
+        }
+
         Destroy(this);
     }
 

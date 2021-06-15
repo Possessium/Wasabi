@@ -39,6 +39,16 @@ public class WSB_PlayerMovable : LG_Movable
     private static readonly int unWalk_hash = Animator.StringToHash("UnWalk");
     #endregion
 
+    [SerializeField] private bool forceSpawn = true;
+    [SerializeField] private Vector3 spawnPosition = Vector3.zero;
+
+    public override void Start()
+    {
+        base.Start();
+        if(forceSpawn)
+            SetPosition(spawnPosition);
+    }
+
     public override void Update()
     {
         if (WSB_GameManager.Paused)

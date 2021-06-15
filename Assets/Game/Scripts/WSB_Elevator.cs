@@ -22,6 +22,8 @@ public class WSB_Elevator : MonoBehaviour
     [SerializeField] private Transform anchorLeft = null;
     [SerializeField] private Transform anchorRight = null;
 
+    [SerializeField] private WSB_ElevatorCam elevatorCam = null;
+
     //[SerializeField] private WSB_TriggerCam triggerCamToStuck = null;
     //[SerializeField] private WSB_TriggerCam triggerCamToTop = null;
 
@@ -115,6 +117,7 @@ public class WSB_Elevator : MonoBehaviour
             case ElevatorState.Bottom:
                 break;
             case ElevatorState.Stuck:
+                elevatorCam.Activate(false);
                 elevatorStuckFX.Stop();
                 trigger.enabled = true;
                 break;
@@ -130,6 +133,7 @@ public class WSB_Elevator : MonoBehaviour
             case ElevatorState.Bottom:
                 break;
             case ElevatorState.Stuck:
+                elevatorCam.Activate(true);
                 elevatorStuckFX.Play();
                 trigger.enabled = false;
                 break;
