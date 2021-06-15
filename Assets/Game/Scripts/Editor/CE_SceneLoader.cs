@@ -48,6 +48,12 @@ public class CE_SceneLoader : Editor
             EditorGUILayout.Space();
         }
 
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Bocking collider : ");
+        tLoader.BlockingCollider = (BoxCollider2D)EditorGUILayout.ObjectField(tLoader.BlockingCollider, typeof(BoxCollider2D), false);
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.Space();
+
         if (EditorGUI.EndChangeCheck())
             EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
 

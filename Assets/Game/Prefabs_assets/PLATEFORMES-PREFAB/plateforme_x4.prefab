@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4105173861797697788}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4105173861797697788}
-  m_Mesh: {fileID: -3753833249835127093, guid: ed0814d448137124b949a3298dc2ca2b, type: 3}
+  m_Mesh: {fileID: -3753833249835127093, guid: 51635c8996ef5a94d842730231fe5166, type: 3}
 --- !u!23 &2591959646118099241
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.0014968, y: 0.5}
+  m_Offset: {x: 0.00000011920929, y: 0.49984032}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}

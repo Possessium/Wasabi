@@ -4,23 +4,130 @@ using UnityEngine;
 
 public class WSB_Elevator : MonoBehaviour
 {
-    [SerializeField] GameObject pivotLeft = null;
-    [SerializeField] GameObject pivotRight = null;
-    [SerializeField] LineRenderer line = null;
-    [SerializeField] Animator animator = null;
-    [SerializeField] WSB_EventOnDestroy destroyEvent = null;
+    public static WSB_Elevator I { get; private set; }
 
-    private void Start()
+    [SerializeField] private Animator animator = null;
+    [SerializeField] private BoxCollider2D block = null;
+    [SerializeField] private BoxCollider2D trigger = null;
+
+    [SerializeField] private ParticleSystem elevatorStuckFX = null;
+
+    [SerializeField] private WSB_SceneLoader bottomSceneLoader = null;
+    [SerializeField] private WSB_SceneLoader stuckSceneLoader = null;
+
+    private ElevatorState elevatorState = ElevatorState.Bottom;
+
+    private static readonly int startElevator_Hash = Animator.StringToHash("Start");
+
+    private int playersIn = 0;
+
+    private void Awake()
     {
-        WSB_GameManager.I.RegisterElevator(animator);
-        destroyEvent.CallBack.AddListener(WSB_GameManager.I.ElevatorRepaired);
+        I = this;
     }
 
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        line.SetPosition(1, new Vector3(pivotLeft.transform.position.x, pivotLeft.transform.position.y, -5));
-        line.SetPosition(2, new Vector3(pivotRight.transform.position.x, pivotRight.transform.position.y, -5));
+        if (!collision.GetComponent<WSB_PlayerInteraction>())
+            return;
+
+        playersIn++;
+        if (playersIn == 2)
+            ActivateElevator();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!collision.GetComponent<WSB_PlayerInteraction>())
+            return;
+
+        playersIn--;
+
+        if (playersIn < 0)
+            playersIn = 0;
     }
 
 
+
+
+    private void ActivateElevator()
+    {
+        playersIn = 0;
+        switch (elevatorState)
+        {
+            case ElevatorState.Bottom:
+                bottomSceneLoader.OnScenesReady += StartElevator;
+                bottomSceneLoader.NextScene();
+
+                elevatorState = ElevatorState.Stuck;
+
+                bottomSceneLoader.enabled = false;
+                stuckSceneLoader.enabled = true;
+                break;
+            case ElevatorState.Stuck:
+                stuckSceneLoader.OnScenesReady += StartElevator;
+                stuckSceneLoader.NextScene();
+
+                elevatorState = ElevatorState.Top;
+
+                stuckSceneLoader.enabled = false;
+                break;
+        }
+        block.enabled = true;
+        trigger.enabled = false;
+    }
+
+    void StartElevator()
+    {
+        animator.SetTrigger(startElevator_Hash);
+        switch (elevatorState)
+        {
+            case ElevatorState.Stuck:
+                bottomSceneLoader.OnScenesReady -= StartElevator;
+                break;
+            case ElevatorState.Top:
+                stuckSceneLoader.OnScenesReady -= StartElevator;
+                break;
+        }
+    }
+
+    public void ActivateTrigger()
+    {
+        switch (elevatorState)
+        {
+            case ElevatorState.Bottom:
+                break;
+            case ElevatorState.Stuck:
+                elevatorStuckFX.Stop();
+                trigger.enabled = true;
+                break;
+            case ElevatorState.Top:
+                break;
+        }
+    }
+
+    public void DisableTrigger()
+    {
+        switch (elevatorState)
+        {
+            case ElevatorState.Bottom:
+                break;
+            case ElevatorState.Stuck:
+                elevatorStuckFX.Play();
+                trigger.enabled = false;
+                break;
+            case ElevatorState.Top:
+                break;
+            default:
+                break;
+        }
+    }
+
+}
+
+public enum ElevatorState
+{
+    Bottom,
+    Stuck,
+    Top
 }

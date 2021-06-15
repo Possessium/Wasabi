@@ -29,14 +29,15 @@ public class LG_Movable : MonoBehaviour
     #region Fields / Properties
     protected const float castMaxDistanceDetection = .001f;
     protected const int collisionSystemRecursionCeil = 3;
-    public bool CanMove { get; protected set; } = true;
+    public bool CanMove = true;
 
     // -----------------------
     
 
     [SerializeField] protected new BoxCollider2D collider = null;
     public BoxCollider2D MovableCollider { get { return collider; } }
-    [SerializeField] protected new Rigidbody2D rigidbody = null;
+    public Rigidbody2D MovableRigidbody = null;
+    
 
     /*[SerializeField] */protected bool isAwake = true;
     /*[SerializeField] */protected bool useGravity = true;
@@ -81,7 +82,7 @@ public class LG_Movable : MonoBehaviour
     public int FacingSide { get { return facingSide; } }
     public bool IsGrounded { get { return isGrounded; } }
 
-    /*[SerializeField, Min(0)] */protected float speed = 1;
+    /*[SerializeField, Min(0)] */public float speed = 1;
     /*[SerializeField, Min(0)] */protected float speedCoef = 1;
 
     // --------------------------------------------------
@@ -94,9 +95,9 @@ public class LG_Movable : MonoBehaviour
     //  • Movement, the velocity applied by the object itself (like walking)
     //
 
-    /*[SerializeField] */protected Vector2 force = Vector2.zero;
-    /*[SerializeField] */protected Vector2 instantForce = Vector2.zero;
-    /*[SerializeField] */protected Vector2 movement = Vector2.zero;
+    /*[SerializeField] */public Vector2 force = Vector2.zero;
+    /*[SerializeField] */public Vector2 instantForce = Vector2.zero;
+    /*[SerializeField] */public Vector2 movement = Vector2.zero;
 
     // -----------------------
 
@@ -129,7 +130,7 @@ public class LG_Movable : MonoBehaviour
             isJumping = false;
             AddIgnoredCollider(_plateformCollider);
 
-            Vector2 _p = new Vector2(rigidbody.position.x, _plateformCollider.bounds.max.y);
+            Vector2 _p = new Vector2(MovableRigidbody.position.x, _plateformCollider.bounds.max.y);
             _p.y += Vector2.Distance(_p, transform.position);
 
             SetPosition(_p);
@@ -156,7 +157,7 @@ public class LG_Movable : MonoBehaviour
         {
             for (int i = 0; i < _hits.Length; i++)
             {
-                if(_hits[i] && _hits[i].transform.GetComponent<WSB_MovingPlateform2>() && _hits[i].collider.bounds.max.y < collider.bounds.min.y)
+                if(_hits[i] && _hits[i].transform.GetComponent<WSB_MovingPlateform>() && _hits[i].collider.bounds.max.y < collider.bounds.min.y)
                 {
                     SetOnMovingPlateform(true, _hits[i].collider);
                     return;
@@ -219,13 +220,16 @@ public class LG_Movable : MonoBehaviour
         force.y = 0;
         force += _force;
         semiSolidCollider = null;
-        dontResetSemiSolid = false;
+        PressDown = false;
     }
 
     float 所有 = 0;
 
     public virtual void MoveHorizontally(float _movement)
     {
+        if (!CanMove)
+            return;
+
         if (_movement == 0)
         {
             if(speed != 0)
@@ -240,7 +244,13 @@ public class LG_Movable : MonoBehaviour
         movement.x += (_movement * speed);
     }
 
-    protected virtual void MoveVertically(float _movement) => movement.y += _movement;
+    public void StopMoving()
+    {
+        movement = Vector2.zero;
+        CanMove = false;
+    }
+
+    public void MoveVertically(float _movement) => movement.y += _movement;
 
     // -----------------------
 
@@ -344,19 +354,19 @@ public class LG_Movable : MonoBehaviour
     {
 #if UNITY_EDITOR
         // Refresh position if object moved in editor
-        if (previousPosition != rigidbody.position) RefreshPosition();
+        if (previousPosition != MovableRigidbody.position) RefreshPosition();
 #endif
 
         if (!((force + instantForce + movement) == null))
         {
-            Vector2 _lastPosition = rigidbody.position;
+            Vector2 _lastPosition = MovableRigidbody.position;
 
             ComputeVelocityBeforeMovement();
             ComplexCollisionsSystem();
             //CollisionSystemDelegate();
             RefreshPosition();
 
-            Vector2 _finalMovement = rigidbody.position - _lastPosition;
+            Vector2 _finalMovement = MovableRigidbody.position - _lastPosition;
 
             if (useGravity)
                 RefreshGroundState(_finalMovement);
@@ -367,7 +377,7 @@ public class LG_Movable : MonoBehaviour
             OnAppliedVelocity(Vector2.zero);
 
 #if UNITY_EDITOR
-        previousPosition = rigidbody.position;
+        previousPosition = MovableRigidbody.position;
 #endif
     }
 
@@ -377,9 +387,9 @@ public class LG_Movable : MonoBehaviour
     /// </summary>
     public void SetPosition(Vector2 _position)
     {
-        if (rigidbody.position != _position)
+        if (MovableRigidbody.position != _position)
         {
-            rigidbody.position = _position;
+            MovableRigidbody.position = _position;
             RefreshPosition();
         }
     }
@@ -412,7 +422,7 @@ public class LG_Movable : MonoBehaviour
         if (!_isGrounded)
         {
             _isGrounded = CastCollider(groundNormal * Physics2D.defaultContactOffset * -2, out RaycastHit2D _groundHit) &&
-                            (_groundHit.normal.y >= movableValues.GroundClimbHeight) &&
+                            (_groundHit.normal.y >= movableValues.GroundClimbHeight) && !ignoredColliders.Contains(_groundHit.collider) && 
                             _groundHit.collider != semiSolidCollider
                             || IsOnMovingPlateform;
 
@@ -437,8 +447,8 @@ public class LG_Movable : MonoBehaviour
     {
         ExtractFromCollisions();
 
-        if ((Vector2)transform.position != rigidbody.position)
-            transform.position = rigidbody.position;
+        if ((Vector2)transform.position != MovableRigidbody.position)
+            transform.position = new Vector3(MovableRigidbody.position.x, MovableRigidbody.position.y, transform.position.z);
     }
 
     // -----------------------
@@ -448,7 +458,7 @@ public class LG_Movable : MonoBehaviour
     /// </summary>
     protected virtual void OnAppliedVelocity(Vector2 _movement) { }
 
-    protected bool dontResetSemiSolid = false;
+    public bool PressDown = false;
 
     /// <summary>
     /// Called when grounded value has been set.
@@ -456,7 +466,7 @@ public class LG_Movable : MonoBehaviour
     protected virtual void OnSetGrounded()
     {
         // Reduce horizontal force if not null when get grounded.
-        if (isGrounded && !dontResetSemiSolid)
+        if (isGrounded && !PressDown)
         {
             if (semiSolidCollider)
                 semiSolidCollider = null;
@@ -545,7 +555,7 @@ public class LG_Movable : MonoBehaviour
 
         if (_amount == 0)
         {
-            rigidbody.position += _velocity;
+            MovableRigidbody.position += _velocity;
             GroundSnap(_velocity, _normal);
             //semiSolidCollider = null;
             return;
@@ -557,7 +567,7 @@ public class LG_Movable : MonoBehaviour
         {
             Vector2 _normalizedVelocity = _velocity.normalized;
 
-            rigidbody.position += _normalizedVelocity * _distance;
+            MovableRigidbody.position += _normalizedVelocity * _distance;
             _velocity = _normalizedVelocity * (_velocity.magnitude - _distance);
         }
 
@@ -672,22 +682,22 @@ public class LG_Movable : MonoBehaviour
 
         // Heighten the rigidbody position and add opposite velocity,
         // then cast collider and get hit informations.
-        rigidbody.position += new Vector2(0, movableValues.MaxHeightClimb);
+        MovableRigidbody.position += new Vector2(0, movableValues.MaxHeightClimb);
         _velocity.y -= movableValues.MaxHeightClimb;
 
         int _amount = CastCollider(_velocity, extraCastBuffer, out float _climbDistance);
 
         if (_amount == 0)
         {
-            rigidbody.position += _velocity;
+            MovableRigidbody.position += _velocity;
             _velocity.Set(0, 0);
         }
         // If hit something, check if it's a different surface than the one trying to climb
         // and that the rigidbody is not stuck in ; when so, distance is equal to zero.
-        else if ((_climbDistance != 0) && ((_stepHit.collider != extraCastBuffer[0].collider) || (_stepHit.normal != extraCastBuffer[0].normal)))
+        else if ((_climbDistance != 0) && ((_stepHit.collider != extraCastBuffer[0].collider) || (_stepHit.normal != extraCastBuffer[0].normal)) && _stepHit.collider != semiSolidCollider && !ignoredColliders.Contains(_stepHit.collider))
         {
             Vector2 _normalized = _velocity.normalized;
-            rigidbody.position += _normalized * _climbDistance;
+            MovableRigidbody.position += _normalized * _climbDistance;
             _velocity = _normalized * (_velocity.magnitude - _climbDistance);
 
             InsertCastInfos(extraCastBuffer, _amount);
@@ -695,7 +705,7 @@ public class LG_Movable : MonoBehaviour
         // If not, climb is failed so just reset position and velocity.
         else
         {
-            rigidbody.position -= new Vector2(0, movableValues.MaxHeightClimb);
+            MovableRigidbody.position -= new Vector2(0, movableValues.MaxHeightClimb);
             _velocity.y += movableValues.MaxHeightClimb;
             _velocity.x = 0;
         }
@@ -734,7 +744,9 @@ public class LG_Movable : MonoBehaviour
     {
         if (CastCollider(_normal * -movableValues.GroundSnapHeight, out RaycastHit2D _snapHit))
         {
-            rigidbody.position += _normal * -_snapHit.distance;
+            if (_snapHit.collider == semiSolidCollider || ignoredColliders.Contains(_snapHit.collider))
+                return false;
+            MovableRigidbody.position += _normal * -_snapHit.distance;
             InsertCastInfo(_snapHit);
             return true;
         }
@@ -745,7 +757,7 @@ public class LG_Movable : MonoBehaviour
 
     #region Collider Operations
 
-    protected Collider2D semiSolidCollider = null;
+    public Collider2D semiSolidCollider = null;
 
     private static RaycastHit2D[] singleCastBuffer = new RaycastHit2D[1];
 
@@ -766,7 +778,7 @@ public class LG_Movable : MonoBehaviour
 
         int _hitAmount = collider.Cast(_movement, movableValues.Contact, _hitBuffer, _distance);
 
-        if (_hitAmount == 0 && !dontResetSemiSolid)
+        if (_hitAmount == 0 && !PressDown)
         {
             semiSolidCollider = null;
         }
@@ -785,6 +797,8 @@ public class LG_Movable : MonoBehaviour
             {
                 semiSolidCollider = null;
             }
+            if (_hitBuffer[i].normal.y == -1 && force.y > 0)
+                force.y = 0;
         }
 
         if (_hitAmount > 0)
@@ -812,7 +826,7 @@ public class LG_Movable : MonoBehaviour
 
         for (int _i = 0; _i < _count; _i++)
         {
-            if (ignoredColliders.Contains(overlapBuffer[_i]))
+            if (ignoredColliders.Contains(overlapBuffer[_i]) || overlapBuffer[_i] == semiSolidCollider)
                 continue;
 
             // If overlap, extract from collision.
@@ -828,20 +842,21 @@ public class LG_Movable : MonoBehaviour
                (
                    _distance.normal.y == -1
                 && _distance.pointB.y < transform.position.y + .01f
-                && !dontResetSemiSolid
+                && !PressDown
                 && !transform.parent
                ))
             {
-                rigidbody.position += _distance.normal * _distance.distance * 2;
+                MovableRigidbody.position += _distance.normal * _distance.distance * 2;
             }
                
         }
     }
     #endregion
      
-    protected float jumpVar = 0;
-    /*[SerializeField]*/ protected bool isJumping = false;
-    [SerializeField] protected SO_MovableValues movableValues;
+    public float jumpVar = 0;
+    /*[SerializeField]*/
+    public bool isJumping = false;
+    public SO_MovableValues movableValues;
 
     #region Monobehaviour
     public virtual void Start()
@@ -863,7 +878,7 @@ public class LG_Movable : MonoBehaviour
         if (WSB_GameManager.Paused)
             return;
 
-        if (!GetComponent<WSB_Player>() && force.y > 5)
+        if (!GetComponent<WSB_PlayerMovable>() && force.y > 5)
             force.y = 5;
 
         PhysicsUpdate();

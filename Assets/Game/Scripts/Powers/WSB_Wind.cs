@@ -2,61 +2,73 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WSB_Wind : WSB_Power
+public class WSB_Wind : WSB_Rune
 {
     [SerializeField] float windPower = 2;
     [SerializeField] LayerMask windLayer = 0;
-
-    Collider2D hit = null;
-    RaycastHit2D[] checkPlayerOn = new RaycastHit2D[10];
-    LG_Movable physics;
+    [SerializeField] Vector2 size = Vector2.one;
+    [SerializeField] private GameObject poufAigretteFX = null;
     [SerializeField] LayerMask stopWindSight = 0;
 
-    public override void Update()
-    {
-        base.Update();
+    WSB_Ban ban = null;
+    WSB_Lux lux = null;
 
+
+    private void Start()
+    {
+        ban = WSB_Ban.I;
+        lux = WSB_Lux.I;
+    }
+
+    protected override void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 2, .3f, .6f);
+        Gizmos.DrawWireCube(transform.position + new Vector3(0, size.y/2), size);
+    }
+
+    protected override void PlayPower()
+    {
         // Hold if game is in pause
-        if (WSB_GameManager.Paused)
+        if (WSB_GameManager.Paused || !ban || !lux)
             return;
 
         // Find all corresponding objects in range
-        Collider2D[] _hits = Physics2D.OverlapCircleAll(transform.position, range, windLayer);
+        Collider2D[] _hits = Physics2D.OverlapBoxAll(transform.position + new Vector3(0, size.y / 2), size, 0, windLayer);
+
+        Collider2D _hit = null;
 
         // Loops through found objects
         for (int i = 0; i < _hits.Length; i++)
         {
-            hit = _hits[i];
+            _hit = _hits[i];
             // Check if hit is Ban or Lux
-            if (hit == WSB_Ban.I.MovableCollider || hit == WSB_Lux.I.MovableCollider || hit == collider)
+            if (_hit == ban.Player.MovableCollider || _hit == lux.PlayerMovable.MovableCollider || _hit == movable.MovableCollider)
                 continue;
-
-            //// Check if Ban is on top of the moving object
-            //checkPlayerOn = new RaycastHit2D[10];
-            //WSB_Ban.I.MovableCollider.Cast(Vector2.down, checkPlayerOn, 1);
-            //if (System.Array.Find(checkPlayerOn, r => r.collider == hit))
-            //    continue;
-
-            //// Check if Lux is on top of the moving object
-            //checkPlayerOn = new RaycastHit2D[10];
-            //WSB_Lux.I.MovableCollider.Cast(Vector2.down, checkPlayerOn, 1);
-            //if (System.Array.Find(checkPlayerOn, r => r.collider == hit))
-            //    continue;
 
             // Looks if there is a wall between the power and the object and stop if yes
-            Vector2 _dir = hit.transform.position - transform.position;
-            if (Physics2D.Raycast(transform.position, _dir.normalized, Vector2.Distance(transform.position, hit.transform.position), stopWindSight))
+            Vector2 _dir = _hit.transform.position - transform.position;
+            RaycastHit2D _fion;
+            if (_fion = Physics2D.Raycast(transform.position, _dir, Vector2.Distance(transform.position, _hit.transform.position), stopWindSight))
+            {
+                Debug.LogError(_fion.transform.name);
                 continue;
+            }
 
+            LG_Movable _physics;
             // Gets physic of hit object
-            hit.gameObject.TryGetComponent(out physics);
-
-            if (physics)
+            if (_hit.gameObject.TryGetComponent(out _physics))
             {
                 // Add vertical force on the physic of the object
-                physics.AddForce(Vector2.up * windPower);
+                _physics.AddForce(Vector2.up * windPower);
             }
         }
+    }
 
+    public override void DeactivatePower(WSB_PlayerMovable _p)
+    {
+        base.DeactivatePower(_p);
+
+        if (poufAigretteFX)
+            Instantiate(poufAigretteFX, transform.position, Quaternion.identity);
     }
 }

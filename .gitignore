@@ -79,3 +79,14 @@ Library/SceneVisibilityState.asset
 obj/Debug
 Library/SceneVisibilityState.asset
 Library/ShaderCache
+Library/ShaderCache.db
+Assembly-CSharp.csproj
+Library/ScriptAssemblies
+Library/SceneVisibilityState.asset
+.vs/Wasabi/v16/.suo
+Library/InspectorExpandedItems.asset
+Library/ShaderCache/EditorEncounteredVariants
+Assembly-CSharp.csproj
+*.validationcache
+*.prof
+*.meta

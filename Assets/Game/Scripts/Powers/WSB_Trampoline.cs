@@ -2,39 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WSB_Trampoline : WSB_Power
+public class WSB_Trampoline : WSB_Plant
 {
     [SerializeField] float trampolineForce = 10;
     [SerializeField] BoxCollider2D bounceCollider = null;
+    [SerializeField] ParticleSystem trampolineBounceFX = null;
+
+
+    private static readonly int bounce_Hash = Animator.StringToHash("Bounce");
 
     protected override void OnDrawGizmos()
     {
         // don't show range on that plant
     }
 
-    [SerializeField] LayerMask layerBounce;
     [SerializeField] ContactFilter2D bounceFilter;
     RaycastHit2D[] hits = new RaycastHit2D[2];
+    bool canFX = true;
 
-    public override void Update()
+    protected override void PlayPower()
     {
-        base.Update();
-
         System.Array.Clear(hits, 0, 2);
 
         bounceCollider.Cast(Vector2.up, bounceFilter, hits, .5f);
 
-        //Physics2D.BoxCastNonAlloc((Vector2)transform.position + bounceCollider.offset, bounceCollider.size, 0, Vector2.zero, hits, 0, layerBounce);
-        
         for (int i = 0; i < hits.Length; i++)
         {
             LG_Movable _movable;
-            if (hits[i] && hits[i].transform != this.transform && hits[i].transform.TryGetComponent(out _movable))
+            if (hits[i] && hits[i].transform != this.transform && hits[i].transform.position.y > transform.position.y + .5f && hits[i].transform.TryGetComponent(out _movable))
             {
+                if(trampolineBounceFX && canFX)
+                {
+                    trampolineBounceFX.Play();
+                    StartCoroutine(DelayFX());
+                }
+
                 _movable.SetPosition(_movable.transform.position + Vector3.up * .5f);
+
+                if (animator)
+                    animator.SetTrigger(bounce_Hash);
+
                 _movable.TrampolineJump(Vector2.up * trampolineForce);
             }
         }
+    }
 
+    IEnumerator DelayFX()
+    {
+        canFX = false;
+        yield return new WaitForSeconds(.5f);
+        canFX = true;
     }
 }

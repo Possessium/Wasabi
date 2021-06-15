@@ -2,109 +2,66 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WSB_Shrink : WSB_Power
+public class WSB_Shrink : WSB_Rune
 {
-    [SerializeField] LayerMask layerShrink = 0;
-
-    Coroutine shrinkDelay = null;
-    Coroutine unshrinkDelay = null;
     [SerializeField] Vector2 offset = Vector2.zero;
-    bool hasLux = false;
+    [SerializeField] bool hasLux = false;
+    WSB_Lux lux = null;
 
-    public override void Start()
+    private void Start()
     {
-        base.Start();
+        lux = WSB_Lux.I;
     }
+
 
     protected override void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, 2, .3f, .6f);
-        if(WSB_Lux.I)
-            Gizmos.DrawWireSphere((Vector2)transform.position + offset, range * (WSB_Lux.I.Shrinked ? 1 : .9f));
+        if(lux)
+            Gizmos.DrawWireSphere((Vector2)transform.position + offset, range);
         
         else
             Gizmos.DrawWireSphere((Vector2)transform.position + offset, range);
     }
 
-    public override void Update()
+    protected override void PlayPower()
     {
-        base.Update();
-
-        if (!IsActive)
+        if (!lux)
             return;
 
-            Shrink();
-    }
-
-    void Shrink()
-    {
-        Collider2D[] _hits = Physics2D.OverlapCircleAll(new Vector2(transform.position.x + offset.x, transform.position.y + offset.y), range * (WSB_Lux.I.Shrinked ? 1 : .9f), layerShrink);
-
-        if (!WSB_Lux.I.Shrinked && !WSB_Lux.I.HeldObject)
+        if (!hasLux && !lux.PlayerInteraction.HeldObject && Vector2.Distance(transform.position, lux.transform.position) < range)
         {
-            for (int i = 0; i < _hits.Length; i++)
-            {
-                if (_hits[i].transform != WSB_Lux.I.transform)
-                    continue;
+            hasLux = true;
 
-                hasLux = true;
+            lux.Shrink();
 
-                if (unshrinkDelay != null)
-                    StopCoroutine(unshrinkDelay);
-                unshrinkDelay = null;
-
-                WSB_Lux.I.Shrink();
-                shrinkDelay = StartCoroutine(ShrinkDelay());
-                break;
-            }
             return;
         }
 
-        else if (!System.Array.Find(_hits, h => h.transform == WSB_Lux.I.transform) && hasLux)
+        else if (hasLux && !lux.PlayerInteraction.HeldObject && Vector2.Distance(transform.position, lux.transform.position) > range)
         {
-            if (shrinkDelay != null)
-                StopCoroutine(shrinkDelay);
-            shrinkDelay = null;
-
             hasLux = false;
 
-            WSB_Lux.I.Unshrink();
-            unshrinkDelay = StartCoroutine(UnshrinkDelay());
+            lux.Unshrink();
+
             return;
         }
     }
 
-    IEnumerator ShrinkDelay()
+    public override void DeactivatePower(WSB_PlayerMovable _p)
     {
-        while(!WSB_Lux.I.Shrinked)
-        {
-            WSB_Lux.I.Shrink();
-            yield return new WaitForEndOfFrame();
-        }
-        shrinkDelay = null;
-    }
+        base.DeactivatePower(_p);
 
-    IEnumerator UnshrinkDelay()
-    {
-        while(WSB_Lux.I.Shrinked)
-        {
-            WSB_Lux.I.Unshrink();
-            yield return new WaitForEndOfFrame();
-        }
-        unshrinkDelay = null;
+        enabled = false;
     }
 
     private void OnDisable()
     {
-        if (!hasLux)
+        if (!hasLux || !lux)
             return;
-
-        if (shrinkDelay != null)
-            StopCoroutine(shrinkDelay);
-        shrinkDelay = null;
 
         hasLux = false;
 
-        WSB_Lux.I.Unshrink();
+        lux.Unshrink();
     }
 }

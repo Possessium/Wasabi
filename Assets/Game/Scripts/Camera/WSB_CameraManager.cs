@@ -118,16 +118,28 @@ public class WSB_CameraManager : MonoBehaviour
                 SplitFixe();
                 break;
             case CamType.SplitDynamic:
-                // Sets the correct angle of the split
-                //_dir = ban.position - lux.position;
-                //_angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
-                //mask.transform.eulerAngles = new Vector3(0, 0, _angle - 90);
-                //render.transform.localEulerAngles = new Vector3(0, 0, -_angle + 90);
                 SplitDynamic();
                 break;
         }
+
+
+        if (Vector2.Distance(ban.position, lux.position) > MaxCamZoom / 1.25f && !leftMiddle.GetBool("Split") && !rightMiddle.GetBool("Split"))
+        {
+            leftMiddle.SetTrigger("Change");
+            rightMiddle.SetTrigger("Change");
+            leftMiddle.SetBool("Split", true);
+            rightMiddle.SetBool("Split", true);
+        }
+        if (Vector2.Distance(ban.position, lux.position) <= MaxCamZoom / 1.25f && leftMiddle.GetBool("Split") && rightMiddle.GetBool("Split"))
+        {
+            leftMiddle.SetTrigger("Change");
+            rightMiddle.SetTrigger("Change");
+            leftMiddle.SetBool("Split", false);
+            rightMiddle.SetBool("Split", false);
+        }
+
     }
-    
+
 
     public void SetResolution()
     {
@@ -225,14 +237,6 @@ public class WSB_CameraManager : MonoBehaviour
         {
             ToggleSplit(false);
 
-            if (Vector2.Distance(ban.position, lux.position) <= MaxCamZoom / 1.21f && leftMiddle.GetBool("Split") && rightMiddle.GetBool("Split"))
-            {
-                leftMiddle.SetTrigger("Change");
-                rightMiddle.SetTrigger("Change");
-                leftMiddle.SetBool("Split", false);
-                rightMiddle.SetBool("Split", false);
-            }
-
             Dynamic();
         }
     }
@@ -285,21 +289,6 @@ public class WSB_CameraManager : MonoBehaviour
     {
         
         Vector3 _camPos = camLux.transform.position;
-
-        if (Vector2.Distance(ban.position, lux.position) > MaxCamZoom / 1.25f && !leftMiddle.GetBool("Split") && !rightMiddle.GetBool("Split"))
-        {
-            leftMiddle.SetTrigger("Change");
-            rightMiddle.SetTrigger("Change");
-            leftMiddle.SetBool("Split", true);
-            rightMiddle.SetBool("Split", true);
-        }
-        if (Vector2.Distance(ban.position, lux.position) <= MaxCamZoom / 1.25f && leftMiddle.GetBool("Split") && rightMiddle.GetBool("Split"))
-        {
-            leftMiddle.SetTrigger("Change");
-            rightMiddle.SetTrigger("Change");
-            leftMiddle.SetBool("Split", false);
-            rightMiddle.SetBool("Split", false);
-        }
 
 
         // Split the screen if the distance is higher than the maximum given zoom
@@ -382,7 +371,7 @@ public class WSB_CameraManager : MonoBehaviour
         render.transform.localEulerAngles = new Vector3(0, 0, -_angle + 90);
 
         // Loop until the distance between lux & ban is lower than the max zoom * 1.5
-        if (_dist <= MaxCamZoom * 1.5f)
+        if (_dist <= MaxCamZoom * 1.1f)
         {
             // Tells the cameras to merge towards each other if the distance is lower than the max zoom
             if (_dist < MaxCamZoom)
@@ -397,8 +386,8 @@ public class WSB_CameraManager : MonoBehaviour
 
             // Calcul and set ban's cam position and zoom
             targetPositionCamBan = new Vector3(
-                _luxOffset.x - (_dirOffset.x * (_dist / (maxCamZoom * 1.5f))),
-                _luxOffset.y - (_dirOffset.y * (_dist /(maxCamZoom * 1.5f))),
+                _luxOffset.x - (_dirOffset.x * (_dist / (maxCamZoom * 1.1f))),
+                _luxOffset.y - (_dirOffset.y * (_dist /(maxCamZoom * 1.1f))),
                 _dist);
 
 
@@ -406,8 +395,8 @@ public class WSB_CameraManager : MonoBehaviour
 
             // Calcul and set ban's cam position and zoom
             targetPositionCamLux = new Vector3(
-                _banOffset.x + (_dirOffset.x * (_dist / (maxCamZoom * 1.5f))),
-                _banOffset.y + (_dirOffset.y * (_dist /(maxCamZoom * 1.5f))),
+                _banOffset.x + (_dirOffset.x * (_dist / (maxCamZoom * 1.1f))),
+                _banOffset.y + (_dirOffset.y * (_dist /(maxCamZoom * 1.1f))),
                 _dist);
 
             camLux.SetCam(targetPositionCamLux/*, targetPositionCamLux.z*/);
@@ -416,8 +405,8 @@ public class WSB_CameraManager : MonoBehaviour
         // If the distance is higher than the max zoom * 1.5
         else
         {
-            camBan.SetCam(new Vector3(_banOffset.x, _banOffset.y, Mathf.Clamp(_dist, MaxCamZoom / 2, maxCamZoom * 1.5f)));
-            camLux.SetCam(new Vector3(_luxOffset.x, _luxOffset.y, Mathf.Clamp(_dist, MaxCamZoom / 2, maxCamZoom * 1.5f)));
+            camBan.SetCam(new Vector3(_banOffset.x, _banOffset.y, Mathf.Clamp(_dist, MaxCamZoom / 2, maxCamZoom * 1.1f)));
+            camLux.SetCam(new Vector3(_luxOffset.x, _luxOffset.y, Mathf.Clamp(_dist, MaxCamZoom / 2, maxCamZoom * 1.1f)));
         }
 
     }
@@ -425,6 +414,8 @@ public class WSB_CameraManager : MonoBehaviour
     public void ToggleSplit(bool _status)
     {
         bigSplit.SetActive(_status);
+
+        camBan.transform.gameObject.SetActive(_status);
     }
 }
 

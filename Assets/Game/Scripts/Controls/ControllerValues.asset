@@ -49,4 +49,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   ContactGrabLayer:
     serializedVersion: 2
-    m_Bits: 57089
+    m_Bits: 54017
+  LeverLayer:
+    serializedVersion: 2
+    m_Bits: 131072
