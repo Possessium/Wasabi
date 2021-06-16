@@ -106,6 +106,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
 
             leverToTrigger = _lever;
             AnimateLever();
+            AkSoundEngine.PostEvent("Play_Lever_Action", gameObject);
         }
     }
 
@@ -151,6 +152,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
                 playerAnimator.SetTrigger(pick_Hash);
 
             movable.StopMoving();
+            AkSoundEngine.PostEvent("Play_Grab_Item", gameObject);
         }
     }
 
