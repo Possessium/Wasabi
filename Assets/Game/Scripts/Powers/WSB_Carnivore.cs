@@ -17,6 +17,7 @@ public class WSB_Carnivore : WSB_Plant
 
         if (animator)
             animator.SetTrigger(fire_Hash);
+       
 
         yield return new WaitForSeconds(.5f);
 
