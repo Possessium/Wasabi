@@ -155,6 +155,7 @@
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerDisable.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkBusHierarchyFlags.cs" />
     <Compile Include="Assets\Game\Scripts\Powers\WSB_Rune.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_ElevatorCam.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseObjects\WwiseSwitchGroupReference.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerMouseExit.cs" />
     <Compile Include="Assets\Game\Scripts\Powers\WSB_Socle.cs" />
@@ -276,6 +277,7 @@
     <Compile Include="Assets\Game\fxs\scripts\WSB_WindParticle.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMonitoringCallbackInfo.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkExternalSourceInfo.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_RedirectCinemachine.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkRoomPortal.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkPlaylistArray.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMIDIEventCallbackInfo.cs" />

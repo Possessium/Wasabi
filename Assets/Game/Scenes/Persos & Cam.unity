@@ -6541,11 +6541,17 @@ MonoBehaviour:
     SceneName: Tuto_lights
   - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
     SceneName: T1_plateformes
+  - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_FXs.unity
+    SceneName: T1_FXs
+  - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_lights.unity
+    SceneName: T1_lights
   - ScenePath: Assets/Game/Scenes/Music.unity
     SceneName: Music
   - ScenePath: Assets/Game/Scenes/Sound_Design.unity
     SceneName: Sound_Design
-  LoadListSize: 7
+  - ScenePath: Assets/Game/Scenes/Tuto area/FXs_start_tuto.unity
+    SceneName: FXs_start_tuto
+  LoadListSize: 10
   AllScenesToUnloadInOrder: []
   UnloadListSize: 0
   BlockingCollider: {fileID: 0}
@@ -7622,7 +7628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2381727434349249441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.76577, y: 5.160488, z: -200}
+  m_LocalPosition: {x: 0, y: 6.3826447, z: -200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7721,7 +7727,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15.858965
+  orthographic size: 19
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -1136,7 +1136,11 @@ MonoBehaviour:
   AllScenesToLoadInOrder:
   - ScenePath: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_plateformes.unity
     SceneName: T2_plateformes
-  LoadListSize: 1
+  - ScenePath: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_FXs.unity
+    SceneName: T2_FXs
+  - ScenePath: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_lights.unity
+    SceneName: T2_lights
+  LoadListSize: 3
   AllScenesToUnloadInOrder:
   - ScenePath: Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_plateformes.unity
     SceneName: T_serre_bas_plateformes
@@ -1161,17 +1165,9 @@ MonoBehaviour:
     SceneName: GP_Plateformes
   - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
     SceneName: GP_Interactables
-  - ScenePath: "Assets/Game/Scenes/Gameplay area/GP_D\xE9cor.unity"
-    SceneName: "GP_D\xE9cor"
-  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
-    SceneName: GP_Lights
-  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_FX.unity
-    SceneName: GP_FX
   - ScenePath: Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_plateformes.unity
     SceneName: T_serre_haut_plateformes
-  - ScenePath: "Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_D\xE9cor.unity"
-    SceneName: "T_serre_haut_D\xE9cor"
-  LoadListSize: 7
+  LoadListSize: 3
   AllScenesToUnloadInOrder:
   - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_interactables.unity
     SceneName: Tuto_interactables
@@ -1181,7 +1177,13 @@ MonoBehaviour:
     SceneName: Tuto_lights
   - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
     SceneName: T1_plateformes
-  UnloadListSize: 4
+  - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_lights.unity
+    SceneName: T1_lights
+  - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_FXs.unity
+    SceneName: T1_FXs
+  - ScenePath: Assets/Game/Scenes/Tuto area/FXs_start_tuto.unity
+    SceneName: FXs_start_tuto
+  UnloadListSize: 7
   BlockingCollider: {fileID: 0}
 --- !u!1001 &535091295
 PrefabInstance:
@@ -3814,3 +3816,84 @@ MonoBehaviour:
     showNormalsHelpInfo: 0
     tabIndex: 0
   initialized: 1
+--- !u!1 &2144547539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2144547542}
+  - component: {fileID: 2144547541}
+  - component: {fileID: 2144547540}
+  m_Layer: 18
+  m_Name: Clean scenes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2144547540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144547539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093ec8c4f899be74cb665c1f371aebdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trigger: {fileID: 2144547541}
+  LoadOnPlay: 0
+  AllScenesToLoadInOrder: []
+  LoadListSize: 0
+  AllScenesToUnloadInOrder:
+  - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
+    SceneName: GP_Interactables
+  - ScenePath: "Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_D\xE9cor.unity"
+    SceneName: "T_serre_bas_D\xE9cor"
+  UnloadListSize: 2
+  BlockingCollider: {fileID: 0}
+--- !u!61 &2144547541
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144547539}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10, y: 5}
+  m_EdgeRadius: 0
+--- !u!4 &2144547542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144547539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5, y: 57.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

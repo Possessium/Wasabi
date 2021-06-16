@@ -83,6 +83,7 @@ public class WSB_Elevator : MonoBehaviour
                 bottomSceneLoader.enabled = false;
                 break;
             case ElevatorState.Stuck:
+                elevatorCam.Activate(false);
                 stuckSceneLoader.OnScenesReady += StartElevator;
                 stuckSceneLoader.NextScene();
 
