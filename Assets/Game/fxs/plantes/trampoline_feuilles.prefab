@@ -43,7 +43,7 @@ ParticleSystem:
   serializedVersion: 7
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 1
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -221,9 +221,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.63866544, g: 0.8773585, b: 0.21933962, a: 1}
+      maxColor: {r: 1, g: 0.95441294, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -976,7 +976,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 7
+        scalar: 4
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1539,7 +1539,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -5820368538821568360, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: -6000332733890134250, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
     flipU: 0
     flipV: 0
@@ -9948,9 +9948,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.6392157, g: 0.8784314, b: 0.21960784, a: 1}
+      maxColor: {r: 1, g: 0.9529412, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -11266,7 +11266,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -6104442770297589223, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: -6000332733890134250, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
     flipU: 0
     flipV: 0

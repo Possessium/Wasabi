@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PathCreation;
+using PathCreation.Examples;
 
 public class WSB_Elevator : MonoBehaviour
 {
@@ -15,6 +17,16 @@ public class WSB_Elevator : MonoBehaviour
     [SerializeField] private WSB_SceneLoader bottomSceneLoader = null;
     [SerializeField] private WSB_SceneLoader stuckSceneLoader = null;
 
+    [SerializeField] private LineRenderer lineRendererLeft = null;
+    [SerializeField] private LineRenderer lineRendererRight = null;
+    [SerializeField] private Transform anchorLeft = null;
+    [SerializeField] private Transform anchorRight = null;
+
+    [SerializeField] private WSB_ElevatorCam elevatorCam = null;
+
+    //[SerializeField] private WSB_TriggerCam triggerCamToStuck = null;
+    //[SerializeField] private WSB_TriggerCam triggerCamToTop = null;
+
     private ElevatorState elevatorState = ElevatorState.Bottom;
 
     private static readonly int startElevator_Hash = Animator.StringToHash("Start");
@@ -24,6 +36,12 @@ public class WSB_Elevator : MonoBehaviour
     private void Awake()
     {
         I = this;
+    }
+
+    private void Update()
+    {
+        lineRendererLeft.SetPosition(0, new Vector3(anchorLeft.position.x, anchorLeft.position.y, -24.5f));
+        lineRendererRight.SetPosition(0, new Vector3(anchorRight.position.x, anchorRight.position.y, -24.5f));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,21 +66,21 @@ public class WSB_Elevator : MonoBehaviour
     }
 
 
-
-
     private void ActivateElevator()
     {
+        WSB_CameraManager.I.ToggleSplit(false);
+        WSB_CameraManager.I.IsActive = false;
         playersIn = 0;
         switch (elevatorState)
         {
             case ElevatorState.Bottom:
                 bottomSceneLoader.OnScenesReady += StartElevator;
+                //triggerCamToStuck.MoveToDestination = true;
                 bottomSceneLoader.NextScene();
 
                 elevatorState = ElevatorState.Stuck;
 
                 bottomSceneLoader.enabled = false;
-                stuckSceneLoader.enabled = true;
                 break;
             case ElevatorState.Stuck:
                 stuckSceneLoader.OnScenesReady += StartElevator;
@@ -77,13 +95,14 @@ public class WSB_Elevator : MonoBehaviour
         trigger.enabled = false;
     }
 
-    void StartElevator()
+    public void StartElevator()
     {
         animator.SetTrigger(startElevator_Hash);
         switch (elevatorState)
         {
             case ElevatorState.Stuck:
                 bottomSceneLoader.OnScenesReady -= StartElevator;
+                stuckSceneLoader.enabled = true;
                 break;
             case ElevatorState.Top:
                 stuckSceneLoader.OnScenesReady -= StartElevator;
@@ -98,6 +117,7 @@ public class WSB_Elevator : MonoBehaviour
             case ElevatorState.Bottom:
                 break;
             case ElevatorState.Stuck:
+                elevatorCam.Activate(false);
                 elevatorStuckFX.Stop();
                 trigger.enabled = true;
                 break;
@@ -113,6 +133,7 @@ public class WSB_Elevator : MonoBehaviour
             case ElevatorState.Bottom:
                 break;
             case ElevatorState.Stuck:
+                elevatorCam.Activate(true);
                 elevatorStuckFX.Play();
                 trigger.enabled = false;
                 break;
