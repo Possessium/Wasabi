@@ -455,6 +455,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac954296871f6fd4b92201c512224958, type: 3}
+--- !u!1 &623681985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623681987}
+  - component: {fileID: 623681986}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &623681986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623681985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbad4d3ae692e84da3c564b6c6121fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: 4b9477f739063424283dc75f9ca5415d,
+    type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  diffractionFlags: 11
+  engineLogging: 0
+--- !u!4 &623681987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623681985}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &658694785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7422819242396222980, guid: 8a7f2b87393a29e44aea8d651bf9f38a,
@@ -6499,6 +6557,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a280892c1a6c8540bd87f790a4599d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1433720644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433720640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2beb8184dd702974b9e03307b3f847c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepFX: {fileID: 3792860050757049618, guid: c814f685d702b3343afa3f9becdd85cf, type: 3}
+  playerMovable: {fileID: 460986512884628070}
 --- !u!1 &1489719377
 GameObject:
   m_ObjectHideFlags: 0
@@ -6821,6 +6893,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1600151155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600151152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2beb8184dd702974b9e03307b3f847c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepFX: {fileID: 3792860050757049618, guid: c814f685d702b3343afa3f9becdd85cf, type: 3}
+  playerMovable: {fileID: 6072583074185493580}
 --- !u!1 &1773243429
 GameObject:
   m_ObjectHideFlags: 0
@@ -6850,64 +6936,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1600151151}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1807311534
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1807311536}
-  - component: {fileID: 1807311535}
-  m_Layer: 0
-  m_Name: WwiseGlobal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1807311535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807311534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adbad4d3ae692e84da3c564b6c6121fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 11400000, guid: 4b9477f739063424283dc75f9ca5415d,
-    type: 2}
-  basePath: 
-  language: 
-  defaultPoolSize: 0
-  lowerPoolSize: 0
-  streamingPoolSize: 0
-  memoryCutoffThreshold: 0
-  monitorPoolSize: 0
-  monitorQueuePoolSize: 0
-  callbackManagerBufferSize: 0
-  spatialAudioPoolSize: 0
-  maxSoundPropagationDepth: 0
-  diffractionFlags: 11
-  engineLogging: 0
---- !u!4 &1807311536
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807311534}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1828882879
 PrefabInstance:
@@ -7397,7 +7425,7 @@ MonoBehaviour:
   Rend: {fileID: 1433720640}
   Turning: 0
   IsRight: 1
-  PlayerAnimator: {fileID: 1433720642}
+  playerAnimator: {fileID: 1433720642}
   jumpPosition: {fileID: 1415670898}
   jumpFX: {fileID: 6201043444680019866, guid: 29674f040469b61499ef4f9aa43f9c7d, type: 3}
   jumpInplaceFX: {fileID: 2563315505554339886, guid: ebeaa289d6a80d04e9b11cf79455322d,
@@ -7628,7 +7656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2381727434349249441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.3826447, z: -200}
+  m_LocalPosition: {x: 0, y: 7.1499977, z: -200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8207,7 +8235,7 @@ MonoBehaviour:
   Rend: {fileID: 1600151152}
   Turning: 0
   IsRight: 1
-  PlayerAnimator: {fileID: 1600151154}
+  playerAnimator: {fileID: 1600151154}
   jumpPosition: {fileID: 1773243430}
   jumpFX: {fileID: 6201043444680019866, guid: 29674f040469b61499ef4f9aa43f9c7d, type: 3}
   jumpInplaceFX: {fileID: 2563315505554339886, guid: ebeaa289d6a80d04e9b11cf79455322d,
