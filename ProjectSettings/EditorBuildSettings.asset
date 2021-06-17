@@ -48,11 +48,26 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/Tuto area/Tuto_plateformes.unity
     guid: b7afae277d9e0794c88fcbbe390cf2fd
   - enabled: 1
+    path: Assets/Game/Scenes/Tuto area/FXs_start_tuto.unity
+    guid: 7ecae2ea53792544c9ee4559e7caee4a
+  - enabled: 1
     path: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
     guid: 8d44e6a5dff93374eb1896e9a0ea89ad
   - enabled: 1
+    path: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_lights.unity
+    guid: 9f841288c3fc8844ca8ac8880c24673b
+  - enabled: 1
+    path: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_FXs.unity
+    guid: 4ea475962d0331d499d1b158326253f9
+  - enabled: 1
     path: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_plateformes.unity
     guid: fbab61ec814f1be4aaa1571f9583be53
+  - enabled: 1
+    path: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_lights.unity
+    guid: e8327cefdc4da7e42a85634a8c10b10f
+  - enabled: 1
+    path: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_FXs.unity
+    guid: b5c42e6c85895de43b811f78918fd28b
   - enabled: 1
     path: "Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_D\xE9cor.unity"
     guid: 89ae1a8d8c1ddf945b2c8d7ada5086ab

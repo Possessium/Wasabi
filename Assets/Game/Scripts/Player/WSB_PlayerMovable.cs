@@ -15,7 +15,8 @@ public class WSB_PlayerMovable : LG_Movable
     public bool Turning = false;
     public bool IsRight = true;
 
-    [SerializeField] private Animator PlayerAnimator = null;
+    [SerializeField] private Animator playerAnimator = null;
+        public Animator PlayerAnimator { get { return playerAnimator; } }
 
     private bool jumpInput = false;
 
@@ -36,7 +37,18 @@ public class WSB_PlayerMovable : LG_Movable
     private static readonly int jump_Hash = Animator.StringToHash("Jump");
     private static readonly int grounded_Hash = Animator.StringToHash("Grounded");
     private static readonly int rotate_Hash = Animator.StringToHash("Rotate");
+    private static readonly int unWalk_hash = Animator.StringToHash("UnWalk");
     #endregion
+
+    [SerializeField] private bool forceSpawn = true;
+    [SerializeField] private Vector3 spawnPosition = Vector3.zero;
+
+    public override void Start()
+    {
+        base.Start();
+        if(forceSpawn)
+            SetPosition(spawnPosition);
+    }
 
     public override void Update()
     {
@@ -54,22 +66,25 @@ public class WSB_PlayerMovable : LG_Movable
                     if (IsGrounded || (Time.time - coyoteVar < ControllerValues.JumpDelay))
                         Jump();
             }
-            if (PlayerAnimator)
+            if (playerAnimator && CanMove)
             {
 
-                PlayerAnimator.SetFloat(run_Hash, speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
+                playerAnimator.SetFloat(run_Hash, speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
 
-                PlayerAnimator.SetBool(jump_Hash, isJumping);
+                playerAnimator.SetBool(jump_Hash, isJumping);
 
                 if (IsGrounded)
-                    PlayerAnimator.SetBool(grounded_Hash, true);
+                    playerAnimator.SetBool(grounded_Hash, true);
                 else
                 {
                     if (IsOnMovingPlateform && !isJumping)
-                        PlayerAnimator.SetBool(grounded_Hash, true);
+                        playerAnimator.SetBool(grounded_Hash, true);
+
                     else if (semiSolidCollider && !isJumping)
-                        PlayerAnimator.SetBool(grounded_Hash, true);
-                    else PlayerAnimator.SetBool(grounded_Hash, false);
+                        playerAnimator.SetBool(grounded_Hash, true);
+
+                    else 
+                        playerAnimator.SetBool(grounded_Hash, false);
                 }
 
                 //PlayerAnimator.SetBool(grounded_Hash,IsGrounded ? true : (IsOnMovingPlateform && !isJumping) ? true : false);
@@ -81,7 +96,7 @@ public class WSB_PlayerMovable : LG_Movable
                         IsRight = false;
                         if (IsGrounded)
                         {
-                            PlayerAnimator.SetTrigger(rotate_Hash);
+                            playerAnimator.SetTrigger(rotate_Hash);
                         }
                         else
                             Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, -90, Rend.transform.eulerAngles.z);
@@ -92,7 +107,7 @@ public class WSB_PlayerMovable : LG_Movable
                         IsRight = true;
                         if (IsGrounded)
                         {
-                            PlayerAnimator.SetTrigger(rotate_Hash);
+                            playerAnimator.SetTrigger(rotate_Hash);
                         }
                         else
                             Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, 90, Rend.transform.eulerAngles.z);
@@ -166,6 +181,13 @@ public class WSB_PlayerMovable : LG_Movable
     public void Turn()
     {
         Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, IsRight ? 90 : -90, Rend.transform.eulerAngles.z);
+    }
+
+    public void ResetAnimations()
+    {
+        playerAnimator.SetTrigger(unWalk_hash);
+        playerAnimator.SetBool(grounded_Hash, true);
+        playerAnimator.SetBool(jump_Hash, false);
     }
 
     #region Jump

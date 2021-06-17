@@ -22,6 +22,8 @@ public class WSB_InputManager : MonoBehaviour
         InputSystem.onDeviceChange += InputSystem_onDeviceChange;
         inputBan.SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
         inputLux.SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
+
+        SwitchControls();
     }
 
     bool keyboard = true;
