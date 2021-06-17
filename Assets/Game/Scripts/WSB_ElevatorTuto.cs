@@ -47,13 +47,10 @@ public class WSB_ElevatorTuto : MonoBehaviour
         {
             animator.SetTrigger(animate_Hash);
             animator.speed = 1;
-            AkSoundEngine.PostEvent("Play_Elevator_First_Start", gameObject); 
-
         }
         else
         {
             animator.speed = 0;
-            AkSoundEngine.PostEvent("Play_Elevator_First_Start", gameObject);
         }
     }
 
