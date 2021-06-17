@@ -1548,17 +1548,17 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -5696261206480421264, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: 8051143802926207907, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
-    - sprite: {fileID: 1123189200505004060, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: -2888916111641823662, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
-    - sprite: {fileID: 7611194965948290169, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: 7398120867710476588, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
-    - sprite: {fileID: 6959291014380980288, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: 5838531260104418950, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
-    - sprite: {fileID: 2522958832652000202, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: 4840516491799884572, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
-    - sprite: {fileID: 4600893536393101460, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: 6107241437362788938, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
     flipU: 0
     flipV: 0
@@ -4857,7 +4857,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -6430,17 +6430,17 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -5696261206480421264, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: 8051143802926207907, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
-    - sprite: {fileID: 1123189200505004060, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: -2888916111641823662, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
-    - sprite: {fileID: 7611194965948290169, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: 7398120867710476588, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
-    - sprite: {fileID: 6959291014380980288, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: 5838531260104418950, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
-    - sprite: {fileID: 2522958832652000202, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: 4840516491799884572, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
-    - sprite: {fileID: 4600893536393101460, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: 6107241437362788938, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
     flipU: 0
     flipV: 0

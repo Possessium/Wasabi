@@ -32,27 +32,6 @@ TextureImporter:
   - first:
       213: 5599080825631443811
     second: aigrettes
-  - first:
-      213: 4600893536393101460
-    second: jump_static_L_06
-  - first:
-      213: -2814845724076200807
-    second: jump_static_R_06
-  - first:
-      213: -5246710842436047360
-    second: dust_01
-  - first:
-      213: 1788781845138341825
-    second: dust_02
-  - first:
-      213: -4858010010811732971
-    second: dust_03
-  - first:
-      213: -3450012418691447787
-    second: dust_04
-  - first:
-      213: -5064176257656726935
-    second: fire
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -559,10 +538,10 @@ TextureImporter:
       name: jump_static_L_02
       rect:
         serializedVersion: 2
-        x: 212
-        y: 713
-        width: 71
-        height: 65
+        x: 232
+        y: 718
+        width: 74
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,10 +559,10 @@ TextureImporter:
       name: jump_static_L_03
       rect:
         serializedVersion: 2
-        x: 395
+        x: 439
         y: 714
-        width: 71
-        height: 66
+        width: 61
+        height: 57
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -601,10 +580,10 @@ TextureImporter:
       name: jump_static_L_04
       rect:
         serializedVersion: 2
-        x: 564
+        x: 610
         y: 713
-        width: 59
-        height: 67
+        width: 61
+        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -622,10 +601,10 @@ TextureImporter:
       name: jump_static_L_01
       rect:
         serializedVersion: 2
-        x: 8
-        y: 712
-        width: 83
-        height: 65
+        x: 19
+        y: 715
+        width: 86
+        height: 53
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -643,10 +622,10 @@ TextureImporter:
       name: jump_static_L_05
       rect:
         serializedVersion: 2
-        x: 725
+        x: 792
         y: 715
-        width: 57
-        height: 60
+        width: 40
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1504,10 +1483,10 @@ TextureImporter:
       name: jump_static_R_01
       rect:
         serializedVersion: 2
-        x: 102
-        y: 713
-        width: 102
-        height: 66
+        x: 115
+        y: 716
+        width: 89
+        height: 53
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1525,10 +1504,10 @@ TextureImporter:
       name: jump_static_R_02
       rect:
         serializedVersion: 2
-        x: 297
-        y: 713
-        width: 72
-        height: 66
+        x: 329
+        y: 715
+        width: 84
+        height: 63
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1546,10 +1525,10 @@ TextureImporter:
       name: jump_static_R_03
       rect:
         serializedVersion: 2
-        x: 475
-        y: 715
-        width: 71
-        height: 66
+        x: 512
+        y: 713
+        width: 65
+        height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1567,10 +1546,10 @@ TextureImporter:
       name: jump_static_R_04
       rect:
         serializedVersion: 2
-        x: 639
-        y: 714
-        width: 58
-        height: 68
+        x: 696
+        y: 713
+        width: 65
+        height: 63
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1588,10 +1567,10 @@ TextureImporter:
       name: jump_static_R_05
       rect:
         serializedVersion: 2
-        x: 794
-        y: 716
-        width: 57
-        height: 60
+        x: 855
+        y: 713
+        width: 42
+        height: 57
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1706,153 +1685,6 @@ TextureImporter:
       bones: []
       spriteID: 36b8670885ee3bd40800000000000000
       internalID: 5599080825631443811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump_static_L_06
-      rect:
-        serializedVersion: 2
-        x: 873
-        y: 714
-        width: 52
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4900a167b48a9df30800000000000000
-      internalID: 4600893536393101460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump_static_R_06
-      rect:
-        serializedVersion: 2
-        x: 941
-        y: 715
-        width: 52
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99c29e64ab8afe8d0800000000000000
-      internalID: -2814845724076200807
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dust_01
-      rect:
-        serializedVersion: 2
-        x: 861
-        y: 293
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00ea86d7940ff27b0800000000000000
-      internalID: -5246710842436047360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dust_02
-      rect:
-        serializedVersion: 2
-        x: 821
-        y: 327
-        width: 13
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cf732c5c9703d810800000000000000
-      internalID: 1788781845138341825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dust_03
-      rect:
-        serializedVersion: 2
-        x: 834
-        y: 273
-        width: 10
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51c664e42a1e49cb0800000000000000
-      internalID: -4858010010811732971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dust_04
-      rect:
-        serializedVersion: 2
-        x: 873
-        y: 247
-        width: 12
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 514c531fbf71f10d0800000000000000
-      internalID: -3450012418691447787
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fire
-      rect:
-        serializedVersion: 2
-        x: 914
-        y: 241
-        width: 54
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96a576a568e68b9b0800000000000000
-      internalID: -5064176257656726935
       vertices: []
       indices: 
       edges: []
