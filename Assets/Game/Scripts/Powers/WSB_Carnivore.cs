@@ -6,25 +6,19 @@ public class WSB_Carnivore : WSB_Plant
 {
     [SerializeField] float eatDelay = 3;
     [SerializeField] LayerMask eatLayer = 0;
-    [SerializeField] private Animator fxFire = null;
     bool isEating = false;
 
 
     private static readonly int fire_Hash = Animator.StringToHash("Fire");
-    private static readonly int goForIt_Hash = Animator.StringToHash("GoForIt");
 
     IEnumerator Eat(GameObject _hit)
     {
         isEating = true;
-        fxFire.SetBool(goForIt_Hash, true);
 
         if (animator)
             animator.SetTrigger(fire_Hash);
-       
 
         yield return new WaitForSeconds(.5f);
-
-        fxFire.SetBool(goForIt_Hash, false);
 
         Destroy(_hit.gameObject);
         // Wait for given delay

@@ -70,7 +70,6 @@ public class WSB_Socle : MonoBehaviour
         _power.transform.position = new Vector3(transform.position.x + position.x, transform.position.y + position.y, transform.position.z);
         currentHeldPower = _power;
         currentHeldPower.Lock(true);
-        AkSoundEngine.PostEvent("Play_ValidPattern", gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

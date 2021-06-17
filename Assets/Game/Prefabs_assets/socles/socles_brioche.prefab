@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 118471904}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 622e6b89e0156954984af3c2786405ad, type: 2}
+  m_Controller: {fileID: 9100000, guid: c60f426df732a0344b8b10ae8c321099, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -323,8 +323,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 2
-      minColor: {r: 1, g: 0.8314501, b: 0, a: 1}
+      minMaxState: 0
+      minColor: {r: 1, g: 1, b: 1, a: 1}
       maxColor: {r: 1, g: 0.9723208, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -387,8 +387,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.1
-      minScalar: 0.05
+      scalar: 0.2
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1583,7 +1583,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -6104442770297589223, guid: 37418b5615b1d7a4ea5e9171bf292be2,
+    - sprite: {fileID: 7585060041342726568, guid: 37418b5615b1d7a4ea5e9171bf292be2,
         type: 3}
     flipU: 0
     flipV: 0

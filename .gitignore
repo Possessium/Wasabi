@@ -90,4 +90,3 @@ Assembly-CSharp.csproj
 *.validationcache
 *.prof
 *.meta
-Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset

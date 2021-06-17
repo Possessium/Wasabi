@@ -369,7 +369,7 @@ MonoBehaviour:
   force: {x: 0, y: 0}
   instantForce: {x: 0, y: 0}
   movement: {x: 0, y: 0}
-  PressDown: 0
+  dontResetSemiSolid: 0
   semiSolidCollider: {fileID: 0}
   jumpVar: 0
   isJumping: 0
@@ -446,11 +446,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4884805826140603924, guid: a047e70373fcdc44c8810d4801041966,
-        type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4884805826300558548, guid: a047e70373fcdc44c8810d4801041966,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -460,11 +455,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.5276772
-      objectReference: {fileID: 0}
-    - target: {fileID: 6961319856021287313, guid: a047e70373fcdc44c8810d4801041966,
-        type: 3}
-      propertyPath: looping
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a047e70373fcdc44c8810d4801041966, type: 3}
