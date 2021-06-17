@@ -12,25 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ae33782c5aeee4ca039d7b06d1cc75, type: 3}
   m_Name: ControllerValues
   m_EditorClassIdentifier: 
-  Contact:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 130935
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  GroundMin: 0.5
-  MaxHeightClimb: 0.5
-  SpeedCoef: 1
-  ClimbSpeed: 5
-  Deceleration: 10
   JumpDelay: 0.2
   JumpBufferDelay: 0.2
   JumpCurve:
@@ -39,72 +20,36 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 28.895802
-      outSlope: 28.895802
+      inSlope: 35.14169
+      outSlope: 35.14169
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.20100601
+      outWeight: 0.033369213
     - serializedVersion: 3
-      time: 0.07318489
-      value: 1.9296483
-      inSlope: 15.379731
-      outSlope: 16.426838
-      tangentMode: 1
-      weightedMode: 0
-      inWeight: 0.30698952
-      outWeight: 0.22193906
-    - serializedVersion: 3
-      time: 0.14400226
-      value: 3.0194035
-      inSlope: 12.568548
-      outSlope: 12.568548
+      time: 0.3477514
+      value: 7
+      inSlope: -0.24112624
+      outSlope: -0.24112624
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.26893553
-      outWeight: 0.33333334
+      inWeight: 0.33333334
+      outWeight: 0.2991671
     - serializedVersion: 3
-      time: 0.31075954
-      value: 4.443853
-      inSlope: 6.0436797
-      outSlope: 6.0436797
+      time: 0.40780422
+      value: 6.8018923
+      inSlope: -5.0102067
+      outSlope: -5.0102067
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.25267634
-      outWeight: 0.10602267
-    - serializedVersion: 3
-      time: 0.46004915
-      value: 4.9181423
-      inSlope: -0.8193136
-      outSlope: -0.8193136
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.27087522
-      outWeight: 0.33333334
+      inWeight: 0.27349323
+      outWeight: 0
     m_PreInfinity: 2
-    m_PostInfinity: 2
+    m_PostInfinity: 0
     m_RotationOrder: 4
-  SpeedCurve:
+  ContactGrabLayer:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 17.058317
-      outSlope: 17.058317
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.047008548
-    - serializedVersion: 3
-      time: 1
-      value: 8.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_Bits: 54017
+  LeverLayer:
+    serializedVersion: 2
+    m_Bits: 131072

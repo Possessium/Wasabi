@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1707965370	Play_BAN_FT			\Default Work Unit\MC\Play_BAN_FT	
+	1895657866	Play_Lux_FT			\Default Work Unit\MC\Play_Lux_FT	
+	2529647175	Play_BAN_Runes			\Default Work Unit\MC\Play_BAN_Runes	
+	4084884993	Play_BAN_Foley			\Default Work Unit\MC\Play_BAN_Foley	
+
