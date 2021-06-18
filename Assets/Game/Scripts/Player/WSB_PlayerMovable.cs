@@ -15,13 +15,15 @@ public class WSB_PlayerMovable : LG_Movable
     public bool Turning = false;
     public bool IsRight = true;
 
-    [SerializeField] private Animator PlayerAnimator = null;
+    [SerializeField] private Animator playerAnimator = null;
+    public Animator PlayerAnimator { get { return playerAnimator; } }
 
     private bool jumpInput = false;
 
     private float coyoteVar = -999;
     private float jumpOriginHeight = 0;
 
+    private string materialName = "";
     #region Animations
     [SerializeField] Transform jumpPosition = null;
 
@@ -36,7 +38,48 @@ public class WSB_PlayerMovable : LG_Movable
     private static readonly int jump_Hash = Animator.StringToHash("Jump");
     private static readonly int grounded_Hash = Animator.StringToHash("Grounded");
     private static readonly int rotate_Hash = Animator.StringToHash("Rotate");
+    private static readonly int unWalk_hash = Animator.StringToHash("UnWalk");
     #endregion
+
+    [SerializeField] private bool forceSpawn = true;
+    [SerializeField] private Vector3 spawnPosition = Vector3.zero;
+
+    public void FootstepSound(GameObject SwitchSound)
+    {
+
+        switch (materialName)
+        {
+            case "mtl_plateforme_metal":
+                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Metal", SwitchSound);
+                break;
+            case "mtl_plateforme_semi_solid":
+                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Puddle", SwitchSound);
+                break;
+            case "mtl_plateforme_terre":
+                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Dirt", SwitchSound);
+                break;
+
+        }
+    }
+    private void CheckGroundTexture()
+    {
+
+        if (!IsGrounded) return;
+        LayerMask mask = LayerMask.GetMask("SemiSolid", "Test");
+        RaycastHit2D hit;
+        hit = Physics2D.Raycast(transform.position, Vector2.up, 50, mask);
+        if (hit.collider != null)
+        {
+            materialName = hit.collider.gameObject.GetComponent<MeshRenderer>().material.name;
+            Debug.Log(materialName + "DebugRaycast");
+        }
+    }
+    public override void Start()
+    {
+        base.Start();
+        if (forceSpawn)
+            SetPosition(spawnPosition);
+    }
 
     public override void Update()
     {
@@ -54,22 +97,25 @@ public class WSB_PlayerMovable : LG_Movable
                     if (IsGrounded || (Time.time - coyoteVar < ControllerValues.JumpDelay))
                         Jump();
             }
-            if (PlayerAnimator)
+            if (playerAnimator && CanMove)
             {
 
-                PlayerAnimator.SetFloat(run_Hash, speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
+                playerAnimator.SetFloat(run_Hash, speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
 
-                PlayerAnimator.SetBool(jump_Hash, isJumping);
+                playerAnimator.SetBool(jump_Hash, isJumping);
 
                 if (IsGrounded)
-                    PlayerAnimator.SetBool(grounded_Hash, true);
+                    playerAnimator.SetBool(grounded_Hash, true);
                 else
                 {
                     if (IsOnMovingPlateform && !isJumping)
-                        PlayerAnimator.SetBool(grounded_Hash, true);
+                        playerAnimator.SetBool(grounded_Hash, true);
+
                     else if (semiSolidCollider && !isJumping)
-                        PlayerAnimator.SetBool(grounded_Hash, true);
-                    else PlayerAnimator.SetBool(grounded_Hash, false);
+                        playerAnimator.SetBool(grounded_Hash, true);
+
+                    else
+                        playerAnimator.SetBool(grounded_Hash, false);
                 }
 
                 //PlayerAnimator.SetBool(grounded_Hash,IsGrounded ? true : (IsOnMovingPlateform && !isJumping) ? true : false);
@@ -81,7 +127,7 @@ public class WSB_PlayerMovable : LG_Movable
                         IsRight = false;
                         if (IsGrounded)
                         {
-                            PlayerAnimator.SetTrigger(rotate_Hash);
+                            playerAnimator.SetTrigger(rotate_Hash);
                         }
                         else
                             Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, -90, Rend.transform.eulerAngles.z);
@@ -92,7 +138,7 @@ public class WSB_PlayerMovable : LG_Movable
                         IsRight = true;
                         if (IsGrounded)
                         {
-                            PlayerAnimator.SetTrigger(rotate_Hash);
+                            playerAnimator.SetTrigger(rotate_Hash);
                         }
                         else
                             Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, 90, Rend.transform.eulerAngles.z);
@@ -103,7 +149,7 @@ public class WSB_PlayerMovable : LG_Movable
             {
                 RaycastHit2D[] _hits = new RaycastHit2D[5];
                 bool _jump = true;
-                if(MovableCollider.Cast(Vector2.down, _hits, .5f) > 0)
+                if (MovableCollider.Cast(Vector2.down, _hits, .5f) > 0)
                 {
                     for (int i = 0; i < _hits.Length; i++)
                     {
@@ -112,7 +158,7 @@ public class WSB_PlayerMovable : LG_Movable
                     }
                 }
 
-                if(_jump)
+                if (_jump)
                 {
                     // Stop the jump if input is released & peak of jump icn't reached yet
                     if (!jumpInput && jumpVar < .3f)
@@ -168,6 +214,13 @@ public class WSB_PlayerMovable : LG_Movable
         Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, IsRight ? 90 : -90, Rend.transform.eulerAngles.z);
     }
 
+    public void ResetAnimations()
+    {
+        playerAnimator.SetTrigger(unWalk_hash);
+        playerAnimator.SetBool(grounded_Hash, true);
+        playerAnimator.SetBool(jump_Hash, false);
+    }
+
     #region Jump
     // Makes the character jump
     void Jump()
@@ -189,14 +242,16 @@ public class WSB_PlayerMovable : LG_Movable
         PressDown = false;
 
         isJumping = true;
+        //AkSoundEngine.SetSwitch("FOOT_TYPE", "JUMP_Start", SwitchSound);
 
         if (XMovement != 0)
         {
             if (jumpFX && jumpPosition)
             {
                 ParticleSystemRenderer _fx = Instantiate(jumpFX, jumpPosition.position, Quaternion.identity).GetComponent<ParticleSystemRenderer>();
-                if(_fx)
+                if (_fx)
                 {
+
                     _fx.transform.localScale = Vector3.one * (GetComponent<WSB_Ban>() ? 2 : 1);
                     _fx.flip = new Vector3(IsRight ? 0 : 1, 0, 0);
                     _fx.transform.eulerAngles = new Vector3(0, IsRight ? 0 : 180, 0);
@@ -207,6 +262,7 @@ public class WSB_PlayerMovable : LG_Movable
         {
             if (jumpInplaceFX && jumpPosition)
             {
+
                 ParticleSystemRenderer _fx = Instantiate(jumpInplaceFX, jumpPosition.position, Quaternion.identity).GetComponent<ParticleSystemRenderer>();
                 if (_fx)
                 {
@@ -220,7 +276,7 @@ public class WSB_PlayerMovable : LG_Movable
                 }
             }
         }
-        
+
 
         jumpVar = force.y = 0;
 
@@ -239,7 +295,23 @@ public class WSB_PlayerMovable : LG_Movable
         base.OnSetGrounded();
 
         if (IsGrounded)
+        {
+            //AkSoundEngine.SetSwitch("FOOT_TYPE", "JUMP_Land", SwitchSound);
             isJumping = false;
+        }
+
+
     }
     #endregion
+    void MyAnimationEventCallback(AnimationEvent evt)
+    {
+        if (evt.animatorClipInfo.weight > 0.5f)
+        {
+            //foreach (AK.Wwise.Event WwiseEvent in myEvents)
+            //{
+            //    WwiseEvent.Post(gameObject);
+            //}
+            // Debug.Log("eventPlayed");
+        }
+    }
 }
