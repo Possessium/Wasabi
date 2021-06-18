@@ -17,6 +17,7 @@ public abstract class WSB_Plant : WSB_Power
         {
             animator.SetBool(active_Hash, true);
             animator.SetTrigger(ping_Hash);
+            AkSoundEngine.PostEvent("Play_Plant_Grow", gameObject);
         }
     }
 
@@ -28,6 +29,7 @@ public abstract class WSB_Plant : WSB_Power
         {
             animator.SetBool(active_Hash, false);
             animator.SetTrigger(ping_Hash);
+            AkSoundEngine.PostEvent("Play_Plant_Retract", gameObject);
         }
     }
 }
