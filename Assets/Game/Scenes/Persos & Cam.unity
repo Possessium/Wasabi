@@ -6623,7 +6623,9 @@ MonoBehaviour:
     SceneName: Sound_Design
   - ScenePath: Assets/Game/Scenes/Tuto area/FXs_start_tuto.unity
     SceneName: FXs_start_tuto
-  LoadListSize: 10
+  - ScenePath: "Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_D\xE9cor.unity"
+    SceneName: "T1_D\xE9cor"
+  LoadListSize: 11
   AllScenesToUnloadInOrder: []
   UnloadListSize: 0
   BlockingCollider: {fileID: 0}
@@ -7656,7 +7658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2381727434349249441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.1499977, z: -200}
+  m_LocalPosition: {x: 0, y: -31.7, z: -200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
