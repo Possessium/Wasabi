@@ -24,6 +24,7 @@ public class WSB_PlayerMovable : LG_Movable
     private float jumpOriginHeight = 0;
 
     private string materialName = "";
+    public AK.Wwise.Event Landingsound;
     #region Animations
     [SerializeField] Transform jumpPosition = null;
 
@@ -101,7 +102,10 @@ public class WSB_PlayerMovable : LG_Movable
             {
 
                 playerAnimator.SetFloat(run_Hash, speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
-
+                if (isJumping && isGrounded)
+                {
+                    AkSoundEngine.SetSwitch("FOOT_TYPE", "JUMP_start", PlayerAnimator.gameObject);
+                }
                 playerAnimator.SetBool(jump_Hash, isJumping);
 
                 if (IsGrounded)
@@ -132,7 +136,10 @@ public class WSB_PlayerMovable : LG_Movable
                         else
                             Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, -90, Rend.transform.eulerAngles.z);
                     }
-
+                    else if (XMovement>0 && IsRight && isGrounded && !isJumping)
+                    {
+                        AkSoundEngine.SetSwitch("FOOT_TYPE", "WALK", PlayerAnimator.gameObject);
+                    }
                     if (XMovement > 0 && !IsRight)
                     {
                         IsRight = true;
@@ -142,6 +149,11 @@ public class WSB_PlayerMovable : LG_Movable
                         }
                         else
                             Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, 90, Rend.transform.eulerAngles.z);
+
+                    }
+                    else if (XMovement < 0 && !IsRight && isGrounded && !isJumping)
+                    {
+                        AkSoundEngine.SetSwitch("FOOT_TYPE", "WALK", PlayerAnimator.gameObject);
                     }
                 }
             }
@@ -211,6 +223,7 @@ public class WSB_PlayerMovable : LG_Movable
 
     public void Turn()
     {
+        AkSoundEngine.SetSwitch("FOOT_TYPE", "SCUFF", PlayerAnimator.gameObject);
         Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, IsRight ? 90 : -90, Rend.transform.eulerAngles.z);
     }
 
@@ -225,6 +238,7 @@ public class WSB_PlayerMovable : LG_Movable
     // Makes the character jump
     void Jump()
     {
+        
         // Checks if input was in direction of the ground
         if (PressDown)
         {
@@ -242,7 +256,7 @@ public class WSB_PlayerMovable : LG_Movable
         PressDown = false;
 
         isJumping = true;
-        //AkSoundEngine.SetSwitch("FOOT_TYPE", "JUMP_Start", SwitchSound);
+           
 
         if (XMovement != 0)
         {
@@ -282,6 +296,7 @@ public class WSB_PlayerMovable : LG_Movable
 
         // Set originHeight for jump curve calculs
         jumpOriginHeight = transform.position.y;
+        
 
         // Reset coyoteVar to unobtainable number
         coyoteVar = -999;
@@ -294,10 +309,15 @@ public class WSB_PlayerMovable : LG_Movable
     {
         base.OnSetGrounded();
 
-        if (IsGrounded)
+        if (IsGrounded && isJumping)
         {
-            //AkSoundEngine.SetSwitch("FOOT_TYPE", "JUMP_Land", SwitchSound);
+         
+               AkSoundEngine.SetSwitch("FOOT_TYPE", "JUMP_land", PlayerAnimator.gameObject);
+               Landingsound.Post(PlayerAnimator.gameObject);
+          
+
             isJumping = false;
+       
         }
 
 
