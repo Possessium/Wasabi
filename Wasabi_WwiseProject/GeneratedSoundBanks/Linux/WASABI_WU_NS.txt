@@ -4,3 +4,43 @@ Event	ID	Name			Wwise Object Path	Notes
 	2529647175	Play_BAN_Runes			\Default Work Unit\MC\Play_BAN_Runes	
 	4084884993	Play_BAN_Foley			\Default Work Unit\MC\Play_BAN_Foley	
 
+Switch Group	ID	Name			Wwise Object Path	Notes
+	974778972	FOOT_TEXTUR			\Default Work Unit\MC\FOOT_TEXTUR	
+	1312575040	FOOT_TYPE			\Default Work Unit\MC\FOOT_TYPE	
+
+Switch	ID	Name	Switch Group			Notes
+	2003927601	Puddle	FOOT_TEXTUR			
+	2058049674	Wood	FOOT_TEXTUR			
+	2195636714	Dirt	FOOT_TEXTUR			
+	2473969246	Metal	FOOT_TEXTUR			
+	2830102203	Pavement	FOOT_TEXTUR			
+	4248645337	Grass	FOOT_TEXTUR			
+	712161704	RUN	FOOT_TYPE			
+	2108779966	WALK	FOOT_TYPE			
+	2332106820	SCUFF	FOOT_TYPE			
+	3244792144	JUMP_start	FOOT_TYPE			
+	3419686739	JUMP_land	FOOT_TYPE			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	172638127	SFX_MC_LUX_FT_JumpStart_Dirt_04	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_JumpStart_Dirt_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_JumpStart_Dirt_rnd\SFX_MC_LUX_FT_JumpStart_Dirt_04		88316
+	263598095	SFX_MC_LUX_FT_JumpSLanding_Dirt_01	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_JumpSLanding_Dirt_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_JumpLand_Dirt_rnd\SFX_MC_LUX_FT_JumpSLanding_Dirt_01		62960
+	375324846	SFX_MC_LUX_FT_Scuff_Dirt_02	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Scuff_Dirt_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Scuff_Dirt_rnd\SFX_MC_LUX_FT_Scuff_Dirt_02		39348
+	493308678	SFX_MC_LUX_FT_JumpStart_Dirt_02	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_JumpStart_Dirt_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_JumpStart_Dirt_rnd\SFX_MC_LUX_FT_JumpStart_Dirt_02		96064
+	543582339	SFX_MC_LUX_FT_Run_Dirt_03	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Run_Dirt_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Run_Dirt_rnd\SFX_MC_LUX_FT_Run_Dirt_03		51904
+	594089436	SFX_MC_LUX_FT_JumpSLanding_Dirt_02	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_JumpSLanding_Dirt_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_JumpLand_Dirt_rnd\SFX_MC_LUX_FT_JumpSLanding_Dirt_02		66776
+	595418198	SFX_MC_LUX_FT_Walk_Dirt_04	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Walk_Dirt_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Walk_Dirt_rnd\SFX_MC_LUX_FT_Walk_Dirt_04		59584
+	596506934	SFX_MC_LUX_FT_JumpSLanding_Dirt_03	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_JumpSLanding_Dirt_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_JumpLand_Dirt_rnd\SFX_MC_LUX_FT_JumpSLanding_Dirt_03		71564
+	686782378	SFX_MC_LUX_FT_Walk_Dirt_02	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Walk_Dirt_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Walk_Dirt_rnd\SFX_MC_LUX_FT_Walk_Dirt_02		51904
+	767339418	SFX_MC_LUX_FT_Walk_Dirt_03	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Walk_Dirt_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Walk_Dirt_rnd\SFX_MC_LUX_FT_Walk_Dirt_03		53824
+	785663920	SFX_MC_LUX_FT_JumpSLanding_Dirt_04	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_JumpSLanding_Dirt_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_JumpLand_Dirt_rnd\SFX_MC_LUX_FT_JumpSLanding_Dirt_04		70536
+	826109478	SFX_MC_LUX_FT_Walk_Dirt_01	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Walk_Dirt_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Walk_Dirt_rnd\SFX_MC_LUX_FT_Walk_Dirt_01		46144
+	827616056	SFX_MC_LUX_FT_Run_Dirt_04	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Run_Dirt_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Run_Dirt_rnd\SFX_MC_LUX_FT_Run_Dirt_04		53824
+	842875774	SFX_MC_LUX_FT_Run_Dirt_05	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Run_Dirt_05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Run_Dirt_rnd\SFX_MC_LUX_FT_Run_Dirt_05		53824
+	918154910	SFX_MC_LUX_FT_Run_Dirt_02	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Run_Dirt_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Run_Dirt_rnd\SFX_MC_LUX_FT_Run_Dirt_02		74944
+	935192194	SFX_MC_LUX_FT_Walk_Dirt_05	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Walk_Dirt_05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Walk_Dirt_rnd\SFX_MC_LUX_FT_Walk_Dirt_05		61504
+	951895106	SFX_MC_LUX_FT_Scuff_Dirt_01	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Scuff_Dirt_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Scuff_Dirt_rnd\SFX_MC_LUX_FT_Scuff_Dirt_01		42316
+	959657696	SFX_MC_LUX_FT_Run_Dirt_01	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Run_Dirt_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Run_Dirt_rnd\SFX_MC_LUX_FT_Run_Dirt_01		59584
+	982991069	SFX_MC_LUX_FT_Scuff_Dirt_03	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_Scuff_Dirt_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_Scuff_Dirt_rnd\SFX_MC_LUX_FT_Scuff_Dirt_03		41228
+	987853500	SFX_MC_LUX_FT_JumpStart_Dirt_03	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_JumpStart_Dirt_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_JumpStart_Dirt_rnd\SFX_MC_LUX_FT_JumpStart_Dirt_03		96064
+	1069311438	SFX_MC_LUX_FT_JumpStart_Dirt_01	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_MC_LUX_FT_JumpStart_Dirt_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LUX_WU\LUX_FT_AM\Lux_FT_Ground_swt\Lux_Dirt_swt\Lux_JumpStart_Dirt_rnd\SFX_MC_LUX_FT_JumpStart_Dirt_01		96064
+

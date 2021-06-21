@@ -16,7 +16,7 @@
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="370138432" Language="SFX" Hash="1152420550">
+		<SoundBank Id="370138432" Language="SFX" Hash="614691114">
 			<ObjectPath>\SoundBanks\Mus\Mus_SB_01</ObjectPath>
 			<ShortName>Mus_SB_01</ShortName>
 			<Path>Mus_SB_01.bnk</Path>
@@ -38,7 +38,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1329476194" Language="SFX" Hash="3815961506">
+		<SoundBank Id="1329476194" Language="SFX" Hash="1201780078">
 			<ObjectPath>\SoundBanks\Default Work Unit\Mus 2\Mus_SB</ObjectPath>
 			<ShortName>Mus_SB</ShortName>
 			<Path>Mus_SB.bnk</Path>
@@ -60,12 +60,183 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3025068371">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2903905640">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3291955309" Language="SFX" Hash="24605627">
+		<SoundBank Id="3256182613" Language="SFX" Hash="436198802">
+			<ObjectPath>\SoundBanks\AMB\AMB_SB</ObjectPath>
+			<ShortName>AMB_SB</ShortName>
+			<Path>AMB_SB.bnk</Path>
+			<IncludedEvents>
+				<Event Id="321009714" Name="Play_Elevator_First_Start" ObjectPath="\Events\AMB\Play_Elevator_First_Start" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="8062124" Language="SFX">
+							<ShortName>Elevator_First_Random-001.wav</ShortName>
+							<Path>SFX/Elevator_First_Random-001_10C4C929.wem</Path>
+						</File>
+						<File Id="138152140" Language="SFX">
+							<ShortName>Elevator_First_Start.wav</ShortName>
+							<Path>SFX/Elevator_First_Start_10C4C929.wem</Path>
+						</File>
+						<File Id="528017019" Language="SFX">
+							<ShortName>Elevator_First_Random-002.wav</ShortName>
+							<Path>SFX/Elevator_First_Random-002_10C4C929.wem</Path>
+						</File>
+						<File Id="582404949" Language="SFX">
+							<ShortName>Elevator_First_Random-003.wav</ShortName>
+							<Path>SFX/Elevator_First_Random-003_10C4C929.wem</Path>
+						</File>
+						<File Id="658481210" Language="SFX">
+							<ShortName>Elevator_First_LP.wav</ShortName>
+							<Path>SFX/Elevator_First_LP_D79FB2B7.wem</Path>
+						</File>
+						<File Id="700405021" Language="SFX">
+							<ShortName>Elevator_First_Random-004.wav</ShortName>
+							<Path>SFX/Elevator_First_Random-004_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2203238506" Name="Play_Elevator_First_Stop" ObjectPath="\Events\AMB\Play_Elevator_First_Stop" DurationType="OneShot" DurationMin="1.150454" DurationMax="1.150454">
+					<IncludedMemoryFiles>
+						<File Id="678613060" Language="SFX">
+							<ShortName>Elevator_First_Stop.wav</ShortName>
+							<Path>SFX/Elevator_First_Stop_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1541866734" Name="Play_Fountain" ObjectPath="\Events\AMB\Play_Fountain" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="330833569" Language="SFX">
+							<ShortName>Fountain_Distant_LP.wav</ShortName>
+							<Path>SFX/Fountain_Distant_LP_D79FB2B7.wem</Path>
+						</File>
+						<File Id="784876779" Language="SFX">
+							<ShortName>Fountain_Close_LP.wav</ShortName>
+							<Path>SFX/Fountain_Close_LP_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4127694467" Name="Play_Pissenlit" ObjectPath="\Events\AMB\Play_Pissenlit" MaxAttenuation="100.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="87403965" Language="SFX">
+							<ShortName>Pissenlit_rnd-003.wav</ShortName>
+							<Path>SFX/Pissenlit_rnd-003_10C4C929.wem</Path>
+						</File>
+						<File Id="491137074" Language="SFX">
+							<ShortName>Pissenlit_LP.wav</ShortName>
+							<Path>SFX/Pissenlit_LP_D79FB2B7.wem</Path>
+						</File>
+						<File Id="944022179" Language="SFX">
+							<ShortName>Pissenlit_rnd-002.wav</ShortName>
+							<Path>SFX/Pissenlit_rnd-002_10C4C929.wem</Path>
+						</File>
+						<File Id="1040549327" Language="SFX">
+							<ShortName>Pissenlit_rnd-001.wav</ShortName>
+							<Path>SFX/Pissenlit_rnd-001_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1559944383" Name="Play_RFX_Birds" ObjectPath="\Events\AMB\Play_RFX_Birds" DurationType="OneShot" DurationMin="1.503771" DurationMax="8.229313">
+					<IncludedMemoryFiles>
+						<File Id="31386224" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_2_01.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_2_01_10C4C929.wem</Path>
+						</File>
+						<File Id="65012393" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_6_01.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_6_01_10C4C929.wem</Path>
+						</File>
+						<File Id="129602559" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_3_01.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_3_01_10C4C929.wem</Path>
+						</File>
+						<File Id="165875833" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_2_03.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_2_03_10C4C929.wem</Path>
+						</File>
+						<File Id="195717372" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_4_03.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_4_03_10C4C929.wem</Path>
+						</File>
+						<File Id="242075943" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_5_03.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_5_03_10C4C929.wem</Path>
+						</File>
+						<File Id="352270381" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_2_05.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_2_05_10C4C929.wem</Path>
+						</File>
+						<File Id="415345012" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_2_02.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_2_02_10C4C929.wem</Path>
+						</File>
+						<File Id="453831204" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_6_02.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_6_02_10C4C929.wem</Path>
+						</File>
+						<File Id="465466798" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_1_02.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_1_02_10C4C929.wem</Path>
+						</File>
+						<File Id="594565310" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_3_02.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_3_02_10C4C929.wem</Path>
+						</File>
+						<File Id="603294683" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_5_02.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_5_02_10C4C929.wem</Path>
+						</File>
+						<File Id="627880167" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_3_03.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_3_03_10C4C929.wem</Path>
+						</File>
+						<File Id="672760501" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_1_03.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_1_03_10C4C929.wem</Path>
+						</File>
+						<File Id="692093619" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_2_04.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_2_04_10C4C929.wem</Path>
+						</File>
+						<File Id="723458123" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_4_02.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_4_02_10C4C929.wem</Path>
+						</File>
+						<File Id="834084710" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_4_01.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_4_01_10C4C929.wem</Path>
+						</File>
+						<File Id="843546865" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_3_04.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_3_04_10C4C929.wem</Path>
+						</File>
+						<File Id="871307505" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_1_01.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_1_01_10C4C929.wem</Path>
+						</File>
+						<File Id="875347818" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_3_05.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_3_05_10C4C929.wem</Path>
+						</File>
+						<File Id="1029876419" Language="SFX">
+							<ShortName>WSB_Amb_RFX_Bird_5_01.wav</ShortName>
+							<Path>SFX/WSB_Amb_RFX_Bird_5_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1927331672" Name="Play_WSB_Amb_Wind" ObjectPath="\Events\AMB\Play_WSB_Amb_Wind" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="603062134" Language="SFX">
+							<ShortName>WSB_Amb_Wind_LP.wav</ShortName>
+							<Path>SFX/WSB_Amb_Wind_LP_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+		<SoundBank Id="3291955309" Language="SFX" Hash="2519798384">
 			<ObjectPath>\SoundBanks\Nico_WU\WASABI_WU_NS</ObjectPath>
 			<ShortName>WASABI_WU_NS</ShortName>
 			<Path>WASABI_WU_NS.bnk</Path>
@@ -73,7 +244,388 @@
 				<Event Id="4084884993" Name="Play_BAN_Foley" ObjectPath="\Events\Default Work Unit\MC\Play_BAN_Foley" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1707965370" Name="Play_BAN_FT" ObjectPath="\Events\Default Work Unit\MC\Play_BAN_FT" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2529647175" Name="Play_BAN_Runes" ObjectPath="\Events\Default Work Unit\MC\Play_BAN_Runes" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1895657866" Name="Play_Lux_FT" ObjectPath="\Events\Default Work Unit\MC\Play_Lux_FT" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1895657866" Name="Play_Lux_FT" ObjectPath="\Events\Default Work Unit\MC\Play_Lux_FT" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.530038">
+					<IncludedMemoryFiles>
+						<File Id="172638127" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_JumpStart_Dirt_04.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_JumpStart_Dirt_04_10C4C929.wem</Path>
+						</File>
+						<File Id="263598095" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_JumpSLanding_Dirt_01.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_JumpSLanding_Dirt_01_10C4C929.wem</Path>
+						</File>
+						<File Id="375324846" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Scuff_Dirt_02.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Scuff_Dirt_02_10C4C929.wem</Path>
+						</File>
+						<File Id="493308678" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_JumpStart_Dirt_02.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_JumpStart_Dirt_02_10C4C929.wem</Path>
+						</File>
+						<File Id="543582339" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Run_Dirt_03.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Run_Dirt_03_10C4C929.wem</Path>
+						</File>
+						<File Id="594089436" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_JumpSLanding_Dirt_02.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_JumpSLanding_Dirt_02_10C4C929.wem</Path>
+						</File>
+						<File Id="595418198" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Walk_Dirt_04.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Walk_Dirt_04_10C4C929.wem</Path>
+						</File>
+						<File Id="596506934" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_JumpSLanding_Dirt_03.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_JumpSLanding_Dirt_03_10C4C929.wem</Path>
+						</File>
+						<File Id="686782378" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Walk_Dirt_02.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Walk_Dirt_02_10C4C929.wem</Path>
+						</File>
+						<File Id="767339418" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Walk_Dirt_03.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Walk_Dirt_03_10C4C929.wem</Path>
+						</File>
+						<File Id="785663920" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_JumpSLanding_Dirt_04.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_JumpSLanding_Dirt_04_10C4C929.wem</Path>
+						</File>
+						<File Id="826109478" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Walk_Dirt_01.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Walk_Dirt_01_10C4C929.wem</Path>
+						</File>
+						<File Id="827616056" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Run_Dirt_04.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Run_Dirt_04_10C4C929.wem</Path>
+						</File>
+						<File Id="842875774" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Run_Dirt_05.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Run_Dirt_05_10C4C929.wem</Path>
+						</File>
+						<File Id="918154910" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Run_Dirt_02.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Run_Dirt_02_10C4C929.wem</Path>
+						</File>
+						<File Id="935192194" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Walk_Dirt_05.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Walk_Dirt_05_10C4C929.wem</Path>
+						</File>
+						<File Id="951895106" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Scuff_Dirt_01.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Scuff_Dirt_01_10C4C929.wem</Path>
+						</File>
+						<File Id="959657696" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Run_Dirt_01.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Run_Dirt_01_10C4C929.wem</Path>
+						</File>
+						<File Id="982991069" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_Scuff_Dirt_03.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_Scuff_Dirt_03_10C4C929.wem</Path>
+						</File>
+						<File Id="987853500" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_JumpStart_Dirt_03.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_JumpStart_Dirt_03_10C4C929.wem</Path>
+						</File>
+						<File Id="1069311438" Language="SFX">
+							<ShortName>SFX_MC_LUX_FT_JumpStart_Dirt_01.wav</ShortName>
+							<Path>SFX/SFX_MC_LUX_FT_JumpStart_Dirt_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{0A104C20-29B2-45B0-80F4-FEC783B0C69F}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{0A104C20-29B2-45B0-80F4-FEC783B0C69F}">
+							<DefaultSwitchValue>{8D3970F5-F543-4338-95CD-9B82C9DD4E4E}</DefaultSwitchValue>
+							<Children>
+								<SwitchContainer SwitchValue="{062E3E5F-F03A-4D41-9C77-649CCF72FF6E}">
+									<Media>
+										<File Id="172638127"/>
+										<File Id="493308678"/>
+										<File Id="987853500"/>
+										<File Id="1069311438"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{D30BE64E-253F-4BAE-BF2C-BE32D679A534}">
+									<Media>
+										<File Id="263598095"/>
+										<File Id="594089436"/>
+										<File Id="596506934"/>
+										<File Id="785663920"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{8D3970F5-F543-4338-95CD-9B82C9DD4E4E}">
+									<Media>
+										<File Id="595418198"/>
+										<File Id="686782378"/>
+										<File Id="767339418"/>
+										<File Id="826109478"/>
+										<File Id="935192194"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{E9DCE041-D779-4D79-9FD7-92FF5EDB3EDB}">
+									<Media>
+										<File Id="543582339"/>
+										<File Id="827616056"/>
+										<File Id="842875774"/>
+										<File Id="918154910"/>
+										<File Id="959657696"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{816DBCC6-FDE3-4A5E-9186-B35558959881}">
+									<Media>
+										<File Id="375324846"/>
+										<File Id="951895106"/>
+										<File Id="982991069"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{0AB51888-BB0D-4D19-BAE7-FC96A26BAE29}">
+							<Media>
+								<File Id="4754772"/>
+								<File Id="88957919"/>
+								<File Id="125117991"/>
+								<File Id="147254827"/>
+								<File Id="149731938"/>
+								<File Id="313764838"/>
+								<File Id="375460333"/>
+								<File Id="494532990"/>
+								<File Id="536585873"/>
+								<File Id="592980061"/>
+								<File Id="606593527"/>
+								<File Id="635610299"/>
+								<File Id="652455848"/>
+								<File Id="681627352"/>
+								<File Id="759118735"/>
+								<File Id="890853641"/>
+								<File Id="896168178"/>
+								<File Id="923387428"/>
+								<File Id="928734767"/>
+								<File Id="963341583"/>
+								<File Id="1002180363"/>
+								<File Id="1050008710"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{59E19DD4-7E4D-4357-829B-FFB37BB7D555}">
+							<Media>
+								<File Id="32347289"/>
+								<File Id="230738924"/>
+								<File Id="244379261"/>
+								<File Id="252208177"/>
+								<File Id="259698602"/>
+								<File Id="261665278"/>
+								<File Id="296669614"/>
+								<File Id="413174623"/>
+								<File Id="415192135"/>
+								<File Id="450508365"/>
+								<File Id="466165279"/>
+								<File Id="494849181"/>
+								<File Id="541553621"/>
+								<File Id="734636923"/>
+								<File Id="751635309"/>
+								<File Id="764349647"/>
+								<File Id="828465358"/>
+								<File Id="870999249"/>
+								<File Id="946244230"/>
+								<File Id="977967591"/>
+								<File Id="1047570300"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{23EB2D00-115B-4EDF-AD5D-0FC26A513284}">
+							<Media>
+								<File Id="10021515"/>
+								<File Id="14249523"/>
+								<File Id="103635224"/>
+								<File Id="221953086"/>
+								<File Id="291694955"/>
+								<File Id="307318047"/>
+								<File Id="551716732"/>
+								<File Id="610851543"/>
+								<File Id="610904033"/>
+								<File Id="637981349"/>
+								<File Id="656659164"/>
+								<File Id="691288827"/>
+								<File Id="699096508"/>
+								<File Id="710172157"/>
+								<File Id="717572454"/>
+								<File Id="752461471"/>
+								<File Id="766270823"/>
+								<File Id="783018617"/>
+								<File Id="901026175"/>
+								<File Id="958257215"/>
+								<File Id="980577113"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B742E5A2-A28E-4145-B337-BC217E08ED2B}">
+							<Media>
+								<File Id="59413370"/>
+								<File Id="171758989"/>
+								<File Id="207154453"/>
+								<File Id="469775336"/>
+								<File Id="499306924"/>
+								<File Id="500384429"/>
+								<File Id="549889740"/>
+								<File Id="598262925"/>
+								<File Id="669324919"/>
+								<File Id="712282868"/>
+								<File Id="793090183"/>
+								<File Id="799249081"/>
+								<File Id="854483219"/>
+								<File Id="908588571"/>
+								<File Id="1053304657"/>
+								<File Id="1072652684"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{09AA2832-7313-474D-94C1-98A257AA44ED}">
+							<Media>
+								<File Id="14269343"/>
+								<File Id="19893492"/>
+								<File Id="152239343"/>
+								<File Id="199866666"/>
+								<File Id="242808620"/>
+								<File Id="283238797"/>
+								<File Id="308780922"/>
+								<File Id="493180190"/>
+								<File Id="497860526"/>
+								<File Id="677575921"/>
+								<File Id="704764405"/>
+								<File Id="725484587"/>
+								<File Id="795723114"/>
+								<File Id="803788320"/>
+								<File Id="821269837"/>
+								<File Id="892192139"/>
+								<File Id="992356436"/>
+								<File Id="1005228897"/>
+								<File Id="1036270365"/>
+								<File Id="1043065093"/>
+								<File Id="1056482359"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="974778972" Name="FOOT_TEXTUR" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TEXTUR">
+					<Switches>
+						<Switch Id="2195636714" Name="Dirt" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TEXTUR\Dirt"/>
+						<Switch Id="4248645337" Name="Grass" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TEXTUR\Grass"/>
+						<Switch Id="2473969246" Name="Metal" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TEXTUR\Metal"/>
+						<Switch Id="2830102203" Name="Pavement" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TEXTUR\Pavement"/>
+						<Switch Id="2003927601" Name="Puddle" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TEXTUR\Puddle"/>
+						<Switch Id="2058049674" Name="Wood" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TEXTUR\Wood"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="1312575040" Name="FOOT_TYPE" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TYPE">
+					<Switches>
+						<Switch Id="712161704" Name="RUN" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TYPE\RUN"/>
+						<Switch Id="2108779966" Name="WALK" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TYPE\WALK"/>
+						<Switch Id="3244792144" Name="JUMP_start" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TYPE\JUMP_start"/>
+						<Switch Id="3419686739" Name="JUMP_land" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TYPE\JUMP_land"/>
+						<Switch Id="2332106820" Name="SCUFF" ObjectPath="\Switches\Default Work Unit\MC\FOOT_TYPE\SCUFF"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="3759756040" Language="SFX" Hash="2957118931">
+			<ObjectPath>\SoundBanks\INT\INT_SB</ObjectPath>
+			<ShortName>INT_SB</ShortName>
+			<Path>INT_SB.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1810912708" Name="Play_Bite" ObjectPath="\Events\INT\Play_Bite" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000">
+					<IncludedMemoryFiles>
+						<File Id="141674363" Language="SFX">
+							<ShortName>Bite.wav</ShortName>
+							<Path>SFX/Bite_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="130877718" Name="Play_Grab_Item" ObjectPath="\Events\INT\Play_Grab_Item" DurationType="OneShot" DurationMin="0.249048" DurationMax="0.249048">
+					<IncludedMemoryFiles>
+						<File Id="910507811" Language="SFX">
+							<ShortName>Grab_Item.wav</ShortName>
+							<Path>SFX/Grab_Item_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1756278707" Name="Play_Lever_Action" ObjectPath="\Events\INT\Play_Lever_Action" DurationType="OneShot" DurationMin="2.433609" DurationMax="2.433609">
+					<IncludedMemoryFiles>
+						<File Id="628971355" Language="SFX">
+							<ShortName>Lever_Action.wav</ShortName>
+							<Path>SFX/Lever_Action_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2364705861" Name="Play_Plant_Grow" ObjectPath="\Events\INT\Play_Plant_Grow" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000">
+					<IncludedMemoryFiles>
+						<File Id="442445464" Language="SFX">
+							<ShortName>Plant_Grow.wav</ShortName>
+							<Path>SFX/Plant_Grow_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1851123459" Name="Play_Plant_Retract" ObjectPath="\Events\INT\Play_Plant_Retract" DurationType="OneShot" DurationMin="0.679955" DurationMax="0.679955">
+					<IncludedMemoryFiles>
+						<File Id="493778745" Language="SFX">
+							<ShortName>Plant_Retract.wav</ShortName>
+							<Path>SFX/Plant_Retract_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="579113732" Name="Play_SFX_INT_Plants_Carnivore" ObjectPath="\Events\INT\Play_SFX_INT_Plants_Carnivore" DurationType="OneShot" DurationMin="1.062354" DurationMax="1.062354">
+					<IncludedMemoryFiles>
+						<File Id="835619460" Language="SFX">
+							<ShortName>SFX_INT_Plants_Carnivore.wav</ShortName>
+							<Path>SFX/SFX_INT_Plants_Carnivore_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="787048984" Name="Play_SFX_INT_Plants_Trampoline" ObjectPath="\Events\INT\Play_SFX_INT_Plants_Trampoline" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000">
+					<IncludedMemoryFiles>
+						<File Id="414637325" Language="SFX">
+							<ShortName>SFX_INT_Plants_Trampoline.wav</ShortName>
+							<Path>SFX/SFX_INT_Plants_Trampoline_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2209142165" Name="Play_Shrink" ObjectPath="\Events\INT\Play_Shrink" DurationType="OneShot" DurationMin="0.627459" DurationMax="0.627459">
+					<IncludedMemoryFiles>
+						<File Id="937195738" Language="SFX">
+							<ShortName>Shrink.wav</ShortName>
+							<Path>SFX/Shrink_59ECB95F.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3639383266" Name="Play_Trampoline_Bounce" ObjectPath="\Events\INT\Play_Trampoline_Bounce" DurationType="OneShot" DurationMin="1.334805" DurationMax="1.661473">
+					<IncludedMemoryFiles>
+						<File Id="605319600" Language="SFX">
+							<ShortName>Trampoline_Bounce-003.wav</ShortName>
+							<Path>SFX/Trampoline_Bounce-003_10C4C929.wem</Path>
+						</File>
+						<File Id="925659490" Language="SFX">
+							<ShortName>Trampoline_Bounce-002.wav</ShortName>
+							<Path>SFX/Trampoline_Bounce-002_10C4C929.wem</Path>
+						</File>
+						<File Id="946119699" Language="SFX">
+							<ShortName>Trampoline_Bounce-001.wav</ShortName>
+							<Path>SFX/Trampoline_Bounce-001_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1233222880" Name="Play_UnShrink" ObjectPath="\Events\INT\Play_UnShrink" DurationType="OneShot" DurationMin="0.685690" DurationMax="0.685690">
+					<IncludedMemoryFiles>
+						<File Id="798996938" Language="SFX">
+							<ShortName>UnShrink.wav</ShortName>
+							<Path>SFX/UnShrink_C68EC531.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4234711942" Name="Play_ValidPattern" ObjectPath="\Events\INT\Play_ValidPattern" DurationType="OneShot" DurationMin="3.000000" DurationMax="3.000000">
+					<IncludedMemoryFiles>
+						<File Id="109352083" Language="SFX">
+							<ShortName>ValidPattern.wav</ShortName>
+							<Path>SFX/ValidPattern_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 			</IncludedEvents>
 		</SoundBank>
 	</SoundBanks>
