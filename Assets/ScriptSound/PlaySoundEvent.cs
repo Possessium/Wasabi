@@ -55,8 +55,8 @@ public class PlaySoundEvent : MonoBehaviour
         //to remove with good character
        
         AkSoundEngine.SetSwitch("Footstep_Action", "Walk", gameObject);
-        movement.FootstepSound(gameObject);
-        
+        //movement.FootstepSound(gameObject); // <-- Faut mettre FootstepSound sur le playerMovable ou alors virer cette ligne sinon tout pète ! screugneugneu !
+
         //AkSoundEngine.SetRTPCValue(WwiseVariable, movement.GetSpeed(), gameObject);
         MyAnimationEventCallback(evt);
     }
