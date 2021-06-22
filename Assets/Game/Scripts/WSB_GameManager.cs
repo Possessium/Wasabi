@@ -11,18 +11,16 @@ public class WSB_GameManager : MonoBehaviour
 {
     public static WSB_GameManager I { get; private set; }
 
-    //[SerializeField] GameObject menu = null; 
-    //[SerializeField] GameObject menuPause = null;
     [SerializeField] Animator elevatorAnimator = null;
     [SerializeField] bool paused = true;
+    [SerializeField] Cinemachine.CinemachineBrain cinemachineBrain = null; 
     public static bool Paused { get; private set; } = true;
     public static bool IsDialogue { get; private set; } = false;
+    [SerializeField] WSB_SceneLoader gameSceneLoader = null;
 
 
-    public static event Action OnUpdate = null;
     public static event Action OnPause = null;
     public static event Action OnResume = null;
-    string currentLevel = "";
 
     private void Awake()
     {
@@ -31,8 +29,7 @@ public class WSB_GameManager : MonoBehaviour
 
     private void Start()
     {
-        currentLevel = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-
+        gameSceneLoader.OnScenesReady += StartGame;
         InputSystem.onDeviceChange += DeviceChange;
     }
 
@@ -49,20 +46,7 @@ public class WSB_GameManager : MonoBehaviour
 
     private void Update()
     {
-        // * * * * * *
-        // Cheat codes
-
-        if (Keyboard.current.numpad8Key.isPressed)
-            SceneManager.LoadScene("Persos & Cam");
-
-        //
-        //
-
         Paused = paused;
-
-        // Invoke the main Update of the game if it is not paused
-        if (!Paused)
-            OnUpdate?.Invoke();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -103,21 +87,12 @@ public class WSB_GameManager : MonoBehaviour
     {
         elevatorAnimator = _a;
     }
-    public void StartGame(string _m)
+    public void StartGame(string _m = "")
     {
         // Set Pause to false
         Paused = false;
 
         OnResume?.Invoke();
-    }
-
-    public void ReloadScene()
-    {
-        // Reset all the events and load PlayTest scene
-        OnUpdate = null;
-        OnPause = null;
-        OnResume = null;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(currentLevel);
     }
 
     public void QuitGame() => Application.Quit();
