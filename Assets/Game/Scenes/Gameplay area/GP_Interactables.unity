@@ -1143,6 +1143,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8906412799403487368, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616,
+        type: 3}
+      propertyPath: contextualMenu
+      value: 
+      objectReference: {fileID: 102049528}
     m_RemovedComponents:
     - {fileID: 303760839, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616, type: 3}
@@ -4693,6 +4698,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shrink
       objectReference: {fileID: 0}
+    - target: {fileID: 1365447000156757517, guid: 0ff904526b783674181160111a21d11f,
+        type: 3}
+      propertyPath: contextualMenu
+      value: 
+      objectReference: {fileID: 953711448}
     m_RemovedComponents:
     - {fileID: 472665331, guid: 0ff904526b783674181160111a21d11f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ff904526b783674181160111a21d11f, type: 3}
@@ -7294,6 +7304,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b728cc17caedd424caa73d0988be3da7, type: 2}
+    - target: {fileID: 6942134283002665280, guid: 25f4ba55638ead643aa8fdabc11e8abf,
+        type: 3}
+      propertyPath: contextualMenu
+      value: 
+      objectReference: {fileID: 1475540693}
     - target: {fileID: 8323398943613124324, guid: 25f4ba55638ead643aa8fdabc11e8abf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7550,7 +7565,7 @@ PrefabInstance:
         type: 3}
       propertyPath: contextualMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1488304142}
     - target: {fileID: 6942134283002665280, guid: 25f4ba55638ead643aa8fdabc11e8abf,
         type: 3}
       propertyPath: trampolineForce
@@ -8577,6 +8592,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754262397}
     m_Modifications:
+    - target: {fileID: 3868218173550294174, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
+        type: 3}
+      propertyPath: contextualMenu
+      value: 
+      objectReference: {fileID: 1734183303}
     - target: {fileID: 6734575209522334005, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
         type: 3}
       propertyPath: m_Name
