@@ -8,32 +8,47 @@ public class WSB_MainMenu : MonoBehaviour
 {
     [SerializeField] MenuMode currentMode = MenuMode.Title;
 
-    [SerializeField] GameObject titleScreen = null;
-    [SerializeField] GameObject mainMenu = null;
-    [SerializeField] GameObject tutorial = null;
-    bool canSkipTitle;
+    [SerializeField] Animator menuAnimator = null;
 
-    private void Start()
-    {
-        ShowTitleScreen();
-    }
+    private static readonly int activate_Hash = Animator.StringToHash("Activate");
+    private static readonly int reset_Hash = Animator.StringToHash("Reset");
+    private static readonly int back_Hash = Animator.StringToHash("Back");
+
+    bool canSkipTitle = true;
 
     private void Update()
     {
         if(currentMode == MenuMode.Title && canSkipTitle)
         {
             if (Keyboard.current.anyKey.wasPressedThisFrame)
-                ShowMainMenu();
+                Next();
 
             if(Gamepad.all.Count == 1)
             {
                 if(GamepadAnyButtonPressed(Gamepad.all[0]))
-                    ShowMainMenu();
+                    Next();
             }
             else if (Gamepad.all.Count == 2)
             {
                 if (GamepadAnyButtonPressed(Gamepad.all[0]) || GamepadAnyButtonPressed(Gamepad.all[1]))
-                    ShowMainMenu();
+                    Next();
+            }
+        }
+        if(currentMode != MenuMode.Title && currentMode != MenuMode.Play)
+        {
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+                Back();
+
+
+            if (Gamepad.all.Count == 1)
+            {
+                if (Gamepad.all[0].buttonWest.wasPressedThisFrame)
+                    Back();
+            }
+            else if (Gamepad.all.Count == 2)
+            {
+                if (Gamepad.all[0].buttonWest.wasPressedThisFrame || Gamepad.all[1].buttonWest.wasPressedThisFrame)
+                    Back();
             }
         }
     }
@@ -79,45 +94,45 @@ public class WSB_MainMenu : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         canSkipTitle = true;
     }
-
-    public void ShowMainMenu()
-    {
-        currentMode = MenuMode.Main;
-        SwitchMenu(ref mainMenu);
-    }
-    public void ShowTitleScreen()
-    {
-        canSkipTitle = false;
-        StartCoroutine(DelayTitle());
-        currentMode = MenuMode.Title;
-        SwitchMenu(ref titleScreen);
-    }
-    public void ShowTutorial()
-    {
-        currentMode = MenuMode.Tuto;
-        SwitchMenu(ref tutorial);
-    }
     public void PlayGame()
     {
         currentMode = MenuMode.Play;
 
-        titleScreen.SetActive(false);
-        mainMenu.SetActive(false);
-        tutorial.SetActive(false);
-
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Loading");
     }
-
-    void SwitchMenu(ref GameObject _go)
+    public void Next()
     {
-        titleScreen.SetActive(false);
-        mainMenu.SetActive(false);
-        tutorial.SetActive(false);
-        if(_go)
-            _go.SetActive(true);
+        switch (currentMode)
+        {
+            case MenuMode.Title:
+                currentMode = MenuMode.Main;
+                break;
+            case MenuMode.Main:
+                currentMode = MenuMode.Tuto;
+                break;
+            case MenuMode.Tuto:
+                currentMode = MenuMode.Play;
+                break;
+        }
+        menuAnimator.SetTrigger(activate_Hash);
     }
 
+    public void Back()
+    {
+        switch (currentMode)
+        {
+            case MenuMode.Main:
+                currentMode = MenuMode.Title;
 
+                canSkipTitle = false;
+                StartCoroutine(DelayTitle());
+                break;
+            case MenuMode.Tuto:
+                currentMode = MenuMode.Main;
+                break;
+        }
+        menuAnimator.SetTrigger(back_Hash);
+    }
 }
 
 public enum MenuMode
