@@ -45,36 +45,8 @@ public class WSB_PlayerMovable : LG_Movable
     [SerializeField] private bool forceSpawn = true;
     [SerializeField] private Vector3 spawnPosition = Vector3.zero;
 
-    public void FootstepSound(GameObject SwitchSound)
-    {
-
-        switch (materialName)
-        {
-            case "mtl_plateforme_metal":
-                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Metal", SwitchSound);
-                break;
-            case "mtl_plateforme_semi_solid":
-                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Puddle", SwitchSound);
-                break;
-            case "mtl_plateforme_terre":
-                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Dirt", SwitchSound);
-                break;
-
-        }
-    }
-    private void CheckGroundTexture()
-    {
-
-        if (!IsGrounded) return;
-        LayerMask mask = LayerMask.GetMask("SemiSolid", "Test");
-        RaycastHit2D hit;
-        hit = Physics2D.Raycast(transform.position, Vector2.up, 50, mask);
-        if (hit.collider != null)
-        {
-            materialName = hit.collider.gameObject.GetComponent<MeshRenderer>().material.name;
-            Debug.Log(materialName + "DebugRaycast");
-        }
-    }
+    
+    
     public override void Start()
     {
         base.Start();
@@ -323,15 +295,26 @@ public class WSB_PlayerMovable : LG_Movable
 
     }
     #endregion
-    void MyAnimationEventCallback(AnimationEvent evt)
+    
+    private  void OnTriggerEnter2D(Collider2D collision)
     {
-        if (evt.animatorClipInfo.weight > 0.5f)
+        Debug.Log("collision : " + collision.gameObject.name);
+        switch (collision.gameObject.tag)
         {
-            //foreach (AK.Wwise.Event WwiseEvent in myEvents)
-            //{
-            //    WwiseEvent.Post(gameObject);
-            //}
-            // Debug.Log("eventPlayed");
+            case "bois":
+                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Wood", playerAnimator.gameObject);
+                break;
+            case "metal":
+                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Metal", playerAnimator.gameObject);
+                break;
+            case "crystal":
+                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Crystal", playerAnimator.gameObject);
+                break;
+            case "herbe":
+                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Grass", playerAnimator.gameObject);
+                break;
         }
     }
+    
+   
 }

@@ -365,6 +365,24 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585775794262344625
     List: []
+  - PhysicalPath: SoundBanks\FT.wwu
+    PathAndIcons:
+    - ElementName: FT
+      ObjectType: 12
+    ParentPath: FT
+    guid: 4142380176204144b6cc33241240c633
+    GuidInternal: 
+    m_lastTime: -8585773274156775098
+    List:
+    - name: ft
+      guid: 7789159c120f4f41956ff0d779169365
+      id: 1802970383
+      PathAndIcons:
+      - ElementName: FT
+        ObjectType: 12
+      - ElementName: ft
+        ObjectType: 7
+      Path: FT\ft
   - PhysicalPath: SoundBanks\INT.wwu
     PathAndIcons:
     - ElementName: INT
@@ -453,7 +471,7 @@ MonoBehaviour:
     ParentPath: AMB
     guid: cb1cd1d59edc2244b86e3f349c6156b8
     GuidInternal: 
-    m_lastTime: -8585775794124746216
+    m_lastTime: -8585773313314332615
     List:
     - name: Play_Elevator_First_Start
       guid: 41f51fa13c29a246903155ea25749390
@@ -486,7 +504,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 68b90be56767c44facdc155b8cbbb2f6
     GuidInternal: 
-    m_lastTime: -8585775794412990300
+    m_lastTime: -8585773274993129262
     List:
     - name: MC
       guid: 51dc4bb3646f924aaab20fb60bbdd80f
@@ -542,6 +560,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Footstep
+      guid: e6dde024cee0f549b51fffa2c49f2e77
+      id: 1602358412
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Footstep
+        ObjectType: 3
+      Path: Default Work Unit\Play_Footstep
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Lux_FT
       guid: 8f31e2b2a0676148bc968691957acdf9
       id: 1895657866
@@ -556,6 +586,15 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+  - PhysicalPath: Events\Footstep.wwu
+    PathAndIcons:
+    - ElementName: Footstep
+      ObjectType: 12
+    ParentPath: Footstep
+    guid: a9960754178a0c47bc01722da05baeb3
+    GuidInternal: 
+    m_lastTime: -8585773275296229045
+    List: []
   - PhysicalPath: Events\INT.wwu
     PathAndIcons:
     - ElementName: INT
@@ -563,7 +602,7 @@ MonoBehaviour:
     ParentPath: INT
     guid: 79699e1e3afffa4ea6060b75a1aaba94
     GuidInternal: 
-    m_lastTime: -8585775794126166596
+    m_lastTime: -8585773313314382406
     List:
     - name: Play_Bite
       guid: 048462916c1c2243a41cf567b42e8f22
@@ -786,7 +825,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f150671b5878647adc8ae70a9d71a9f
     GuidInternal: 
-    m_lastTime: -8585775794122843236
+    m_lastTime: -8585773313314402429
     List:
     - name: Elevator_Speed
       guid: 370efc5c7ccbff4782e95190a1d76ba5
@@ -938,13 +977,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Wasabi_WwiseProject
-  - /Wasabi_WwiseProject/Auxiliary Busses
-  - /Wasabi_WwiseProject/Auxiliary Busses/Default Work Unit
   - /Wasabi_WwiseProject/Events
+  - /Wasabi_WwiseProject/Events/AMB
   - /Wasabi_WwiseProject/Events/Default Work Unit
-  - /Wasabi_WwiseProject/SoundBanks
-  - /Wasabi_WwiseProject/SoundBanks/Default Work Unit
-  - /Wasabi_WwiseProject/SoundBanks/Default Work Unit/Mus
-  - /Wasabi_WwiseProject/SoundBanks/Nico_WU
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -13,6 +13,10 @@ TagManager:
   - Trampoline
   - Carnivore
   - DestroyPlant
+  - bois
+  - metal
+  - crystal
+  - herbe
   layers:
   - Default
   - TransparentFX
