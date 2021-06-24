@@ -29,7 +29,7 @@ public class WSB_GameManager : MonoBehaviour
 
     private void Start()
     {
-        gameSceneLoader.OnScenesReady += StartGame;
+        //gameSceneLoader.OnScenesReady += StartGame;
         InputSystem.onDeviceChange += DeviceChange;
     }
 
