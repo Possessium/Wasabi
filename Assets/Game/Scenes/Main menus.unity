@@ -293,7 +293,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1752619189}
         m_TargetAssemblyTypeName: WSB_MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1915,7 +1915,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1752619189}
         m_TargetAssemblyTypeName: WSB_MainMenu, Assembly-CSharp
-        m_MethodName: Next
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
