@@ -37,6 +37,7 @@ public class WSB_Wind : WSB_Rune
 
         Collider2D _hit = null;
 
+        AkSoundEngine.PostEvent("Play_Wind_Start", gameObject);
         // Loops through found objects
         for (int i = 0; i < _hits.Length; i++)
         {
@@ -70,5 +71,6 @@ public class WSB_Wind : WSB_Rune
 
         if (poufAigretteFX)
             Instantiate(poufAigretteFX, transform.position, Quaternion.identity);
+        AkSoundEngine.PostEvent("Play_Wind_End", gameObject);
     }
 }
