@@ -10,9 +10,7 @@ public class WSB_MainMenu : MonoBehaviour
 
     [SerializeField] GameObject titleScreen = null;
     [SerializeField] GameObject mainMenu = null;
-    [SerializeField] GameObject options = null;
-    [SerializeField] GameObject credits = null;
-    [SerializeField] GameObject characterSelection = null;
+    [SerializeField] GameObject tutorial = null;
     bool canSkipTitle;
 
     private void Start()
@@ -85,7 +83,6 @@ public class WSB_MainMenu : MonoBehaviour
     public void ShowMainMenu()
     {
         currentMode = MenuMode.Main;
-        EventSystem.current.SetSelectedGameObject(mainMenu.GetComponentInChildren<UnityEngine.UI.Button>().gameObject);
         SwitchMenu(ref mainMenu);
     }
     public void ShowTitleScreen()
@@ -95,31 +92,29 @@ public class WSB_MainMenu : MonoBehaviour
         currentMode = MenuMode.Title;
         SwitchMenu(ref titleScreen);
     }
-    public void ShowOptions()
+    public void ShowTutorial()
     {
-        currentMode = MenuMode.Options;
-        SwitchMenu(ref options);
+        currentMode = MenuMode.Tuto;
+        SwitchMenu(ref tutorial);
     }
-    public void ShowCredits()
+    public void PlayGame()
     {
-        currentMode = MenuMode.Credits;
-        SwitchMenu(ref credits);
-    }
-    public void ShowCharacterSelection()
-    {
+        currentMode = MenuMode.Play;
 
-        currentMode = MenuMode.Select;
-        SwitchMenu(ref characterSelection);
+        titleScreen.SetActive(false);
+        mainMenu.SetActive(false);
+        tutorial.SetActive(false);
+
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Loading");
     }
 
     void SwitchMenu(ref GameObject _go)
     {
         titleScreen.SetActive(false);
         mainMenu.SetActive(false);
-        characterSelection.SetActive(false);
-        credits.SetActive(false);
-        options.SetActive(false);
-        _go.SetActive(true);
+        tutorial.SetActive(false);
+        if(_go)
+            _go.SetActive(true);
     }
 
 
@@ -129,7 +124,6 @@ public enum MenuMode
 {
     Title,
     Main,
-    Options,
-    Credits,
-    Select
+    Tuto,
+    Play
 }
