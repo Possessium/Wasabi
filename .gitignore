@@ -48,9 +48,9 @@ ExportedObj/
 *.VC.db
 
 # Unity3D generated meta files
-*.pidb.meta
-*.pdb.meta
-*.mdb.meta
+#*.pidb.meta
+#*.pdb.meta
+#*.mdb.meta
 
 # Unity3D generated file on crash reports
 sysinfo.txt
@@ -89,5 +89,5 @@ Library/ShaderCache/EditorEncounteredVariants
 Assembly-CSharp.csproj
 *.validationcache
 *.prof
-*.meta
+#*.meta
 Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
