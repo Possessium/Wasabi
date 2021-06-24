@@ -23,13 +23,8 @@ public class WSB_SceneLoader : MonoBehaviour
 
     void Start()
     {
-        if (!LoadOnPlay)
-            return;
-
-        for (int i = 0; i < AllScenesToLoadInOrder.Count; i++)
-        {
-            SceneManager.LoadScene(AllScenesToLoadInOrder[i].SceneName, LoadSceneMode.Additive);
-        }
+        if (LoadOnPlay)
+            NextScene();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -97,6 +92,12 @@ public class WSB_SceneLoader : MonoBehaviour
         }
 
         OnScenesReady?.Invoke();
+
+        if(LoadOnPlay)
+        {
+            WSB_GameManager.I.StartGame();
+            SceneManager.UnloadSceneAsync("Loading");
+        }
     }
 }
 

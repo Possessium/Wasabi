@@ -10,13 +10,10 @@ using System.Linq;
 public class WSB_GameManager : MonoBehaviour
 {
     public static WSB_GameManager I { get; private set; }
-
-    [SerializeField] Animator elevatorAnimator = null;
     [SerializeField] bool paused = true;
     [SerializeField] Cinemachine.CinemachineBrain cinemachineBrain = null; 
+    [SerializeField] WSB_TriggerCam triggerCamStart = null; 
     public static bool Paused { get; private set; } = true;
-    public static bool IsDialogue { get; private set; } = false;
-    [SerializeField] WSB_SceneLoader gameSceneLoader = null;
 
 
     public static event Action OnPause = null;
@@ -29,7 +26,6 @@ public class WSB_GameManager : MonoBehaviour
 
     private void Start()
     {
-        //gameSceneLoader.OnScenesReady += StartGame;
         InputSystem.onDeviceChange += DeviceChange;
     }
 
@@ -54,9 +50,6 @@ public class WSB_GameManager : MonoBehaviour
         if (collision.GetComponent<WSB_PlayerMovable>())
             WSB_CheckpointManager.I.Respawn(collision.GetComponent<WSB_PlayerMovable>());
     }
-
-
-    public static void SetDialogue(bool _state) => IsDialogue = _state;
 
     public void Pause(InputAction.CallbackContext _ctx)
     {
@@ -83,26 +76,18 @@ public class WSB_GameManager : MonoBehaviour
         OnResume?.Invoke();
     }
 
-    public void RegisterElevator(Animator _a)
-    {
-        elevatorAnimator = _a;
-    }
-    public void StartGame(string _m = "")
+    public void StartGame()
     {
         // Set Pause to false
         Paused = false;
+
+        cinemachineBrain.enabled = true;
+
+        triggerCamStart.TriggerCinemachine();
 
         OnResume?.Invoke();
     }
 
     public void QuitGame() => Application.Quit();
-
-
-
-    public void ElevatorRepaired()
-    {
-        if(elevatorAnimator)
-            elevatorAnimator.SetTrigger("Repaired");
-    }
 
 }

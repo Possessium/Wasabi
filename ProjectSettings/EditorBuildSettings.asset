@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Game/Scenes/Main menus.unity
+    guid: 4b08ef9661f8ce54aa39f9220a74198c
+  - enabled: 1
+    path: Assets/Game/Scenes/Loading.unity
+    guid: 9469496d0a8443d4c83459c5fbdce9ea
+  - enabled: 1
     path: Assets/Game/Scenes/Persos & Cam.unity
     guid: 10a20d184f813984c993ed3f843e239c
   - enabled: 1
