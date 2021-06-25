@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 1680755536}
   m_Layer: 0
   m_Name: Right side
-  m_TagString: Untagged
+  m_TagString: bois
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 1731298724}
   m_Layer: 0
   m_Name: Left side
-  m_TagString: Untagged
+  m_TagString: bois
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,13 +1,93 @@
 sceneSetups:
 - path: Assets/Game/Scenes/Persos & Cam.unity
   isLoaded: 1
-  isActive: 1
+  isActive: 0
   isSubScene: 0
 - path: Assets/Game/Scenes/Gameplay area/GP_elevator.unity
   isLoaded: 1
   isActive: 0
   isSubScene: 0
 - path: "Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_D\xE9cor.unity"
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: "Assets/Game/Scenes/Gameplay area/GP_D\xE9cor.unity"
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Gameplay area/GP_FX.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Gameplay area/GP_Plateformes.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: "Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_D\xE9cor.unity"
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_plateformes.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: "Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_D\xE9cor.unity"
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_plateformes.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_FXs.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_lights.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_plateformes.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_FXs.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_lights.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Tuto area/Tuto_plateformes.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Tuto area/FXs_start_tuto.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Tuto area/Tuto_interactables.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/Tuto area/Tuto_lights.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Game/Scenes/All walls.unity
   isLoaded: 1
   isActive: 0
   isSubScene: 0
