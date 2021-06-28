@@ -91,3 +91,6 @@ Assembly-CSharp.csproj
 *.prof
 *.meta
 Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
+Library/ShaderCache.db
+Library/LastSceneManagerSetup.txt
