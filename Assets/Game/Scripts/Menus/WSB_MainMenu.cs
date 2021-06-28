@@ -13,6 +13,7 @@ public class WSB_MainMenu : MonoBehaviour
     private static readonly int activate_Hash = Animator.StringToHash("Activate");
     private static readonly int reset_Hash = Animator.StringToHash("Reset");
     private static readonly int back_Hash = Animator.StringToHash("Back");
+    private static readonly int creditsTransition_Hash = Animator.StringToHash("CreditsTransition");
 
     bool canSkipTitle = true;
 
@@ -20,7 +21,7 @@ public class WSB_MainMenu : MonoBehaviour
     {
         if(currentMode == MenuMode.Title && canSkipTitle)
         {
-            if (Keyboard.current.anyKey.wasPressedThisFrame)
+            if (Keyboard.current.anyKey.wasPressedThisFrame || MouseClicked(Mouse.current))
                 Next();
 
             if(Gamepad.all.Count == 1)
@@ -34,7 +35,7 @@ public class WSB_MainMenu : MonoBehaviour
                     Next();
             }
         }
-        if(currentMode != MenuMode.Title && currentMode != MenuMode.Play)
+        else if(currentMode != MenuMode.Title && currentMode != MenuMode.Play)
         {
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
                 Back();
@@ -51,6 +52,17 @@ public class WSB_MainMenu : MonoBehaviour
                     Back();
             }
         }
+    }
+
+    private bool MouseClicked(Mouse _m)
+    {
+        return
+            _m.backButton.wasPressedThisFrame ||
+            _m.forwardButton.wasPressedThisFrame ||
+            _m.leftButton.wasPressedThisFrame ||
+            _m.middleButton.wasPressedThisFrame ||
+            _m.rightButton.wasPressedThisFrame
+            ;
     }
 
     bool GamepadAnyButtonPressed(Gamepad _g)
@@ -117,6 +129,11 @@ public class WSB_MainMenu : MonoBehaviour
         menuAnimator.SetTrigger(activate_Hash);
     }
 
+    public void Credits()
+    {
+        menuAnimator.SetTrigger(creditsTransition_Hash);
+        currentMode = MenuMode.Credits;
+    }
     public void Back()
     {
         switch (currentMode)
@@ -128,6 +145,7 @@ public class WSB_MainMenu : MonoBehaviour
                 StartCoroutine(DelayTitle());
                 break;
             case MenuMode.Tuto:
+            case MenuMode.Credits:
                 currentMode = MenuMode.Main;
                 break;
         }
@@ -140,5 +158,6 @@ public enum MenuMode
     Title,
     Main,
     Tuto,
-    Play
+    Play,
+    Credits
 }

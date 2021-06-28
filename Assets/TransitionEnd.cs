@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TransitionBehaviour : StateMachineBehaviour
+public class TransitionEnd : StateMachineBehaviour
 {
-    [SerializeField] private string parameter = "";
-
     private static readonly int transition_Hash = Animator.StringToHash("Transition");
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        animator.SetBool(transition_Hash, true);
-    }
+    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -23,7 +21,7 @@ public class TransitionBehaviour : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetTrigger(Animator.StringToHash(parameter));
+        animator.SetBool(transition_Hash, false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
