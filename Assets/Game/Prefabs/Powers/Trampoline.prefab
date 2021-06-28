@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 728637568}
   - component: {fileID: 728637570}
-  - component: {fileID: 728637569}
+  - component: {fileID: 8844714271401059441}
   m_Layer: 18
   m_Name: Contextual menu
   m_TagString: Untagged
@@ -135,7 +135,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!114 &728637569
+--- !u!114 &8844714271401059441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 728637567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a59646580c5cf545b190c71411ecda7, type: 3}
+  m_Script: {fileID: 11500000, guid: 034f01cb516ab68479da0e4389297d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   toShow: {fileID: 946084552}
@@ -384,7 +384,7 @@ MonoBehaviour:
   dropFX: {fileID: 2063312554690039335}
   IsActive: 1
   movable: {fileID: 3585471164119141326}
-  contextualMenu: {fileID: 728637569}
+  contextualMenu: {fileID: 0}
   trampolineForce: 20
   bounceCollider: {fileID: 6942134283002665311}
   trampolineBounceFX: {fileID: 4763693696857991485}
@@ -422,7 +422,7 @@ MonoBehaviour:
   force: {x: 0, y: 0}
   instantForce: {x: 0, y: 0}
   movement: {x: 0, y: 0}
-  dontResetSemiSolid: 0
+  PressDown: 0
   semiSolidCollider: {fileID: 0}
   jumpVar: 0
   isJumping: 0

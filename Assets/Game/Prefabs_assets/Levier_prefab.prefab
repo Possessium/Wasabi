@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2089814265}
   - component: {fileID: 2089814267}
-  - component: {fileID: 2089814266}
+  - component: {fileID: 7249589417481484900}
   m_Layer: 18
   m_Name: Contextual menu
   m_TagString: Untagged
@@ -217,7 +217,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!114 &2089814266
+--- !u!114 &7249589417481484900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2089814264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a59646580c5cf545b190c71411ecda7, type: 3}
+  m_Script: {fileID: 11500000, guid: 034f01cb516ab68479da0e4389297d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   toShow: {fileID: 666198810}

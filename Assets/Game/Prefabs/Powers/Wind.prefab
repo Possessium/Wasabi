@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1266385559}
   - component: {fileID: 1266385561}
-  - component: {fileID: 1266385560}
+  - component: {fileID: 6775818914215496546}
   m_Layer: 18
   m_Name: Contextual menu
   m_TagString: Untagged
@@ -135,7 +135,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!114 &1266385560
+--- !u!114 &6775818914215496546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1266385558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a59646580c5cf545b190c71411ecda7, type: 3}
+  m_Script: {fileID: 11500000, guid: 034f01cb516ab68479da0e4389297d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   toShow: {fileID: 1387692115}
@@ -336,7 +336,7 @@ MonoBehaviour:
   dropFX: {fileID: 5988373435810081345}
   IsActive: 1
   movable: {fileID: 7395138133827779389}
-  contextualMenu: {fileID: 1266385560}
+  contextualMenu: {fileID: 0}
   powerAnimatorFX: {fileID: 2276306377280096564}
   shrinkFX: {fileID: 0}
   windPower: 2
@@ -454,12 +454,12 @@ PrefabInstance:
     - target: {fileID: 4884805826300558548, guid: a047e70373fcdc44c8810d4801041966,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3712498
+      value: 1.3712552
       objectReference: {fileID: 0}
     - target: {fileID: 4884805826300558548, guid: a047e70373fcdc44c8810d4801041966,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5276772
+      value: 1.5276785
       objectReference: {fileID: 0}
     - target: {fileID: 6961319856021287313, guid: a047e70373fcdc44c8810d4801041966,
         type: 3}

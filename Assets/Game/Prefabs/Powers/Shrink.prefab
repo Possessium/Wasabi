@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472665330}
   - component: {fileID: 472665332}
-  - component: {fileID: 472665331}
+  - component: {fileID: 2032605717316926678}
   m_Layer: 18
   m_Name: Contextual menu
   m_TagString: Untagged
@@ -59,7 +59,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!114 &472665331
+--- !u!114 &2032605717316926678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 472665329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a59646580c5cf545b190c71411ecda7, type: 3}
+  m_Script: {fileID: 11500000, guid: 034f01cb516ab68479da0e4389297d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   toShow: {fileID: 1397093042}
@@ -336,10 +336,11 @@ MonoBehaviour:
   dropFX: {fileID: 6996306252029988736}
   IsActive: 1
   movable: {fileID: 1271053287}
-  contextualMenu: {fileID: 472665331}
+  contextualMenu: {fileID: 0}
   powerAnimatorFX: {fileID: 0}
   shrinkFX: {fileID: 6120584658623388753}
   offset: {x: 0, y: 0}
+  hasLux: 0
 --- !u!114 &1271053287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,7 +361,7 @@ MonoBehaviour:
   force: {x: 0, y: 0}
   instantForce: {x: 0, y: 0}
   movement: {x: 0, y: 0}
-  dontResetSemiSolid: 0
+  PressDown: 0
   semiSolidCollider: {fileID: 0}
   jumpVar: 0
   isJumping: 0

@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 303760838}
   - component: {fileID: 303760840}
-  - component: {fileID: 303760839}
+  - component: {fileID: 5030341819134713540}
   m_Layer: 18
   m_Name: Contextual menu
   m_TagString: Untagged
@@ -141,7 +141,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!114 &303760839
+--- !u!114 &5030341819134713540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 303760837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a59646580c5cf545b190c71411ecda7, type: 3}
+  m_Script: {fileID: 11500000, guid: 034f01cb516ab68479da0e4389297d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   toShow: {fileID: 188706369}
@@ -357,7 +357,7 @@ MonoBehaviour:
   dropFX: {fileID: 6170048992832868534}
   IsActive: 1
   movable: {fileID: 4136980650250086288}
-  contextualMenu: {fileID: 303760839}
+  contextualMenu: {fileID: 0}
   eatDelay: 3
   eatLayer:
     serializedVersion: 2
