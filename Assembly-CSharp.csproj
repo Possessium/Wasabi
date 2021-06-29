@@ -254,6 +254,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Mac\AkCommunicationSettings_Mac.cs" />
     <Compile Include="Assets\ScriptSound\PlaySoundEvent.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseTypes\AkWwiseCallbackFlags.cs" />
+    <Compile Include="Assets\Game\Scripts\AnimationBehaviours\TransitionBehaviour.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkMIDIEventTypes.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\WwiseTypes\AkWwiseTrigger.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkAudioInterruptionCallbackInfo.cs" />
@@ -263,6 +264,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\AkRoomManager.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Linux\AkLinuxBasePathGetter.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkGameObj.cs" />
+    <Compile Include="Assets\TransitionEnd.cs" />
     <Compile Include="Assets\Wwise\Deployment\Components\AkEventPlayable.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Linux\AkAudioAPI_Linux.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\Ak3DPositionType.cs" />
@@ -334,7 +336,6 @@
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerCollisionEnter.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkRoomParams.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkDiffractionPathInfoArray.cs" />
-    <Compile Include="Assets\Game\Scripts\AnimationBehaviours\TransitionBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86_64\DSP\MSSpatial.dll" />

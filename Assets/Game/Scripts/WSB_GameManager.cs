@@ -6,6 +6,7 @@ using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Linq;
+using UnityEngine.UI;
 
 public class WSB_GameManager : MonoBehaviour
 {
@@ -14,6 +15,15 @@ public class WSB_GameManager : MonoBehaviour
     [SerializeField] Cinemachine.CinemachineBrain cinemachineBrain = null; 
     [SerializeField] WSB_TriggerCam triggerCamStart = null; 
     public static bool Paused { get; private set; } = true;
+
+    #region Pause
+    [SerializeField] private GameObject pauseMenu = null;
+    [SerializeField] private GameObject confirmQuit = null;
+    [SerializeField] private GameObject confirmMenu = null;
+    [SerializeField] private Button resumeButton = null;
+    [SerializeField] private Button quitButton = null;
+    [SerializeField] private Button menuButton = null;
+    #endregion
 
 
     public static event Action OnPause = null;
@@ -27,6 +37,8 @@ public class WSB_GameManager : MonoBehaviour
     private void Start()
     {
         InputSystem.onDeviceChange += DeviceChange;
+        OnPause += ShowPauseMenu;
+        OnResume += HidePauseMenu;
     }
 
     private void DeviceChange(InputDevice arg1, InputDeviceChange arg2)
@@ -89,5 +101,58 @@ public class WSB_GameManager : MonoBehaviour
     }
 
     public void QuitGame() => Application.Quit();
+    public void RestartGame() => SceneManager.LoadSceneAsync("Main Menus", LoadSceneMode.Single);
 
+    public void NeedConfirmationMenu(bool _s)
+    {
+        if (_s)
+        {
+            confirmMenu.SetActive(true);
+            menuButton.enabled = false;
+            quitButton.enabled = false;
+            resumeButton.enabled = false;
+        }
+
+        else
+        {
+            confirmMenu.SetActive(false);
+            menuButton.enabled = true;
+            quitButton.enabled = true;
+            resumeButton.enabled = true;
+        }
+    }
+    public void NeedConfirmationQuit(bool _s)
+    {
+        if (_s)
+        {
+            confirmQuit.SetActive(true);
+            menuButton.enabled = false;
+            quitButton.enabled = false;
+            resumeButton.enabled = false;
+        }
+
+        else
+        {
+            confirmQuit.SetActive(false);
+            menuButton.enabled = true;
+            quitButton.enabled = true;
+            resumeButton.enabled = true;
+        }
+    }
+
+    private void ShowPauseMenu()
+    {
+        if(pauseMenu)
+            pauseMenu.SetActive(true);
+    }
+
+    private void HidePauseMenu()
+    {
+        if(confirmMenu && confirmQuit && pauseMenu)
+        {
+            confirmQuit.SetActive(false);
+            confirmMenu.SetActive(false);
+            pauseMenu.SetActive(false);
+        }
+    }
 }

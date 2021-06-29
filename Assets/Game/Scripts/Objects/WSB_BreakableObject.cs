@@ -28,10 +28,10 @@ public class WSB_BreakableObject : MonoBehaviour
         CallBack?.Invoke();
     }
 
-    //private void OnDisable()
-    //{
-    //    isQuitting = true;
-    //}
+    private void OnDisable()
+    {
+        isQuitting = true;
+    }
 
     private void OnApplicationQuit()
     {

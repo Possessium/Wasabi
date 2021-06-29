@@ -81,7 +81,7 @@ public class WSB_TriggerCam : MonoBehaviour
             FindObjectOfType<WSB_ElevatorCam>()?.Activate(true);
         }
 
-        Destroy(this);
+        this.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
