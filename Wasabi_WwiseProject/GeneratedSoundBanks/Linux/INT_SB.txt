@@ -1,0 +1,24 @@
+Event	ID	Name			Wwise Object Path	Notes
+	130877718	Play_Grab_Item			\INT\Play_Grab_Item	
+	579113732	Play_SFX_INT_Plants_Carnivore			\INT\Play_SFX_INT_Plants_Carnivore	
+	787048984	Play_SFX_INT_Plants_Trampoline			\INT\Play_SFX_INT_Plants_Trampoline	
+	1233222880	Play_UnShrink			\INT\Play_UnShrink	
+	1756278707	Play_Lever_Action			\INT\Play_Lever_Action	
+	1810912708	Play_Bite			\INT\Play_Bite	
+	2209142165	Play_Shrink			\INT\Play_Shrink	
+	2364705861	Play_Plant_Grow			\INT\Play_Plant_Grow	
+	3639383266	Play_Trampoline_Bounce			\INT\Play_Trampoline_Bounce	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	141674363	Bite	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Bite_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\INTERRACTION\Seeds_AM\Evenement\Bite		132364
+	414637325	SFX_INT_Plants_Trampoline	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_INT_Plants_Trampoline_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\INTERRACTION\Seeds_AM\Start\SFX_INT_Plants_Trampoline		288064
+	442445464	Plant_Grow	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Plant_Grow_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\INTERRACTION\Seeds_AM\Start\Plant_Grow		88264
+	605319600	Trampoline_Bounce-003	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Trampoline_Bounce-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\INTERRACTION\FDB_AM\Trampoline_Bounce_rnd\Trampoline_Bounce-003		132364
+	628971355	Lever_Action	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Lever_Action_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\INTERRACTION\FDB_AM\Lever_Action		132364
+	798996938	UnShrink	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\UnShrink_C68EC531.wem		\Actor-Mixer Hierarchy\Default Work Unit\INTERRACTION\FDB_AM\UnShrink		94964
+	835619460	SFX_INT_Plants_Carnivore	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\SFX_INT_Plants_Carnivore_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\INTERRACTION\Seeds_AM\Start\SFX_INT_Plants_Carnivore		204036
+	910507811	Grab_Item	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Grab_Item_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\INTERRACTION\FDB_AM\Grab_Item		22030
+	925659490	Trampoline_Bounce-002	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Trampoline_Bounce-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\INTERRACTION\FDB_AM\Trampoline_Bounce_rnd\Trampoline_Bounce-002		132364
+	937195738	Shrink	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Shrink_59ECB95F.wem		\Actor-Mixer Hierarchy\Default Work Unit\INTERRACTION\FDB_AM\Shrink		86904
+	946119699	Trampoline_Bounce-001	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Trampoline_Bounce-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\INTERRACTION\FDB_AM\Trampoline_Bounce_rnd\Trampoline_Bounce-001		132364
+
