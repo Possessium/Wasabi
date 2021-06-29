@@ -14,6 +14,7 @@ public class WSB_GameManager : MonoBehaviour
     [SerializeField] bool paused = true;
     [SerializeField] Cinemachine.CinemachineBrain cinemachineBrain = null; 
     [SerializeField] WSB_TriggerCam triggerCamStart = null;
+    [SerializeField] Animator endAnimator = null;
     private bool isEnded = false;
     public static bool Paused { get; private set; } = true;
 
@@ -107,6 +108,8 @@ public class WSB_GameManager : MonoBehaviour
         isEnded = true;
         if (Paused)
             Resume();
+
+        endAnimator.enabled = true;
     }
 
     public void QuitGame() => Application.Quit();
