@@ -250,6 +250,8 @@ public class LG_Movable : MonoBehaviour
         CanMove = false;
     }
 
+    public void StartMoving() => CanMove = true;
+
     public void MoveVertically(float _movement) => movement.y += _movement;
 
     // -----------------------
@@ -865,12 +867,10 @@ public class LG_Movable : MonoBehaviour
         previousPosition = transform.position;
 #endif
 
-        //// Initialize object contact filter.
-        //movableValues.Contact.layerMask = Physics2D.GetLayerCollisionMask(gameObject.layer);
-        //movableValues.Contact.useLayerMask = true;
-
         groundNormal = Vector2.up;
-        //CollisionSystem = collisionSystem;
+
+        WSB_GameManager.I.OnPause += StopMoving;
+        WSB_GameManager.I.OnResume += StartMoving;
     }
 
     public virtual void Update()

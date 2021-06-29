@@ -13,7 +13,8 @@ public class WSB_GameManager : MonoBehaviour
     public static WSB_GameManager I { get; private set; }
     [SerializeField] bool paused = true;
     [SerializeField] Cinemachine.CinemachineBrain cinemachineBrain = null; 
-    [SerializeField] WSB_TriggerCam triggerCamStart = null; 
+    [SerializeField] WSB_TriggerCam triggerCamStart = null;
+    private bool isEnded = false;
     public static bool Paused { get; private set; } = true;
 
     #region Pause
@@ -26,8 +27,9 @@ public class WSB_GameManager : MonoBehaviour
     #endregion
 
 
-    public static event Action OnPause = null;
-    public static event Action OnResume = null;
+    public event Action OnPause = null;
+    public event Action OnResume = null;
+    
 
     private void Awake()
     {
@@ -66,7 +68,7 @@ public class WSB_GameManager : MonoBehaviour
     public void Pause(InputAction.CallbackContext _ctx)
     {
         // If input isn't start exit
-        if (!_ctx.started)
+        if (!_ctx.started && !isEnded)
             return;
 
         // Inverse pause state
@@ -98,6 +100,13 @@ public class WSB_GameManager : MonoBehaviour
         triggerCamStart.TriggerCinemachine();
 
         OnResume?.Invoke();
+    }
+
+    public void EndGame()
+    {
+        isEnded = true;
+        if (Paused)
+            Resume();
     }
 
     public void QuitGame() => Application.Quit();

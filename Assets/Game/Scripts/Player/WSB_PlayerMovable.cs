@@ -40,6 +40,7 @@ public class WSB_PlayerMovable : LG_Movable
     private static readonly int grounded_Hash = Animator.StringToHash("Grounded");
     private static readonly int rotate_Hash = Animator.StringToHash("Rotate");
     private static readonly int unWalk_hash = Animator.StringToHash("UnWalk");
+    private static readonly int end_Hash = Animator.StringToHash("End");
     #endregion
 
     [SerializeField] private bool forceSpawn = true;
@@ -52,6 +53,9 @@ public class WSB_PlayerMovable : LG_Movable
         base.Start();
         if (forceSpawn)
             SetPosition(spawnPosition);
+
+        WSB_GameManager.I.OnPause += PauseAnimation;
+        WSB_GameManager.I.OnResume += ResumeAnimation;
     }
 
     public override void Update()
@@ -204,6 +208,36 @@ public class WSB_PlayerMovable : LG_Movable
         playerAnimator.SetTrigger(unWalk_hash);
         playerAnimator.SetBool(grounded_Hash, true);
         playerAnimator.SetBool(jump_Hash, false);
+    }
+
+    public void PauseAnimation()
+    {
+        playerAnimator.speed = 0;
+    }
+
+    public void ResumeAnimation()
+    {
+        playerAnimator.speed = 1;
+    }
+
+    public void EndGame()
+    {
+        playerAnimator.SetTrigger(end_Hash);
+        StopMoving();
+
+        WSB_GameManager.I.OnPause -= StopMoving;
+        WSB_GameManager.I.OnResume -= StartMoving;
+
+        StartCoroutine(MoveBack());
+    }
+
+    IEnumerator MoveBack()
+    {
+        while(transform.position.z < 20)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y, 30), Time.deltaTime * 5);
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     #region Jump
