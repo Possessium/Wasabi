@@ -141,7 +141,7 @@ public class WSB_PlayerMovable : LG_Movable
                 {
                     for (int i = 0; i < _hits.Length; i++)
                     {
-                        if (_hits[i] && _hits[i].transform.GetComponent<LG_Movable>() && !_hits[i].transform.GetComponent<LG_Movable>().IsGrounded)
+                        if (_hits[i] && _hits[i].transform.GetComponent<LG_Movable>() && !_hits[i].transform.GetComponent<WSB_PlayerMovable>() && !_hits[i].transform.GetComponent<LG_Movable>().IsGrounded)
                             _jump = false;
                     }
                 }
