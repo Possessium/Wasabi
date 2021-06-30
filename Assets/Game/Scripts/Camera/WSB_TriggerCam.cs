@@ -81,6 +81,8 @@ public class WSB_TriggerCam : MonoBehaviour
             FindObjectOfType<WSB_ElevatorCam>()?.Activate(true);
         }
 
+        WSB_GameManager.I.Resume();
+
         this.enabled = false;
     }
 

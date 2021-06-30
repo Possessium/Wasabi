@@ -336,7 +336,7 @@ MonoBehaviour:
   dropFX: {fileID: 6996306252029988736}
   IsActive: 1
   movable: {fileID: 1271053287}
-  contextualMenu: {fileID: 0}
+  contextualMenu: {fileID: 2032605717316926678}
   powerAnimatorFX: {fileID: 0}
   shrinkFX: {fileID: 6120584658623388753}
   offset: {x: 0, y: 0}

@@ -11,7 +11,6 @@ using UnityEngine.UI;
 public class WSB_GameManager : MonoBehaviour
 {
     public static WSB_GameManager I { get; private set; }
-    [SerializeField] bool paused = true;
     [SerializeField] Cinemachine.CinemachineBrain cinemachineBrain = null; 
     [SerializeField] WSB_TriggerCam triggerCamStart = null;
     [SerializeField] Animator endAnimator = null;
@@ -54,12 +53,6 @@ public class WSB_GameManager : MonoBehaviour
         }
     }
 
-
-    private void Update()
-    {
-        Paused = paused;
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<WSB_PlayerMovable>())
@@ -93,14 +86,9 @@ public class WSB_GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        // Set Pause to false
-        Paused = false;
-
         cinemachineBrain.enabled = true;
 
         triggerCamStart.TriggerCinemachine();
-
-        OnResume?.Invoke();
     }
 
     public void EndGame()

@@ -336,7 +336,7 @@ MonoBehaviour:
   dropFX: {fileID: 5988373435810081345}
   IsActive: 1
   movable: {fileID: 7395138133827779389}
-  contextualMenu: {fileID: 0}
+  contextualMenu: {fileID: 6775818914215496546}
   powerAnimatorFX: {fileID: 2276306377280096564}
   shrinkFX: {fileID: 0}
   windPower: 2

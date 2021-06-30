@@ -357,7 +357,7 @@ MonoBehaviour:
   dropFX: {fileID: 6170048992832868534}
   IsActive: 1
   movable: {fileID: 4136980650250086288}
-  contextualMenu: {fileID: 0}
+  contextualMenu: {fileID: 5030341819134713540}
   eatDelay: 3
   eatLayer:
     serializedVersion: 2

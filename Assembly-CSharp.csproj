@@ -180,6 +180,7 @@
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkReflectionPathInfoArray.cs" />
     <Compile Include="Assets\Game\Scripts\Powers\WSB_Power.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\Ak3DSpatializationMode.cs" />
+    <Compile Include="Assets\Game\Scripts\WSB_EndGame.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkRamp.cs" />
     <Compile Include="Assets\Game\Scripts\Player\SO_MovableValues.cs" />
     <Compile Include="Assets\Game\Scripts\WSB_GameManager.cs" />
@@ -336,7 +337,6 @@
     <Compile Include="Assets\Wwise\Deployment\Components\AkTriggerCollisionEnter.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\AkRoomParams.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Handwritten\Common\Arrays\AkDiffractionPathInfoArray.cs" />
-    <Compile Include="Assets\Game\Scripts\WSB_EndGame.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Wwise\Deployment\Plugins\Windows\x86_64\DSP\MSSpatial.dll" />
