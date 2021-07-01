@@ -5171,7 +5171,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Allez me chercher de l'Oton pour la montgolfi\xE8re !"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 00255a23faa765c449ef7241469358c7, type: 2}
   m_sharedMaterial: {fileID: 1161050934712836316, guid: 00255a23faa765c449ef7241469358c7,
@@ -5541,6 +5541,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec6e755320682c49ab52c8b22405d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDelay: 0
+  delay: 2
+  luxActivate: 1
+  banActivate: 1
+  text: "Allez me chercher de l'Oton pour la montgolfi\xE8re !"
   tmpText: {fileID: 1628135104}
   dialogue: {fileID: 1826945935}
   letterDelay: 0.01
@@ -5863,7 +5868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.5}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1826945937
@@ -5908,7 +5913,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1001 &1921858443
 PrefabInstance:

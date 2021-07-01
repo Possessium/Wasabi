@@ -5,43 +5,68 @@ using TMPro;
 
 public class WSB_Dialogue : MonoBehaviour
 {
-    private int playersIn = 0;
+    [SerializeField] private bool isDelay = false;
+    [SerializeField] private float delay = 2;
 
+    [SerializeField] private bool luxActivate = true;
+    [SerializeField] private bool banActivate = true;
+    private bool luxIn = false;
+    private bool banIn = false;
+
+    [SerializeField] private string text = "";
     [SerializeField] private TMP_Text tmpText = null;
     [SerializeField] private GameObject dialogue = null;
-    [SerializeField] private float letterDelay = .25f;
+    [SerializeField] private float letterDelay = .01f;
 
     private Coroutine dialogueCoroutine = null;
     private int charPosition = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<WSB_PlayerInteraction>())
+        if (luxActivate && !luxIn && collision.GetComponent<WSB_Lux>())
         {
-            playersIn++;
-            if (playersIn == 1)
-                ShowDialogue();
+            luxIn = true;
+            ShowDialogue();
+        }
+        if (banActivate && !banIn && collision.GetComponent<WSB_Ban>())
+        {
+            banIn = true;
+            ShowDialogue();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<WSB_PlayerInteraction>())
+        if (!isDelay && luxIn && collision.GetComponent<WSB_Lux>())
         {
-            playersIn--;
-            if (playersIn == 0)
-                HideDialogue();
+            luxIn = false;
+            HideDialogue();
+        }
+        if (!isDelay && banIn && collision.GetComponent<WSB_Ban>())
+        {
+            banIn = false;
+            HideDialogue();
         }
     }
 
     private void ShowDialogue()
     {
         charPosition = tmpText.maxVisibleCharacters = 0;
+        tmpText.text = text;
         dialogue.SetActive(true);
         
         if (dialogueCoroutine != null)
             StopCoroutine(dialogueCoroutine);
         dialogueCoroutine = StartCoroutine(Dialogue());
+
+        if (isDelay)
+            StartCoroutine(Delay());
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(delay);
+        HideDialogue();
     }
 
     IEnumerator Dialogue()
@@ -64,5 +89,8 @@ public class WSB_Dialogue : MonoBehaviour
 
         charPosition = tmpText.maxVisibleCharacters = 0;
         dialogue.SetActive(false);
+
+        if (isDelay)
+            Destroy(this);
     }
 }
