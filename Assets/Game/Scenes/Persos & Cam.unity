@@ -1004,13 +1004,14 @@ GameObject:
   - component: {fileID: 460642914}
   - component: {fileID: 460642916}
   - component: {fileID: 460642915}
+  - component: {fileID: 460642917}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &460642914
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1020,7 +1021,7 @@ RectTransform:
   m_GameObject: {fileID: 460642913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -30}
-  m_LocalScale: {x: 0.006, y: 0.006, z: 0.006}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1680048229}
   - {fileID: 254466056}
@@ -1077,6 +1078,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 100
   m_TargetDisplay: 0
+--- !u!95 &460642917
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460642913}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4adf32930f802b40a4cd678993e57ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &543453807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1282,7 @@ MonoBehaviour:
   banActivate: 1
   text: Une fontaine dans un arbre, surprenant !
   tmpText: {fileID: 751349915}
-  dialogue: {fileID: 1491218780}
+  animator: {fileID: 1491218784}
   letterDelay: 0.03
 --- !u!61 &558827966
 BoxCollider2D:
@@ -1340,7 +1360,7 @@ MonoBehaviour:
   banActivate: 1
   text: "Vite, allons sur le pont pour r\xE9parer cette montgolfi\xE8re."
   tmpText: {fileID: 751349915}
-  dialogue: {fileID: 1491218780}
+  animator: {fileID: 1491218784}
   letterDelay: 0.03
 --- !u!61 &611370761
 BoxCollider2D:
@@ -1774,7 +1794,7 @@ MonoBehaviour:
   text: "Suffit de r\xE9colter des feuilles pour partir en montgolfi\xE8re. Facile
     !"
   tmpText: {fileID: 254466057}
-  dialogue: {fileID: 460642913}
+  animator: {fileID: 460642917}
   letterDelay: 0.03
 --- !u!61 &749301276
 BoxCollider2D:
@@ -2660,7 +2680,7 @@ MonoBehaviour:
   banActivate: 0
   text: "Pfiou, j'esp\xE8re que le reste du voyage sera moins compliqu\xE9..."
   tmpText: {fileID: 254466057}
-  dialogue: {fileID: 460642913}
+  animator: {fileID: 460642917}
   letterDelay: 0.03
 --- !u!61 &1057862098
 BoxCollider2D:
@@ -3739,7 +3759,7 @@ MonoBehaviour:
   banActivate: 0
   text: "C'est pas i\xE7i le haut de la serre ? Quelle taille fait cet arbre ?!"
   tmpText: {fileID: 254466057}
-  dialogue: {fileID: 460642913}
+  animator: {fileID: 460642917}
   letterDelay: 0.03
 --- !u!61 &1270127905
 BoxCollider2D:
@@ -9929,13 +9949,14 @@ GameObject:
   - component: {fileID: 1491218781}
   - component: {fileID: 1491218783}
   - component: {fileID: 1491218782}
+  - component: {fileID: 1491218784}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1491218781
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9945,7 +9966,7 @@ RectTransform:
   m_GameObject: {fileID: 1491218780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -30}
-  m_LocalScale: {x: 0.006, y: 0.006, z: 0.006}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1132661083}
   - {fileID: 751349914}
@@ -10002,6 +10023,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 100
   m_TargetDisplay: 0
+--- !u!95 &1491218784
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491218780}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4adf32930f802b40a4cd678993e57ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1539134554
 GameObject:
   m_ObjectHideFlags: 0

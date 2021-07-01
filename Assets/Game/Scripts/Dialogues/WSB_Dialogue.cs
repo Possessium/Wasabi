@@ -15,11 +15,15 @@ public class WSB_Dialogue : MonoBehaviour
 
     [SerializeField] private string text = "";
     [SerializeField] private TMP_Text tmpText = null;
-    [SerializeField] private GameObject dialogue = null;
+    //[SerializeField] private GameObject dialogue = null;
+    [SerializeField] private Animator animator = null;
     [SerializeField] private float letterDelay = .01f;
 
     private Coroutine dialogueCoroutine = null;
     private int charPosition = 0;
+
+    private static readonly int activate_Hash = Animator.StringToHash("Activate");
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -53,7 +57,7 @@ public class WSB_Dialogue : MonoBehaviour
     {
         charPosition = tmpText.maxVisibleCharacters = 0;
         tmpText.text = text;
-        dialogue.SetActive(true);
+        animator.SetBool(activate_Hash, true);
         
         if (dialogueCoroutine != null)
             StopCoroutine(dialogueCoroutine);
@@ -88,7 +92,7 @@ public class WSB_Dialogue : MonoBehaviour
         dialogueCoroutine = null;
 
         charPosition = tmpText.maxVisibleCharacters = 0;
-        dialogue.SetActive(false);
+        animator.SetBool(activate_Hash, false);
 
         if (isDelay)
             Destroy(this);
