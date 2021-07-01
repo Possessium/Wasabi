@@ -71,7 +71,7 @@ public class WSB_Dialogue : MonoBehaviour
 
     IEnumerator Dialogue()
     {
-        while(charPosition < tmpText.text.Length)
+        while(charPosition <= tmpText.text.Length)
         {
             tmpText.maxVisibleCharacters = charPosition++;
             yield return new WaitForSeconds(letterDelay);
