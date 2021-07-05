@@ -74,10 +74,6 @@ public class WSB_PlayerMovable : LG_Movable
             {
 
                 playerAnimator.SetFloat(run_Hash, speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
-                if (isJumping && isGrounded)
-                {
-                    AkSoundEngine.SetSwitch("FOOT_TYPE", "JUMP_start", PlayerAnimator.gameObject);
-                }
                 playerAnimator.SetBool(jump_Hash, isJumping);
 
                 if (IsGrounded)
