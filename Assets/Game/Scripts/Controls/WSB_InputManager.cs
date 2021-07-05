@@ -26,26 +26,68 @@ public class WSB_InputManager : MonoBehaviour
         SwitchControls();
     }
 
-    bool keyboard = true;
+    public bool IsKeyboard { get; private set; } = true;
 
     private void Update()
     {
-        if (Keyboard.current.tabKey.wasPressedThisFrame)
+        if (IsKeyboard && Gamepad.all.Count > 1)
+        {
+            if (GamepadAnyButtonPressed(Gamepad.all[0]) || GamepadAnyButtonPressed(Gamepad.all[1]))
+                SwitchControls();
+        }
+
+        else if (!IsKeyboard && Keyboard.current.wasUpdatedThisFrame)
             SwitchControls();
+    }
+
+    bool GamepadAnyButtonPressed(Gamepad _g)
+    {
+        return
+            _g.buttonEast.wasPressedThisFrame ||
+            _g.buttonNorth.wasPressedThisFrame ||
+            _g.buttonSouth.wasPressedThisFrame ||
+            _g.buttonWest.wasPressedThisFrame ||
+
+            _g.aButton.wasPressedThisFrame ||
+            _g.bButton.wasPressedThisFrame ||
+            _g.xButton.wasPressedThisFrame ||
+            _g.yButton.wasPressedThisFrame ||
+
+            _g.circleButton.wasPressedThisFrame ||
+            _g.crossButton.wasPressedThisFrame ||
+            _g.squareButton.wasPressedThisFrame ||
+            _g.triangleButton.wasPressedThisFrame ||
+
+            _g.leftStickButton.wasPressedThisFrame ||
+            _g.rightStickButton.wasPressedThisFrame ||
+
+            _g.selectButton.wasPressedThisFrame ||
+            _g.startButton.wasPressedThisFrame ||
+
+            _g.leftTrigger.wasPressedThisFrame ||
+            _g.rightTrigger.wasPressedThisFrame ||
+            _g.leftShoulder.wasPressedThisFrame ||
+            _g.rightShoulder.wasPressedThisFrame ||
+
+            _g.dpad.left.wasPressedThisFrame ||
+            _g.dpad.right.wasPressedThisFrame ||
+            _g.dpad.up.wasPressedThisFrame ||
+            _g.dpad.down.wasPressedThisFrame
+            ;
     }
 
     void SwitchControls()
     {
-        if (keyboard && Gamepad.all.Count >= 2)
+        if (IsKeyboard && Gamepad.all.Count >= 2)
         {
-            keyboard = false;
+            IsKeyboard = false;
             inputBan.SwitchCurrentControlScheme("Gamepad 2", Gamepad.all[0].device);
             inputLux.SwitchCurrentControlScheme("Gamepad", Gamepad.all[1].device);
         }
 
-        else if (!keyboard)
+        else if (!IsKeyboard)
         {
-            keyboard = true;
+            IsKeyboard = true;
             inputBan.SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
             inputLux.SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
         }
