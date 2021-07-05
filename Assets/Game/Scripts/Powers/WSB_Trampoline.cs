@@ -43,7 +43,7 @@ public class WSB_Trampoline : WSB_Plant
                     animator.SetTrigger(bounce_Hash);
 
                 _movable.TrampolineJump(Vector2.up * trampolineForce);
-                AkSoundEngine.PostEvent("Play_Trampoline_Bounce", gameObject);
+                
             }
         }
     }
