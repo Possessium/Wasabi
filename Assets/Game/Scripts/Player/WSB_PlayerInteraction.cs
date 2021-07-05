@@ -146,7 +146,7 @@ public class WSB_PlayerInteraction : MonoBehaviour
             return;
 
         RaycastHit2D[] _hit = new RaycastHit2D[1];
-        if(!grabbedObject && movable.MovableCollider.Cast(movable.IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, 1) > 0 || grabbedObject)
+        if(!grabbedObject && (movable.MovableCollider.Cast(movable.IsRight ? Vector2.right : Vector2.left, grabContactFilter, _hit, 1) > 0 && _hit[0].transform.GetComponent<WSB_Power>().CanBePickedUp) || grabbedObject)
         {
             if (playerAnimator)
                 playerAnimator.SetTrigger(pick_Hash);
