@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000018, guid: f266d837da34479498eee73eb239aad8,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -200,15 +201,40 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: db9f9a0bb44e2ec4faed771b232ba7bd, type: 2}
+    - target: {fileID: -1903013184824556290, guid: 0f351e737ee1836438a81277492356b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -1038890582416934644, guid: 0f351e737ee1836438a81277492356b4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 20c621a0e428a374cbc823661299ff4a, type: 2}
+    - target: {fileID: -892976628452683364, guid: 0f351e737ee1836438a81277492356b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0f351e737ee1836438a81277492356b4,
         type: 3}
       propertyPath: m_Name
       value: sols_all
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0f351e737ee1836438a81277492356b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273428209469936427, guid: 0f351e737ee1836438a81277492356b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438212568983425178, guid: 0f351e737ee1836438a81277492356b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4442750798104206508, guid: 0f351e737ee1836438a81277492356b4,
         type: 3}
@@ -220,6 +246,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 20c621a0e428a374cbc823661299ff4a, type: 2}
+    - target: {fileID: 6721138070581181120, guid: 0f351e737ee1836438a81277492356b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976897689237043883, guid: 0f351e737ee1836438a81277492356b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f351e737ee1836438a81277492356b4, type: 3}
 --- !u!1 &339771265
@@ -466,6 +502,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: mur_serre_bas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9893b586d28295a40834d8cf26ddd4ae,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912722797414498327, guid: 9893b586d28295a40834d8cf26ddd4ae,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3609568604059202427, guid: 9893b586d28295a40834d8cf26ddd4ae,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -559,6 +605,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: mur_tuto (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4ec9c60e2594249b0339d1be966bb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5204180455201040250, guid: aa4ec9c60e2594249b0339d1be966bb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7627440218977170503, guid: aa4ec9c60e2594249b0339d1be966bb8,
         type: 3}
@@ -735,6 +791,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: mur_serre_droite (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c4385f9449b36d3448eabd6451e329a4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615052386959784911, guid: c4385f9449b36d3448eabd6451e329a4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4385f9449b36d3448eabd6451e329a4, type: 3}
 --- !u!1001 &1269076935
@@ -819,10 +885,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1a4313f250c067346af40dc3846dbb98, type: 2}
+    - target: {fileID: -57298108554126155, guid: e40ea985f2854e447b372494bf044d6f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e40ea985f2854e447b372494bf044d6f,
         type: 3}
       propertyPath: m_Name
       value: mur_haut_serre_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e40ea985f2854e447b372494bf044d6f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e40ea985f2854e447b372494bf044d6f, type: 3}
@@ -916,7 +992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406418648}
   m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 126.25, y: 0, z: 50}
+  m_LocalPosition: {x: 126.25, y: -0, z: 100}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1009,6 +1085,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: mur_transition_fin_bas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 05b18fe538407194bacf77bab7b7fd80,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705530719114028422, guid: 05b18fe538407194bacf77bab7b7fd80,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05b18fe538407194bacf77bab7b7fd80, type: 3}
 --- !u!1001 &1529140525
@@ -1098,6 +1184,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: mur_haut_serre_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f0af8e0c6238e64498fa33b362271096,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248173404266554388, guid: f0af8e0c6238e64498fa33b362271096,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0af8e0c6238e64498fa33b362271096, type: 3}
 --- !u!1 &1636283365
@@ -1174,7 +1270,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!23 &1733028162
 MeshRenderer:
@@ -1321,6 +1417,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: mur_transition_debut (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b2a462b2804a254da3a60af56e12e67,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2504196671574226968, guid: 2b2a462b2804a254da3a60af56e12e67,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7740879503859452260, guid: 2b2a462b2804a254da3a60af56e12e67,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1405,10 +1511,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6422995129671360377, guid: 7e9f3e470908cf94181b552fac62bacf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7e9f3e470908cf94181b552fac62bacf,
         type: 3}
       propertyPath: m_Name
       value: mur_serre_gauche (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7e9f3e470908cf94181b552fac62bacf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5002931139341805201, guid: 7e9f3e470908cf94181b552fac62bacf,
         type: 3}
@@ -1499,10 +1615,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: mur_transition_fin_haut (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bad5657e851ed1e4a90e018771164642,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5295084116114583243, guid: bad5657e851ed1e4a90e018771164642,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1a4313f250c067346af40dc3846dbb98, type: 2}
+    - target: {fileID: 8597429985162048405, guid: bad5657e851ed1e4a90e018771164642,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bad5657e851ed1e4a90e018771164642, type: 3}

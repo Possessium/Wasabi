@@ -607,7 +607,9 @@ MonoBehaviour:
     SceneName: FXs_start_tuto
   - ScenePath: "Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_D\xE9cor.unity"
     SceneName: "T1_D\xE9cor"
-  LoadListSize: 12
+  - ScenePath: Assets/Game/Scenes/Tuto area/decor_tuto.unity
+    SceneName: decor_tuto
+  LoadListSize: 13
   AllScenesToUnloadInOrder: []
   UnloadListSize: 0
   BlockingCollider: {fileID: 0}
