@@ -72,7 +72,10 @@ public class WSB_InputManager : MonoBehaviour
             _g.dpad.left.wasPressedThisFrame ||
             _g.dpad.right.wasPressedThisFrame ||
             _g.dpad.up.wasPressedThisFrame ||
-            _g.dpad.down.wasPressedThisFrame
+            _g.dpad.down.wasPressedThisFrame ||
+
+            _g.rightStick.ReadValue().magnitude > .5f ||
+            _g.leftStick.ReadValue().magnitude > .5f;
             ;
     }
 
