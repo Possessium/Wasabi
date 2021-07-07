@@ -22,8 +22,8 @@ public class WSB_Elevator : MonoBehaviour
 
     [SerializeField] private WSB_ElevatorCam elevatorCam = null;
 
-    //[SerializeField] private WSB_TriggerCam triggerCamToStuck = null;
-    //[SerializeField] private WSB_TriggerCam triggerCamToTop = null;
+    [SerializeField] private WSB_LightBulb lightBulb = null;
+        public WSB_LightBulb LightBulb { get { return lightBulb; } }
 
     private ElevatorState elevatorState = ElevatorState.Bottom;
 
