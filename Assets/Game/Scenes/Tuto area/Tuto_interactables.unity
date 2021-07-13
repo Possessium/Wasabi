@@ -7597,6 +7597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6846853333082928586, guid: e609fe559c5a8a249b5369d37452236b,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6846853333082928586, guid: e609fe559c5a8a249b5369d37452236b,
+        type: 3}
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
@@ -7609,6 +7614,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Elevator
+      objectReference: {fileID: 0}
+    - target: {fileID: 144471592220976232, guid: e609fe559c5a8a249b5369d37452236b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 669510812171714258, guid: e609fe559c5a8a249b5369d37452236b,
         type: 3}
@@ -7683,6 +7693,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1801924005311595965, guid: e609fe559c5a8a249b5369d37452236b, type: 3}
     - {fileID: 4532115582011060599, guid: e609fe559c5a8a249b5369d37452236b, type: 3}
+    - {fileID: -6846853333082928586, guid: e609fe559c5a8a249b5369d37452236b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e609fe559c5a8a249b5369d37452236b, type: 3}
 --- !u!1 &2065802011 stripped
 GameObject:
@@ -7735,7 +7746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b5ffde415e4414292b10abcf79b92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  col: {fileID: 2065802016}
+  col: {fileID: 0}
 --- !u!61 &2065802015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7762,12 +7773,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.75, y: 0.2}
   m_EdgeRadius: 0
---- !u!61 &2065802016 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: -6846853333082928586, guid: e609fe559c5a8a249b5369d37452236b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2065802009}
+--- !u!60 &2065802016
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065802011}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2, y: 0.5}
+      - {x: -2, y: 0.5}
+      - {x: -2, y: -0.5}
+      - {x: 0, y: -2.2}
+      - {x: 2, y: -0.5}
 --- !u!114 &2065802019
 MonoBehaviour:
   m_ObjectHideFlags: 0
