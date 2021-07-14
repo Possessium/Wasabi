@@ -36,8 +36,7 @@ public class WSB_CameraManager : MonoBehaviour
     [SerializeField] RawImage render = null;
     [SerializeField] GameObject mask = null;
     [SerializeField] GameObject bigSplit = null;
-    [SerializeField] Animator leftMiddle = null;
-    [SerializeField] Animator rightMiddle = null;
+    [SerializeField] Animator splitAnimator = null;
     [SerializeField] GameObject splitMiddleParent = null;
     public float SplitAngle { get; private set; } = 0;
     #endregion
@@ -127,19 +126,15 @@ public class WSB_CameraManager : MonoBehaviour
         }
 
 
-        if (Vector2.Distance(ban.position, lux.position) > MaxCamZoom / 1.25f && !leftMiddle.GetBool("Split") && !rightMiddle.GetBool("Split"))
+        if (Vector2.Distance(ban.position, lux.position) > MaxCamZoom / 1.25f && !splitAnimator.GetBool("Split"))
         {
-            leftMiddle.SetTrigger("Change");
-            rightMiddle.SetTrigger("Change");
-            leftMiddle.SetBool("Split", true);
-            rightMiddle.SetBool("Split", true);
+            splitAnimator.SetTrigger("Change");
+            splitAnimator.SetBool("Split", true);
         }
-        if (Vector2.Distance(ban.position, lux.position) <= MaxCamZoom / 1.25f && leftMiddle.GetBool("Split") && rightMiddle.GetBool("Split"))
+        if (Vector2.Distance(ban.position, lux.position) <= MaxCamZoom / 1.25f && splitAnimator.GetBool("Split"))
         {
-            leftMiddle.SetTrigger("Change");
-            rightMiddle.SetTrigger("Change");
-            leftMiddle.SetBool("Split", false);
-            rightMiddle.SetBool("Split", false);
+            splitAnimator.SetTrigger("Change");
+            splitAnimator.SetBool("Split", false);
         }
 
     }

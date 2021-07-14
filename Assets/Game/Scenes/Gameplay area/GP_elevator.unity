@@ -1420,7 +1420,9 @@ MonoBehaviour:
     SceneName: T2_FXs
   - ScenePath: Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_lights.unity
     SceneName: T2_lights
-  LoadListSize: 3
+  - ScenePath: "Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_D\xE9cor.unity"
+    SceneName: "T2_D\xE9cor"
+  LoadListSize: 4
   AllScenesToUnloadInOrder:
   - ScenePath: Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_plateformes.unity
     SceneName: T_serre_bas_plateformes
