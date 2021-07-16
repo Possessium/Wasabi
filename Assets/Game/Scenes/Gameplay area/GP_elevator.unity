@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36b4c8a171293e4e81c553fff780787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeOnStart: 0
+  activeOnStart: 1
   activeColor: {r: 0, g: 1, b: 0, a: 1}
   deactiveColor: {r: 1, g: 0, b: 0, a: 1}
   link: {fileID: 2086520439}
