@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000006, guid: ac9646677c165c648b5d3ccabad3034a,
+  m_LightingDataAsset: {fileID: 112000006, guid: 4fc20e1dab73d7349a0cad8bda17f4c5,
     type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 1071398657}
   - component: {fileID: 1071398656}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: machinerie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,7 +433,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.36237565, b: 0.3160377, a: 1}
   m_Intensity: 30
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 1607704097}
   - component: {fileID: 1607704096}
   m_Layer: 0
-  m_Name: Point Light (1)
+  m_Name: machinerie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,7 +526,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.36237565, b: 0.3160377, a: 1}
   m_Intensity: 10
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -583,7 +583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607704095}
   m_LocalRotation: {x: 0.6431956, y: 0.040045522, z: 0.29376772, w: 0.7059719}
-  m_LocalPosition: {x: 78.25, y: 31.32, z: -7.33}
+  m_LocalPosition: {x: 78.25, y: 30.43, z: -5.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
