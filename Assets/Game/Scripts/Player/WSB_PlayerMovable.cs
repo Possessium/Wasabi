@@ -216,9 +216,15 @@ public class WSB_PlayerMovable : LG_Movable
         playerAnimator.speed = 1;
     }
 
+    [SerializeField] private Animator endAnimator = null;
+
     public void EndGame()
     {
-        playerAnimator.SetTrigger(end_Hash);
+        playerAnimator.gameObject.SetActive(false);
+        endAnimator.transform.position = transform.position;
+        endAnimator.gameObject.SetActive(true);
+
+        endAnimator.SetTrigger(end_Hash);
         StopMoving();
 
         WSB_GameManager.I.OnPause -= StopMoving;
@@ -229,9 +235,24 @@ public class WSB_PlayerMovable : LG_Movable
 
     IEnumerator MoveBack()
     {
-        while(transform.position.z < 20)
+        while(endAnimator.transform.position.z < 15)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y, 30), Time.deltaTime * 5);
+            endAnimator.transform.position = Vector3.MoveTowards(endAnimator.transform.position, new Vector3(endAnimator.transform.position.x, endAnimator.transform.position.y, 30), Time.deltaTime * 5);
+            yield return new WaitForEndOfFrame();
+        }
+        while(endAnimator.transform.position.x < 174)
+        {
+            endAnimator.transform.position = Vector3.MoveTowards(endAnimator.transform.position, 
+                new Vector3(endAnimator.transform.position.x,
+                endAnimator.transform.position.y,
+                30)
+                , Time.deltaTime * 5);
+
+            endAnimator.transform.position = Vector3.MoveTowards(endAnimator.transform.position, 
+                new Vector3(174,
+                endAnimator.transform.position.y, 
+                endAnimator.transform.position.z)
+                , Time.deltaTime * 2);
             yield return new WaitForEndOfFrame();
         }
     }

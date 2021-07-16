@@ -903,7 +903,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   anchorLeft: {fileID: 777427189}
   anchorRight: {fileID: 550628631}
   elevatorCam: {fileID: 39445768}
-  lightBulb: {fileID: 0}
+  lightBulb: {fileID: 103654931}
 --- !u!61 &517820875
 BoxCollider2D:
   m_ObjectHideFlags: 0
