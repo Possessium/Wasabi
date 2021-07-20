@@ -2,8 +2,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	3151363576	Play_Mus_Niveau			\Music (= 2\Mus_Niveau\Play_Mus_Niveau	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	613892428	Mus_Wasabi_Niveau_V2	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Mus_Wasabi_Niveau_V2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\All_Music\Mus_Niveau\Mus_Wasabi_Niveau_V2\Mus_Wasabi_Niveau_V2		157944
+	613892428	Mus_Wasabi_Niveau_V2	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Mus_Wasabi_Niveau_V2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\All_Music\Mus_Niveau\Mus_Wasabi_Niveau_V2\Mus_Wasabi_Niveau_V2		157944
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	613892428	Mus_Wasabi_Niveau_V2	D:\COURS AUDIO WORKSHOP\PROJET ECOLE\Wasabi\GIT\Wasabi\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Mus_Wasabi_Niveau_V2_D79FB2B7.wem	613892428.wem	\Interactive Music Hierarchy\Default Work Unit\All_Music\Mus_Niveau\Mus_Wasabi_Niveau_V2\Mus_Wasabi_Niveau_V2	
+	613892428	Mus_Wasabi_Niveau_V2	Y:\Desktop\Audio Workshop\JEUX VIDEO\WASABI_PROJECT\Wasabi\Wasabi_WwiseProject\.cache\Linux\SFX\Mus_Wasabi_Niveau_V2_D79FB2B7.wem	613892428.wem	\Interactive Music Hierarchy\Default Work Unit\All_Music\Mus_Niveau\Mus_Wasabi_Niveau_V2\Mus_Wasabi_Niveau_V2	
 
