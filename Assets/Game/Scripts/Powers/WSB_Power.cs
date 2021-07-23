@@ -5,6 +5,9 @@ using UnityEngine;
 
 public abstract class WSB_Power : MonoBehaviour
 {
+    [SerializeField] private bool canBePickedUp = true;
+    public bool CanBePickedUp { get { return canBePickedUp; } }
+
     [SerializeField] protected Animator animator = null;
     [SerializeField] protected float range = 2;
 

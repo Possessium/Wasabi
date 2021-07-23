@@ -69,25 +69,12 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-Library/
 
-*.log
-*.csproj
 
-Library/SceneVisibilityState.asset
-*.log
-obj/Debug
-Library/SceneVisibilityState.asset
-Library/ShaderCache
-Library/ShaderCache.db
-Assembly-CSharp.csproj
-Library/ScriptAssemblies
-Library/SceneVisibilityState.asset
-.vs/Wasabi/v16/.suo
-Library/InspectorExpandedItems.asset
-Library/ShaderCache/EditorEncounteredVariants
-Assembly-CSharp.csproj
 *.validationcache
 *.prof
-*.meta
 Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
+Library/ShaderCache.db
+Library/expandedItems
+Library/LastSceneManagerSetup.txt
+Wasabi_WwiseProject/.cache

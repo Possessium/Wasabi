@@ -34,7 +34,7 @@ public class WSB_Shrink : WSB_Rune
             hasLux = true;
 
             lux.Shrink();
-            AkSoundEngine.PostEvent("Play_Shrink", gameObject);
+            
             return;
             
         }
@@ -44,7 +44,7 @@ public class WSB_Shrink : WSB_Rune
             hasLux = false;
 
             lux.Unshrink();
-            AkSoundEngine.PostEvent("Play_UnShrink", gameObject);
+            
             return;
             
         }

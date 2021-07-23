@@ -40,6 +40,7 @@ public class WSB_PlayerMovable : LG_Movable
     private static readonly int grounded_Hash = Animator.StringToHash("Grounded");
     private static readonly int rotate_Hash = Animator.StringToHash("Rotate");
     private static readonly int unWalk_hash = Animator.StringToHash("UnWalk");
+    private static readonly int end_Hash = Animator.StringToHash("End");
     #endregion
 
     [SerializeField] private bool forceSpawn = true;
@@ -52,6 +53,9 @@ public class WSB_PlayerMovable : LG_Movable
         base.Start();
         if (forceSpawn)
             SetPosition(spawnPosition);
+
+        WSB_GameManager.I.OnPause += PauseAnimation;
+        WSB_GameManager.I.OnResume += ResumeAnimation;
     }
 
     public override void Update()
@@ -74,10 +78,6 @@ public class WSB_PlayerMovable : LG_Movable
             {
 
                 playerAnimator.SetFloat(run_Hash, speed / movableValues.SpeedCurve.Evaluate(movableValues.SpeedCurve[movableValues.SpeedCurve.length - 1].time) * (IsRight ? 1 : -1));
-                if (isJumping && isGrounded)
-                {
-                    AkSoundEngine.SetSwitch("FOOT_TYPE", "JUMP_start", PlayerAnimator.gameObject);
-                }
                 playerAnimator.SetBool(jump_Hash, isJumping);
 
                 if (IsGrounded)
@@ -137,7 +137,7 @@ public class WSB_PlayerMovable : LG_Movable
                 {
                     for (int i = 0; i < _hits.Length; i++)
                     {
-                        if (_hits[i] && _hits[i].transform.GetComponent<LG_Movable>() && !_hits[i].transform.GetComponent<LG_Movable>().IsGrounded)
+                        if (_hits[i] && _hits[i].transform.GetComponent<LG_Movable>() && !_hits[i].transform.GetComponent<WSB_PlayerMovable>() && !_hits[i].transform.GetComponent<LG_Movable>().IsGrounded)
                             _jump = false;
                     }
                 }
@@ -204,6 +204,57 @@ public class WSB_PlayerMovable : LG_Movable
         playerAnimator.SetTrigger(unWalk_hash);
         playerAnimator.SetBool(grounded_Hash, true);
         playerAnimator.SetBool(jump_Hash, false);
+    }
+
+    public void PauseAnimation()
+    {
+        playerAnimator.speed = 0;
+    }
+
+    public void ResumeAnimation()
+    {
+        playerAnimator.speed = 1;
+    }
+
+    [SerializeField] private Animator endAnimator = null;
+
+    public void EndGame()
+    {
+        playerAnimator.gameObject.SetActive(false);
+        endAnimator.transform.position = transform.position;
+        endAnimator.gameObject.SetActive(true);
+
+        endAnimator.SetTrigger(end_Hash);
+        StopMoving();
+
+        WSB_GameManager.I.OnPause -= StopMoving;
+        WSB_GameManager.I.OnResume -= StartMoving;
+
+        StartCoroutine(MoveBack());
+    }
+
+    IEnumerator MoveBack()
+    {
+        while(endAnimator.transform.position.z < 15)
+        {
+            endAnimator.transform.position = Vector3.MoveTowards(endAnimator.transform.position, new Vector3(endAnimator.transform.position.x, endAnimator.transform.position.y, 30), Time.deltaTime * 5);
+            yield return new WaitForEndOfFrame();
+        }
+        while(endAnimator.transform.position.x < 174)
+        {
+            endAnimator.transform.position = Vector3.MoveTowards(endAnimator.transform.position, 
+                new Vector3(endAnimator.transform.position.x,
+                endAnimator.transform.position.y,
+                30)
+                , Time.deltaTime * 5);
+
+            endAnimator.transform.position = Vector3.MoveTowards(endAnimator.transform.position, 
+                new Vector3(174,
+                endAnimator.transform.position.y, 
+                endAnimator.transform.position.z)
+                , Time.deltaTime * 2);
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     #region Jump

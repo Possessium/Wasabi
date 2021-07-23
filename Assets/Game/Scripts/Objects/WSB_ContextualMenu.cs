@@ -5,7 +5,8 @@ using UnityEngine;
 public class WSB_ContextualMenu : MonoBehaviour
 {
 
-    [SerializeField] GameObject toShow = null;
+    [SerializeField] GameObject controllerToShow = null;
+    [SerializeField] GameObject keyboardToShow = null;
     int playersIn = 0;
     [SerializeField] private bool isLux = false;
     [SerializeField] private bool isBan = false;
@@ -19,7 +20,10 @@ public class WSB_ContextualMenu : MonoBehaviour
             playersIn++;
 
             // Activate the thing to show
-            toShow.SetActive(true);
+            if (WSB_InputManager.I.IsKeyboard)
+                keyboardToShow.SetActive(true);
+            else
+                controllerToShow.SetActive(true);
         }
 
         if (isBan && collision.GetComponent<WSB_Ban>())
@@ -28,7 +32,10 @@ public class WSB_ContextualMenu : MonoBehaviour
             playersIn++;
 
             // Activate the thing to show
-            toShow.SetActive(true);
+            if (WSB_InputManager.I.IsKeyboard)
+                keyboardToShow.SetActive(true);
+            else
+                controllerToShow.SetActive(true);
         }
     }
 
@@ -47,12 +54,13 @@ public class WSB_ContextualMenu : MonoBehaviour
 
         // If there is no players left in the trigger, disable the thing to show
         if (playersIn == 0)
-            toShow.SetActive(false);
+            Disable();
     }
 
     public void Disable()
     {
-        toShow.SetActive(false);
+        controllerToShow.SetActive(false);
+        keyboardToShow.SetActive(false);
     }
 
 }
