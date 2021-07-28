@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000030, guid: 4fc20e1dab73d7349a0cad8bda17f4c5,
+  m_LightingDataAsset: {fileID: 112000038, guid: fcfa523b29142674b8e7580127e0555e,
     type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
@@ -215,6 +215,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: arbre_sortie (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 26a53333885f1b8468e8a2fb84853d4a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 26a53333885f1b8468e8a2fb84853d4a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a53333885f1b8468e8a2fb84853d4a, type: 3}
