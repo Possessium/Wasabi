@@ -23,8 +23,6 @@ public class WSB_PlayerMovable : LG_Movable
     private float coyoteVar = -999;
     private float jumpOriginHeight = 0;
 
-    private string materialName = "";
-    public AK.Wwise.Event Landingsound;
     #region Animations
     [SerializeField] Transform jumpPosition = null;
 
@@ -94,8 +92,6 @@ public class WSB_PlayerMovable : LG_Movable
                         playerAnimator.SetBool(grounded_Hash, false);
                 }
 
-                //PlayerAnimator.SetBool(grounded_Hash,IsGrounded ? true : (IsOnMovingPlateform && !isJumping) ? true : false);
-
                 if (CanMove)
                 {
                     if (XMovement < 0 && IsRight)
@@ -108,10 +104,6 @@ public class WSB_PlayerMovable : LG_Movable
                         else
                             Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, -90, Rend.transform.eulerAngles.z);
                     }
-                    else if (XMovement>0 && IsRight && isGrounded && !isJumping)
-                    {
-                        AkSoundEngine.SetSwitch("FOOT_TYPE", "WALK", PlayerAnimator.gameObject);
-                    }
                     if (XMovement > 0 && !IsRight)
                     {
                         IsRight = true;
@@ -122,10 +114,6 @@ public class WSB_PlayerMovable : LG_Movable
                         else
                             Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, 90, Rend.transform.eulerAngles.z);
 
-                    }
-                    else if (XMovement < 0 && !IsRight && isGrounded && !isJumping)
-                    {
-                        AkSoundEngine.SetSwitch("FOOT_TYPE", "WALK", PlayerAnimator.gameObject);
                     }
                 }
             }
@@ -195,7 +183,6 @@ public class WSB_PlayerMovable : LG_Movable
 
     public void Turn()
     {
-        AkSoundEngine.SetSwitch("FOOT_TYPE", "SCUFF", PlayerAnimator.gameObject);
         Rend.transform.eulerAngles = new Vector3(Rend.transform.eulerAngles.x, IsRight ? 90 : -90, Rend.transform.eulerAngles.z);
     }
 
@@ -216,9 +203,15 @@ public class WSB_PlayerMovable : LG_Movable
         playerAnimator.speed = 1;
     }
 
+    [SerializeField] private Animator endAnimator = null;
+
     public void EndGame()
     {
-        playerAnimator.SetTrigger(end_Hash);
+        playerAnimator.gameObject.SetActive(false);
+        endAnimator.transform.position = transform.position;
+        endAnimator.gameObject.SetActive(true);
+
+        endAnimator.SetTrigger(end_Hash);
         StopMoving();
 
         WSB_GameManager.I.OnPause -= StopMoving;
@@ -229,9 +222,24 @@ public class WSB_PlayerMovable : LG_Movable
 
     IEnumerator MoveBack()
     {
-        while(transform.position.z < 20)
+        while(endAnimator.transform.position.z < 15)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y, 30), Time.deltaTime * 5);
+            endAnimator.transform.position = Vector3.MoveTowards(endAnimator.transform.position, new Vector3(endAnimator.transform.position.x, endAnimator.transform.position.y, 30), Time.deltaTime * 5);
+            yield return new WaitForEndOfFrame();
+        }
+        while(endAnimator.transform.position.x < 174)
+        {
+            endAnimator.transform.position = Vector3.MoveTowards(endAnimator.transform.position, 
+                new Vector3(endAnimator.transform.position.x,
+                endAnimator.transform.position.y,
+                30)
+                , Time.deltaTime * 5);
+
+            endAnimator.transform.position = Vector3.MoveTowards(endAnimator.transform.position, 
+                new Vector3(174,
+                endAnimator.transform.position.y, 
+                endAnimator.transform.position.z)
+                , Time.deltaTime * 2);
             yield return new WaitForEndOfFrame();
         }
     }
@@ -313,38 +321,12 @@ public class WSB_PlayerMovable : LG_Movable
 
         if (IsGrounded && isJumping)
         {
-         
-               AkSoundEngine.SetSwitch("FOOT_TYPE", "JUMP_land", PlayerAnimator.gameObject);
-               Landingsound.Post(PlayerAnimator.gameObject);
-          
-
             isJumping = false;
-       
         }
 
 
     }
     #endregion
-    
-    private  void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("collision : " + collision.gameObject.name);
-        switch (collision.gameObject.tag)
-        {
-            case "bois":
-                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Wood", playerAnimator.gameObject);
-                break;
-            case "metal":
-                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Metal", playerAnimator.gameObject);
-                break;
-            case "crystal":
-                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Crystal", playerAnimator.gameObject);
-                break;
-            case "herbe":
-                AkSoundEngine.SetSwitch("FOOT_TEXTUR", "Grass", playerAnimator.gameObject);
-                break;
-        }
-    }
     
    
 }

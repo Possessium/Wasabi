@@ -151,6 +151,8 @@ public class WSB_MainMenu : MonoBehaviour
         }
         menuAnimator.SetTrigger(back_Hash);
     }
+
+    public void Quit() => Application.Quit();
 }
 
 public enum MenuMode
