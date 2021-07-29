@@ -93,7 +93,7 @@ public class WSB_SceneLoader : MonoBehaviour
 
         OnScenesReady?.Invoke();
 
-        if(LoadOnPlay)
+        if(LoadOnPlay && WSB_GameManager.I)
         {
             WSB_GameManager.I.StartGame();
             SceneManager.UnloadSceneAsync("Loading");

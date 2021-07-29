@@ -32,11 +32,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Gameplay area/GP_FX.unity
     guid: dd2d21c2be15e7747a912cf0fedcd329
-  - enabled: 1
-    path: Assets/Game/Scenes/Sound_Design.unity
+  - enabled: 0
+    path: Assets/Game/Scenes/Archives/Sound_Design.unity
     guid: f5f82b50d878942009b778bb7e3392dc
   - enabled: 1
-    path: Assets/Game/Scenes/Music.unity
+    path: Assets/Game/Scenes/Archives/Music.unity
     guid: 00a9edcc9395fba4ea82034c53676d64
   - enabled: 1
     path: "Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_D\xE9cor.unity"
@@ -56,9 +56,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Tuto area/FXs_start_tuto.unity
     guid: 7ecae2ea53792544c9ee4559e7caee4a
-  - enabled: 1
-    path: Assets/Game/Scenes/Tuto area/decor_tuto.unity
-    guid: 7e80a464c662c054bbaeb932e068a065
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
