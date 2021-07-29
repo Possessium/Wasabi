@@ -39,9 +39,6 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/Music.unity
     guid: 00a9edcc9395fba4ea82034c53676d64
   - enabled: 1
-    path: "Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_D\xE9cor.unity"
-    guid: 862191a9264d2ff4e85c3b0f9ac8509d
-  - enabled: 1
     path: Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_plateformes.unity
     guid: 027c06c6deaeb43459b58a596993222c
   - enabled: 1
@@ -56,12 +53,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Tuto area/FXs_start_tuto.unity
     guid: 7ecae2ea53792544c9ee4559e7caee4a
-  - enabled: 1
-    path: Assets/Game/Scenes/Tuto area/decor_tuto.unity
-    guid: 7e80a464c662c054bbaeb932e068a065
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
     guid: 8d44e6a5dff93374eb1896e9a0ea89ad
@@ -87,15 +78,9 @@ EditorBuildSettings:
     path: "Assets/Game/Scenes/Transition area/Transition 02 Fin/T2_D\xE9cor.unity"
     guid: 9a61a0d1724d6564bae81b16eb9f970c
   - enabled: 1
-    path: "Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_D\xE9cor.unity"
-    guid: 89ae1a8d8c1ddf945b2c8d7ada5086ab
-  - enabled: 1
     path: Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_plateformes.unity
     guid: 05eb91179b2c2fe4ca4627847dd0d881
   - enabled: 1
     path: Assets/Game/Scenes/All walls.unity
     guid: 4abe293ec4919514788d9c9ede22a78c
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   m_configObjects: {}

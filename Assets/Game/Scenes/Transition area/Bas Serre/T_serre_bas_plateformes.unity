@@ -189,6 +189,75 @@ PolygonCollider2D:
       - {x: 5.5, y: 2.5}
       - {x: 5.75, y: -8.5}
       - {x: 10, y: -8.25}
+--- !u!1001 &115318087
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -33.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 928577814210644104, guid: 566d7323571d19244b1bc4b1c66c8d23,
+        type: 3}
+      propertyPath: m_Name
+      value: fontaine_maj
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 566d7323571d19244b1bc4b1c66c8d23, type: 3}
 --- !u!1 &1549809013
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +346,7 @@ Transform:
   - {fileID: 2767256}
   - {fileID: 2142452374}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2142452373
 GameObject:

@@ -7948,17 +7948,13 @@ MonoBehaviour:
     SceneName: T_serre_bas_plateformes
   - ScenePath: Assets/Game/Scenes/Gameplay area/GP_elevator.unity
     SceneName: GP_elevator
-  - ScenePath: "Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_D\xE9cor.unity"
-    SceneName: "T_serre_bas_D\xE9cor"
   - ScenePath: Assets/Game/Scenes/Gameplay area/GP_FX.unity
     SceneName: GP_FX
   - ScenePath: "Assets/Game/Scenes/Gameplay area/GP_D\xE9cor.unity"
     SceneName: "GP_D\xE9cor"
-  - ScenePath: "Assets/Game/Scenes/Transition area/Haut Serre/T_serre_haut_D\xE9cor.unity"
-    SceneName: "T_serre_haut_D\xE9cor"
   - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Lights.unity
     SceneName: GP_Lights
-  LoadListSize: 7
+  LoadListSize: 5
   AllScenesToUnloadInOrder: []
   UnloadListSize: 0
   BlockingCollider: {fileID: 0}

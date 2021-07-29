@@ -5141,9 +5141,7 @@ MonoBehaviour:
   AllScenesToUnloadInOrder:
   - ScenePath: Assets/Game/Scenes/Gameplay area/GP_Interactables.unity
     SceneName: GP_Interactables
-  - ScenePath: "Assets/Game/Scenes/Transition area/Bas Serre/T_serre_bas_D\xE9cor.unity"
-    SceneName: "T_serre_bas_D\xE9cor"
-  UnloadListSize: 2
+  UnloadListSize: 1
   BlockingCollider: {fileID: 0}
 --- !u!61 &2144547541
 BoxCollider2D:
