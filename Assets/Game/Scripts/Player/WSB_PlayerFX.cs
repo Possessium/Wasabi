@@ -12,7 +12,6 @@ public class WSB_PlayerFX : MonoBehaviour
     {
         if (playerMovable.IsGrounded && playerMovable.CanMove && stepFX)
         {
-            //AkSoundEngine.SetSwitch("FOOT_TYPE", "WALK", SwitchSound);
             ParticleSystem _particle = Instantiate(stepFX, transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
             _particle.transform.position += Vector3.up * .1f;
             _particle.transform.localEulerAngles = new Vector3(0, playerMovable.IsRight ? 0 : 180, 0);
