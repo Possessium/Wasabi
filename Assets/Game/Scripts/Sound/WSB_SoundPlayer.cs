@@ -10,7 +10,7 @@ public class WSB_SoundPlayer : MonoBehaviour
 
     private Transform p1 = null;
     private Transform p2 = null;
-    private Transform obj = null;
+    [SerializeField] private Transform obj = null;
 
     private void Start()
     {

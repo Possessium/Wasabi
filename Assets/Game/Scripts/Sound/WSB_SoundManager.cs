@@ -14,33 +14,83 @@ public class WSB_SoundManager : MonoBehaviour
         I = this;
     }
 
-    #region Characters
-    public void Step(bool _ban)
+    public void Walk(bool _ban, GroundType _t)
     {
 
     }
+    public void Run(bool _ban, GroundType _t)
+    {
 
+    }
+    public void Jump(bool _ban, GroundType _t)
+    {
+
+    }
+    public void Land(bool _ban, GroundType _t)
+    {
+
+    }
+    
     public void Lift(bool _ban)
     {
 
     }
-
-    public void Drop(bool _ban)
+    public void Lever(bool _ban)
     {
 
     }
 
-    public void Jump(bool _ban)
+    public void ShrinkLux()
+    {
+
+    }
+    public void UnshrinkLux()
     {
 
     }
 
-    public void Land(bool _ban)
+    public void TrampoBounce(bool _ban)
     {
 
     }
 
-    #endregion
+    public void SpawnDragon(Transform _t)
+    {
+
+    }
+    public void DespawnDragon(Transform _t)
+    {
+
+    }
+    public void DragonEat(Transform _t)
+    {
+
+    }
+
+    public void WindActive(Transform _t)
+    {
+
+    }
+    public void WindDisable(Transform _t)
+    {
+
+    }
+
+    public void Elevator(Transform _t)
+    {
+
+    }
+
+    public void ValidPattern()
+    {
+
+    }
+}
+public enum GroundType
+{
+    Grass,
+    Wood,
+    Metal
 }
 
 /*
