@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5ddec079c4b8344b8b95d7fb23d165, type: 3}
   m_Name: SoundBank
   m_EditorClassIdentifier: 
+  musics:
+  - {fileID: 8300000, guid: 3595e2dfa623b354c950bf05dd737d9e, type: 3}
+  - {fileID: 8300000, guid: a3f12c2d9f9c3e9469f35894d240ce6f, type: 3}
+  - {fileID: 8300000, guid: 4c3a3e436be3d4f44a555356ab7a3cdf, type: 3}
   banStepGrass:
   - {fileID: 8300000, guid: 5b1f06c599e13a64eae8b641f3fd3e32, type: 3}
   - {fileID: 8300000, guid: 1b3bdabc4693dc14bab6a377f9d47f93, type: 3}

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SoundBank", menuName = "ScriptableObjects/CreateSoundBank", order = 1)]
 public class SO_Sounds : ScriptableObject
 {
+    [SerializeField] private List<AudioClip> musics = new List<AudioClip>();
     #region Steps
     #region Ban
     [SerializeField] private List<AudioClip> banStepGrass = new List<AudioClip>();
@@ -217,7 +218,8 @@ public class SO_Sounds : ScriptableObject
         }
         return _clip;
     }
-    
+
+    public AudioClip GetMusic(int _i) => musics[_i];
 }
 
 public enum Sound

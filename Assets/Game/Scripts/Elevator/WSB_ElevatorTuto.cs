@@ -22,6 +22,7 @@ public class WSB_ElevatorTuto : MonoBehaviour
 
     private void ScenesLoaded()
     {
+        WSB_GameManager.I.ChangeMusic(2);
         sceneLoader.OnScenesReady -= ScenesLoaded;
         sceneLoader.enabled = false;
         TriggerElevator(true);

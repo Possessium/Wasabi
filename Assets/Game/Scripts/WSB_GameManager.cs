@@ -93,6 +93,8 @@ public class WSB_GameManager : MonoBehaviour
         cinemachineBrain.enabled = true;
 
         triggerCamStart.TriggerCinemachine();
+
+        WSB_SoundManager.I.ChangeMusic(1);
     }
 
     public void EndGame()
@@ -162,4 +164,8 @@ public class WSB_GameManager : MonoBehaviour
     public void ChangeMusicVolume(float f) => WSB_SoundManager.I.ChangeMusicVolume(f);
     public void ChangeSoundVolume(float f) => WSB_SoundManager.I.ChangeSoundVolume(f);
 
+    public void ChangeMusic(int _i)
+    {
+        WSB_SoundManager.I.ChangeMusic(_i);
+    }
 }

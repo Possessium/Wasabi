@@ -41,6 +41,12 @@ public class WSB_SoundManager : MonoBehaviour
         musicSource.outputAudioMixerGroup.audioMixer.GetFloat("VolumeSound", out _f);
         return _f;
     }
+    public void ChangeMusic(int _i)
+    {
+        musicSource.Stop();
+        musicSource.clip = soundsData.GetMusic(_i);
+        musicSource.Play();
+    }
 
     public void Walk(bool _ban, GroundType _t)
     {
