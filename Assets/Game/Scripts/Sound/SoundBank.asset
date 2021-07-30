@@ -168,8 +168,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b83d845ffaaca0341ac55337eeeef3d9, type: 3}
   - {fileID: 8300000, guid: 0b7985d4c58d7ee48be818393c1053de, type: 3}
   lever: {fileID: 8300000, guid: 10be4386fd511604497879340fb76b66, type: 3}
-  luxShrink: {fileID: 8300000, guid: 1be550822dae1d2429c0fdf437f9f1e4, type: 3}
-  luxUnshrink: {fileID: 8300000, guid: 877d153c87cca3847b34671c864a1f9a, type: 3}
+  luxShrink: {fileID: 8300000, guid: 877d153c87cca3847b34671c864a1f9a, type: 3}
+  luxUnshrink: {fileID: 8300000, guid: 1be550822dae1d2429c0fdf437f9f1e4, type: 3}
   validPattern: {fileID: 8300000, guid: 57eb33d3338e0e64097a99126da04389, type: 3}
   button: {fileID: 8300000, guid: c2198511497965149a7b5948b779160a, type: 3}
   valid: {fileID: 8300000, guid: 388d5c98277fcc34690d9b48f5005037, type: 3}

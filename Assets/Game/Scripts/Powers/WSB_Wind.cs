@@ -65,12 +65,20 @@ public class WSB_Wind : WSB_Rune
         }
     }
 
+    public override void ActivatePower()
+    {
+        base.ActivatePower();
+
+        WSB_SoundManager.I.WindActive(transform);
+    }
+
     public override void DeactivatePower(WSB_PlayerMovable _p)
     {
         base.DeactivatePower(_p);
 
         if (poufAigretteFX)
             Instantiate(poufAigretteFX, transform.position, Quaternion.identity);
-        
+
+        WSB_SoundManager.I.WindDisable(transform);        
     }
 }

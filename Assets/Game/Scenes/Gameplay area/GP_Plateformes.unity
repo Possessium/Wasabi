@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 197692200}
   m_Layer: 0
   m_Name: Wall high to low
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 214958414}
   m_Layer: 0
   m_Name: Ground trampo room
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 261864702}
   m_Layer: 15
   m_Name: Grille
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -672,6 +672,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: semi_solid_plateformes_grilles
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8dd74ac153886f647a62f70d0e34f26e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1423781110199703953, guid: 8dd74ac153886f647a62f70d0e34f26e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -719,6 +724,63 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 69d68577ec5dae74ba9504f7df3e80e0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd74ac153886f647a62f70d0e34f26e, type: 3}
+--- !u!1 &410943842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 410943843}
+  - component: {fileID: 410943844}
+  m_Layer: 0
+  m_Name: Grass
+  m_TagString: GRASS
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &410943843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410943842}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1731211700}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &410943844
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410943842}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -4.3437386, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 41.056145, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &485166457
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +793,7 @@ GameObject:
   - component: {fileID: 485166459}
   m_Layer: 0
   m_Name: Wall right side elevator
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -959,7 +1021,7 @@ GameObject:
   - component: {fileID: 600330327}
   m_Layer: 0
   m_Name: Wall right ventilation
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1016,7 +1078,7 @@ GameObject:
   - component: {fileID: 603506285}
   m_Layer: 0
   m_Name: Ground last floor
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1167,7 +1229,7 @@ GameObject:
   - component: {fileID: 679354424}
   m_Layer: 0
   m_Name: Cabanon
-  m_TagString: Untagged
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1376,7 +1438,7 @@ GameObject:
   - component: {fileID: 761334532}
   m_Layer: 0
   m_Name: Roof lever
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1433,7 +1495,7 @@ GameObject:
   - component: {fileID: 817589429}
   m_Layer: 0
   m_Name: Roof
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1489,7 +1551,7 @@ GameObject:
   - component: {fileID: 832558972}
   m_Layer: 0
   m_Name: "Mont\xE9e"
-  m_TagString: bois
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1524,7 +1586,7 @@ GameObject:
   - component: {fileID: 852857396}
   m_Layer: 0
   m_Name: Wall far left
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1581,7 +1643,7 @@ GameObject:
   - component: {fileID: 894302557}
   m_Layer: 0
   m_Name: Right side last floor
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1638,7 +1700,7 @@ GameObject:
   - component: {fileID: 898649878}
   m_Layer: 0
   m_Name: High ground
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1695,7 +1757,7 @@ GameObject:
   - component: {fileID: 914541052}
   m_Layer: 0
   m_Name: Wall left ventilation
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1752,7 +1814,7 @@ GameObject:
   - component: {fileID: 927084267}
   m_Layer: 0
   m_Name: Bois
-  m_TagString: Untagged
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1809,7 +1871,7 @@ GameObject:
   - component: {fileID: 987759157}
   m_Layer: 0
   m_Name: Wall right bottom
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1866,7 +1928,7 @@ GameObject:
   - component: {fileID: 1026108804}
   m_Layer: 0
   m_Name: Ground lever
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1923,7 +1985,7 @@ GameObject:
   - component: {fileID: 1026976101}
   m_Layer: 0
   m_Name: Ground first floor
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1980,7 +2042,7 @@ GameObject:
   - component: {fileID: 1055601688}
   m_Layer: 0
   m_Name: Ground second floor left
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2094,7 +2156,7 @@ GameObject:
   - component: {fileID: 1103932868}
   m_Layer: 0
   m_Name: Low ground
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2150,7 +2212,7 @@ GameObject:
   - component: {fileID: 1133803985}
   m_Layer: 0
   m_Name: Trampo
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2188,7 +2250,7 @@ GameObject:
   - component: {fileID: 1200507813}
   m_Layer: 0
   m_Name: Wall wind
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2245,7 +2307,7 @@ GameObject:
   - component: {fileID: 1318827290}
   m_Layer: 0
   m_Name: Wall trampo room right
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2302,7 +2364,7 @@ GameObject:
   - component: {fileID: 1339000467}
   m_Layer: 0
   m_Name: Wall shrink Lux
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2399,7 +2461,7 @@ GameObject:
   - component: {fileID: 1395950416}
   m_Layer: 0
   m_Name: Ground wind
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2537,7 +2599,7 @@ GameObject:
   - component: {fileID: 1528774973}
   m_Layer: 0
   m_Name: Ground rdc left
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2594,7 +2656,7 @@ GameObject:
   - component: {fileID: 1644581623}
   m_Layer: 0
   m_Name: Ground rdc right
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2651,7 +2713,7 @@ GameObject:
   - component: {fileID: 1674551050}
   m_Layer: 0
   m_Name: Big block
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2708,7 +2770,7 @@ GameObject:
   - component: {fileID: 1707390196}
   m_Layer: 0
   m_Name: Ground second floor right
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2762,7 +2824,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1731211700}
-  - component: {fileID: 1731211701}
   m_Layer: 0
   m_Name: Ground
   m_TagString: herbe
@@ -2783,35 +2844,10 @@ Transform:
   m_Children:
   - {fileID: 1988132439}
   - {fileID: 927084266}
+  - {fileID: 410943843}
   m_Father: {fileID: 1352435853}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1731211701
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731211699}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -4.3437386, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 41.056145, y: 2}
-  m_EdgeRadius: 0
 --- !u!1 &1782110984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,7 +2860,7 @@ GameObject:
   - component: {fileID: 1782110986}
   m_Layer: 0
   m_Name: Wall lever
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2881,7 +2917,7 @@ GameObject:
   - component: {fileID: 1860833206}
   m_Layer: 0
   m_Name: Wall left triple elevator
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2938,7 +2974,7 @@ GameObject:
   - component: {fileID: 1869198134}
   m_Layer: 0
   m_Name: Roof top elevator area
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3060,7 +3096,7 @@ GameObject:
   - component: {fileID: 1988132440}
   m_Layer: 0
   m_Name: Metal
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3231,7 +3267,7 @@ GameObject:
   - component: {fileID: 2046180893}
   m_Layer: 0
   m_Name: Triple elevator
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3275,7 +3311,7 @@ GameObject:
   - component: {fileID: 2067683976}
   m_Layer: 0
   m_Name: Roof trampo room
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3416,7 +3452,7 @@ GameObject:
   - component: {fileID: 2131197859}
   m_Layer: 0
   m_Name: Wall right top
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

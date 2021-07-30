@@ -17,6 +17,9 @@ TagManager:
   - metal
   - crystal
   - herbe
+  - WOOD
+  - GRASS
+  - METAL
   layers:
   - Default
   - TransparentFX
@@ -41,8 +44,6 @@ TagManager:
   - 
   - 
   - Split
-  - 
-  - 
   - 
   - 
   - 

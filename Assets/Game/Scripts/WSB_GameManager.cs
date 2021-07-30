@@ -15,6 +15,7 @@ public class WSB_GameManager : MonoBehaviour
     [SerializeField] WSB_TriggerCam triggerCamStart = null;
     [SerializeField] Animator endAnimator = null;
     private bool isEnded = false;
+    private bool isStarted = false;
     public static bool Paused { get; private set; } = true;
 
     #region Pause
@@ -66,7 +67,7 @@ public class WSB_GameManager : MonoBehaviour
     public void Pause(InputAction.CallbackContext _ctx)
     {
         // If input isn't start exit
-        if (!_ctx.started && !isEnded)
+        if (!_ctx.started && !isEnded || !isStarted)
             return;
 
         // Inverse pause state
@@ -84,6 +85,8 @@ public class WSB_GameManager : MonoBehaviour
     public void Resume()
     {
         // Set Pause state to false, invoke resume event, hide pause menu
+
+        isStarted = true;
         Paused = false;
         OnResume?.Invoke();
     }

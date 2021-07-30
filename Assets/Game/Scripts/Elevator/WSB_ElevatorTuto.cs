@@ -46,11 +46,13 @@ public class WSB_ElevatorTuto : MonoBehaviour
 
         if(_s)
         {
+            WSB_SoundManager.I.Elevator(transform);
             animator.SetTrigger(animate_Hash);
             animator.speed = 1;
         }
         else
         {
+            WSB_SoundManager.I.StopSound(transform);
             animator.speed = 0;
         }
     }

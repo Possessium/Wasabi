@@ -29,7 +29,9 @@ public class WSB_Lux : MonoBehaviour
     {
         playerMovable.RemoveSpeedCoef(1.5f);
         shrinkAnimator.SetBool(shrink_Hash, true);
-        
+
+        WSB_SoundManager.I.ShrinkLux();
+
         Shrinked = true;
     }
 
@@ -37,6 +39,8 @@ public class WSB_Lux : MonoBehaviour
     {
         playerMovable.AddSpeedCoef(1.5f);
         shrinkAnimator.SetBool(shrink_Hash, false);
+
+        WSB_SoundManager.I.UnshrinkLux();
 
         Shrinked = false;
     }

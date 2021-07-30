@@ -25,6 +25,8 @@ public class WSB_Carnivore : WSB_Plant
 
         fxFire.SetBool(goForIt_Hash, false);
 
+        WSB_SoundManager.I.DragonEat(transform);
+
         Destroy(_hit.gameObject);
         // Wait for given delay
         yield return new WaitForSeconds(eatDelay);
@@ -48,5 +50,19 @@ public class WSB_Carnivore : WSB_Plant
 
             StartCoroutine(Eat(_hits[0].gameObject));
         }
+    }
+
+    public override void ActivatePower()
+    {
+        base.ActivatePower();
+
+        WSB_SoundManager.I.SpawnDragon(transform);
+    }
+
+    public override void DeactivatePower(WSB_PlayerMovable _p)
+    {
+        base.DeactivatePower(_p);
+
+        WSB_SoundManager.I.DespawnDragon(transform);
     }
 }

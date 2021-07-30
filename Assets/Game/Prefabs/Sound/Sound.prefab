@@ -143,5 +143,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 281458751553896072}
   minDist: 3
-  maxDist: 50
+  maxDist: 15
   obj: {fileID: 0}

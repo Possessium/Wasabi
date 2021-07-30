@@ -50,9 +50,18 @@ public class WSB_Shrink : WSB_Rune
         }
     }
 
+    public override void ActivatePower()
+    {
+        base.ActivatePower();
+
+        WSB_SoundManager.I.ShrinkSpawn(transform);
+    }
+
     public override void DeactivatePower(WSB_PlayerMovable _p)
     {
         base.DeactivatePower(_p);
+
+        WSB_SoundManager.I.ShrinkDespawn(transform);
 
         enabled = false;
     }

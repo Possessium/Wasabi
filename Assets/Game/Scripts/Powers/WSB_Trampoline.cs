@@ -34,6 +34,7 @@ public class WSB_Trampoline : WSB_Plant
                 if(trampolineBounceFX && canFX)
                 {
                     trampolineBounceFX.Play();
+                    WSB_SoundManager.I.TrampoBounce(transform);
                     StartCoroutine(DelayFX());
                 }
 
@@ -53,5 +54,19 @@ public class WSB_Trampoline : WSB_Plant
         canFX = false;
         yield return new WaitForSeconds(.5f);
         canFX = true;
+    }
+
+    public override void ActivatePower()
+    {
+        base.ActivatePower();
+
+        WSB_SoundManager.I.TrampoSpawn(transform);
+    }
+
+    public override void DeactivatePower(WSB_PlayerMovable _p)
+    {
+        base.DeactivatePower(_p);
+
+        WSB_SoundManager.I.TrampoDespawn(transform);
     }
 }

@@ -413,6 +413,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepFX: {fileID: 3792860050757049618, guid: c814f685d702b3343afa3f9becdd85cf, type: 3}
   playerMovable: {fileID: 6072583074185493580}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &174927133
 Animator:
   serializedVersion: 3
@@ -6719,6 +6722,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepFX: {fileID: 3792860050757049618, guid: c814f685d702b3343afa3f9becdd85cf, type: 3}
   playerMovable: {fileID: 460986512884628070}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &570233092
 Animator:
   serializedVersion: 3
@@ -16198,6 +16204,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepFX: {fileID: 3792860050757049618, guid: c814f685d702b3343afa3f9becdd85cf, type: 3}
   playerMovable: {fileID: 460986512884628070}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 13057
 --- !u!1 &1450110261
 GameObject:
   m_ObjectHideFlags: 0
@@ -17024,6 +17033,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepFX: {fileID: 3792860050757049618, guid: c814f685d702b3343afa3f9becdd85cf, type: 3}
   playerMovable: {fileID: 6072583074185493580}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 13057
 --- !u!1 &1600962912
 GameObject:
   m_ObjectHideFlags: 0
@@ -25666,6 +25678,9 @@ MonoBehaviour:
   forceSpawn: 1
   spawnPosition: {x: 129.1118, y: -89.71, z: -5}
   endAnimator: {fileID: 570233092}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 13057
 --- !u!114 &460986512884628071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42980,6 +42995,9 @@ MonoBehaviour:
   forceSpawn: 1
   spawnPosition: {x: 137.9467, y: -89.71, z: -5}
   endAnimator: {fileID: 174927133}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 13057
 --- !u!114 &6072583074185493581
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2699,7 +2699,7 @@ GameObject:
   - component: {fileID: 689477485}
   - component: {fileID: 689477487}
   - component: {fileID: 689477486}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Portrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5386,7 +5386,7 @@ GameObject:
   - component: {fileID: 1312781210}
   - component: {fileID: 1312781212}
   - component: {fileID: 1312781211}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6128,7 +6128,7 @@ GameObject:
   - component: {fileID: 1628135103}
   - component: {fileID: 1628135105}
   - component: {fileID: 1628135104}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6549,7 +6549,7 @@ GameObject:
   - component: {fileID: 1730306625}
   - component: {fileID: 1730306624}
   - component: {fileID: 1730306623}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Yonix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7060,7 +7060,7 @@ GameObject:
   - component: {fileID: 1826945938}
   - component: {fileID: 1826945937}
   - component: {fileID: 1826945939}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}

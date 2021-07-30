@@ -110,13 +110,18 @@ public class WSB_SoundManager : MonoBehaviour
     }
     
     public void Lift(bool _ban) => SpawnSound().Init(_ban ? ban : lux, soundsData.GetClip(Sound.PowerPickup));
+    public void Lever(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.Lever));
 
-    public void TrampoBounce(bool _ban) => SpawnSound().Init(_ban ? ban : lux, soundsData.GetClip(Sound.PlayerBounce));
+    #region Powers
+    public void TrampoBounce(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.PlayerBounce));
+    public void TrampoSpawn(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.TrampoSpawn));
+    public void TrampoDespawn(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.TrampoDespawn));
+
+    public void ShrinkSpawn(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.ShrinkActive));
+    public void ShrinkDespawn(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.ShrinkDisable));
 
     public void ShrinkLux() => SpawnSound().Init(lux, soundsData.GetClip(Sound.LuxUnshrink));
     public void UnshrinkLux() => SpawnSound().Init(lux, soundsData.GetClip(Sound.LuxShrink));
-
-    public void Lever(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.Lever));
 
     public void SpawnDragon(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.DragonSpawn));
     public void DespawnDragon(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.DragonDespawn));
@@ -124,6 +129,7 @@ public class WSB_SoundManager : MonoBehaviour
 
     public void WindActive(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.WindActive));
     public void WindDisable(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.WindDisable));
+    #endregion
 
     public void Elevator(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.Elevator), true);
     public void StopSound(Transform _t)

@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 406457523}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: bois
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 433192965}
   m_Layer: 0
   m_Name: Trunk middle
-  m_TagString: Untagged
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 704442428}
   m_Layer: 0
   m_Name: Wall left
-  m_TagString: Untagged
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 877681372}
   m_Layer: 0
   m_Name: Wall shrink Lux
-  m_TagString: Untagged
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 1109717258}
   m_Layer: 0
   m_Name: Trunk right
-  m_TagString: bois
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 1180126895}
   m_Layer: 0
   m_Name: Wall dragon right
-  m_TagString: Untagged
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 1338098681}
   m_Layer: 0
   m_Name: Wall dragon left
-  m_TagString: Untagged
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 1478172029}
   m_Layer: 0
   m_Name: Trunk left
-  m_TagString: bois
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 1760829735}
   m_Layer: 0
   m_Name: Wall right
-  m_TagString: Untagged
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 1861851530}
   m_Layer: 0
   m_Name: High ground
-  m_TagString: bois
+  m_TagString: WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

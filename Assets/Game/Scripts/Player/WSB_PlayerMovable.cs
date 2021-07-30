@@ -301,6 +301,14 @@ public class WSB_PlayerMovable : LG_Movable
             }
         }
 
+        string _s = Physics2D.Raycast(transform.position, Vector2.down, 2, groundLayer).transform?.tag;
+
+        if (_s == "METAL")
+            WSB_SoundManager.I.Jump(GetComponent<WSB_Ban>(), GroundType.Metal);
+        else if (_s == "GRASS")
+            WSB_SoundManager.I.Jump(GetComponent<WSB_Ban>(), GroundType.Grass);
+        else if (_s == "WOOD")
+            WSB_SoundManager.I.Jump(GetComponent<WSB_Ban>(), GroundType.Wood);
 
         jumpVar = force.y = 0;
 
@@ -314,10 +322,20 @@ public class WSB_PlayerMovable : LG_Movable
 
     public void StopJump() => isJumping = false;
 
-
+    
+    [SerializeField] private LayerMask groundLayer = 0;
     protected override void OnSetGrounded()
     {
         base.OnSetGrounded();
+
+        string _s = Physics2D.Raycast(transform.position, Vector2.down, 2, groundLayer).transform?.tag;
+
+        if (_s == "METAL")
+            WSB_SoundManager.I.Land(GetComponent<WSB_Ban>(), GroundType.Metal);
+        else if (_s == "GRASS")
+            WSB_SoundManager.I.Land(GetComponent<WSB_Ban>(), GroundType.Grass);
+        else if (_s == "WOOD")
+            WSB_SoundManager.I.Land(GetComponent<WSB_Ban>(), GroundType.Wood);
 
         if (IsGrounded && isJumping)
         {

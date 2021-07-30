@@ -210,6 +210,8 @@ public class WSB_PlayerInteraction : MonoBehaviour
             {
                 grabbedObject.transform.parent = playerHands;
                 grabbedObject.transform.position = playerHands.transform.position + ((movable.IsRight ? Vector3.right : Vector3.left) * (GetComponent<WSB_Ban>() ? 1.2f : .85f));
+
+                WSB_SoundManager.I.Lift(GetComponent<WSB_Ban>());
             }
 
             grabbedObject.MovableCollider.enabled = false;

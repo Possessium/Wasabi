@@ -72,5 +72,6 @@ public class WSB_Lever : MonoBehaviour
             Active = true;
             CanPress = false;
         }
+        WSB_SoundManager.I.Lever(transform);
     }
 }
