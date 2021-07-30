@@ -59,7 +59,7 @@ public class SO_Sounds : ScriptableObject
     [SerializeField] private AudioClip dragonEat = null;
     #endregion
     #region Players
-    [SerializeField] private AudioClip playerBounce = null;
+    [SerializeField] private List<AudioClip> playerBounce = null;
     [SerializeField] private AudioClip lever = null;
 
     [SerializeField] private AudioClip luxShrink = null;
@@ -185,7 +185,7 @@ public class SO_Sounds : ScriptableObject
                 _clip = dragonEat;
                 break;
             case Sound.PlayerBounce:
-                _clip = playerBounce;
+                _clip = playerBounce[Random.Range(0, playerBounce.Count - 1)]; ;
                 break;
             case Sound.Lever:
                 _clip = lever;

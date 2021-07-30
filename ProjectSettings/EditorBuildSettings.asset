@@ -32,9 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Gameplay area/GP_FX.unity
     guid: dd2d21c2be15e7747a912cf0fedcd329
-  - enabled: 0
-    path: Assets/Game/Scenes/Archives/Sound_Design.unity
-    guid: f5f82b50d878942009b778bb7e3392dc
   - enabled: 1
     path: Assets/Game/Scenes/Archives/Music.unity
     guid: 00a9edcc9395fba4ea82034c53676d64
@@ -56,12 +53,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Tuto area/FXs_start_tuto.unity
     guid: 7ecae2ea53792544c9ee4559e7caee4a
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
     guid: 8d44e6a5dff93374eb1896e9a0ea89ad
@@ -95,7 +86,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/All walls.unity
     guid: 4abe293ec4919514788d9c9ede22a78c
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Game/Scenes/Sound.unity
+    guid: 7b29b245d7c5b824f8b23253c927c6e6
   m_configObjects: {}

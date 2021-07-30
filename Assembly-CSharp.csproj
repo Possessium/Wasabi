@@ -100,9 +100,11 @@
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
     <Compile Include="Assets\Unity\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Game\Scripts\AnimationBehaviours\ActivateLever.cs" />
+    <Compile Include="Assets\Game\Scripts\Sound\WSB_SoundManager.cs" />
     <Compile Include="Assets\Game\FindMissingScriptsRecursively.cs" />
     <Compile Include="Assets\Game\Scripts\Controls\Controls Ban.cs" />
     <Compile Include="Assets\Game\Scripts\WSB_OutOfBounds.cs" />
+    <Compile Include="Assets\Game\Scripts\Sound\SO_Sounds.cs" />
     <Compile Include="Assets\Game\Scripts\Menus\WSB_MainMenu.cs" />
     <Compile Include="Assets\Game\Scripts\AnimationBehaviours\TransitionBehaviour.cs" />
     <Compile Include="Assets\TransitionEnd.cs" />
@@ -116,14 +118,12 @@
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
     <Compile Include="Assets\Game\Scripts\Camera\WSB_CameraManager.cs" />
+    <Compile Include="Assets\Game\Scripts\Sound\WSB_SoundPlayer.cs" />
     <Compile Include="Assets\Tools\SceneLoader\Scripts\SceneLoaderProfile.cs" />
     <Compile Include="Assets\Game\Scripts\Objects\WSB_KeyObject.cs" />
     <Compile Include="Assets\Game\Scripts\Player\WSB_PlayerFX.cs" />
     <Compile Include="Assets\Game\Scripts\Powers\WSB_Shrink.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
-    <Compile Include="Assets\Game\Scripts\Sound\WSB_SoundManager.cs" />
-    <Compile Include="Assets\Game\Scripts\Sound\SO_Sounds.cs" />
-    <Compile Include="Assets\Game\Scripts\Sound\WSB_SoundPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

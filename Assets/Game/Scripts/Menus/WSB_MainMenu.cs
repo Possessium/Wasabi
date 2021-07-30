@@ -152,6 +152,9 @@ public class WSB_MainMenu : MonoBehaviour
         menuAnimator.SetTrigger(back_Hash);
     }
 
+    public void ChangeMusicVolume(float f) => WSB_SoundManager.I.ChangeMusicVolume(f);
+    public void ChangeSoundVolume(float f) => WSB_SoundManager.I.ChangeSoundVolume(f);
+
     public void Quit() => Application.Quit();
 }
 

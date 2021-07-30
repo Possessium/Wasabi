@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5ddec079c4b8344b8b95d7fb23d165, type: 3}
+  m_Name: SoundBank
+  m_EditorClassIdentifier: 
+  banStepGrass:
+  - {fileID: 8300000, guid: 5b1f06c599e13a64eae8b641f3fd3e32, type: 3}
+  - {fileID: 8300000, guid: 1b3bdabc4693dc14bab6a377f9d47f93, type: 3}
+  - {fileID: 8300000, guid: a5773b173a7b4b543bac0595ff5b1fa4, type: 3}
+  - {fileID: 8300000, guid: 5a36550f84d0cc84ebbf99ccddc22c6e, type: 3}
+  - {fileID: 8300000, guid: 138dff7cbdba4254081741db0874353a, type: 3}
+  banStepMetal:
+  - {fileID: 8300000, guid: 6ebffc7ba2b1ed349a51b6babb27562f, type: 3}
+  - {fileID: 8300000, guid: ceeddb8a04804384fb4f4620c4d197c4, type: 3}
+  - {fileID: 8300000, guid: c7449f98fc2d6b141aaf7299e6eec6c9, type: 3}
+  - {fileID: 8300000, guid: 299ccfbaf351915488951ea8cf780c9f, type: 3}
+  - {fileID: 8300000, guid: 4b243f93888a84c458864989f437592e, type: 3}
+  banStepWood:
+  - {fileID: 8300000, guid: 621d0b7cbe22e184db5da82c5a2b2530, type: 3}
+  - {fileID: 8300000, guid: f582c3007e28bda419a35cb0f9e8f6db, type: 3}
+  - {fileID: 8300000, guid: 588a863f6b45c6048b87f5061da2fc1d, type: 3}
+  - {fileID: 8300000, guid: 774f37ea199159f45983ab94ba37ef74, type: 3}
+  - {fileID: 8300000, guid: 47bcda76ed6abf442a5a86a40f6b2ad6, type: 3}
+  - {fileID: 8300000, guid: af40aac799cddbc4ab85e47a42791ce7, type: 3}
+  - {fileID: 8300000, guid: 868529ec21148f049ac54f15922fab4d, type: 3}
+  - {fileID: 8300000, guid: ac553deeab8e71d4c911f427eab50d15, type: 3}
+  banRunGrass:
+  - {fileID: 8300000, guid: e14438daff633e2498a0df18357ed945, type: 3}
+  - {fileID: 8300000, guid: 492f796e0f03ae84ebe1f20750fd5356, type: 3}
+  - {fileID: 8300000, guid: f657aa4200fdc2e448dda3b69750cdcf, type: 3}
+  - {fileID: 8300000, guid: 2a4ef20557b4c384e87a31336f681fb9, type: 3}
+  - {fileID: 8300000, guid: caf4fbbbce61bc047904f22c6545ef01, type: 3}
+  - {fileID: 8300000, guid: 95c1eab86650d144080577877abae866, type: 3}
+  banRunMetal:
+  - {fileID: 8300000, guid: 36589b0aca50dcd47bc523e7c11465c5, type: 3}
+  - {fileID: 8300000, guid: 0280342fe9cb39643ac3d7145b28bfb7, type: 3}
+  - {fileID: 8300000, guid: 4d1712962aafacb4baadc31a3fcd68bf, type: 3}
+  - {fileID: 8300000, guid: 173993190ec6b3444875405177614113, type: 3}
+  - {fileID: 8300000, guid: eed62214769402746b4903226bba57e7, type: 3}
+  banRunWood:
+  - {fileID: 8300000, guid: 46824c5b979e11041ad8f2944f757b10, type: 3}
+  - {fileID: 8300000, guid: 28c6222ad238e164783b08d42d559d3d, type: 3}
+  - {fileID: 8300000, guid: caac119fb0f51664b816e1ab433b223b, type: 3}
+  - {fileID: 8300000, guid: ee96230b05316164f9fcec6acffbe46b, type: 3}
+  - {fileID: 8300000, guid: 0b636a78e452eaa488af018e3f19808e, type: 3}
+  banJumpGrass:
+  - {fileID: 8300000, guid: 0f5e50da25c4cd14f8fcd0a9a678da4d, type: 3}
+  - {fileID: 8300000, guid: 4092c6d81acb5a446b4f2fca7aa69388, type: 3}
+  - {fileID: 8300000, guid: 0e6c0b9cfd76fb540b80991b0adf4795, type: 3}
+  - {fileID: 8300000, guid: 8d246dd9acc37ce48ac86ee2c977eab0, type: 3}
+  banJumpMetal:
+  - {fileID: 8300000, guid: 65baf0ef122e90a4d9f307bf718d33e8, type: 3}
+  - {fileID: 8300000, guid: 686993217fc57b74992f7e6b2432accd, type: 3}
+  - {fileID: 8300000, guid: 2680d6b144c3f8747821d83304198899, type: 3}
+  - {fileID: 8300000, guid: 69e69314268fea24fb56280014d41cf3, type: 3}
+  banJumpWood:
+  - {fileID: 8300000, guid: 3a9f2c0f78e1b36408565e1c64c65641, type: 3}
+  - {fileID: 8300000, guid: 04ba2fd0f72167b43bcd9765b2665543, type: 3}
+  - {fileID: 8300000, guid: 87cd6c67256be204caccea76b7afbce4, type: 3}
+  - {fileID: 8300000, guid: d83cf6cfd12cae840ade508e6f6ec330, type: 3}
+  banLandGrass:
+  - {fileID: 8300000, guid: b372f2c504233ed4cb8da2cbbb101b45, type: 3}
+  - {fileID: 8300000, guid: 9e6b87fef89e6b24c825c63cf47f594f, type: 3}
+  - {fileID: 8300000, guid: 533511974ba5dc64ab1f2e6d266df281, type: 3}
+  - {fileID: 8300000, guid: 5902d690fbdbc4d4fa112ae6d9a01e6c, type: 3}
+  banLandMetal:
+  - {fileID: 8300000, guid: 88c12dc1b5f8d184fab12049e39bdc82, type: 3}
+  - {fileID: 8300000, guid: 203fb980a9f947645bfa18e55cddb62c, type: 3}
+  - {fileID: 8300000, guid: 669b5fcbc15681343ac6ab7af68b2f36, type: 3}
+  - {fileID: 8300000, guid: 4b6c9a7e1faa48245ab322127415fd8f, type: 3}
+  banLandWood:
+  - {fileID: 8300000, guid: 5d9a972338177774683c18b99da7ba79, type: 3}
+  - {fileID: 8300000, guid: 178d75cf06ab49b458d3f2d64ab936b5, type: 3}
+  - {fileID: 8300000, guid: 4e4ef417ce11dd441844e82cca086466, type: 3}
+  - {fileID: 8300000, guid: 46354a1291f476b49bd9a049db87e24e, type: 3}
+  luxStepGrass:
+  - {fileID: 8300000, guid: 5102ebd2a4c39fe449d0d9aaf3bc0f52, type: 3}
+  - {fileID: 8300000, guid: 771c94cc8d264c048bcc0604102b9ce7, type: 3}
+  - {fileID: 8300000, guid: 31c019321c810724da17a44f7f4a45b1, type: 3}
+  - {fileID: 8300000, guid: b048a516d182a354ab50bb30ab4ff383, type: 3}
+  - {fileID: 8300000, guid: 533ac34542de9784d8f0d5c1ff8b5428, type: 3}
+  luxStepMetal:
+  - {fileID: 8300000, guid: 58de04c33752c7145a3ee83ebb432950, type: 3}
+  - {fileID: 8300000, guid: c69c447cbd8845b44be807868672967a, type: 3}
+  - {fileID: 8300000, guid: c0d3c23674c348a4f979c01b71ab3b6e, type: 3}
+  - {fileID: 8300000, guid: b3c29c08ad0db694581aadbc1d738805, type: 3}
+  - {fileID: 8300000, guid: dc8fdc8eab7f7d245a2234764d0b1022, type: 3}
+  luxStepWood:
+  - {fileID: 8300000, guid: 37333e53b3a83cb41abed5809904e290, type: 3}
+  - {fileID: 8300000, guid: 1f6411879a47ac4498455acbcad94532, type: 3}
+  - {fileID: 8300000, guid: d2e297631301b64479fc4e9d0ebd6512, type: 3}
+  - {fileID: 8300000, guid: 4b8ad939dd5758f4ba93cd7552db7d42, type: 3}
+  - {fileID: 8300000, guid: 0de2cfec577a1ae4e889ac8e36e66ea5, type: 3}
+  - {fileID: 8300000, guid: e478f8391ee11724a814ac4be61b5ccb, type: 3}
+  luxRunGrass:
+  - {fileID: 8300000, guid: a526b8c13ef39e74d9cbb1c6383a89d3, type: 3}
+  - {fileID: 8300000, guid: bc350a29a44c8a34ebea9c8f5905216a, type: 3}
+  - {fileID: 8300000, guid: ad105ce32039e3142994593829e41f58, type: 3}
+  - {fileID: 8300000, guid: 8bea4e4e09f561246816d1a1374f1915, type: 3}
+  - {fileID: 8300000, guid: c3912d24997246e41bb301667d3eb78b, type: 3}
+  luxRunMetal:
+  - {fileID: 8300000, guid: 9000edf5be897f247b0b3941875eb7c6, type: 3}
+  - {fileID: 8300000, guid: 31b7b08ff6ca95c49a775d7e1a5da08e, type: 3}
+  - {fileID: 8300000, guid: 754ea0b915073a14c923f6fe9dba416a, type: 3}
+  - {fileID: 8300000, guid: d03d09f00b6f2cc438593bb5b312d22f, type: 3}
+  - {fileID: 8300000, guid: aab924b9ebd46ca429021da7b6bd5473, type: 3}
+  luxRunWood:
+  - {fileID: 8300000, guid: e563a670dca9c394fa3b85ba42b6ff4c, type: 3}
+  - {fileID: 8300000, guid: 209c6967b9425cc41931000f385f3d9b, type: 3}
+  - {fileID: 8300000, guid: 9bb804019f7bd384a994f43714cce9e2, type: 3}
+  - {fileID: 8300000, guid: 8039e92708828c149b6eb332a070a466, type: 3}
+  - {fileID: 8300000, guid: 7cce26da8bdbdbb4bb68b9a77db5ba89, type: 3}
+  luxJumpGrass:
+  - {fileID: 8300000, guid: bef397baedfedb9419f83c97d52ae726, type: 3}
+  - {fileID: 8300000, guid: 81b21ba9e079f9d419323a41e55560f1, type: 3}
+  - {fileID: 8300000, guid: a23a60757c5a99543a18e15675f5178d, type: 3}
+  - {fileID: 8300000, guid: 73ceb32b815342b438d586d75c28aa61, type: 3}
+  luxJumpMetal:
+  - {fileID: 8300000, guid: 10f9427ae3276ee4e95831f6d5cfa286, type: 3}
+  - {fileID: 8300000, guid: 1d052a9fa38ed00448d7b7d8024e1b7d, type: 3}
+  - {fileID: 8300000, guid: b4c109021f510be4ea9a9d2d6d2253e3, type: 3}
+  - {fileID: 8300000, guid: 789d65ab847124b4297525ee1e20a9fd, type: 3}
+  luxJumpWood:
+  - {fileID: 8300000, guid: fe081758a1339604aae3273f35caa78a, type: 3}
+  - {fileID: 8300000, guid: f4139aad43f5bdd49a3add16d9373555, type: 3}
+  - {fileID: 8300000, guid: d157b2454cbc1ec44864643976d73d30, type: 3}
+  - {fileID: 8300000, guid: d277635ae35532e43a4eb6d8c4ef6e21, type: 3}
+  luxLandGrass:
+  - {fileID: 8300000, guid: 4c478de225f21944a9f3e47dcb2762ac, type: 3}
+  - {fileID: 8300000, guid: d3fd4d2dad54e9746aa0dbd215eb4514, type: 3}
+  - {fileID: 8300000, guid: 2167220fd1b487641b8cdf2867fede47, type: 3}
+  - {fileID: 8300000, guid: 1fc8b8c86cfe9d54898bd012950b07f1, type: 3}
+  luxLandMetal:
+  - {fileID: 8300000, guid: b004c5daf60dd1e4b9b6afbb6981c278, type: 3}
+  - {fileID: 8300000, guid: 41892f63e886ce14799bdfab89200a6d, type: 3}
+  - {fileID: 8300000, guid: f5a120c39356dd640a74d5841cab13f0, type: 3}
+  - {fileID: 8300000, guid: 6fe20de0be2ecf64cad2b0a1155174e0, type: 3}
+  luxLandWood:
+  - {fileID: 8300000, guid: d16ab407ac5059c4ba7a1742b141daa6, type: 3}
+  - {fileID: 8300000, guid: 79d27be06e8e91743913bbcef7c28cf1, type: 3}
+  - {fileID: 8300000, guid: db4401330ce15504f917ed76448ee30f, type: 3}
+  - {fileID: 8300000, guid: 081d35a7de6a033468a1dcb8e0d3a53b, type: 3}
+  powerPickup: {fileID: 8300000, guid: a5abf7b4e4bcf614286562c16c693897, type: 3}
+  shrinkActive: {fileID: 8300000, guid: e31d871afb63b0a4db50fe2f99fc3299, type: 3}
+  shrinkDisable: {fileID: 8300000, guid: f62503e3ab1edb84696d858977725467, type: 3}
+  windActive: {fileID: 8300000, guid: 95facbc7df55e7745a472f2c12af4975, type: 3}
+  windDisable: {fileID: 8300000, guid: 8df0d2f7d925f9b468134ca98c7cd5ef, type: 3}
+  trampoSpawn: {fileID: 8300000, guid: a45c3103df5007640a488fbf7364d641, type: 3}
+  trampoDespawn: {fileID: 8300000, guid: dee379555cf8fd64ca5e0331aba4968a, type: 3}
+  dragonSpawn: {fileID: 8300000, guid: ccf964fbf004e184384a7f04e3377a74, type: 3}
+  dragonDespawn: {fileID: 8300000, guid: af5fed9a57d713144aaf01a7fa61644d, type: 3}
+  dragonEat: {fileID: 8300000, guid: 87deeb3ce5c8f114193d27eca33e4baa, type: 3}
+  playerBounce:
+  - {fileID: 8300000, guid: 2588c2012c7221a4ca4939b62d6240d8, type: 3}
+  - {fileID: 8300000, guid: b83d845ffaaca0341ac55337eeeef3d9, type: 3}
+  - {fileID: 8300000, guid: 0b7985d4c58d7ee48be818393c1053de, type: 3}
+  lever: {fileID: 8300000, guid: 10be4386fd511604497879340fb76b66, type: 3}
+  luxShrink: {fileID: 8300000, guid: 1be550822dae1d2429c0fdf437f9f1e4, type: 3}
+  luxUnshrink: {fileID: 8300000, guid: 877d153c87cca3847b34671c864a1f9a, type: 3}
+  validPattern: {fileID: 8300000, guid: 57eb33d3338e0e64097a99126da04389, type: 3}
+  button: {fileID: 8300000, guid: c2198511497965149a7b5948b779160a, type: 3}
+  valid: {fileID: 8300000, guid: 388d5c98277fcc34690d9b48f5005037, type: 3}
+  cancel: {fileID: 8300000, guid: ba47d1ebdb9cbf74bbdfa7221cf9e3e4, type: 3}
+  fountain: {fileID: 8300000, guid: 2ab3ed1580abda9479abc2f14048490d, type: 3}
+  elevator: {fileID: 8300000, guid: 3ee6582294035964fa84f923fdb06cf1, type: 3}
