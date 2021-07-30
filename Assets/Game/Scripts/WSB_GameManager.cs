@@ -24,6 +24,8 @@ public class WSB_GameManager : MonoBehaviour
     [SerializeField] private Button resumeButton = null;
     [SerializeField] private Button quitButton = null;
     [SerializeField] private Button menuButton = null;
+    [SerializeField] private Slider musicVolumeSlider = null;
+    [SerializeField] private Slider soundVolumeSlider = null;
     #endregion
 
 
@@ -41,6 +43,8 @@ public class WSB_GameManager : MonoBehaviour
         InputSystem.onDeviceChange += DeviceChange;
         OnPause += ShowPauseMenu;
         OnResume += HidePauseMenu;
+        musicVolumeSlider.value = WSB_SoundManager.I.GetMusicVolume();
+        soundVolumeSlider.value = WSB_SoundManager.I.GetSoundVolume();
     }
 
     private void DeviceChange(InputDevice arg1, InputDeviceChange arg2)
@@ -155,4 +159,7 @@ public class WSB_GameManager : MonoBehaviour
             pauseMenu.SetActive(false);
         }
     }
+    public void ChangeMusicVolume(float f) => WSB_SoundManager.I.ChangeMusicVolume(f);
+    public void ChangeSoundVolume(float f) => WSB_SoundManager.I.ChangeSoundVolume(f);
+
 }

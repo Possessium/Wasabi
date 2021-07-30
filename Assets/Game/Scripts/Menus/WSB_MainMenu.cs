@@ -110,7 +110,8 @@ public class WSB_MainMenu : MonoBehaviour
     {
         currentMode = MenuMode.Play;
 
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Loading");
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Loading", UnityEngine.SceneManagement.LoadSceneMode.Additive);
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Main Menus");
     }
     public void Next()
     {

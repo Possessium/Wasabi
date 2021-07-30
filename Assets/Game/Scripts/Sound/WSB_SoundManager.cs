@@ -21,12 +21,26 @@ public class WSB_SoundManager : MonoBehaviour
 
     private void Start()
     {
-        ban = WSB_Ban.I?.transform;
-        ban = WSB_Lux.I?.transform;
+        if (WSB_Ban.I)
+            ban = WSB_Ban.I.transform;
+        if (WSB_Lux.I)
+            lux = WSB_Lux.I.transform;
     }
 
     public void ChangeMusicVolume(float f) => musicSource.outputAudioMixerGroup.audioMixer.SetFloat("VolumeMusic", f);
     public void ChangeSoundVolume(float f) => musicSource.outputAudioMixerGroup.audioMixer.SetFloat("VolumeSound", f);
+    public float GetMusicVolume()
+    {
+        float _f = 0;
+        musicSource.outputAudioMixerGroup.audioMixer.GetFloat("VolumeMusic", out _f);
+        return _f;
+    }
+    public float GetSoundVolume()
+    {
+        float _f = 0;
+        musicSource.outputAudioMixerGroup.audioMixer.GetFloat("VolumeSound", out _f);
+        return _f;
+    }
 
     public void Walk(bool _ban, GroundType _t)
     {
