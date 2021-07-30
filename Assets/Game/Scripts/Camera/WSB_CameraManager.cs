@@ -130,14 +130,23 @@ public class WSB_CameraManager : MonoBehaviour
         {
             splitAnimator.SetTrigger("Change");
             splitAnimator.SetBool("Split", true);
+
+            paillette1.loop = true;
+            paillette2.loop = true;
         }
         if (Vector2.Distance(ban.position, lux.position) <= MaxCamZoom / 1.25f && splitAnimator.GetBool("Split"))
         {
             splitAnimator.SetTrigger("Change");
             splitAnimator.SetBool("Split", false);
+
+            paillette1.loop = false;
+            paillette2.loop = false;
         }
 
     }
+
+    [SerializeField] private ParticleSystem paillette1 = null;
+    [SerializeField] private ParticleSystem paillette2 = null;
 
     private void CalculateOffset()
     {
