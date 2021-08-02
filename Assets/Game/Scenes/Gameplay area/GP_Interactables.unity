@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.1805699, g: 0.22605702, b: 0.3070817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 15340711}
   m_Layer: 0
   m_Name: ElevatorEiffel_v2 (4)
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3283,6 +3283,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: porte_shrink
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb7515f0951489f4da8e4af11528a237,
+        type: 3}
+      propertyPath: m_TagString
+      value: METAL
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7515f0951489f4da8e4af11528a237, type: 3}
 --- !u!4 &649039746 stripped
@@ -6018,7 +6023,7 @@ GameObject:
   - component: {fileID: 1283993314}
   m_Layer: 0
   m_Name: ElevatorEiffel_v2 (3)
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6497,7 +6502,7 @@ GameObject:
   - component: {fileID: 1385632305}
   m_Layer: 0
   m_Name: ElevatorEiffel_v2 (2)
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7063,6 +7068,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Trappe end
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105173861797697788, guid: a745185c936b2a3428a49259c669e62f,
+        type: 3}
+      propertyPath: m_TagString
+      value: METAL
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a745185c936b2a3428a49259c669e62f, type: 3}
@@ -9173,6 +9183,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b633b6806c29a524a9cf41c1ff79d500,
+        type: 3}
+      propertyPath: m_TagString
+      value: GRASS
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b633b6806c29a524a9cf41c1ff79d500, type: 3}
 --- !u!1 &1938456681 stripped
@@ -10850,7 +10865,7 @@ GameObject:
   - component: {fileID: 1872160452}
   m_Layer: 0
   m_Name: escalier_Eiffel (4)
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10867,7 +10882,7 @@ GameObject:
   - component: {fileID: 99328209}
   m_Layer: 0
   m_Name: escalier_Eiffel (3)
-  m_TagString: Untagged
+  m_TagString: METAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
