@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.1805699, g: 0.22605702, b: 0.3070817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4990,6 +4990,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: disjonteur elevator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6765531006819997708, guid: bc1c2387a6a154d47a76b8e21d3af2e8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc1c2387a6a154d47a76b8e21d3af2e8, type: 3}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.1793047, g: 0.21902536, b: 0.27452782, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2767256}
   - component: {fileID: 2767257}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Top right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,81 +189,6 @@ PolygonCollider2D:
       - {x: 5.5, y: 2.5}
       - {x: 5.75, y: -8.5}
       - {x: 10, y: -8.25}
---- !u!1001 &115318087
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 27.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -33.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 928577814210644104, guid: 566d7323571d19244b1bc4b1c66c8d23,
-        type: 3}
-      propertyPath: m_Name
-      value: fontaine_maj
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 566d7323571d19244b1bc4b1c66c8d23, type: 3}
---- !u!4 &115318088 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 552016644690793010, guid: 566d7323571d19244b1bc4b1c66c8d23,
-    type: 3}
-  m_PrefabInstance: {fileID: 115318087}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1549809013
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1549809014}
   - component: {fileID: 1549809015}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Ground
   m_TagString: GRASS
   m_Icon: {fileID: 0}
@@ -429,7 +354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1643991570}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: COLLIDERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +376,7 @@ Transform:
   - {fileID: 2767256}
   - {fileID: 2142452374}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2142452373
 GameObject:
@@ -463,7 +388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2142452374}
   - component: {fileID: 2142452375}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
