@@ -2846,6 +2846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerCam: {fileID: 517820872}
+  bulb: {fileID: 103654931}
 --- !u!95 &983941674
 Animator:
   serializedVersion: 3
@@ -3498,6 +3499,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56141aa14cbfac646b75e22e89b4bf12,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56141aa14cbfac646b75e22e89b4bf12,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56141aa14cbfac646b75e22e89b4bf12,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56141aa14cbfac646b75e22e89b4bf12,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -3509,7 +3525,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 56141aa14cbfac646b75e22e89b4bf12,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56141aa14cbfac646b75e22e89b4bf12,
         type: 3}
