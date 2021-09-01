@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1805699, g: 0.22605702, b: 0.3070817, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000004, guid: 193515bee13b30e4784566f4d8ea5456,
+  m_LightingDataAsset: {fileID: 112000004, guid: 4fc20e1dab73d7349a0cad8bda17f4c5,
     type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
@@ -1455,17 +1455,15 @@ MonoBehaviour:
     SceneName: Tuto_interactables
   - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_plateformes.unity
     SceneName: Tuto_plateformes
-  - ScenePath: Assets/Game/Scenes/Tuto area/Tuto_lights.unity
-    SceneName: Tuto_lights
   - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_plateformes.unity
     SceneName: T1_plateformes
-  - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_lights.unity
-    SceneName: T1_lights
   - ScenePath: Assets/Game/Scenes/Transition area/Transition 01 champignons/T1_FXs.unity
     SceneName: T1_FXs
   - ScenePath: Assets/Game/Scenes/Tuto area/FXs_start_tuto.unity
     SceneName: FXs_start_tuto
-  UnloadListSize: 7
+  - ScenePath: Assets/Game/Scenes/Tuto area/decor_tuto.unity
+    SceneName: decor_tuto
+  UnloadListSize: 6
   BlockingCollider: {fileID: 0}
 --- !u!1 &534116669
 GameObject:
