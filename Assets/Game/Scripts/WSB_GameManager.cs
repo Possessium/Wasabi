@@ -16,7 +16,7 @@ public class WSB_GameManager : MonoBehaviour
     [SerializeField] Animator endAnimator = null;
     private bool isEnded = false;
     private bool isStarted = false;
-    public static bool Paused { get; private set; } = true;
+    public static bool Paused { get; private set; } = false;
 
     #region Pause
     [SerializeField] private GameObject pauseMenu = null;

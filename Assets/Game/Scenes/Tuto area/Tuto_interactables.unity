@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000026, guid: d6006a1fdd411d64cb9beda32f2064c4,
+  m_LightingDataAsset: {fileID: 112000028, guid: d6006a1fdd411d64cb9beda32f2064c4,
     type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
@@ -4166,6 +4166,11 @@ PrefabInstance:
       propertyPath: InitialModule.startLifetime.scalar
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7943616262754035008, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1266385560, guid: 660738c11b46e4146b0e9d01d8bbd4a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 660738c11b46e4146b0e9d01d8bbd4a7, type: 3}
@@ -4738,6 +4743,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 864487390}
     m_Modifications:
+    - target: {fileID: 87423789207830733, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3319797153310874226, guid: 1a7d7c2d63e99fa45ab8444d2f0e9616,
         type: 3}
       propertyPath: m_Name

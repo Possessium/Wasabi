@@ -534,6 +534,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1365447000156757506}
     m_Modifications:
+    - target: {fileID: 479253685, guid: c38acaa39b82fa249921b3913ab7ad79, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548780048314220006, guid: c38acaa39b82fa249921b3913ab7ad79,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120584658580370111, guid: c38acaa39b82fa249921b3913ab7ad79,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6120584658708146918, guid: c38acaa39b82fa249921b3913ab7ad79,
         type: 3}
       propertyPath: m_RootOrder
@@ -594,6 +608,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShrinkRune
       objectReference: {fileID: 0}
+    - target: {fileID: 6120584658708146919, guid: c38acaa39b82fa249921b3913ab7ad79,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120584659127214799, guid: c38acaa39b82fa249921b3913ab7ad79,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120584660074466621, guid: c38acaa39b82fa249921b3913ab7ad79,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c38acaa39b82fa249921b3913ab7ad79, type: 3}
 --- !u!4 &6120584658623388752 stripped
@@ -619,6 +648,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: insects_pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591230070395319162, guid: 38a180ac1f82b0c40a2da99e56b690fd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7591230070395319165, guid: 38a180ac1f82b0c40a2da99e56b690fd,
         type: 3}
@@ -756,6 +790,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: poser_objet
       objectReference: {fileID: 0}
+    - target: {fileID: 7596408598476977123, guid: 1486ea30d29664a4caf018ceda829cd2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1486ea30d29664a4caf018ceda829cd2, type: 3}
 --- !u!198 &6996306252029988736 stripped
@@ -777,6 +816,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1365447000156757506}
     m_Modifications:
+    - target: {fileID: 752476088681055056, guid: 7acbeead32092184fb14df94a574e4ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4218898642454393705, guid: 7acbeead32092184fb14df94a574e4ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8446522175891601055, guid: 7acbeead32092184fb14df94a574e4ca,
         type: 3}
       propertyPath: m_RootOrder
@@ -836,6 +885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rune_shrink
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111841452531002405, guid: 7acbeead32092184fb14df94a574e4ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7acbeead32092184fb14df94a574e4ca, type: 3}

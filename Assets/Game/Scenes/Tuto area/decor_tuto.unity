@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000012, guid: d6006a1fdd411d64cb9beda32f2064c4,
+  m_LightingDataAsset: {fileID: 112000014, guid: d6006a1fdd411d64cb9beda32f2064c4,
     type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
@@ -843,7 +843,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 22fc7e7fa21e93243b5fe91835308751, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6034166390573f14d99dcc6c28b5d264, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
