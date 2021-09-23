@@ -7519,8 +7519,8 @@ MonoBehaviour:
   delay: 7
   luxActivate: 1
   banActivate: 0
-  text: "Suffit de r\xE9colter des feuilles pour partir en montgolfi\xE8re. Facile
-    !"
+  text: "Il suffit de r\xE9colter des feuilles pour avoir un vol en montgolfi\xE8re,
+    facile !"
   tmpText: {fileID: 254466057}
   animator: {fileID: 460642917}
   letterDelay: 0.03
@@ -8966,7 +8966,7 @@ MonoBehaviour:
   delay: 5
   luxActivate: 1
   banActivate: 0
-  text: "Pfiou, j'esp\xE8re que le reste du voyage sera moins compliqu\xE9..."
+  text: "Pfiou, j'esp\xE8re que la reste du voyage sera moins compliqu\xE9"
   tmpText: {fileID: 254466057}
   animator: {fileID: 460642917}
   letterDelay: 0.03
@@ -10694,7 +10694,7 @@ MonoBehaviour:
   delay: 6
   luxActivate: 1
   banActivate: 0
-  text: "C'est pas i\xE7i le haut de la serre ? Quelle taille fait cet arbre ?!"
+  text: "C'est pas i\xE7i le haut de la serre ? Quelle taille fait cet arbre !?"
   tmpText: {fileID: 254466057}
   animator: {fileID: 460642917}
   letterDelay: 0.03

@@ -30,12 +30,14 @@ public class WSB_Dialogue : MonoBehaviour
         if (luxActivate && !luxIn && collision.GetComponent<WSB_Lux>())
         {
             luxIn = true;
-            ShowDialogue();
+            if(!banIn)
+                ShowDialogue();
         }
         if (banActivate && !banIn && collision.GetComponent<WSB_Ban>())
         {
             banIn = true;
-            ShowDialogue();
+            if(!luxIn)
+                ShowDialogue();
         }
     }
 
@@ -44,12 +46,14 @@ public class WSB_Dialogue : MonoBehaviour
         if (!isDelay && luxIn && collision.GetComponent<WSB_Lux>())
         {
             luxIn = false;
-            HideDialogue();
+            if(!banIn)
+                HideDialogue();
         }
         if (!isDelay && banIn && collision.GetComponent<WSB_Ban>())
         {
             banIn = false;
-            HideDialogue();
+            if(!luxIn)
+                HideDialogue();
         }
     }
 
@@ -96,5 +100,11 @@ public class WSB_Dialogue : MonoBehaviour
 
         if (isDelay)
             Destroy(this);
+    }
+
+    public void RemoveDialogue()
+    {
+        HideDialogue();
+        Destroy(this);
     }
 }
