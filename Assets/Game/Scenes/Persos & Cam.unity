@@ -6436,7 +6436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: 1, b: 1, a: 1}
-  targetIntensity: 2.3
+  targetIntensity: 1.9
 --- !u!1 &419149140
 GameObject:
   m_ObjectHideFlags: 0
@@ -29736,7 +29736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 0.85882354, g: 0.5294118, b: 0.5058824, a: 1}
-  targetIntensity: 45
+  targetIntensity: 4.5
 --- !u!1 &2077111057
 GameObject:
   m_ObjectHideFlags: 0
