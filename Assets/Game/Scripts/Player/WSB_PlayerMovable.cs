@@ -169,7 +169,13 @@ public class WSB_PlayerMovable : LG_Movable
     {
         if (_context.valueType != typeof(Vector2) /*|| !CanMove*/) return;
         XMovement = _context.ReadValue<Vector2>().x;
+        if (Mathf.Abs(XMovement) < .25f)
+            XMovement = 0;
+
         YMovement = _context.ReadValue<Vector2>().y;
+        if (Mathf.Abs(YMovement) < .25f)
+            YMovement = 0;
+
         PressDown = _context.ReadValue<Vector2>().y < -.8f;
     }
 
