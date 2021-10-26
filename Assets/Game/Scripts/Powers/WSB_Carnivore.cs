@@ -21,13 +21,16 @@ public class WSB_Carnivore : WSB_Plant
         if (animator)
             animator.SetTrigger(fire_Hash);
 
-        yield return new WaitForSeconds(.5f);
+        WSB_SoundManager.I.DragonEat(transform);
+
+        yield return new WaitForSeconds(1.1f);
+
+        Destroy(_hit.gameObject);
+
+        yield return new WaitForSeconds(1.1f);
 
         fxFire.SetBool(goForIt_Hash, false);
 
-        WSB_SoundManager.I.DragonEat(transform);
-
-        Destroy(_hit.gameObject);
         // Wait for given delay
         yield return new WaitForSeconds(eatDelay);
 

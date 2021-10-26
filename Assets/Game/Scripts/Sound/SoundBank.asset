@@ -162,7 +162,7 @@ MonoBehaviour:
   trampoDespawn: {fileID: 8300000, guid: dee379555cf8fd64ca5e0331aba4968a, type: 3}
   dragonSpawn: {fileID: 8300000, guid: ccf964fbf004e184384a7f04e3377a74, type: 3}
   dragonDespawn: {fileID: 8300000, guid: af5fed9a57d713144aaf01a7fa61644d, type: 3}
-  dragonEat: {fileID: 8300000, guid: 87deeb3ce5c8f114193d27eca33e4baa, type: 3}
+  dragonEat: {fileID: 8300000, guid: 696785f7353abd84ab38e94d33ac6507, type: 3}
   playerBounce:
   - {fileID: 8300000, guid: 2588c2012c7221a4ca4939b62d6240d8, type: 3}
   - {fileID: 8300000, guid: b83d845ffaaca0341ac55337eeeef3d9, type: 3}

@@ -434,6 +434,8 @@ MonoBehaviour:
   changePos: 0
   playOnStart: 0
   isElevator: 0
+  stopAmbiant: 0
+  startAmbiant: 1
 --- !u!4 &1923448153
 Transform:
   m_ObjectHideFlags: 0

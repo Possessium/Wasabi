@@ -9,6 +9,7 @@ public class WSB_SoundManager : MonoBehaviour
     [SerializeField] private SO_Sounds soundsData = null;
 
     [SerializeField] private AudioSource musicSource = null;
+    [SerializeField] private AudioSource ambiantSource = null;
     [SerializeField] private GameObject soundSource = null;
 
     private Transform ban = null;
@@ -148,6 +149,25 @@ public class WSB_SoundManager : MonoBehaviour
             _go.transform.parent = _t;
 
         return _go.GetComponent<WSB_SoundPlayer>();
+    }
+
+    public void StartAmbiant()
+    {
+        ambiantSource.Play();
+    }
+    public void StopAmbiant()
+    {
+        StartCoroutine(LowerAmbiant());
+    }
+
+    IEnumerator LowerAmbiant()
+    {
+        while(ambiantSource.volume > .1f)
+        {
+            ambiantSource.volume = Mathf.MoveTowards(ambiantSource.volume, 0, Time.deltaTime * .5f);
+            yield return new WaitForEndOfFrame();
+        }
+        ambiantSource.Stop();
     }
 }
 public enum GroundType

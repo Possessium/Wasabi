@@ -18,6 +18,8 @@ public class WSB_TriggerCam : MonoBehaviour
     [SerializeField] private bool changePos = false;
     [SerializeField] private bool playOnStart = false;
     [SerializeField] private bool isElevator = false;
+    [SerializeField] private bool stopAmbiant = false;
+    [SerializeField] private bool startAmbiant = false;
 
     private void Start()
     {
@@ -88,6 +90,7 @@ public class WSB_TriggerCam : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+
         // If any player enters this trigger, send the trigger information to the camera manager
         if (!MoveToDestination && col.GetComponent<WSB_PlayerMovable>() && !isElevator)
         {
@@ -102,6 +105,20 @@ public class WSB_TriggerCam : MonoBehaviour
                 WSB_CameraManager.I.ToggleSplit(false);
                 WSB_CameraManager.I.IsActive = false;
                 MoveToDestination = true;
+            }
+        }
+
+        if (col.GetComponent<WSB_PlayerMovable>())
+        {
+            if (startAmbiant)
+            {
+                WSB_SoundManager.I.StartAmbiant();
+                Destroy(this);
+            }
+            if (stopAmbiant)
+            {
+                WSB_SoundManager.I.StopAmbiant();
+                Destroy(this);
             }
         }
     }
