@@ -109,12 +109,14 @@ public class WSB_MainMenu : MonoBehaviour
     public void PlayGame()
     {
         currentMode = MenuMode.Play;
+        WSB_SoundManager.I.ButtonStart();
 
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Loading", UnityEngine.SceneManagement.LoadSceneMode.Additive);
         UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Main Menus");
     }
     public void Next()
     {
+        PlayClickSound(true);
         switch (currentMode)
         {
             case MenuMode.Title:
@@ -132,11 +134,13 @@ public class WSB_MainMenu : MonoBehaviour
 
     public void Credits()
     {
+        PlayClickSound(true);
         menuAnimator.SetTrigger(creditsTransition_Hash);
         currentMode = MenuMode.Credits;
     }
     public void Back()
     {
+        PlayClickSound(false);
         switch (currentMode)
         {
             case MenuMode.Main:
@@ -155,6 +159,14 @@ public class WSB_MainMenu : MonoBehaviour
 
     public void ChangeMusicVolume(float f) => WSB_SoundManager.I.ChangeMusicVolume(f);
     public void ChangeSoundVolume(float f) => WSB_SoundManager.I.ChangeSoundVolume(f);
+
+    private void PlayClickSound(bool _1)
+    {
+        if (_1)
+            WSB_SoundManager.I.Button1();
+        else
+            WSB_SoundManager.I.Button2();
+    }
 
     public void Quit() => Application.Quit();
 }

@@ -151,6 +151,12 @@ public class WSB_SoundManager : MonoBehaviour
         return _go.GetComponent<WSB_SoundPlayer>();
     }
 
+
+    public void Button1() => SpawnSound().Init(transform, soundsData.GetClip(Sound.Button1));
+    public void Button2() => SpawnSound().Init(transform, soundsData.GetClip(Sound.Button2));
+    public void ButtonStart() => SpawnSound().Init(transform, soundsData.GetClip(Sound.ButtonStart));
+    public void Cog(Transform _t) => SpawnSound(_t).Init(_t, soundsData.GetClip(Sound.Cog));
+
     public void StartAmbiant()
     {
         ambiantSource.Play();

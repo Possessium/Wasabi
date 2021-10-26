@@ -1323,6 +1323,8 @@ MonoBehaviour:
   changePos: 0
   playOnStart: 0
   isElevator: 1
+  stopAmbiant: 0
+  startAmbiant: 0
 --- !u!61 &517820873
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2845,6 +2847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerCam: {fileID: 517820872}
   bulb: {fileID: 103654931}
+  elevator: {fileID: 517820874}
 --- !u!95 &983941674
 Animator:
   serializedVersion: 3

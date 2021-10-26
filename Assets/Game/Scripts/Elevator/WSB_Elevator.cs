@@ -52,6 +52,8 @@ public class WSB_Elevator : MonoBehaviour
             ActivateElevator();
     }
 
+    public void StopWheel() => WSB_SoundManager.I.StopSound(transform);
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.GetComponent<WSB_PlayerInteraction>())
@@ -97,6 +99,7 @@ public class WSB_Elevator : MonoBehaviour
     public void StartElevator()
     {
         animator.SetTrigger(startElevator_Hash);
+        WSB_SoundManager.I.Cog(transform);
         switch (elevatorState)
         {
             case ElevatorState.Stuck:

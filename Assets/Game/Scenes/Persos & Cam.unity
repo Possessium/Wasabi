@@ -23636,6 +23636,8 @@ MonoBehaviour:
   changePos: 0
   playOnStart: 0
   isElevator: 0
+  stopAmbiant: 0
+  startAmbiant: 0
 --- !u!114 &1792303647
 MonoBehaviour:
   m_ObjectHideFlags: 0

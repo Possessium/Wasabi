@@ -69,13 +69,16 @@ public class SO_Sounds : ScriptableObject
     [SerializeField] private AudioClip validPattern = null;
     #endregion
     #region UI
-    [SerializeField] private AudioClip button = null;
+    [SerializeField] private AudioClip button1 = null;
+    [SerializeField] private AudioClip button2 = null;
+    [SerializeField] private AudioClip buttonStart = null;
     [SerializeField] private AudioClip valid = null;
     [SerializeField] private AudioClip cancel = null;
     #endregion
     #region Ambiant
     [SerializeField] private AudioClip fountain = null;
     [SerializeField] private AudioClip elevator = null;
+    [SerializeField] private AudioClip cog = null;
     #endregion
 
     public AudioClip GetClip(Sound type)
@@ -206,14 +209,23 @@ public class SO_Sounds : ScriptableObject
             case Sound.Elevator:
                 _clip = elevator;
                 break;
-            case Sound.Button:
-                _clip = button;
+            case Sound.Button1:
+                _clip = button1;
+                break;
+            case Sound.Button2:
+                _clip = button2;
+                break;
+            case Sound.ButtonStart:
+                _clip = buttonStart;
                 break;
             case Sound.Valid:
                 _clip = valid;
                 break;
             case Sound.Cancel:
                 _clip = cancel;
+                break;
+            case Sound.Cog:
+                _clip = cog;
                 break;
         }
         return _clip;
@@ -265,7 +277,10 @@ public enum Sound
     ValidPattern,
     Fountain,
     Elevator,
-    Button,
+    Button1,
+    Button2,
+    ButtonStart,
     Valid,
-    Cancel
+    Cancel,
+    Cog
 }
