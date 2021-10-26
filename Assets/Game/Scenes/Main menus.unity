@@ -727,8 +727,8 @@ RectTransform:
   m_Father: {fileID: 837038999}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.8, y: 0}
+  m_AnchorMax: {x: 0.8, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1080,8 +1080,8 @@ RectTransform:
   m_Father: {fileID: 918516703}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.8, y: 0}
+  m_AnchorMax: {x: 0.8, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2655,7 +2655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -3367.5}
+  m_AnchoredPosition: {x: 0, y: -3587.744}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309366191
@@ -5466,7 +5466,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.8, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11031,7 +11031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1245326855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11137,7 +11137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1245496567
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11887,8 +11887,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "<b><u>Artistes</u></b>\n<size=100>\nCamille Sube\nColine Martins\nEva
     Gallardo\nWilliam Comminges\nLucas Boyadjian\nJawad Yacoubi\n</size>\n\n<b><u>Programmeurs</u></b>\n<size=100>\nHugo
-    Guerquin\nLucas Guibert\nAlexis Thi\xE9baut\nMinions Art\n</size>\n\n<b><u>Audio</u></b>\n<size=100>\nLouise
-    Jeanson\nNicolas Sanchez\nThomas Sieurac\n</size>\n\n<b><u>Professeurs</u></b>\n<size=100>\nYoni
+    Guerquin\nLucas Guibert\nAlexis Thi\xE9baut\nMinions Art\n</size>\n\n<b><u>Audio</u></b>\n<size=100>\nMaxence
+    Ansart\n\nLouise Jeanson\nNicolas Sanchez\nThomas Sieurac\n</size>\n\n<b><u>Professeurs</u></b>\n<size=100>\nYoni
     Arena\nBenjamin Nazon\nAdrien Vert\n</size>\n\n<b><u>Merci \xE0 nos playtesteurs</u></b>\n<size=100>\nL\xE9a,
     Constance, Philipe, Florian, L\xE9na, Lucie, Mah\xE9,  Vincent, Duncan, Jason,
     Paul, Christophe, Marion, Emy, Souame, Alyssa, Ambre, Christine, Catherine, Rapha\xEBl,
@@ -12078,7 +12078,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.8, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15379,7 +15379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -6068}
+  m_AnchoredPosition: {x: 0, y: -6285.455}
   m_SizeDelta: {x: 960, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818753327
