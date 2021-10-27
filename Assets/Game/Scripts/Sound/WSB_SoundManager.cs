@@ -29,13 +29,6 @@ public class WSB_SoundManager : MonoBehaviour
     }
 
 
-    // DEBUG
-    private void Update()
-    {
-        if (UnityEngine.InputSystem.Keyboard.current.enterKey.wasPressedThisFrame)
-            Cog(lux);
-    }
-    //
     public void ChangeMusicVolume(float f) => musicSource.outputAudioMixerGroup.audioMixer.SetFloat("VolumeMusic", f);
     public void ChangeSoundVolume(float f) => musicSource.outputAudioMixerGroup.audioMixer.SetFloat("VolumeSound", f);
     public float GetMusicVolume()
