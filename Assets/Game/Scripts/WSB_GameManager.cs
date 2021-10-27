@@ -86,6 +86,7 @@ public class WSB_GameManager : MonoBehaviour
     {
         // Set Pause state to false, invoke resume event, hide pause menu
 
+        Cursor.visible = false;
         isStarted = true;
         Paused = false;
         OnResume?.Invoke();
@@ -93,6 +94,7 @@ public class WSB_GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        Cursor.visible = false;
         cinemachineBrain.enabled = true;
 
         triggerCamStart.TriggerCinemachine();
@@ -102,6 +104,7 @@ public class WSB_GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        Cursor.visible = true;
         isEnded = true;
         if (Paused)
             Resume();
@@ -110,12 +113,17 @@ public class WSB_GameManager : MonoBehaviour
     }
 
     public void QuitGame() => Application.Quit();
-    public void RestartGame() => SceneManager.LoadSceneAsync("Main Menus", LoadSceneMode.Single);
+    public void RestartGame()
+    {
+        WSB_SoundManager.I.Button2();
+        SceneManager.LoadSceneAsync("Main Menus", LoadSceneMode.Single);
+    }
 
     public void NeedConfirmationMenu(bool _s)
     {
         if (_s)
         {
+            WSB_SoundManager.I.Button1();
             confirmMenu.SetActive(true);
             menuButton.enabled = false;
             quitButton.enabled = false;
@@ -124,6 +132,7 @@ public class WSB_GameManager : MonoBehaviour
 
         else
         {
+            WSB_SoundManager.I.Button2();
             confirmMenu.SetActive(false);
             menuButton.enabled = true;
             quitButton.enabled = true;
@@ -134,6 +143,7 @@ public class WSB_GameManager : MonoBehaviour
     {
         if (_s)
         {
+            WSB_SoundManager.I.Button1();
             confirmQuit.SetActive(true);
             menuButton.enabled = false;
             quitButton.enabled = false;
@@ -142,6 +152,7 @@ public class WSB_GameManager : MonoBehaviour
 
         else
         {
+            WSB_SoundManager.I.Button2();
             confirmQuit.SetActive(false);
             menuButton.enabled = true;
             quitButton.enabled = true;
@@ -151,13 +162,21 @@ public class WSB_GameManager : MonoBehaviour
 
     private void ShowPauseMenu()
     {
+        Cursor.visible = true;
         if(pauseMenu)
+        {
+            WSB_SoundManager.I.Button1();
             pauseMenu.SetActive(true);
+            menuButton.enabled = true;
+            quitButton.enabled = true;
+            resumeButton.enabled = true;
+        }
     }
 
     private void HidePauseMenu()
     {
-        if(confirmMenu && confirmQuit && pauseMenu)
+        Cursor.visible = false;
+        if (confirmMenu && confirmQuit && pauseMenu)
         {
             confirmQuit.SetActive(false);
             confirmMenu.SetActive(false);

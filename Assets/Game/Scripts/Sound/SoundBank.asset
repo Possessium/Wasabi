@@ -15,7 +15,7 @@ MonoBehaviour:
   musics:
   - {fileID: 8300000, guid: 3595e2dfa623b354c950bf05dd737d9e, type: 3}
   - {fileID: 8300000, guid: a3f12c2d9f9c3e9469f35894d240ce6f, type: 3}
-  - {fileID: 8300000, guid: 4c3a3e436be3d4f44a555356ab7a3cdf, type: 3}
+  - {fileID: 8300000, guid: 448e0d8f96d7b2d48ad4aca270fa0c9a, type: 3}
   banStepGrass:
   - {fileID: 8300000, guid: 8cdfa6cf799509049a1a92e4dd0f6ec0, type: 3}
   - {fileID: 8300000, guid: 14fc5f500259a9640ad756df202b00f4, type: 3}
@@ -85,11 +85,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4e4ef417ce11dd441844e82cca086466, type: 3}
   - {fileID: 8300000, guid: 46354a1291f476b49bd9a049db87e24e, type: 3}
   luxStepGrass:
-  - {fileID: 8300000, guid: 5102ebd2a4c39fe449d0d9aaf3bc0f52, type: 3}
-  - {fileID: 8300000, guid: 771c94cc8d264c048bcc0604102b9ce7, type: 3}
-  - {fileID: 8300000, guid: 31c019321c810724da17a44f7f4a45b1, type: 3}
-  - {fileID: 8300000, guid: b048a516d182a354ab50bb30ab4ff383, type: 3}
-  - {fileID: 8300000, guid: 533ac34542de9784d8f0d5c1ff8b5428, type: 3}
+  - {fileID: 8300000, guid: d239581a5c05224478e1839211d8dafb, type: 3}
+  - {fileID: 8300000, guid: 3fe6aa20a23cd0241b84c48fbbb312a6, type: 3}
+  - {fileID: 8300000, guid: e418503a274281849a90aaf77c48f085, type: 3}
+  - {fileID: 8300000, guid: 9d33e9f3ef30cbd419998fa8b87d81b5, type: 3}
+  - {fileID: 8300000, guid: c2755dd8c7480db48ad5392f4baa8b07, type: 3}
+  - {fileID: 8300000, guid: 751216de6c44cb0479b70561822c0a27, type: 3}
+  - {fileID: 8300000, guid: 7f2293b3550bafb44a5b2d8938f6b0c6, type: 3}
+  - {fileID: 8300000, guid: e049492cf024971498e6348d09ede08f, type: 3}
+  - {fileID: 8300000, guid: 82afd00f089ea9442a8c60a58e8f85e8, type: 3}
   luxStepMetal:
   - {fileID: 8300000, guid: 900c2c1a8412602498e5422e6daedeec, type: 3}
   - {fileID: 8300000, guid: 4d6b1ef33840fa942b0100cd9dd61cf4, type: 3}
@@ -103,11 +107,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0de2cfec577a1ae4e889ac8e36e66ea5, type: 3}
   - {fileID: 8300000, guid: e478f8391ee11724a814ac4be61b5ccb, type: 3}
   luxRunGrass:
-  - {fileID: 8300000, guid: c3912d24997246e41bb301667d3eb78b, type: 3}
-  - {fileID: 8300000, guid: a526b8c13ef39e74d9cbb1c6383a89d3, type: 3}
-  - {fileID: 8300000, guid: bc350a29a44c8a34ebea9c8f5905216a, type: 3}
-  - {fileID: 8300000, guid: ad105ce32039e3142994593829e41f58, type: 3}
-  - {fileID: 8300000, guid: 8bea4e4e09f561246816d1a1374f1915, type: 3}
+  - {fileID: 8300000, guid: d239581a5c05224478e1839211d8dafb, type: 3}
+  - {fileID: 8300000, guid: 3fe6aa20a23cd0241b84c48fbbb312a6, type: 3}
+  - {fileID: 8300000, guid: e418503a274281849a90aaf77c48f085, type: 3}
+  - {fileID: 8300000, guid: 9d33e9f3ef30cbd419998fa8b87d81b5, type: 3}
+  - {fileID: 8300000, guid: c2755dd8c7480db48ad5392f4baa8b07, type: 3}
+  - {fileID: 8300000, guid: 751216de6c44cb0479b70561822c0a27, type: 3}
+  - {fileID: 8300000, guid: 7f2293b3550bafb44a5b2d8938f6b0c6, type: 3}
+  - {fileID: 8300000, guid: e049492cf024971498e6348d09ede08f, type: 3}
+  - {fileID: 8300000, guid: 82afd00f089ea9442a8c60a58e8f85e8, type: 3}
   luxRunMetal:
   - {fileID: 8300000, guid: 900c2c1a8412602498e5422e6daedeec, type: 3}
   - {fileID: 8300000, guid: 4d6b1ef33840fa942b0100cd9dd61cf4, type: 3}
@@ -186,4 +194,7 @@ MonoBehaviour:
   spawnMixer: {fileID: 4313406739025122336, guid: 725c918851541c3469184f546abdc481,
     type: 2}
   mechaMixer: {fileID: -1483190724978027115, guid: 725c918851541c3469184f546abdc481,
+    type: 2}
+  vent: {fileID: -1427890613205661969, guid: 725c918851541c3469184f546abdc481, type: 2}
+  "m\xE9lenchon": {fileID: -1670254853806766584, guid: 725c918851541c3469184f546abdc481,
     type: 2}

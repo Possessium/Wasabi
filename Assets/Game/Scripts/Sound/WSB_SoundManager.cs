@@ -28,6 +28,14 @@ public class WSB_SoundManager : MonoBehaviour
             lux = WSB_Lux.I.transform;
     }
 
+
+    // DEBUG
+    private void Update()
+    {
+        if (UnityEngine.InputSystem.Keyboard.current.enterKey.wasPressedThisFrame)
+            Cog(lux);
+    }
+    //
     public void ChangeMusicVolume(float f) => musicSource.outputAudioMixerGroup.audioMixer.SetFloat("VolumeMusic", f);
     public void ChangeSoundVolume(float f) => musicSource.outputAudioMixerGroup.audioMixer.SetFloat("VolumeSound", f);
     public float GetMusicVolume()
@@ -128,8 +136,8 @@ public class WSB_SoundManager : MonoBehaviour
     public void DespawnDragon(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.DragonDespawn), soundsData.GetMixer(Mixer.Spawn));
     public void DragonEat(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.DragonEat), soundsData.GetMixer(Mixer.Spells));
 
-    public void WindActive(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.WindActive), soundsData.GetMixer(Mixer.Spawn));
-    public void WindDisable(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.WindDisable), soundsData.GetMixer(Mixer.Spawn));
+    public void WindActive(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.WindActive), soundsData.GetMixer(Mixer.Vent));
+    public void WindDisable(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.WindDisable), soundsData.GetMixer(Mixer.Vent));
     #endregion
 
     public void Elevator(Transform _t) => SpawnSound().Init(_t, soundsData.GetClip(Sound.Elevator), soundsData.GetMixer(Mixer.Mecha), true);
@@ -152,10 +160,10 @@ public class WSB_SoundManager : MonoBehaviour
     }
 
 
-    public void Button1() => SpawnSound().Init(transform, soundsData.GetClip(Sound.Button1), soundsData.GetMixer(Mixer.Click));
-    public void Button2() => SpawnSound().Init(transform, soundsData.GetClip(Sound.Button2), soundsData.GetMixer(Mixer.Click));
-    public void ButtonStart() => SpawnSound().Init(transform, soundsData.GetClip(Sound.ButtonStart), soundsData.GetMixer(Mixer.Click));
-    public void Cog(Transform _t) => SpawnSound(_t).Init(_t, soundsData.GetClip(Sound.Cog), soundsData.GetMixer(Mixer.Mecha));
+    public void Button1() => SpawnSound().Init(null, soundsData.GetClip(Sound.Button1), soundsData.GetMixer(Mixer.Click));
+    public void Button2() => SpawnSound().Init(null, soundsData.GetClip(Sound.Button2), soundsData.GetMixer(Mixer.Click));
+    public void ButtonStart() => SpawnSound().Init(null, soundsData.GetClip(Sound.ButtonStart), soundsData.GetMixer(Mixer.Click));
+    public void Cog(Transform _t) => SpawnSound(_t).Init(_t, soundsData.GetClip(Sound.Cog), soundsData.GetMixer(Mixer.Mélenchon));
 
     public void StartAmbiant()
     {

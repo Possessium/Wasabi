@@ -8,6 +8,7 @@ public class WSB_SoundPlayer : MonoBehaviour
     [SerializeField] private AudioSource source = null;
     [SerializeField] private float minDist = 3;
     [SerializeField] private float maxDist = 50;
+    [SerializeField] private float maxVolume = 1;
 
     private Transform p1 = null;
     private Transform p2 = null;
@@ -15,8 +16,10 @@ public class WSB_SoundPlayer : MonoBehaviour
 
     private void Start()
     {
-        p1 = WSB_Lux.I?.transform;
-        p2 = WSB_Ban.I?.transform;
+        if(WSB_Lux.I)
+            p1 = WSB_Lux.I?.transform;
+        if(WSB_Ban.I)
+            p2 = WSB_Ban.I?.transform;
     }
 
     private void Update()
@@ -33,13 +36,13 @@ public class WSB_SoundPlayer : MonoBehaviour
                 source.volume = 0;
 
             else if (distP1 > minDist && distP2 < minDist)
-                source.volume = 1;
+                source.volume = maxVolume;
 
             else
             {
                 float dist = Mathf.Min(distP1, distP2);
 
-                source.volume = (dist - maxDist) / (minDist - maxDist);
+                source.volume = ((dist - maxDist) / (minDist - maxDist)) * maxVolume;
             }
         }
     }

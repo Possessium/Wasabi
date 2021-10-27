@@ -336,7 +336,12 @@ PrefabInstance:
     - target: {fileID: -3461760948742214659, guid: c2a36dcff9181e348afb396d531e8563,
         type: 3}
       propertyPath: maxDist
-      value: 30
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -3461760948742214659, guid: c2a36dcff9181e348afb396d531e8563,
+        type: 3}
+      propertyPath: maxVolume
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: -3461760948742214659, guid: c2a36dcff9181e348afb396d531e8563,
         type: 3}
@@ -358,6 +363,12 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 2ab3ed1580abda9479abc2f14048490d, type: 3}
+    - target: {fileID: 281458751553896072, guid: c2a36dcff9181e348afb396d531e8563,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 9010300323977958070, guid: 725c918851541c3469184f546abdc481,
+        type: 2}
     - target: {fileID: 281458751553896078, guid: c2a36dcff9181e348afb396d531e8563,
         type: 3}
       propertyPath: m_Name

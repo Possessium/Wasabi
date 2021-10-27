@@ -88,6 +88,8 @@ public class SO_Sounds : ScriptableObject
     [SerializeField] private AudioMixerGroup objectsMixer = null;
     [SerializeField] private AudioMixerGroup spawnMixer = null;
     [SerializeField] private AudioMixerGroup mechaMixer = null;
+    [SerializeField] private AudioMixerGroup vent = null;
+    [SerializeField] private AudioMixerGroup mélenchon = null;
     #endregion
 
     public AudioClip GetClip(Sound type)
@@ -265,6 +267,12 @@ public class SO_Sounds : ScriptableObject
             case Mixer.Mecha:
                 _g = mechaMixer;
                 break;
+            case Mixer.Vent:
+                _g = vent;
+                break;
+            case Mixer.Mélenchon:
+                _g = mélenchon;
+                break;
         }
         return _g;
     }
@@ -328,5 +336,7 @@ public enum Mixer
     Spells,
     Objects,
     Spawn,
-    Mecha
+    Mecha,
+    Mélenchon,
+    Vent
 }
