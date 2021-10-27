@@ -175,3 +175,15 @@ MonoBehaviour:
   fountain: {fileID: 8300000, guid: 2ab3ed1580abda9479abc2f14048490d, type: 3}
   elevator: {fileID: 8300000, guid: 3ee6582294035964fa84f923fdb06cf1, type: 3}
   cog: {fileID: 8300000, guid: 33ab13aa97614874ab63cd193ded853d, type: 3}
+  footstepsMixer: {fileID: -4122992860459788304, guid: 725c918851541c3469184f546abdc481,
+    type: 2}
+  clickMixer: {fileID: 4906166859841705438, guid: 725c918851541c3469184f546abdc481,
+    type: 2}
+  spellsMixer: {fileID: 6962546902385202214, guid: 725c918851541c3469184f546abdc481,
+    type: 2}
+  objectsMixer: {fileID: 256250187921220028, guid: 725c918851541c3469184f546abdc481,
+    type: 2}
+  spawnMixer: {fileID: 4313406739025122336, guid: 725c918851541c3469184f546abdc481,
+    type: 2}
+  mechaMixer: {fileID: -1483190724978027115, guid: 725c918851541c3469184f546abdc481,
+    type: 2}

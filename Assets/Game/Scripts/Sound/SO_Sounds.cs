@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [CreateAssetMenu(fileName = "SoundBank", menuName = "ScriptableObjects/CreateSoundBank", order = 1)]
 public class SO_Sounds : ScriptableObject
@@ -79,6 +80,14 @@ public class SO_Sounds : ScriptableObject
     [SerializeField] private AudioClip fountain = null;
     [SerializeField] private AudioClip elevator = null;
     [SerializeField] private AudioClip cog = null;
+    #endregion
+    #region Mixers
+    [SerializeField] private AudioMixerGroup footstepsMixer = null;
+    [SerializeField] private AudioMixerGroup clickMixer = null;
+    [SerializeField] private AudioMixerGroup spellsMixer = null;
+    [SerializeField] private AudioMixerGroup objectsMixer = null;
+    [SerializeField] private AudioMixerGroup spawnMixer = null;
+    [SerializeField] private AudioMixerGroup mechaMixer = null;
     #endregion
 
     public AudioClip GetClip(Sound type)
@@ -232,6 +241,33 @@ public class SO_Sounds : ScriptableObject
     }
 
     public AudioClip GetMusic(int _i) => musics[_i];
+
+    public AudioMixerGroup GetMixer(Mixer _m)
+    {
+        AudioMixerGroup _g = null;
+        switch (_m)
+        {
+            case Mixer.Footsteps:
+                _g = footstepsMixer;
+                break;
+            case Mixer.Click:
+                _g = clickMixer;
+                break;
+            case Mixer.Spells:
+                _g = spellsMixer;
+                break;
+            case Mixer.Objects:
+                _g = objectsMixer;
+                break;
+            case Mixer.Spawn:
+                _g = spawnMixer;
+                break;
+            case Mixer.Mecha:
+                _g = mechaMixer;
+                break;
+        }
+        return _g;
+    }
 }
 
 public enum Sound
@@ -283,4 +319,14 @@ public enum Sound
     Valid,
     Cancel,
     Cog
+}
+
+public enum Mixer
+{
+    Footsteps,
+    Click,
+    Spells,
+    Objects,
+    Spawn,
+    Mecha
 }

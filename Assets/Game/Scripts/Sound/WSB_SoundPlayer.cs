@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class WSB_SoundPlayer : MonoBehaviour
 {
@@ -43,8 +44,11 @@ public class WSB_SoundPlayer : MonoBehaviour
         }
     }
 
-    public void Init(Transform _obj, AudioClip _clip, bool _loop = false)
+    public void Init(Transform _obj, AudioClip _clip, AudioMixerGroup _m = null, bool _loop = false)
     {
+        if(_m)
+            source.outputAudioMixerGroup = _m;
+
         source.clip = _clip;
         source.loop = _loop;
         source.enabled = true;
