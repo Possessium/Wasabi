@@ -1466,7 +1466,7 @@ PrefabInstance:
     - target: {fileID: 3175025076563262152, guid: b2c1ead1faaa42e4ebea142a8c7bc453,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -83.97
+      value: -83.74
       objectReference: {fileID: 0}
     - target: {fileID: 3175025076563262152, guid: b2c1ead1faaa42e4ebea142a8c7bc453,
         type: 3}
@@ -4043,6 +4043,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3868218173550294174, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868218173550294174, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
+        type: 3}
       propertyPath: canBePickedUp
       value: 0
       objectReference: {fileID: 0}
@@ -4170,6 +4175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395138133827779389, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7943616262754035008, guid: 660738c11b46e4146b0e9d01d8bbd4a7,
         type: 3}
@@ -7140,7 +7150,7 @@ PrefabInstance:
     - target: {fileID: 6942134283002665280, guid: 25f4ba55638ead643aa8fdabc11e8abf,
         type: 3}
       propertyPath: trampolineForce
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8323398943613124324, guid: 25f4ba55638ead643aa8fdabc11e8abf,
         type: 3}
@@ -7361,7 +7371,7 @@ PrefabInstance:
     - target: {fileID: 1049804911432639112, guid: 441b9ed8639ccd44dbebde789151d9a8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -85.39
+      value: -85.08
       objectReference: {fileID: 0}
     - target: {fileID: 1049804911432639112, guid: 441b9ed8639ccd44dbebde789151d9a8,
         type: 3}
@@ -7444,7 +7454,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921858444}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b89f32785dc40b440baec35b6b3b0aa3, type: 3}
   m_Name: 
@@ -7874,6 +7884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: canBePickedUp
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942134283002665280, guid: 25f4ba55638ead643aa8fdabc11e8abf,
+        type: 3}
+      propertyPath: trampolineForce
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8323398943613124324, guid: 25f4ba55638ead643aa8fdabc11e8abf,
         type: 3}

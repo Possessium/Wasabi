@@ -51,7 +51,6 @@ public class WSB_Wind : WSB_Rune
             RaycastHit2D _fion;
             if (_fion = Physics2D.Raycast(transform.position, _dir, Vector2.Distance(transform.position, _hit.transform.position), stopWindSight))
             {
-                Debug.LogError(_fion.transform.name);
                 continue;
             }
 

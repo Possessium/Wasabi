@@ -78,6 +78,7 @@ public abstract class WSB_Power : MonoBehaviour
     abstract protected void PlayPower();
     internal void Lock(bool v)
     {
-        movable.CanMove = v;
+        movable.CanMove = !v;
+        canBePickedUp = !v;
     }
 }

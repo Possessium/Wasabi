@@ -14,6 +14,9 @@ public class WSB_Ban : MonoBehaviour
     [SerializeField] WSB_PlayerMovable player = null;
     public WSB_PlayerMovable Player { get { return player; } }
 
+    [SerializeField] WSB_PlayerInteraction playerInteraction = null;
+    public WSB_PlayerInteraction PlayerInteraction { get { return playerInteraction; } }
+
 
     private void Awake()
     {

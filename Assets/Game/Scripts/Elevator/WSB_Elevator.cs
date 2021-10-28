@@ -19,6 +19,7 @@ public class WSB_Elevator : MonoBehaviour
     [SerializeField] private LineRenderer lineRendererRight = null;
     [SerializeField] private Transform anchorLeft = null;
     [SerializeField] private Transform anchorRight = null;
+    [SerializeField] private GameObject lockElevator = null;
 
     [SerializeField] private WSB_ElevatorCam elevatorCam = null;
 
@@ -119,6 +120,18 @@ public class WSB_Elevator : MonoBehaviour
             case ElevatorState.Bottom:
                 break;
             case ElevatorState.Stuck:
+
+                WSB_Power[] _powers = FindObjectsOfType<WSB_Power>();
+                foreach (WSB_Power _pow in _powers)
+                {
+                    _pow.Lock(true);
+                }
+
+                WSB_Lux.I.PlayerInteraction.DropObject();
+                WSB_Ban.I.PlayerInteraction.DropObject();
+
+                lockElevator.SetActive(false);
+
                 elevatorCam.Activate(false);
                 elevatorStuckFX.Stop();
                 trigger.enabled = true;

@@ -123,6 +123,7 @@
     <Compile Include="Assets\Game\Scripts\Player\WSB_PlayerFX.cs" />
     <Compile Include="Assets\Game\Scripts\Powers\WSB_Shrink.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
+    <Compile Include="Assets\Game\Scripts\Elevator\WSB_ElevatorLock.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

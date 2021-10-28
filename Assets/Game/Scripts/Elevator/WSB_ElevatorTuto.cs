@@ -32,6 +32,12 @@ public class WSB_ElevatorTuto : MonoBehaviour
     {
         if(!scenesLoaded && _s)
         {
+            WSB_Power[] _powers = FindObjectsOfType<WSB_Power>();
+            foreach (WSB_Power _pow in _powers)
+            {
+                _pow.Lock(true);
+            }
+
             if (sceneLoader)
             {
                 scenesLoaded = true;
