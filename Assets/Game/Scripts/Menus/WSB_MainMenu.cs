@@ -114,15 +114,28 @@ public class WSB_MainMenu : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Loading", UnityEngine.SceneManagement.LoadSceneMode.Additive);
         UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Main Menus");
     }
+
+    [SerializeField] private GameObject menuGO = null;
+    [SerializeField] private GameObject playGO = null;
+    [SerializeField] private GameObject creditGO = null;
+    [SerializeField] private EventSystem eventSystem = null;
+
+    [SerializeField] private UnityEngine.UI.Button menuButton = null;
+    [SerializeField] private UnityEngine.UI.Button tutoButton = null;
+    [SerializeField] private UnityEngine.UI.Button creditsButton = null;
     public void Next()
     {
         PlayClickSound(true);
         switch (currentMode)
         {
             case MenuMode.Title:
+                eventSystem.SetSelectedGameObject(menuGO);
+                menuButton.Select();
                 currentMode = MenuMode.Main;
                 break;
             case MenuMode.Main:
+                eventSystem.SetSelectedGameObject(playGO);
+                tutoButton.Select();
                 currentMode = MenuMode.Tuto;
                 break;
             case MenuMode.Tuto:
@@ -134,6 +147,8 @@ public class WSB_MainMenu : MonoBehaviour
 
     public void Credits()
     {
+        eventSystem.SetSelectedGameObject(creditGO);
+        creditsButton.Select();
         PlayClickSound(true);
         menuAnimator.SetTrigger(creditsTransition_Hash);
         currentMode = MenuMode.Credits;
@@ -144,6 +159,7 @@ public class WSB_MainMenu : MonoBehaviour
         switch (currentMode)
         {
             case MenuMode.Main:
+                eventSystem.SetSelectedGameObject(null);
                 currentMode = MenuMode.Title;
 
                 canSkipTitle = false;
@@ -151,6 +167,8 @@ public class WSB_MainMenu : MonoBehaviour
                 break;
             case MenuMode.Tuto:
             case MenuMode.Credits:
+                eventSystem.SetSelectedGameObject(menuGO);
+                menuButton.Select();
                 currentMode = MenuMode.Main;
                 break;
         }
