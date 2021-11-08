@@ -71,7 +71,8 @@ public class WSB_Socle : MonoBehaviour
         zPowerPosition = _power.transform.position.z;
         _power.transform.position = new Vector3(transform.position.x + position.x, transform.position.y + position.y, transform.position.z);
         currentHeldPower = _power;
-        currentHeldPower.Lock(true);
+        //currentHeldPower.Lock(true);
+        //Debug.Log("in");
         WSB_SoundManager.I.ValidPattern();
     }
 
